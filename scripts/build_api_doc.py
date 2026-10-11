@@ -1,8 +1,10 @@
 """Generate docs/source/API_Documentation.md from the app's OpenAPI schema and the captured examples (plan §12.4).
 
 Run from the repo root:  python -m scripts.build_api_doc   (then: python -m scripts.build_docs api)
+Per endpoint: endpoint and method, request format, response format, one sample request and one sample response.
 Field tables come from the code (FastAPI/Pydantic schemas); samples come from tests/test_cases/api_examples.json
-(scripts/capture_api_examples.py). No API spend.
+(scripts/capture_api_examples.py), trimmed for reading. /evaluation/latest is sampled from the saved evaluation
+results. No API spend. 2026-10-11: rewritten to be concise (top-level fields only; nested models are at /docs).
 """
 import json
 
@@ -13,21 +15,23 @@ EXAMPLES = PROJECT_ROOT / "tests" / "test_cases" / "api_examples.json"
 ORDER = ["/health", "/metadata", "/search", "/cases/{case_id}", "/classify", "/recommend", "/troubleshoot",
          "/prioritize", "/predict/fault-risk", "/predict/performance", "/feedback", "/feedback/summary",
          "/evaluation/latest"]
-LLM_ENDPOINTS = {"/classify": "1 call", "/recommend": "1 call", "/troubleshoot": "4 calls typical, up to 12"}
+LLM_ENDPOINTS = {"/classify": "1", "/recommend": "1", "/troubleshoot": "4 typical, up to 12"}
+# Prefer the full-mode (AI) sample where one was captured.
+PREFER = {"/troubleshoot": "full", "/recommend": "full"}
+ENVELOPE = {"request_id", "warnings"}  # on every response; described once in the conventions
 
 
-def type_of(prop: dict, schemas: dict) -> str:
+def type_of(prop: dict) -> str:
     if "$ref" in prop:
-        return f"`{prop['$ref'].split('/')[-1]}`"
+        return "object"
     if "anyOf" in prop:
-        kinds = [type_of(p, schemas) for p in prop["anyOf"]]
-        return " or ".join(k for k in kinds if k != "null") + (" (nullable)" if "null" in kinds else "")
+        kinds = [type_of(p) for p in prop["anyOf"] if p.get("type") != "null"]
+        nullable = any(p.get("type") == "null" for p in prop["anyOf"])
+        return " or ".join(dict.fromkeys(kinds)) + (", nullable" if nullable else "")
     if prop.get("type") == "array":
-        return f"array of {type_of(prop.get('items', {}), schemas)}"
+        return f"array of {type_of(prop.get('items', {}))}"
     if "enum" in prop:
-        return "enum"
-    if "const" in prop:
-        return f"`{prop['const']}`"
+        return "string (enum)"
     return prop.get("type", "object")
 
 
@@ -35,62 +39,72 @@ def num(v):
     return int(v) if isinstance(v, float) and v.is_integer() else v
 
 
-def refs_in(schema_name: str, schemas: dict) -> list[str]:
-    found = []
-
-    def walk(node):
-        if isinstance(node, dict):
-            if "$ref" in node:
-                found.append(node["$ref"].split("/")[-1])
-            for v in node.values():
-                walk(v)
-        elif isinstance(node, list):
-            for v in node:
-                walk(v)
-    walk(schemas[schema_name].get("properties", {}))
-    return list(dict.fromkeys(found))
-
-
-def constraints(prop: dict) -> str:
+def notes(prop: dict) -> str:
     out = []
     for key, label in (("minLength", "min length"), ("maxLength", "max length"), ("minimum", "≥"),
-                       ("maximum", "≤"), ("exclusiveMinimum", ">"), ("minItems", "min items"), ("maxItems", "max items")):
-        if key in prop:
-            out.append(f"{label} {num(prop[key])}")
-    for alt in prop.get("anyOf", []):
-        out += [c for c in constraints(alt).split("; ") if c]
+                       ("maximum", "≤"), ("exclusiveMinimum", ">"), ("maxItems", "max items")):
+        for p in [prop, *prop.get("anyOf", [])]:
+            if key in p:
+                out.append(f"{label} {num(p[key])}")
     if "enum" in prop:
         vals = ", ".join(map(str, prop["enum"]))
-        out.append(f"one of: {vals[:240]}{'…' if len(vals) > 240 else ''}")
+        out.append(f"one of: {vals[:90]}{'…' if len(vals) > 90 else ''}")
     if "default" in prop and prop["default"] not in (None, [], {}):
         out.append(f"default {json.dumps(prop['default'])}")
-    return "; ".join(out)
+    if prop.get("description"):
+        out.append(prop["description"].replace("\n", " "))
+    return "; ".join(dict.fromkeys(out)).replace("|", "/")
 
 
-def field_table(schema_name: str, schemas: dict) -> str:
+def fields(schema_name: str, schemas: dict, request: bool) -> str:
     sch = schemas[schema_name]
     req = set(sch.get("required", []))
-    props = sch.get("properties", {})
-    with_desc = any(p.get("description") for p in props.values())  # the column is shown only when used
-    rows = ["| Field | Type | Required | Constraints |" + (" Description |" if with_desc else ""),
-            "|---|---|---|---|" + ("---|" if with_desc else "")]
-    for name, prop in props.items():
-        desc = (prop.get("description") or "").replace("|", "\\|").replace("\n", " ")
-        rows.append(f"| `{name}` | {type_of(prop, schemas)} | {'yes' if name in req else 'no'} | "
-                    f"{constraints(prop).replace('|', '/')} |" + (f" {desc} |" if with_desc else ""))
+    props = {k: v for k, v in sch.get("properties", {}).items() if request or k not in ENVELOPE}
+    if request:
+        rows = ["| Field | Type | Required | Notes |", "|---|---|---|---|"]
+        rows += [f"| `{k}` | {type_of(v)} | {'yes' if k in req else 'no'} | {notes(v)} |" for k, v in props.items()]
+    else:
+        rows = ["| Field | Type |", "|---|---|"]
+        rows += [f"| `{k}` | {type_of(v)} |" for k, v in props.items()]
     return "\n".join(rows)
 
 
-def shorten(obj, depth=0):
-    """Trim long lists and strings so samples stay readable; marks what was cut."""
+def trim(obj, depth=0):
+    """Readable sample: first list item plus a count, short strings, deep objects collapsed."""
     if isinstance(obj, list):
-        items = [shorten(x, depth + 1) for x in obj[:2]]
-        return items + ([f"... {len(obj) - 2} more"] if len(obj) > 2 else [])
+        if not obj:
+            return []
+        head = [trim(obj[0], depth + 1)]
+        return head + ([f"... {len(obj) - 1} more"] if len(obj) > 1 else [])
     if isinstance(obj, dict):
-        return {k: shorten(v, depth + 1) for k, v in obj.items()}
-    if isinstance(obj, str) and len(obj) > 220:
-        return obj[:220] + "…"
+        if depth >= 3 and obj:
+            return "{...}"
+        items = list(obj.items())
+        if depth >= 1 and len(items) > 8:  # nested objects: the first fields only (top-level fields all shown)
+            out = {k: trim(v, depth + 1) for k, v in items[:6]}
+            out["..."] = f"{len(items) - 6} more fields"
+            return out
+        return {k: trim(v, depth + 1) for k, v in items}
+    if isinstance(obj, float):
+        return round(obj, 3)
+    if isinstance(obj, str) and len(obj) > 110:
+        return obj[:110] + "…"
     return obj
+
+
+def pick(examples: list[dict], path: str) -> dict | None:
+    ok = [e for e in examples if e["status"] < 400]
+    want = PREFER.get(path)
+    return next((e for e in ok if want and want in e["name"]), ok[0] if ok else None)
+
+
+def evaluation_sample() -> dict:
+    """From the saved results (no API call); the live block is abbreviated."""
+    from src.services import evaluation_results
+    return {"request_id": "3f9c1a2b7d4e", "warnings": [], "offline": evaluation_results.load_offline(),
+            "live": {"total": 12, "verdicts": {"pass": 9, "fail": 2, "unvalidated": 1, "not_judged": 0},
+                     "pass_rate": 0.82, "by_model": [], "avg_scores": None, "scored_runs": 11, "recent": []},
+            "offline_alternatives": evaluation_results.load_alternatives()}
 
 
 def main() -> None:
@@ -98,91 +112,75 @@ def main() -> None:
     spec = app.openapi()
     schemas = spec["components"]["schemas"]
     ex = json.loads(EXAMPLES.read_text(encoding="utf-8"))
-    by_path = {}
+    by_path: dict[str, list] = {}
     for e in ex["examples"] + ex["llm_examples"]:
-        by_path.setdefault(e["path"].replace("/api/v1", "").replace(e["path"].split("/")[-1], "{case_id}")
-                           if e["path"].startswith("/api/v1/cases/") else e["path"].replace("/api/v1", ""), []).append(e)
+        p = e["path"].replace("/api/v1", "")
+        by_path.setdefault("/cases/{case_id}" if p.startswith("/cases/") else p, []).append(e)
 
     md = ["# API Documentation", "",
           "AI-Powered Telecom Network Operations Assistant: REST API reference, generated on 2026-10-11 from the "
-          "application's OpenAPI schema (`app.openapi()`) and real captured request/response pairs "
-          "(`tests/test_cases/api_examples.json`, `scripts/capture_api_examples.py`).", "",
+          "application's OpenAPI schema and real captured requests and responses "
+          "(`tests/test_cases/api_examples.json`).", "",
           "## 1. Conventions", "",
           "| Item | Value |", "|---|---|",
           "| Base URL | `http://localhost:8000/api/v1` |",
-          "| Interactive docs | Swagger UI at `http://localhost:8000/docs`, ReDoc at `/redoc`, schema at `/openapi.json` |",
-          "| Format | JSON request and response bodies (`Content-Type: application/json`) |",
-          "| Request ID | Every response carries an `X-Request-ID` header; every response body has a `request_id` |",
+          "| Interactive docs | `http://localhost:8000/docs` (every nested model), schema at `/openapi.json` |",
+          "| Format | JSON request and response bodies |",
+          "| Every response | `request_id` (string, also in the `X-Request-ID` header) and `warnings` (array of non-fatal "
+          "caveats, e.g. reduced mode). They are not repeated in the tables below. |",
           "| Authentication | None (local use only) |",
-          "| LLM use | Only `/classify`, `/recommend` and `/troubleshoot` call the LLM (Claude Haiku 5.5 by default). "
-          "Without a key, or after the daily spend cap, they return a deterministic reduced-mode answer with a warning. |",
-          "| Warnings | Non-fatal caveats (relative severity, imputed KPIs, reduced mode) are returned in `warnings[]`, never as errors |",
-          "",
-          "### Error envelope", "",
-          "Errors never return stack traces. Every error has the same shape:", "",
-          "```json", json.dumps({"error": {"code": "INVALID_INPUT", "message": "Check the highlighted values.",
-                                           "details": {"errors": ["..."]}, "request_id": "c720f996ef9d"}}, indent=2),
+          "| LLM use | Only `/classify`, `/recommend` and `/troubleshoot` call the LLM (Claude Haiku 5.5). Without a key, "
+          "or after the daily spend cap, they answer in reduced mode with a warning. |", "",
+          "**Errors** have one shape, never a stack trace:", "",
+          "```json", json.dumps({"error": {"code": "OUT_OF_SCOPE", "message": "This assistant answers questions about "
+                                           "mobile network operations.", "details": {}, "request_id": "c720f996ef9d"}}),
           "```", "",
-          "| HTTP | `code` | When |", "|---|---|---|",
-          "| 400 | `INVALID_FILTER` | A filter value is not in the dataset vocabulary (see `/metadata`) |",
-          "| 400 | `PROMPT_INJECTION` | The query contains instructions aimed at the assistant |",
-          "| 400 | `OUT_OF_SCOPE` | The query is not about mobile network operations |",
-          "| 400 | `GIBBERISH` | The query does not look like a sentence |",
-          "| 404 | `NOT_FOUND` | Unknown case ID or run ID |",
-          "| 422 | `INVALID_INPUT` | Request validation failed (types, ranges, unknown fields, empty feedback) |",
-          "| 503 | `NOT_READY` | Data artifacts are missing; run `python -m scripts.bootstrap` |",
-          "| 500 | `INTERNAL_ERROR` | Unexpected error; quote the `request_id` |", "",
-          "## 2. Endpoints", ""]
-    used = []
+          "| HTTP | `code` |", "|---|---|",
+          "| 400 | `INVALID_FILTER`, `PROMPT_INJECTION`, `OUT_OF_SCOPE`, `GIBBERISH` |",
+          "| 404 | `NOT_FOUND` |", "| 422 | `INVALID_INPUT` |", "| 503 | `NOT_READY` (run `python -m scripts.bootstrap`) |",
+          "| 500 | `INTERNAL_ERROR` |", "",
+          "## 2. Endpoints", "",
+          "| # | Method | Endpoint | Purpose | LLM calls |", "|---|---|---|---|---|"]
+    ops = []
     for i, path in enumerate(ORDER, 1):
         for method, op in spec["paths"][f"/api/v1{path}"].items():
-            md += [f"### 2.{i} `{method.upper()} {path}`", "", f"**Purpose:** {op.get('summary', '')}.", ""]
-            if op.get("description"):
-                md += [op["description"].strip(), ""]
-            if path in LLM_ENDPOINTS:
-                md += [f"**LLM calls:** {LLM_ENDPOINTS[path]} (about $0.007, ≈ ₹0.75 through AICredits, per uncached "
-                       "`/troubleshoot` query on Claude Haiku 5.5; identical requests are served from the response cache).", ""]
-            params = [p for p in op.get("parameters", [])]
-            if params:
-                md += ["**Parameters**", "", "| Name | In | Type | Required | Description |", "|---|---|---|---|---|"]
-                md += [f"| `{p['name']}` | {p['in']} | {type_of(p.get('schema', {}), schemas)} | "
-                       f"{'yes' if p.get('required') else 'no'} | {p.get('description', '')} |" for p in params]
-                md.append("")
-            body = op.get("requestBody", {}).get("content", {}).get("application/json", {}).get("schema")
-            if body and "$ref" in body:
-                name = body["$ref"].split("/")[-1]
-                md += [f"**Request body** (`{name}`)", "", field_table(name, schemas), ""]
-                used.append(name)
-            ok = op["responses"].get("200", {}).get("content", {}).get("application/json", {}).get("schema", {})
-            if "$ref" in ok:
-                name = ok["$ref"].split("/")[-1]
-                md += [f"**Response 200** (`{name}`)", "", field_table(name, schemas), ""]
-                used.append(name)
-            for e in by_path.get(path, []):
-                kind = "Sample" if e["status"] < 400 else "Error example"
-                md += [f"**{kind}: {e['name']}** (HTTP {e['status']})" + (f". {e['note']}" if e.get("note") else ""), ""]
-                if e["request"] is not None:
-                    curl = (f"curl -X {e['method']} http://localhost:8000{e['path']} -H \"Content-Type: application/json\" "
-                            f"-d '{json.dumps(e['request'])}'")
-                else:
-                    curl = f"curl http://localhost:8000{e['path']}"
-                md += ["```bash", curl, "```", "", "```json", json.dumps(shorten(e["response"]), indent=2), "```", ""]
-    nested, queue = [], [r for name in used for r in refs_in(name, schemas)]
-    while queue:  # every model referenced by the endpoint tables, transitively, one table each
-        name = queue.pop(0)
-        if name not in nested and name not in used:
-            nested.append(name)
-            queue += refs_in(name, schemas)
-    md += ["## 3. Nested models", "", "Models referenced by the request and response tables above.", ""]
-    for name in nested:
-        md += [f"### `{name}`", "", field_table(name, schemas), ""]
-    md += ["## 4. Full schema", "",
-           "The full machine-readable schema, including every nested model (`TroubleshootResponse`, `Recommendation`, "
-           "`RootCauseAnalysis`, `Priority`, ...), is served at `GET /openapi.json` and browsable at `/docs`. "
-           f"The schema has {len(schemas)} models.", ""]
-    OUT.parent.mkdir(parents=True, exist_ok=True)
-    OUT.write_text("\n".join(md), encoding="utf-8")
-    print(f"wrote {OUT.relative_to(PROJECT_ROOT)} ({len(md)} lines)")
+            ops.append((i, path, method, op))
+            md.append(f"| 2.{i} | {method.upper()} | `{path}` | {op.get('summary', '')} | {LLM_ENDPOINTS.get(path, '0')} |")
+    md.append("")
+
+    for i, path, method, op in ops:
+        md += [f"### 2.{i} `{method.upper()} {path}`", "", f"{op.get('summary', '')}.", "", "**Request format**", ""]
+        params = op.get("parameters", [])
+        body = op.get("requestBody", {}).get("content", {}).get("application/json", {}).get("schema")
+        if params:
+            md += ["| Parameter | In | Type | Required | Notes |", "|---|---|---|---|---|"]
+            md += [f"| `{p['name']}` | {p['in']} | {type_of(p.get('schema', {}))} | {'yes' if p.get('required') else 'no'} "
+                   f"| {notes({**p.get('schema', {}), 'description': p.get('description', '')})} |" for p in params]
+            md.append("")
+        if body and "$ref" in body:
+            md += ["JSON body:", "", fields(body["$ref"].split("/")[-1], schemas, request=True), ""]
+        if not params and not body:
+            md += ["None.", ""]
+        ok = op["responses"].get("200", {}).get("content", {}).get("application/json", {}).get("schema", {})
+        if "$ref" in ok:
+            md += ["**Response format** (HTTP 200)", "", fields(ok["$ref"].split("/")[-1], schemas, request=False), ""]
+
+        e = pick(by_path.get(path, []), path)
+        if e is not None:
+            req = e["request"]
+            curl = (f"curl -X {e['method']} http://localhost:8000{e['path']} -H \"Content-Type: application/json\" "
+                    f"-d '{json.dumps(req)}'" if req is not None else f"curl http://localhost:8000{e['path']}")
+            response = e["response"]
+            label = f" ({e['name'].split('(')[-1].rstrip(')')})" if "(" in e["name"] else ""
+        else:  # /evaluation/latest: no captured example; built from the saved results
+            curl = "curl \"http://localhost:8000/api/v1/evaluation/latest?days=30\""
+            response, label = evaluation_sample(), " (from the saved results; live block abbreviated)"
+        md += ["**Sample request**", "", "```bash", curl, "```", "",
+               f"**Sample response**{label}. Trimmed: lists show the first item, deeper objects are `{{...}}`.", "",
+               "```json", json.dumps(trim(response), indent=2, ensure_ascii=False), "```", ""]
+
+    OUT.write_text("\n".join(md) + "\n", encoding="utf-8")
+    print(f"wrote {OUT.relative_to(PROJECT_ROOT)} ({len(md)} blocks)")
 
 
 if __name__ == "__main__":
