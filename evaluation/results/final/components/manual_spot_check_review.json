@@ -1,0 +1,9 @@
+{
+  "rows": 25,
+  "ai_relevant": 24,
+  "data_relevant": 25,
+  "agreement": 0.96,
+  "flagged": 5,
+  "ai_precision_at_5": 0.96,
+  "data_precision_at_5": 1.0
+}

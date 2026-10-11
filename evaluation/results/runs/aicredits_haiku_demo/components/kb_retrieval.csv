@@ -1,0 +1,23 @@
+query_id,expected,top3,hit_expected,hit_acceptable
+G01,TRANSPORT_QOS,KB-TRANSPORT_QOS-verification | KB-TRANSPORT_QOS-overview | KB-TRANSPORT_QOS-kpi-signature,True,True
+G02,TRANSPORT_QOS,KB-TRANSPORT_QOS-environmental-considerations | KB-TRANSPORT_QOS-overview | KB-TRANSPORT_QOS-likely-root-causes,True,True
+G03,CONGESTION_CAPACITY,KB-CONGESTION_CAPACITY-likely-root-causes | KB-CONGESTION_CAPACITY-overview | KB-CONGESTION_CAPACITY-kpi-signature,True,True
+G04,CONGESTION_CAPACITY,KB-CONGESTION_CAPACITY-kpi-signature | KB-CONGESTION_CAPACITY-diagnostic-checks | KB-TRANSPORT_QOS-interactions-with-other-categories,True,True
+G05,RADIO_COVERAGE,KB-RADIO_COVERAGE-overview | KB-RADIO_COVERAGE-interactions-with-other-categories | KB-RADIO_COVERAGE-likely-root-causes,True,True
+G06,RADIO_COVERAGE,KB-RADIO_COVERAGE-environmental-considerations | KB-RADIO_COVERAGE-overview | KB-MOBILITY_HANDOVER-environmental-considerations,True,True
+G07,MOBILITY_HANDOVER,KB-MOBILITY_HANDOVER-overview | KB-RADIO_COVERAGE-interactions-with-other-categories | KB-MOBILITY_HANDOVER-interactions-with-other-categories,True,True
+G08,MOBILITY_HANDOVER,KB-MOBILITY_HANDOVER-kpi-signature | KB-MOBILITY_HANDOVER-verification | KB-MOBILITY_HANDOVER-environmental-considerations,True,True
+G09,AVAILABILITY_OUTAGE,KB-AVAILABILITY_OUTAGE-likely-root-causes | KB-AVAILABILITY_OUTAGE-overview | KB-AVAILABILITY_OUTAGE-verification,True,True
+G10,AVAILABILITY_OUTAGE,KB-AVAILABILITY_OUTAGE-overview | KB-AVAILABILITY_OUTAGE-verification | KB-AVAILABILITY_OUTAGE-environmental-considerations,True,True
+G11,FAULT_ALARM,KB-FAULT_ALARM-interactions-with-other-categories | KB-FAULT_ALARM-likely-root-causes | KB-FAULT_ALARM-overview,True,True
+G12,FAULT_ALARM,KB-FAULT_ALARM-interactions-with-other-categories | KB-FAULT_ALARM-overview | KB-FAULT_ALARM-verification,True,True
+G13,CONFIG_CHANGE,KB-CONFIG_CHANGE-overview | KB-CONFIG_CHANGE-corrective-actions | KB-CONFIG_CHANGE-likely-root-causes,True,True
+G14,CONFIG_CHANGE,KB-CONGESTION_CAPACITY-environmental-considerations | KB-CONFIG_CHANGE-overview | KB-CONFIG_CHANGE-diagnostic-checks,True,True
+G15,SECURITY_AUTH,KB-SECURITY_AUTH-overview | KB-SECURITY_AUTH-verification | KB-SECURITY_AUTH-likely-root-causes,True,True
+G16,SECURITY_AUTH,KB-SECURITY_AUTH-environmental-considerations | KB-SECURITY_AUTH-overview | KB-SECURITY_AUTH-likely-root-causes,True,True
+G17,TRANSPORT_QOS,KB-TRANSPORT_QOS-overview | KB-TRANSPORT_QOS-likely-root-causes | KB-CONGESTION_CAPACITY-overview,True,True
+G18,FAULT_ALARM,KB-AVAILABILITY_OUTAGE-interactions-with-other-categories | KB-CONGESTION_CAPACITY-likely-root-causes | KB-FAULT_ALARM-likely-root-causes,True,True
+G19,FAULT_ALARM,KB-MOBILITY_HANDOVER-corrective-actions | KB-MOBILITY_HANDOVER-likely-root-causes | KB-MOBILITY_HANDOVER-interactions-with-other-categories,False,True
+G20,CONGESTION_CAPACITY,KB-TRANSPORT_QOS-environmental-considerations | KB-AVAILABILITY_OUTAGE-environmental-considerations | KB-RADIO_COVERAGE-environmental-considerations,False,True
+G23,TRANSPORT_QOS,KB-TRANSPORT_QOS-overview | KB-TRANSPORT_QOS-environmental-considerations | KB-TRANSPORT_QOS-likely-root-causes,True,True
+G24,RADIO_COVERAGE,KB-RADIO_COVERAGE-interactions-with-other-categories | KB-TRANSPORT_QOS-overview | KB-TRANSPORT_QOS-kpi-signature,True,True

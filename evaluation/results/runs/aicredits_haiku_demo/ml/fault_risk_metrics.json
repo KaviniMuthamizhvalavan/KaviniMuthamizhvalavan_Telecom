@@ -1,0 +1,82 @@
+{
+  "target": "fault_occurrence_rate_pct >= 48.15 (p75 of training split)",
+  "threshold_value": 48.15182345869349,
+  "base_rate_test": 0.25,
+  "n_train": 80000,
+  "n_test": 20000,
+  "roc_auc": 0.8743,
+  "pr_auc": 0.6909,
+  "brier": 0.1204,
+  "f1_at_0_5": 0.6161,
+  "best_f1_threshold": 0.307,
+  "f1_at_best": 0.6609,
+  "confusion_at_0_5": [
+    [
+      13504,
+      1496
+    ],
+    [
+      2108,
+      2892
+    ]
+  ],
+  "baselines": {
+    "logistic_regression_roc_auc": 0.8753,
+    "majority_roc_auc": 0.5,
+    "logistic_regression_brier": 0.1201,
+    "majority_brier": 0.1875
+  },
+  "risk_bands": {
+    "low_below": 0.3,
+    "high_from": 0.6
+  },
+  "band_stats_test": {
+    "Low": {
+      "share": 0.646,
+      "actual_high_rate": 0.079
+    },
+    "Medium": {
+      "share": 0.21,
+      "actual_high_rate": 0.448
+    },
+    "High": {
+      "share": 0.144,
+      "actual_high_rate": 0.731
+    }
+  },
+  "top_drivers": [
+    {
+      "feature": "weather",
+      "importance": 0.3154
+    },
+    {
+      "feature": "security_incidents",
+      "importance": 0.0181
+    },
+    {
+      "feature": "alarm_count",
+      "importance": 0.0179
+    },
+    {
+      "feature": "user_count",
+      "importance": 0.0082
+    },
+    {
+      "feature": "packet_loss_pct",
+      "importance": 0.0039
+    },
+    {
+      "feature": "cell_availability_pct",
+      "importance": 0.002
+    },
+    {
+      "feature": "temperature_c",
+      "importance": 0.0001
+    },
+    {
+      "feature": "data_usage_gb",
+      "importance": 0.0001
+    }
+  ],
+  "oof_roc_auc_all_rows": 0.8748
+}

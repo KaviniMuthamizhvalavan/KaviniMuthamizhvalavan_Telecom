@@ -1,0 +1,71 @@
+{
+  "description": "README and demo queries with expected structured fields (plan \u00a711.2). Wording is not asserted because LLM text varies. expected_primary comes from golden_queries.json; the priority range (observed level \u00b11) and the risk band come from the Phase 11 run (Claude Sonnet 5.5, 2026-10-09) and matched the Claude Haiku 5.5 test run on every query.",
+  "queries": [
+    {
+      "id": "G17",
+      "query": "A cell is experiencing high latency, packet loss, and reduced throughput. What similar network conditions have occurred before?",
+      "expected_primary": "TRANSPORT_QOS",
+      "acceptable_primary": [
+        "CONGESTION_CAPACITY"
+      ],
+      "expected_priority_range": [
+        "P3",
+        "P4"
+      ],
+      "expected_risk_band": "Low",
+      "notes": "PRD example query 1"
+    },
+    {
+      "id": "G18",
+      "query": "Multiple cells are experiencing poor service quality and increasing alarm counts. What factors could be contributing to the problem?",
+      "expected_primary": "FAULT_ALARM",
+      "acceptable_primary": [],
+      "expected_priority_range": [
+        "P2",
+        "P3",
+        "P4"
+      ],
+      "expected_risk_band": "Low",
+      "notes": "PRD example query 2"
+    },
+    {
+      "id": "G19",
+      "query": "A network region has increasing fault occurrence and declining handover success. What corrective actions should be considered?",
+      "expected_primary": "FAULT_ALARM",
+      "acceptable_primary": [
+        "MOBILITY_HANDOVER"
+      ],
+      "expected_priority_range": [
+        "P2",
+        "P3",
+        "P4"
+      ],
+      "expected_risk_band": "High",
+      "notes": "PRD example query 3"
+    },
+    {
+      "id": "G01",
+      "query": "Users report high latency and jitter on video calls, with some packet loss",
+      "expected_primary": "TRANSPORT_QOS",
+      "acceptable_primary": [],
+      "expected_priority_range": [
+        "P3",
+        "P4"
+      ],
+      "expected_risk_band": "Low",
+      "notes": "demo: transport QoS (video calls)"
+    },
+    {
+      "id": "G05",
+      "query": "Weak signal and customers cannot connect, calls failing to set up",
+      "expected_primary": "RADIO_COVERAGE",
+      "acceptable_primary": [],
+      "expected_priority_range": [
+        "P3",
+        "P4"
+      ],
+      "expected_risk_band": "Low",
+      "notes": "demo: radio coverage (weak signal)"
+    }
+  ]
+}

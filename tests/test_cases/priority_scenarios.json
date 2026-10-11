@@ -1,0 +1,113 @@
+[
+  {
+    "id": "PS-01",
+    "description": "Typical cell: every KPI near the dataset median, clear weather",
+    "kpis": {
+      "latency_ms": 77,
+      "packet_loss_pct": 6.2,
+      "throughput_mbps": 550,
+      "jitter_ms": 25,
+      "user_count": 5000,
+      "data_usage_gb": 25,
+      "signal_strength_dbm": -90,
+      "cssr_pct": 95,
+      "call_drop_rate_pct": 0,
+      "handover_success_pct": 95,
+      "cell_availability_pct": 89.4,
+      "mttr_hours": 5.2,
+      "alarm_count": 10,
+      "critical_alarm_count": 6.7,
+      "fault_occurrence_rate_pct": 39,
+      "parameter_changes": 10,
+      "config_change_success_pct": 94.5,
+      "security_incidents": 10,
+      "auth_failures": 8,
+      "temperature_c": 17,
+      "humidity_pct": 55,
+      "season": "Spring",
+      "weather": "Clear"
+    },
+    "expected_priority": "P4"
+  },
+  {
+    "id": "PS-02",
+    "description": "Multi-KPI storm: critical loss, latency, alarms, availability; very high load; snow",
+    "kpis": {
+      "latency_ms": 150,
+      "packet_loss_pct": 14,
+      "throughput_mbps": 250,
+      "jitter_ms": 47,
+      "user_count": 9500,
+      "data_usage_gb": 48,
+      "signal_strength_dbm": -116,
+      "cssr_pct": 90.5,
+      "call_drop_rate_pct": 4.5,
+      "handover_success_pct": 90.6,
+      "cell_availability_pct": 77,
+      "mttr_hours": 9.5,
+      "alarm_count": 16,
+      "critical_alarm_count": 10.5,
+      "fault_occurrence_rate_pct": 60,
+      "parameter_changes": 18,
+      "config_change_success_pct": 90.5,
+      "security_incidents": 18,
+      "auth_failures": 40,
+      "temperature_c": -6,
+      "humidity_pct": 30,
+      "season": "Winter",
+      "weather": "Snow"
+    },
+    "expected_priority": "P1"
+  },
+  {
+    "id": "PS-03",
+    "description": "Critical outage (availability 76%) at a small, otherwise healthy cell",
+    "kpis": {
+      "cell_availability_pct": 76,
+      "user_count": 800,
+      "data_usage_gb": 12,
+      "season": "Summer",
+      "weather": "Clear"
+    },
+    "expected_priority": "P2"
+  },
+  {
+    "id": "PS-04",
+    "description": "Security attack: critical security incidents and authentication failures, median load",
+    "kpis": {
+      "security_incidents": 19,
+      "auth_failures": 45,
+      "season": "Fall",
+      "weather": "Clouds"
+    },
+    "expected_priority": "P2"
+  },
+  {
+    "id": "PS-05",
+    "description": "Two mildly degraded KPIs (latency, jitter) at a median-load cell",
+    "kpis": {
+      "latency_ms": 110,
+      "jitter_ms": 39,
+      "season": "Spring",
+      "weather": "Clouds"
+    },
+    "expected_priority": "P4",
+    "original_expectation": "P3",
+    "correction_rationale": "Corrected 2026-10-07 after the first run (user-approved option A). Severity is relative to this dataset (plan C7): the average record has about 4.8 degraded KPIs, so a case with only 2 degraded KPIs is less severe than typical. The original expectation assumed absolute severity."
+  },
+  {
+    "id": "PS-06",
+    "description": "Very high load with degraded throughput and packet loss in rain",
+    "kpis": {
+      "user_count": 9700,
+      "data_usage_gb": 49,
+      "throughput_mbps": 330,
+      "packet_loss_pct": 10.5,
+      "season": "Fall",
+      "weather": "Rain"
+    },
+    "expected_priority": "P3",
+    "original_expectation": "P2",
+    "correction_rationale": "Corrected 2026-10-07 after the first run (user-approved option A). Severity is relative to this dataset (plan C7): the average record has about 4.8 degraded KPIs, so a case with only 2 degraded KPIs is less severe than typical. The original expectation assumed absolute severity."
+  }
+]

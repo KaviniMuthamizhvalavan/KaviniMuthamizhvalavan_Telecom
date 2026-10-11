@@ -1,0 +1,205 @@
+[
+  {
+    "Component":"Retrieval",
+    "Metric":"Filter compliance (hybrid_rerank)",
+    "Value":1.0,
+    "Target":">= 1.0",
+    "Status":"PASS"
+  },
+  {
+    "Component":"Retrieval",
+    "Metric":"Hit@5 (hybrid_rerank)",
+    "Value":1.0,
+    "Target":">= 0.90",
+    "Status":"PASS"
+  },
+  {
+    "Component":"Retrieval",
+    "Metric":"nDCG@10 hybrid vs best single mode",
+    "Value":0.9343,
+    "Target":">= 0.913",
+    "Status":"PASS"
+  },
+  {
+    "Component":"Retrieval",
+    "Metric":"p95 latency, hybrid_rerank (ms)",
+    "Value":129.55,
+    "Target":"<= 300",
+    "Status":"PASS"
+  },
+  {
+    "Component":"KB retrieval",
+    "Metric":"Hit@3 expected category",
+    "Value":0.909,
+    "Target":">= 0.90",
+    "Status":"PASS"
+  },
+  {
+    "Component":"Prioritization",
+    "Metric":"Scenario exact agreement",
+    "Value":1.0,
+    "Target":">= 0.80",
+    "Status":"PASS"
+  },
+  {
+    "Component":"Prioritization",
+    "Metric":"Scenario within one level",
+    "Value":1.0,
+    "Target":">= 1.0",
+    "Status":"PASS"
+  },
+  {
+    "Component":"Classifier (LLM, reasoning off)",
+    "Metric":"Primary accuracy",
+    "Value":0.955,
+    "Target":">= 0.80",
+    "Status":"PASS"
+  },
+  {
+    "Component":"Classifier (LLM, reasoning off)",
+    "Metric":"Macro-F1",
+    "Value":0.964,
+    "Target":">= 0.75",
+    "Status":"PASS"
+  },
+  {
+    "Component":"Classifier (LLM, reasoning off)",
+    "Metric":"Filter exact match",
+    "Value":1.0,
+    "Target":">= 0.85",
+    "Status":"PASS"
+  },
+  {
+    "Component":"Classifier (LLM, reasoning off)",
+    "Metric":"Out-of-scope detection (n=1)",
+    "Value":1.0,
+    "Target":">= 0.90",
+    "Status":"PASS"
+  },
+  {
+    "Component":"Guardrails",
+    "Metric":"Block rate",
+    "Value":1.0,
+    "Target":">= 0.90",
+    "Status":"PASS"
+  },
+  {
+    "Component":"Guardrails",
+    "Metric":"False-positive rate",
+    "Value":0.0,
+    "Target":"<= 0.05",
+    "Status":"PASS"
+  },
+  {
+    "Component":"Fault-risk model",
+    "Metric":"ROC-AUC (holdout)",
+    "Value":0.8743,
+    "Target":">= 0.85",
+    "Status":"PASS"
+  },
+  {
+    "Component":"Performance model",
+    "Metric":"R2 (holdout)",
+    "Value":0.3277,
+    "Target":">= 0.25",
+    "Status":"PASS"
+  },
+  {
+    "Component":"Feedback loop",
+    "Metric":"nDCG@10 delta, voted queries",
+    "Value":0.0058,
+    "Target":"> 0",
+    "Status":"PASS"
+  },
+  {
+    "Component":"Feedback loop",
+    "Metric":"Control queries regressed",
+    "Value":0.0,
+    "Target":"0",
+    "Status":"PASS"
+  },
+  {
+    "Component":"End to end (C)",
+    "Metric":"\/troubleshoot median latency (s)",
+    "Value":31.4,
+    "Target":"<= 60 (internal)",
+    "Status":"PASS"
+  },
+  {
+    "Component":"End to end (C)",
+    "Metric":"JSON failures after repair, per agent call",
+    "Value":0.0,
+    "Target":"<= 0.02",
+    "Status":"PASS"
+  },
+  {
+    "Component":"End to end (C)",
+    "Metric":"Runs ending degraded (any cause)",
+    "Value":0.0,
+    "Target":"reported",
+    "Status":"info"
+  },
+  {
+    "Component":"End to end",
+    "Metric":"\/search p95 latency (s, retrieval core)",
+    "Value":0.12955,
+    "Target":"<= 1.0",
+    "Status":"PASS"
+  },
+  {
+    "Component":"DeepEval, system C (mean score)",
+    "Metric":"actionability_geval",
+    "Value":0.836,
+    "Target":">= 0.7",
+    "Status":"PASS"
+  },
+  {
+    "Component":"DeepEval, system C (mean score)",
+    "Metric":"answer_relevancy",
+    "Value":0.962,
+    "Target":">= 0.7",
+    "Status":"PASS"
+  },
+  {
+    "Component":"DeepEval, system C (mean score)",
+    "Metric":"contextual_precision",
+    "Value":0.231,
+    "Target":">= 0.7",
+    "Status":"FAIL"
+  },
+  {
+    "Component":"DeepEval, system C (mean score)",
+    "Metric":"contextual_recall",
+    "Value":0.667,
+    "Target":">= 0.7",
+    "Status":"FAIL"
+  },
+  {
+    "Component":"DeepEval, system C (mean score)",
+    "Metric":"contextual_relevancy",
+    "Value":0.851,
+    "Target":">= 0.5",
+    "Status":"PASS"
+  },
+  {
+    "Component":"DeepEval, system C (mean score)",
+    "Metric":"diagnosis_validity_geval",
+    "Value":0.855,
+    "Target":">= 0.7",
+    "Status":"PASS"
+  },
+  {
+    "Component":"DeepEval, system C (mean score)",
+    "Metric":"faithfulness",
+    "Value":0.99,
+    "Target":">= 0.7",
+    "Status":"PASS"
+  },
+  {
+    "Component":"Runtime judge",
+    "Metric":"Seeded-error detection rate",
+    "Value":1.0,
+    "Target":">= 0.80",
+    "Status":"PASS"
+  }
+]

@@ -1,0 +1,12 @@
+id,C_latency_s,A_latency_s,C_status,A_status,C_verdict,C_revisions,C_llm_calls,C_tokens,A_tokens,C_repairs,A_repairs,C_fallback_events,C_json_fallbacks,C_budget_fallbacks,C_agent_nodes,C_final_degraded,C_primary,C_low_confidence
+G01,33.9,9.2,ok,ok,pass,0,4,20878,4182,0,0,0,0,0,4,False,TRANSPORT_QOS,False
+G03,30.7,8.9,ok,ok,pass,0,4,20597,4083,0,0,0,0,0,4,False,CONGESTION_CAPACITY,False
+G05,31.8,9.9,ok,ok,pass,0,4,20107,4276,0,0,0,0,0,4,False,RADIO_COVERAGE,False
+G07,31.4,10.1,ok,ok,pass,0,4,20201,4146,0,0,0,0,0,4,False,MOBILITY_HANDOVER,False
+G09,31.3,8.7,ok,ok,pass,0,4,19496,3928,0,0,0,0,0,4,False,AVAILABILITY_OUTAGE,False
+G11,30.0,8.3,ok,ok,pass,0,4,19996,3999,0,0,0,0,0,4,False,FAULT_ALARM,False
+G13,30.2,7.8,ok,ok,pass,0,4,18420,3620,0,0,0,0,0,4,False,CONFIG_CHANGE,False
+G15,29.1,8.1,ok,ok,pass,0,4,18992,3769,0,0,0,0,0,4,False,SECURITY_AUTH,False
+G17,32.1,9.8,ok,ok,pass,0,4,22561,4306,0,0,0,0,0,4,False,TRANSPORT_QOS,False
+G18,32.9,8.8,ok,ok,pass,0,4,20363,4138,0,0,0,0,0,4,False,FAULT_ALARM,False
+G19,32.9,8.4,ok,ok,pass,0,4,21399,3893,0,0,0,0,0,4,False,FAULT_ALARM,False

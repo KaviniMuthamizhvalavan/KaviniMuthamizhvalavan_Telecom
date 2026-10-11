@@ -1,0 +1,301 @@
+[
+  {
+    "id": "G05",
+    "query": "Weak signal and customers cannot connect, calls failing to set up",
+    "wall_s": 33.3,
+    "status": "ok",
+    "verdict": "pass",
+    "revisions": 0,
+    "scores": {
+      "groundedness": 0.8,
+      "kpi_consistency": 0.82,
+      "actionability": 0.85,
+      "completeness": 0.88
+    },
+    "issues": [
+      [
+        "analyst",
+        "The diagnosis cites CASE-088889, but the citation check flagged it as unknown and it was removed. The claim that all 5 similar cases have signal strength betwee"
+      ],
+      [
+        "analyst",
+        "The first hypothesis is labelled 'both' and rated medium likelihood. The data show weak signal and low CSSR but no coverage mapping or site data, so a coverage "
+      ],
+      [
+        "analyst",
+        "Impact is stated as High while priority is P4 (Low) with a score of 0.27. The narrative notes both but does not explain the mismatch. It also calls 1,248 users "
+      ],
+      [
+        "recommender",
+        "Escalation is set to 'needed: true' but the reason says to escalate only 'when diagnostics confirm', which is conditional. Step 7 also mixes radio-planning esca"
+      ]
+    ],
+    "llm_calls": 4,
+    "tokens_in": 16086,
+    "tokens_out": 4382,
+    "repairs": 0,
+    "calls": [
+      {
+        "role": "classifier",
+        "max_tokens": 400,
+        "in": 2121,
+        "out": 188,
+        "stop": "end_turn",
+        "s": 2.7
+      },
+      {
+        "role": "analyst",
+        "max_tokens": 4996,
+        "in": 3456,
+        "out": 1529,
+        "stop": "end_turn",
+        "s": 9.1
+      },
+      {
+        "role": "recommender",
+        "max_tokens": 2500,
+        "in": 2972,
+        "out": 1705,
+        "stop": "end_turn",
+        "s": 10.8
+      },
+      {
+        "role": "judge",
+        "max_tokens": 4596,
+        "in": 7537,
+        "out": 960,
+        "stop": "end_turn",
+        "s": 7.5
+      }
+    ],
+    "fallbacks": [],
+    "warnings": [],
+    "normalizations_logged": 0,
+    "primary": "RADIO_COVERAGE",
+    "recommendations": [
+      {
+        "step": 1,
+        "phase": "immediate",
+        "action": "Check feeder/antenna alarms and VSWR readings at the affected site(s), and compare current transmit power and tilt/azimuth with planned values.",
+        "verification": "Alarm and VSWR readings are within normal range and configured power/tilt match the plan.",
+        "expected_kpi_effect": "Identifies cause of signal strength and CSSR degradation; no direct change yet.",
+        "citations": [
+          "KB-RADIO_COVERAGE-diagnostic-checks"
+        ]
+      },
+      {
+        "step": 2,
+        "phase": "immediate",
+        "action": "Review recent changes to antenna tilt, transmit power and neighbour cells on the affected cells, and restore planned settings if a change reduced coverage.",
+        "verification": "Signal strength and CSSR recover and hold stable for at least 24 hours after the restore.",
+        "expected_kpi_effect": "Signal strength improves and connection setup success rate (CSSR) rises toward normal.",
+        "citations": [
+          "KB-RADIO_COVERAGE-corrective-actions",
+          "KB-RADIO_COVERAGE-diagnostic-checks"
+        ]
+      },
+      {
+        "step": 3,
+        "phase": "immediate",
+        "action": "Dispatch field operations if alarms or VSWR point to a damaged antenna or feeder.",
+        "verification": "Post-repair VSWR is normal and CSSR recovers for 24 hours.",
+        "expected_kpi_effect": "Signal strength and CSSR improve after repair.",
+        "citations": [
+          "KB-RADIO_COVERAGE-corrective-actions",
+          "KB-RADIO_COVERAGE-escalation-criteria"
+        ]
+      },
+      {
+        "step": 4,
+        "phase": "short_term",
+        "action": "Map the weak-signal reports against predicted coverage of the serving and neighbouring cells to confirm a coverage hole or cell-edge issue.",
+        "verification": "Weak-signal areas are located and matched with predicted coverage gaps.",
+        "expected_kpi_effect": "Confirms the hypothesis and scopes the area for optimization.",
+        "citations": [
+          "KB-RADIO_COVERAGE-diagnostic-checks",
+          "CASE-013174"
+        ]
+      },
+      {
+        "step": 5,
+        "phase": "short_term",
+        "action": "Measure uplink noise rise on affected cells to rule out interference, and mitigate any source found.",
+        "verification": "Noise rise returns to baseline and CSSR improves over 24 hours.",
+        "expected_kpi_effect": "Lower noise floor improves CSSR.",
+        "citations": [
+          "KB-RADIO_COVERAGE-diagnostic-checks",
+          "KB-RADIO_COVERAGE-corrective-actions"
+        ]
+      },
+      {
+        "step": 6,
+        "phase": "short_term",
+        "action": "Optimize antenna tilt and azimuth and adjust neighbour relations to close the confirmed coverage gap.",
+        "verification": "Signal strength and CSSR improve for 48 hours with no new handover or drop regressions.",
+        "expected_kpi_effect": "Signal strength and CSSR increase in the affected area.",
+        "citations": [
+          "KB-RADIO_COVERAGE-corrective-actions"
+        ]
+      },
+      {
+        "step": 7,
+        "phase": "preventive",
+        "action": "If the gap persists, request radio planning to evaluate additional coverage (new site, small cell or indoor solution) and set up periodic drive tests.",
+        "verification": "Drive-test or crowd-sourced measurements show the area meeting coverage targets.",
+        "expected_kpi_effect": "Sustained improvement in signal strength and CSSR in the area.",
+        "citations": [
+          "KB-RADIO_COVERAGE-corrective-actions",
+          "KB-RADIO_COVERAGE-escalation-criteria"
+        ]
+      }
+    ],
+    "escalation": {
+      "needed": true,
+      "team": "RAN optimization (field operations if hardware faults found; radio planning if new sites needed)",
+      "reason": "Tilt and neighbour changes require RAN optimization; hardware repairs need field operations; persistent coverage gaps need radio planning. Priority is P4, so escalate when diagnostics confirm these causes."
+    }
+  },
+  {
+    "id": "G01",
+    "query": "Users report high latency and jitter on video calls, with some packet loss",
+    "wall_s": 31.5,
+    "status": "ok",
+    "verdict": "pass",
+    "revisions": 0,
+    "scores": {
+      "groundedness": 0.8,
+      "kpi_consistency": 0.8,
+      "actionability": 0.85,
+      "completeness": 0.85
+    },
+    "issues": [
+      [
+        "analyst",
+        "The top hypothesis cites the observed-vs-expected throughput deficit (-39.9%) as fitting retransmissions from lost packets. The KPIs are estimated from similar-"
+      ],
+      [
+        "analyst",
+        "The data limitations note that radio KPIs are missing and that the similar cases mix in MOBILITY_HANDOVER. No hypothesis covers a radio/mobility component, alth"
+      ],
+      [
+        "recommender",
+        "Step 3 justifies the microwave check with 'rain fading is possible per similar rainy cases'. This is weakly supported: only 2 of the 5 similar cases are rainy, "
+      ],
+      [
+        "recommender",
+        "Steps 4 and 5 are conditional ('if not prioritized', 'if a protection path exists') but are placed as short_term. The runbook lists reroute and QoS prioritizati"
+      ]
+    ],
+    "llm_calls": 4,
+    "tokens_in": 16352,
+    "tokens_out": 4518,
+    "repairs": 0,
+    "calls": [
+      {
+        "role": "classifier",
+        "max_tokens": 400,
+        "in": 2121,
+        "out": 177,
+        "stop": "end_turn",
+        "s": 2.0
+      },
+      {
+        "role": "analyst",
+        "max_tokens": 4996,
+        "in": 3482,
+        "out": 1795,
+        "stop": "end_turn",
+        "s": 10.9
+      },
+      {
+        "role": "recommender",
+        "max_tokens": 2500,
+        "in": 3097,
+        "out": 1439,
+        "stop": "end_turn",
+        "s": 9.4
+      },
+      {
+        "role": "judge",
+        "max_tokens": 4596,
+        "in": 7652,
+        "out": 1107,
+        "stop": "end_turn",
+        "s": 8.3
+      }
+    ],
+    "fallbacks": [],
+    "warnings": [],
+    "normalizations_logged": 0,
+    "primary": "TRANSPORT_QOS",
+    "recommendations": [
+      {
+        "step": 1,
+        "phase": "immediate",
+        "action": "Run TWAMP or ping series from the affected site to the core and compare latency, jitter and loss against the baseline.",
+        "verification": "Measured latency, jitter and loss values are recorded and compared with the baseline.",
+        "expected_kpi_effect": "Establishes a baseline; no direct KPI change.",
+        "citations": [
+          "KB-TRANSPORT_QOS-diagnostic-checks"
+        ]
+      },
+      {
+        "step": 2,
+        "phase": "immediate",
+        "action": "Check interface counters (errors, discards, CRC) on the site router and aggregation devices, plus backhaul utilization in the affected period.",
+        "verification": "Counter deltas and utilization peaks correlate (or not) with the degradation window.",
+        "expected_kpi_effect": "Identifies the cause of packet loss and jitter; no direct KPI change.",
+        "citations": [
+          "KB-TRANSPORT_QOS-diagnostic-checks",
+          "CASE-000876"
+        ]
+      },
+      {
+        "step": 3,
+        "phase": "immediate",
+        "action": "Check microwave signal level and modulation changes, or fibre optical power, and review recent routing, QoS or maintenance changes.",
+        "verification": "Signal and optical levels are within normal range and no unexplained change is found, or a fault is identified.",
+        "expected_kpi_effect": "Pinpoints a physical or config root cause; no direct KPI change.",
+        "citations": [
+          "KB-TRANSPORT_QOS-diagnostic-checks"
+        ]
+      },
+      {
+        "step": 4,
+        "phase": "short_term",
+        "action": "If voice/video traffic is not prioritized, apply QoS marking and queuing for real-time traffic; if a protection path exists and the link is degraded, reroute to it.",
+        "verification": "Video-call latency, jitter and loss stay near baseline for at least one hour after the change.",
+        "expected_kpi_effect": "Latency, jitter and packet loss rate decrease.",
+        "citations": [
+          "KB-TRANSPORT_QOS-corrective-actions"
+        ]
+      },
+      {
+        "step": 5,
+        "phase": "short_term",
+        "action": "Fix the cause found: increase backhaul capacity if utilization is high, correct duplex/MTU mismatches, or repair/clean/realign physical components.",
+        "verification": "Interface errors drop to zero and KPIs remain stable over a full busy period.",
+        "expected_kpi_effect": "Sustained reduction in packet loss, jitter and latency.",
+        "citations": [
+          "KB-TRANSPORT_QOS-corrective-actions",
+          "CASE-000876"
+        ]
+      },
+      {
+        "step": 6,
+        "phase": "preventive",
+        "action": "Set up continuous monitoring with alerts on latency, jitter and loss trends for this transport path, and evaluate path diversity if the site is critical.",
+        "verification": "Alerts fire on threshold breaches in testing and trends are reviewed regularly.",
+        "expected_kpi_effect": "Faster detection; fewer sustained latency/jitter/loss events.",
+        "citations": [
+          "KB-TRANSPORT_QOS-corrective-actions"
+        ]
+      }
+    ],
+    "escalation": {
+      "needed": false,
+      "team": "Transport/IP team",
+      "reason": "Priority is P4 and no multi-site impact is shown; escalate to the transport or IP team if the degradation is on shared aggregation links or affects several sites, and to field operations if a physical repair (fibre, microwave alignment) is needed."
+    }
+  }
+]

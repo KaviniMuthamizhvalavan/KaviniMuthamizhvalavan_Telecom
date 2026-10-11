@@ -1,0 +1,38 @@
+---
+config:
+  flowchart:
+    curve: linear
+---
+graph TD;
+	__start__([<p>__start__</p>]):::first
+	gate(gate)
+	classify(classify)
+	rules(rules)
+	retrieve(retrieve)
+	gather_evidence(gather_evidence)
+	analyze(analyze)
+	recommend(recommend)
+	judge(judge)
+	reduced(reduced)
+	finalize(finalize)
+	__end__([<p>__end__</p>]):::last
+	__start__ --> gate;
+	analyze --> recommend;
+	classify -.-> finalize;
+	classify -.-> retrieve;
+	gate -.-> classify;
+	gate -.-> rules;
+	gather_evidence -.-> analyze;
+	gather_evidence -.-> reduced;
+	judge -.-> analyze;
+	judge -.-> finalize;
+	judge -.-> recommend;
+	recommend --> judge;
+	reduced --> finalize;
+	retrieve --> gather_evidence;
+	rules -.-> finalize;
+	rules -.-> retrieve;
+	finalize --> __end__;
+	classDef default fill:#f2f0ff,line-height:1.2
+	classDef first fill-opacity:0
+	classDef last fill:#bfb6fc

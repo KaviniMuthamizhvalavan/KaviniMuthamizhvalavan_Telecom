@@ -1,0 +1,59 @@
+{
+  "runs": 8,
+  "cache": false,
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "judge_model": "nvidia/nemotron-3-super-120b-a12b",
+  "independent_judge": "openai/gpt-oss-20b",
+  "reasoning": {
+    "classifier": false,
+    "analyst": true,
+    "recommender": false,
+    "judge": true
+  },
+  "latency_s": {
+    "p50": 75.6,
+    "p95": 109.5,
+    "max": 113.2,
+    "prd_max": 102.7
+  },
+  "within_30s": 1,
+  "node_mean_s": {
+    "gate": 0.0,
+    "classify": 1.6,
+    "retrieve": 0.1,
+    "gather_evidence": 0.2,
+    "analyze": 41.9,
+    "recommend": 8.5,
+    "judge": 30.8,
+    "finalize": 0.0
+  },
+  "llm_calls_mean": 5.2,
+  "tokens_mean": 22042,
+  "status": {
+    "ok": 4,
+    "degraded": 3,
+    "needs_clarification": 1
+  },
+  "verdict": {
+    "pass": 6,
+    "unvalidated": 1
+  },
+  "revision_rate": 0.25,
+  "classification_correct": 7,
+  "runtime_judge_mean": {
+    "groundedness": 0.91,
+    "kpi_consistency": 0.96,
+    "actionability": 0.93,
+    "completeness": 0.92
+  },
+  "independent_judge_mean": {
+    "groundedness": 0.96,
+    "kpi_consistency": 0.99,
+    "actionability": 0.96,
+    "completeness": 0.99
+  },
+  "independent_verdict": {
+    "pass": 7
+  },
+  "rule_failures": {}
+}

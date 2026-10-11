@@ -1,0 +1,165 @@
+/* ---------- cases */
+.search-bar {
+  display: grid;
+  gap: var(--s4);
+  padding-bottom: var(--s4);
+}
+
+.search-row {
+  display: flex;
+  gap: var(--s2);
+}
+
+.search-input {
+  min-height: 42px;
+  font-size: var(--fs-lg);
+}
+
+.search-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s4) var(--s5);
+}
+
+.search-bar .disclosure {
+  border-bottom: 1px solid var(--rule);
+}
+
+.tbl.compare td {
+  color: var(--ink-3);
+}
+
+.tbl.compare td.hit {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.tbl.compare td.hit svg {
+  margin-left: var(--s1);
+  color: var(--ok);
+  vertical-align: -2px;
+}
+
+/* ---------- simulate */
+.simulate {
+  display: grid;
+  gap: var(--s5);
+}
+
+.sim-inputs {
+  display: grid;
+  gap: var(--s5);
+  padding-bottom: var(--s5);
+  border-bottom: 1px solid var(--rule);
+}
+
+.sim-source {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s3) var(--s4);
+}
+
+.sim-case {
+  display: flex;
+  gap: var(--s2);
+}
+
+.sim-case .input {
+  width: 160px;
+  font-family: var(--font-mono);
+}
+
+.sim-readout {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 0;
+}
+
+.sim-grid,
+.two-col {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(380px, 100%), 1fr));
+  gap: 0 var(--s7);
+}
+
+/* ---------- quality */
+.quality-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s3);
+  margin-bottom: var(--s4);
+}
+
+.bars {
+  display: grid;
+  gap: var(--s2);
+}
+
+.bars li {
+  display: grid;
+  grid-template-columns: minmax(120px, 1fr) minmax(0, 2fr) 3rem;
+  align-items: center;
+  gap: var(--s3);
+  font-size: var(--fs-sm);
+}
+
+.bar-track {
+  height: 10px;
+  background: var(--band-normal);
+  border-radius: 1px;
+}
+
+.bar-fill {
+  display: block;
+  height: 100%;
+  background: var(--ink-2);
+  border-radius: 1px;
+}
+
+.bar-value {
+  text-align: right;
+}
+
+@media (max-width: 640px) {
+  .search-row {
+    flex-direction: column;
+  }
+
+  .sim-readout {
+    grid-template-columns: 1fr;
+  }
+
+  .sim-grid,
+  .two-col {
+    grid-template-columns: 1fr;
+  }
+}
+
+.fact-note .id {
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+/* evaluation report: which saved configuration is shown, named by its models */
+.run-switch {
+  display: grid;
+  gap: var(--s1);
+  margin-bottom: var(--s4);
+}
+
+.run-switch .seg {
+  justify-self: start;
+  max-width: 100%;
+}
+
+.run-switch .seg button {
+  height: auto;
+  min-height: 30px;
+  white-space: normal;
+  text-align: left;
+}
+
+.run-switch + .notice {
+  margin-bottom: var(--s4);
+}

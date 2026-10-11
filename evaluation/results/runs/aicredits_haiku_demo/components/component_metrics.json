@@ -1,0 +1,30 @@
+{
+  "kb_retrieval": {
+    "n": 22,
+    "hit@3_expected": 0.909,
+    "hit@3_expected_or_acceptable": 1.0,
+    "target": 0.9
+  },
+  "prioritization": {
+    "n": 6,
+    "exact": 1.0,
+    "within_1": 1.0,
+    "targets": {
+      "exact": 0.8,
+      "within_1": 1.0
+    },
+    "corpus_mix": {
+      "P1": 0.05,
+      "P2": 0.2,
+      "P3": 0.4,
+      "P4": 0.35
+    },
+    "corpus_mix_target": {
+      "P1": 0.05,
+      "P2": 0.2,
+      "P3": 0.4,
+      "P4": 0.35
+    },
+    "note": "2 of 6 expectations (PS-05, PS-06) were corrected to the formula output with user approval; originals kept in priority_scenarios.json"
+  }
+}

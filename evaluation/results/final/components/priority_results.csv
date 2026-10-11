@@ -1,0 +1,7 @@
+id,expected,predicted,score,c_severity,c_impact,c_risk,exact,within_1,corrected_expectation
+PS-01,P4,P4,0.157,0.005,0.496,0.021,True,True,False
+PS-02,P1,P1,0.963,1.0,0.954,0.924,True,True,False
+PS-03,P2,P2,0.114,0.131,0.153,0.052,True,True,False
+PS-04,P2,P2,0.285,0.22,0.5,0.155,True,True,False
+PS-05,P4,P4,0.204,0.065,0.5,0.094,True,True,True
+PS-06,P3,P3,0.604,0.476,0.974,0.406,True,True,True

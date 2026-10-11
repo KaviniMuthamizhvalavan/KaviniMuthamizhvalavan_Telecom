@@ -1,0 +1,12 @@
+id,C_latency_s,A_latency_s,C_status,A_status,C_verdict,C_revisions,C_llm_calls,C_tokens,A_tokens,C_repairs,A_repairs,C_fallback_events,C_json_fallbacks,C_budget_fallbacks,C_agent_nodes,C_final_degraded,C_primary,C_low_confidence
+G01,54.9,17.9,ok,ok,pass,0,4,15970,3895,0,0,0,0,0,4,False,TRANSPORT_QOS,False
+G03,67.2,18.4,ok,ok,pass,0,4,15706,3826,0,0,0,0,0,4,False,CONGESTION_CAPACITY,False
+G05,163.5,15.8,degraded,ok,unvalidated,1,8,30954,3900,2,0,1,0,1,7,True,RADIO_COVERAGE,False
+G07,120.4,22.5,ok,ok,pass,1,7,32013,4536,0,0,0,0,0,7,False,MOBILITY_HANDOVER,False
+G09,76.3,14.3,ok,ok,pass,0,4,18484,3495,0,0,0,0,0,4,False,AVAILABILITY_OUTAGE,False
+G11,62.7,55.7,ok,ok,pass,0,4,16612,9222,0,1,0,0,0,4,False,FAULT_ALARM,False
+G13,44.4,18.7,ok,ok,pass,0,4,14004,3715,0,0,0,0,0,4,False,CONFIG_CHANGE,False
+G15,91.1,17.0,ok,ok,pass,0,4,16569,3389,0,0,0,0,0,4,False,SECURITY_AUTH,False
+G17,116.9,14.9,degraded,ok,pass,1,8,38297,3875,1,0,1,1,0,7,True,TRANSPORT_QOS,False
+G18,65.1,22.9,ok,ok,pass,0,4,16676,4152,0,0,0,0,0,4,False,FAULT_ALARM,False
+G19,169.0,37.2,ok,ok,pass,1,8,39113,4153,1,0,0,0,0,7,False,MOBILITY_HANDOVER,False

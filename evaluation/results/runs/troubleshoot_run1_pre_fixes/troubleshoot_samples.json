@@ -1,0 +1,6089 @@
+{
+ "G17": {
+  "run_id": "e44504dd2ab74d228ff2ae32c304390a",
+  "status": "ok",
+  "classification": {
+   "primary_category": "TRANSPORT_QOS",
+   "secondary_categories": [
+    "CONGESTION_CAPACITY"
+   ],
+   "symptoms": [
+    "high_latency",
+    "high_packet_loss",
+    "low_throughput"
+   ],
+   "filters": {
+    "state": [],
+    "city": null,
+    "season": [],
+    "weather": []
+   },
+   "severity_hint": "medium",
+   "in_scope": true,
+   "needs_clarification": false,
+   "clarification_question": null,
+   "confidence": 0.8,
+   "rationale": "The text explicitly states high latency, packet loss, and reduced throughput, which are defining symptoms of TRANSPORT_QOS. Reduced throughput also suggests possible congestion, making CONGESTION_CAPACITY a secondary fit.",
+   "source": "llm"
+  },
+  "applied_filters": {},
+  "similar_cases": [
+   {
+    "rank": 1,
+    "case_id": "CASE-037746",
+    "final_score": 1.18,
+    "score_breakdown": {
+     "dense_rank": 30,
+     "bm25_rank": 12,
+     "rrf": 0.025,
+     "symptom_overlap": 0.6,
+     "feedback_prior": 0.5
+    },
+    "state": "NV",
+    "city": "New Joanne",
+    "season": "Summer",
+    "weather": "Rain",
+    "primary_category": "TRANSPORT_QOS",
+    "secondary_categories": [
+     "CONGESTION_CAPACITY",
+     "CONFIG_CHANGE"
+    ],
+    "priority": "P2",
+    "fault_risk_band": "High",
+    "anomalies": [
+     {
+      "kpi": "latency_ms",
+      "label": "Latency",
+      "value": 166.428,
+      "unit": "ms",
+      "band": "critical",
+      "percentile": 0.997
+     },
+     {
+      "kpi": "packet_loss_pct",
+      "label": "Packet loss rate",
+      "value": 14.25,
+      "unit": "%",
+      "band": "critical",
+      "percentile": 0.974
+     },
+     {
+      "kpi": "config_change_success_pct",
+      "label": "Successful configuration changes",
+      "value": 90.41,
+      "unit": "%",
+      "band": "critical",
+      "percentile": 0.9535
+     },
+     {
+      "kpi": "cell_availability_pct",
+      "label": "Cell availability",
+      "value": 80.431,
+      "unit": "%",
+      "band": "degraded",
+      "percentile": 0.8591
+     },
+     {
+      "kpi": "throughput_mbps",
+      "label": "Throughput",
+      "value": 336.66420000000005,
+      "unit": "Mbps",
+      "band": "degraded",
+      "percentile": 0.8482
+     }
+    ],
+    "summary": "[CASE-037746] NV/Summer/Rain, P2, TRANSPORT_QOS+CONGESTION_CAPACITY: latency 166.4 ms (crit), packet loss rate 14.2% (crit), successful configuration changes 90.4% (crit), cell availability 80.4% (deg); fault rate 45.3%"
+   },
+   {
+    "rank": 2,
+    "case_id": "CASE-016229",
+    "final_score": 0.684,
+    "score_breakdown": {
+     "dense_rank": null,
+     "bm25_rank": 1,
+     "rrf": 0.01639,
+     "symptom_overlap": 0.75,
+     "feedback_prior": 0.5
+    },
+    "state": "TX",
+    "city": "Banksburgh",
+    "season": "Winter",
+    "weather": "Clouds",
+    "primary_category": "TRANSPORT_QOS",
+    "secondary_categories": [
+     "CONGESTION_CAPACITY",
+     "AVAILABILITY_OUTAGE"
+    ],
+    "priority": "P4",
+    "fault_risk_band": "Low",
+    "anomalies": [
+     {
+      "kpi": "throughput_mbps",
+      "label": "Throughput",
+      "value": 306.12085,
+      "unit": "Mbps",
+      "band": "degraded",
+      "percentile": 0.8971
+     },
+     {
+      "kpi": "cell_availability_pct",
+      "label": "Cell availability",
+      "value": 80.245,
+      "unit": "%",
+      "band": "degraded",
+      "percentile": 0.8671
+     },
+     {
+      "kpi": "packet_loss_pct",
+      "label": "Packet loss rate",
+      "value": 10.6,
+      "unit": "%",
+      "band": "degraded",
+      "percentile": 0.8342
+     },
+     {
+      "kpi": "latency_ms",
+      "label": "Latency",
+      "value": 116.6415,
+      "unit": "ms",
+      "band": "degraded",
+      "percentile": 0.8292
+     }
+    ],
+    "summary": "[CASE-016229] TX/Winter/Clouds, P4, TRANSPORT_QOS+CONGESTION_CAPACITY: throughput 306.1 Mbps (deg), cell availability 80.2% (deg), packet loss rate 10.6% (deg), latency 116.6 ms (deg); fault rate 44.0%"
+   },
+   {
+    "rank": 3,
+    "case_id": "CASE-039539",
+    "final_score": 0.681,
+    "score_breakdown": {
+     "dense_rank": null,
+     "bm25_rank": 6,
+     "rrf": 0.01515,
+     "symptom_overlap": 1.0,
+     "feedback_prior": 0.5
+    },
+    "state": "MD",
+    "city": "Gutierrezton",
+    "season": "Winter",
+    "weather": "Clouds",
+    "primary_category": "TRANSPORT_QOS",
+    "secondary_categories": [
+     "CONGESTION_CAPACITY"
+    ],
+    "priority": "P4",
+    "fault_risk_band": "Low",
+    "anomalies": [
+     {
+      "kpi": "throughput_mbps",
+      "label": "Throughput",
+      "value": 379.2406,
+      "unit": "Mbps",
+      "band": "degraded",
+      "percentile": 0.7752
+     },
+     {
+      "kpi": "packet_loss_pct",
+      "label": "Packet loss rate",
+      "value": 9.55,
+      "unit": "%",
+      "band": "degraded",
+      "percentile": 0.7672
+     },
+     {
+      "kpi": "latency_ms",
+      "label": "Latency",
+      "value": 105.879,
+      "unit": "ms",
+      "band": "degraded",
+      "percentile": 0.7542
+     }
+    ],
+    "summary": "[CASE-039539] MD/Winter/Clouds, P4, TRANSPORT_QOS+CONGESTION_CAPACITY: throughput 379.2 Mbps (deg), packet loss rate 9.6% (deg), latency 105.9 ms (deg); fault rate 42.4%"
+   },
+   {
+    "rank": 4,
+    "case_id": "CASE-005057",
+    "final_score": 0.6674,
+    "score_breakdown": {
+     "dense_rank": null,
+     "bm25_rank": 2,
+     "rrf": 0.01613,
+     "symptom_overlap": 0.75,
+     "feedback_prior": 0.5
+    },
+    "state": "CO",
+    "city": "Barkerfort",
+    "season": "Summer",
+    "weather": "Clear",
+    "primary_category": "AVAILABILITY_OUTAGE",
+    "secondary_categories": [
+     "TRANSPORT_QOS",
+     "CONGESTION_CAPACITY"
+    ],
+    "priority": "P2",
+    "fault_risk_band": "Low",
+    "anomalies": [
+     {
+      "kpi": "cell_availability_pct",
+      "label": "Cell availability",
+      "value": 79.03299999999999,
+      "unit": "%",
+      "band": "critical",
+      "percentile": 0.9151
+     },
+     {
+      "kpi": "throughput_mbps",
+      "label": "Throughput",
+      "value": 329.6315,
+      "unit": "Mbps",
+      "band": "degraded",
+      "percentile": 0.8601
+     },
+     {
+      "kpi": "latency_ms",
+      "label": "Latency",
+      "value": 107.845,
+      "unit": "ms",
+      "band": "degraded",
+      "percentile": 0.7692
+     },
+     {
+      "kpi": "packet_loss_pct",
+      "label": "Packet loss rate",
+      "value": 9.48,
+      "unit": "%",
+      "band": "degraded",
+      "percentile": 0.7622
+     }
+    ],
+    "summary": "[CASE-005057] CO/Summer/Clear, P2, AVAILABILITY_OUTAGE+TRANSPORT_QOS: cell availability 79.0% (crit), throughput 329.6 Mbps (deg), latency 107.8 ms (deg), packet loss rate 9.5% (deg); fault rate 41.4%"
+   },
+   {
+    "rank": 5,
+    "case_id": "CASE-050747",
+    "final_score": 0.6529,
+    "score_breakdown": {
+     "dense_rank": null,
+     "bm25_rank": 8,
+     "rrf": 0.01471,
+     "symptom_overlap": 1.0,
+     "feedback_prior": 0.5
+    },
+    "state": "UT",
+    "city": "Lake Matthewview",
+    "season": "Summer",
+    "weather": "Clouds",
+    "primary_category": "TRANSPORT_QOS",
+    "secondary_categories": [
+     "CONGESTION_CAPACITY"
+    ],
+    "priority": "P4",
+    "fault_risk_band": "Low",
+    "anomalies": [
+     {
+      "kpi": "packet_loss_pct",
+      "label": "Packet loss rate",
+      "value": 9.525,
+      "unit": "%",
+      "band": "degraded",
+      "percentile": 0.7657
+     },
+     {
+      "kpi": "throughput_mbps",
+      "label": "Throughput",
+      "value": 388.84685,
+      "unit": "Mbps",
+      "band": "degraded",
+      "percentile": 0.7592
+     },
+     {
+      "kpi": "latency_ms",
+      "label": "Latency",
+      "value": 106.3865,
+      "unit": "ms",
+      "band": "degraded",
+      "percentile": 0.7582
+     }
+    ],
+    "summary": "[CASE-050747] UT/Summer/Clouds, P4, TRANSPORT_QOS+CONGESTION_CAPACITY: packet loss rate 9.5% (deg), throughput 388.8 Mbps (deg), latency 106.4 ms (deg); fault rate 46.9%"
+   }
+  ],
+  "kpi_assessment": {
+   "basis": "similar_cases_median",
+   "anomalies": [
+    {
+     "kpi": "cell_availability_pct",
+     "label": "Cell availability",
+     "unit": "%",
+     "value": 80.431,
+     "percentile": 0.1409,
+     "worse_than_pct": 85.9,
+     "band": "degraded",
+     "imputed": false
+    },
+    {
+     "kpi": "throughput_mbps",
+     "label": "Throughput",
+     "unit": "Mbps",
+     "value": 336.66420000000005,
+     "percentile": 0.1518,
+     "worse_than_pct": 84.8,
+     "band": "degraded",
+     "imputed": false
+    },
+    {
+     "kpi": "latency_ms",
+     "label": "Latency",
+     "unit": "ms",
+     "value": 107.845,
+     "percentile": 0.7692,
+     "worse_than_pct": 76.9,
+     "band": "degraded",
+     "imputed": false
+    },
+    {
+     "kpi": "packet_loss_pct",
+     "label": "Packet loss rate",
+     "unit": "%",
+     "value": 9.55,
+     "percentile": 0.7672,
+     "worse_than_pct": 76.7,
+     "band": "degraded",
+     "imputed": false
+    }
+   ],
+   "imputed_fields": []
+  },
+  "segment_stats": {
+   "count": 8339,
+   "top_lifts": [
+    {
+     "factor": "weather=Snow",
+     "segment_rate": 0.154,
+     "corpus_rate": 0.062,
+     "lift": 2.47
+    },
+    {
+     "factor": "adverse_weather",
+     "segment_rate": 0.729,
+     "corpus_rate": 0.374,
+     "lift": 1.95
+    },
+    {
+     "factor": "high_fault_rate",
+     "segment_rate": 0.481,
+     "corpus_rate": 0.25,
+     "lift": 1.93
+    },
+    {
+     "factor": "weather=Rain",
+     "segment_rate": 0.575,
+     "corpus_rate": 0.312,
+     "lift": 1.84
+    },
+    {
+     "factor": "high_auth_failures",
+     "segment_rate": 0.483,
+     "corpus_rate": 0.264,
+     "lift": 1.83
+    },
+    {
+     "factor": "high_critical_alarms",
+     "segment_rate": 0.431,
+     "corpus_rate": 0.25,
+     "lift": 1.72
+    },
+    {
+     "factor": "low_throughput",
+     "segment_rate": 0.424,
+     "corpus_rate": 0.25,
+     "lift": 1.69
+    },
+    {
+     "factor": "high_call_drop",
+     "segment_rate": 0.4,
+     "corpus_rate": 0.25,
+     "lift": 1.6
+    }
+   ],
+   "priority_mix": {
+    "P1": 0.173,
+    "P2": 0.343,
+    "P3": 0.406,
+    "P4": 0.078
+   },
+   "median_fault_rate": 47.65
+  },
+  "root_cause_analysis": {
+   "hypotheses": [
+    {
+     "cause": "Backhaul link congestion or an under-dimensioned transport link",
+     "likelihood": "high",
+     "evidence_type": "both",
+     "supporting_evidence": [
+      "Throughput 336.664 Mbps (degraded, worse than 85%)",
+      "Latency 107.845 ms (degraded, worse than 77%)",
+      "Packet loss rate 9.55% (degraded, worse than 77%)",
+      "Cell availability 80.431% (degraded, worse than 86%)",
+      "CASE-037746: latency 166.4 ms, packet loss 14.2%, cell availability 80.4%",
+      "CASE-016229: throughput 306.1 Mbps, latency 116.6 ms, packet loss 10.6%",
+      "CASE-039539: throughput 379.2 Mbps, latency 105.9 ms, packet loss 9.6%",
+      "CASE-050747: throughput 388.8 Mbps, latency 106.4 ms, packet loss 9.5%"
+     ],
+     "citations": [
+      "KPI ASSESSMENT",
+      "CASE-037746",
+      "CASE-016229",
+      "CASE-039539",
+      "CASE-050747",
+      "KB-TRANSPORT_QOS-likely-root-causes"
+     ]
+    },
+    {
+     "cause": "Adverse weather (rain/snow) causing transport degradation (e.g., microwave fading, fibre damage)",
+     "likelihood": "medium",
+     "evidence_type": "both",
+     "supporting_evidence": [
+      "weather=Snow 2.47x (segment 15% vs corpus 6%)",
+      "adverse_weather 1.95x (segment 73% vs corpus 37%)",
+      "weather=Rain 1.84x (segment 57% vs corpus 31%)",
+      "CASE-037746: NV, Summer, Rain",
+      "CASE-050747: UT, Summer, Clouds"
+     ],
+     "citations": [
+      "SEGMENT STATS",
+      "CASE-037746",
+      "CASE-050747",
+      "KB-TRANSPORT_QOS-likely-root-causes"
+     ]
+    },
+    {
+     "cause": "QoS misconfiguration causing real-time traffic not prioritized",
+     "likelihood": "low",
+     "evidence_type": "knowledge",
+     "supporting_evidence": [
+      "QoS misconfiguration, so real-time traffic is not prioritized."
+     ],
+     "citations": [
+      "KB-TRANSPORT_QOS-likely-root-causes"
+     ]
+    }
+   ],
+   "contributing_factors": [
+    {
+     "factor": "Adverse weather (rain/snow)",
+     "direction": "increases risk",
+     "evidence": "weather=Snow 2.47x (segment 15% vs corpus 6%); adverse_weather 1.95x (segment 73% vs corpus 37%); weather=Rain 1.84x (segment 57% vs corpus 31%)",
+     "citation": "SEGMENT STATS"
+    },
+    {
+     "factor": "High fault rate",
+     "direction": "increases risk",
+     "evidence": "high_fault_rate 1.93x (segment 48% vs corpus 25%)",
+     "citation": "SEGMENT STATS"
+    },
+    {
+     "factor": "High critical alarms",
+     "direction": "increases risk",
+     "evidence": "high_critical_alarms 1.72x (segment 43% vs corpus 25%)",
+     "citation": "SEGMENT STATS"
+    }
+   ],
+   "data_limitations": [
+    "The dataset is synthetic and lacks timestamps, cell IDs, or network topology, so temporal trends cannot be verified.",
+    "Severity measures are relative to the network's historical percentiles, not absolute thresholds.",
+    "Correlations observed in historical cases do not prove causation."
+   ]
+  },
+  "impact": {
+   "level": "Moderate",
+   "affected_services": [
+    "data",
+    "real-time and video",
+    "network access"
+   ],
+   "users_served": 3381,
+   "data_gb": 31.72,
+   "narrative": "The incident affects data, real-time and video services, as well as network access for approximately 3,381 users (33rd percentile of user base). The degraded throughput (336.664 Mbps) and high latency (107.845 ms) impact user experience, while the packet loss rate of 9.55% contributes to reduced reliability. Overall impact is assessed as Moderate with priority P4 (Low)."
+  },
+  "fault_risk": {
+   "probability": 0.0414,
+   "band": "Low",
+   "top_drivers": [
+    {
+     "feature": "weather",
+     "importance": 0.3154,
+     "value": "Clouds",
+     "band": null,
+     "imputed": false
+    },
+    {
+     "feature": "security_incidents",
+     "importance": 0.0181,
+     "value": 3.0,
+     "band": "normal",
+     "imputed": false
+    },
+    {
+     "feature": "alarm_count",
+     "importance": 0.0179,
+     "value": 8.0,
+     "band": "normal",
+     "imputed": false
+    },
+    {
+     "feature": "user_count",
+     "importance": 0.0082,
+     "value": 3381.0,
+     "band": "normal",
+     "imputed": false
+    },
+    {
+     "feature": "packet_loss_pct",
+     "importance": 0.0039,
+     "value": 9.55,
+     "band": "degraded",
+     "imputed": false
+    }
+   ],
+   "basis": "similar_cases_median"
+  },
+  "performance_prediction": {
+   "expected_throughput_mbps": 552.7,
+   "observed": 336.66420000000005,
+   "deficit_pct": -39.1,
+   "model_r2": 0.3277
+  },
+  "priority": {
+   "level": "P4",
+   "label": "Low",
+   "score": 0.286,
+   "components": {
+    "severity": 0.322,
+    "impact": 0.482,
+    "risk": 0.041
+   },
+   "overrides": [],
+   "reasons": [
+    "Estimated from the median KPIs of the similar cases (no KPIs were given).",
+    "Degraded cell availability: 80.431 % (worse than 86% of records)",
+    "Degraded throughput: 336.664 Mbps (worse than 85% of records)",
+    "Degraded latency: 107.845 ms (worse than 77% of records)",
+    "Serves 3,381 users (more than 33% of records)",
+    "Fault risk 4%"
+   ]
+  },
+  "recommendations": [
+   {
+    "step": 1,
+    "action": "Run latency, jitter and loss measurements from the site to the core and compare with baseline",
+    "phase": "immediate",
+    "rationale": "Confirm transport degradation as indicated by high latency and packet loss symptoms",
+    "expected_kpi_effect": "Latency and packet loss KPIs should decrease if transport issue is resolved",
+    "verification": "Measurements show improvement toward baseline values for at least 15 minutes",
+    "risk_level": "low",
+    "requires_change_approval": false,
+    "citations": [
+     "KB-TRANSPORT_QOS-diagnostic-checks"
+    ]
+   },
+   {
+    "step": 2,
+    "action": "Check interface counters on site router and aggregation devices for errors, discards and CRC failures",
+    "phase": "immediate",
+    "rationale": "Identify physical or data link layer issues contributing to packet loss",
+    "expected_kpi_effect": "Packet loss KPI should improve if errors are found and addressed",
+    "verification": "Error counters show no increase over 5-minute intervals after check",
+    "risk_level": "low",
+    "requires_change_approval": false,
+    "citations": [
+     "KB-TRANSPORT_QOS-diagnostic-checks"
+    ]
+   },
+   {
+    "step": 3,
+    "action": "Check backhaul utilization during the affected period",
+    "phase": "immediate",
+    "rationale": "Validate hypothesis of backhaul link congestion from similar cases",
+    "expected_kpi_effect": "Throughput KPI should increase if congestion is alleviated",
+    "verification": "Utilization drops below 80% and remains stable for 10 minutes",
+    "risk_level": "low",
+    "requires_change_approval": false,
+    "citations": [
+     "KB-TRANSPORT_QOS-diagnostic-checks",
+     "KB-CONGESTION_CAPACITY-diagnostic-checks"
+    ]
+   },
+   {
+    "step": 4,
+    "action": "For microwave links, check received signal level and modulation changes; for fibre, check optical power levels",
+    "phase": "immediate",
+    "rationale": "Assess adverse weather impact on transport as a contributing factor",
+    "expected_kpi_effect": "Latency and packet loss KPIs should improve if link quality is restored",
+    "verification": "Signal levels return to normal range and stabilize for 5 minutes",
+    "risk_level": "low",
+    "requires_change_approval": false,
+    "citations": [
+     "KB-TRANSPORT_QOS-diagnostic-checks"
+    ]
+   }
+  ],
+  "escalation": {
+   "needed": false,
+   "team": "",
+   "reason": "P4 priority with single-site degradation; no indication of shared aggregation links or multi-site impact per escalation criteria"
+  },
+  "validation": {
+   "verdict": "pass",
+   "scores": {
+    "groundedness": 0.97,
+    "kpi_consistency": 0.96,
+    "actionability": 0.96,
+    "completeness": 0.97
+   },
+   "issues": [],
+   "summary": "The diagnosis is well-supported by evidence, with all hypotheses and recommendations grounded in the provided data and knowledge bases. No unsupported claims were found, and the analysis addresses the primary anomaly and impact adequately.",
+   "rule_checks": [
+    {
+     "rule": "citations_valid",
+     "passed": true,
+     "critical": false,
+     "target": "analyst",
+     "detail": "all citations known"
+    },
+    {
+     "rule": "recommendation_kb_citation",
+     "passed": true,
+     "critical": true,
+     "target": "recommender",
+     "detail": "every step cites a runbook"
+    },
+    {
+     "rule": "hypotheses_grounded",
+     "passed": true,
+     "critical": false,
+     "target": "analyst",
+     "detail": "every hypothesis cites evidence"
+    },
+    {
+     "rule": "numbers_match_evidence",
+     "passed": true,
+     "critical": false,
+     "target": "analyst",
+     "detail": "all quoted numbers match the evidence"
+    },
+    {
+     "rule": "primary_category_addressed",
+     "passed": true,
+     "critical": true,
+     "target": "recommender",
+     "detail": "TRANSPORT_QOS runbook cited"
+    },
+    {
+     "rule": "recommendation_count",
+     "passed": true,
+     "critical": false,
+     "target": "recommender",
+     "detail": "4 recommendations (expected 4-7)"
+    }
+   ],
+   "revisions": 0
+  },
+  "sources": [
+   {
+    "id": "CASE-037746",
+    "type": "case",
+    "title": "TRANSPORT_QOS case, NV",
+    "snippet": "[CASE-037746] NV/Summer/Rain, P2, TRANSPORT_QOS+CONGESTION_CAPACITY: latency 166.4 ms (crit), packet loss rate 14.2% (crit), successful configuration changes 90.4% (crit), cell availability 80.4% (deg); fault rate 45.3%",
+    "score": 1.18
+   },
+   {
+    "id": "CASE-016229",
+    "type": "case",
+    "title": "TRANSPORT_QOS case, TX",
+    "snippet": "[CASE-016229] TX/Winter/Clouds, P4, TRANSPORT_QOS+CONGESTION_CAPACITY: throughput 306.1 Mbps (deg), cell availability 80.2% (deg), packet loss rate 10.6% (deg), latency 116.6 ms (deg); fault rate 44.0%",
+    "score": 0.684
+   },
+   {
+    "id": "CASE-039539",
+    "type": "case",
+    "title": "TRANSPORT_QOS case, MD",
+    "snippet": "[CASE-039539] MD/Winter/Clouds, P4, TRANSPORT_QOS+CONGESTION_CAPACITY: throughput 379.2 Mbps (deg), packet loss rate 9.6% (deg), latency 105.9 ms (deg); fault rate 42.4%",
+    "score": 0.681
+   },
+   {
+    "id": "CASE-005057",
+    "type": "case",
+    "title": "AVAILABILITY_OUTAGE case, CO",
+    "snippet": "[CASE-005057] CO/Summer/Clear, P2, AVAILABILITY_OUTAGE+TRANSPORT_QOS: cell availability 79.0% (crit), throughput 329.6 Mbps (deg), latency 107.8 ms (deg), packet loss rate 9.5% (deg); fault rate 41.4%",
+    "score": 0.6674
+   },
+   {
+    "id": "CASE-050747",
+    "type": "case",
+    "title": "TRANSPORT_QOS case, UT",
+    "snippet": "[CASE-050747] UT/Summer/Clouds, P4, TRANSPORT_QOS+CONGESTION_CAPACITY: packet loss rate 9.5% (deg), throughput 388.8 Mbps (deg), latency 106.4 ms (deg); fault rate 46.9%",
+    "score": 0.6529
+   },
+   {
+    "id": "KB-TRANSPORT_QOS-likely-root-causes",
+    "type": "runbook",
+    "title": "Transport and QoS degradation (latency, jitter, packet loss) / likely-root-causes",
+    "snippet": "Runbook: Transport and QoS degradation (latency, jitter, packet loss) > Likely root causes\n- Backhaul link congestion or an under-dimensioned transport link.\n- A degraded physical link: fibre damage, a dirty connector, microwave fading or m",
+    "score": 0.7488
+   },
+   {
+    "id": "KB-TRANSPORT_QOS-kpi-signature",
+    "type": "runbook",
+    "title": "Transport and QoS degradation (latency, jitter, packet loss) / kpi-signature",
+    "snippet": "Runbook: Transport and QoS degradation (latency, jitter, packet loss) > KPI signature\n- High latency, high jitter and high packet loss (worse than this network's 75th percentile), often together.\n- Throughput may fall because lost packets t",
+    "score": 0.7369
+   },
+   {
+    "id": "KB-CONGESTION_CAPACITY-kpi-signature",
+    "type": "runbook",
+    "title": "Congestion and capacity / kpi-signature",
+    "snippet": "Runbook: Congestion and capacity > KPI signature\n- High user count and high data usage (worse than this network's 75th percentile).\n- Low throughput per cell, often with rising latency.\n- Accessibility can dip at the busiest moments, while ",
+    "score": 0.725
+   },
+   {
+    "id": "KB-CONGESTION_CAPACITY-likely-root-causes",
+    "type": "runbook",
+    "title": "Congestion and capacity / likely-root-causes",
+    "snippet": "Runbook: Congestion and capacity > Likely root causes\n- Peak-hour demand or a local event exceeding the cell's designed capacity.\n- Uneven load: one cell is saturated while its neighbours have headroom (poor load balancing).\n- Insufficient ",
+    "score": 0.7024
+   },
+   {
+    "id": "KB-TRANSPORT_QOS-diagnostic-checks",
+    "type": "runbook",
+    "title": "Transport and QoS degradation (latency, jitter, packet loss) / diagnostic-checks",
+    "snippet": "Runbook: Transport and QoS degradation (latency, jitter, packet loss) > Diagnostic checks\n1. Run latency, jitter and loss measurements (for example TWAMP or ping series) from the site to the core and compare with the baseline.\n2. Check inte",
+    "score": 0.7017
+   },
+   {
+    "id": "KB-TRANSPORT_QOS-escalation-criteria",
+    "type": "runbook",
+    "title": "Transport and QoS degradation (latency, jitter, packet loss) / escalation-criteria",
+    "snippet": "Runbook: Transport and QoS degradation (latency, jitter, packet loss) > Escalation criteria\n- Escalate to the transport or IP team when the degradation is on shared aggregation links or affects several sites.\n- Escalate to field operations ",
+    "score": 0.7001
+   },
+   {
+    "id": "KB-CONGESTION_CAPACITY-diagnostic-checks",
+    "type": "runbook",
+    "title": "Congestion and capacity / diagnostic-checks",
+    "snippet": "Runbook: Congestion and capacity > Diagnostic checks\n1. Plot user count, data volume and throughput for the cell and its neighbours over the last 7 days to confirm a load-driven pattern.\n2. Compare radio resource utilization (PRB usage) wit",
+    "score": 0.6835
+   },
+   {
+    "id": "KB-TRANSPORT_QOS-corrective-actions",
+    "type": "runbook",
+    "title": "Transport and QoS degradation (latency, jitter, packet loss) / corrective-actions",
+    "snippet": "Runbook: Transport and QoS degradation (latency, jitter, packet loss) > Corrective actions\n### Immediate\n- Reroute traffic to a backup or protection path if available (requires change approval).\n- Prioritize voice and real-time traffic with",
+    "score": 0.6683
+   }
+  ],
+  "warnings": [],
+  "trace": [
+   {
+    "node": "gate",
+    "ms": 0.0,
+    "llm_calls": 0,
+    "tokens_in": 0,
+    "tokens_out": 0,
+    "tool_calls": [],
+    "status": "ok"
+   },
+   {
+    "node": "classify",
+    "ms": 1501.6,
+    "llm_calls": 1,
+    "tokens_in": 1341,
+    "tokens_out": 159,
+    "tool_calls": [],
+    "status": "ok"
+   },
+   {
+    "node": "retrieve",
+    "ms": 45.5,
+    "llm_calls": 0,
+    "tokens_in": 0,
+    "tokens_out": 0,
+    "tool_calls": [
+     "hybrid_search"
+    ],
+    "status": "ok"
+   },
+   {
+    "node": "gather_evidence",
+    "ms": 293.8,
+    "llm_calls": 0,
+    "tokens_in": 0,
+    "tokens_out": 0,
+    "tool_calls": [
+     "kpi_assessment",
+     "segment_stats",
+     "predict_fault_risk",
+     "predict_performance",
+     "impact",
+     "prioritize",
+     "search_runbook(analyst)",
+     "search_runbook(recommender)"
+    ],
+    "status": "ok"
+   },
+   {
+    "node": "analyze",
+    "ms": 48959.3,
+    "llm_calls": 2,
+    "tokens_in": 5945,
+    "tokens_out": 5610,
+    "tool_calls": [],
+    "status": "ok"
+   },
+   {
+    "node": "recommend",
+    "ms": 5523.7,
+    "llm_calls": 1,
+    "tokens_in": 2172,
+    "tokens_out": 571,
+    "tool_calls": [],
+    "status": "ok"
+   },
+   {
+    "node": "judge",
+    "ms": 45830.5,
+    "llm_calls": 2,
+    "tokens_in": 9342,
+    "tokens_out": 4363,
+    "tool_calls": [],
+    "status": "ok"
+   },
+   {
+    "node": "finalize",
+    "ms": 0.0,
+    "llm_calls": 0,
+    "tokens_in": 0,
+    "tokens_out": 0,
+    "tool_calls": [],
+    "status": "ok"
+   }
+  ],
+  "meta": {
+   "model": "nvidia/nemotron-3-super-120b-a12b",
+   "judge_model": "nvidia/nemotron-3-super-120b-a12b",
+   "prompt_version": "classifier_v1,analyst_v1,recommender_v1,judge_v1",
+   "latency_ms": 102191.7,
+   "llm_calls": 6,
+   "tokens_in": 18800,
+   "tokens_out": 10703,
+   "cached_calls": 0
+  },
+  "usage": {
+   "llm_calls": 6,
+   "tokens_in": 18800,
+   "tokens_out": 10703,
+   "cached_calls": 0
+  }
+ },
+ "G18": {
+  "run_id": "19b205346c454454b2b03a0fae523c6e",
+  "status": "needs_clarification",
+  "classification": {
+   "primary_category": "FAULT_ALARM",
+   "secondary_categories": [
+    "CONGESTION_CAPACITY"
+   ],
+   "symptoms": [
+    "high_alarms"
+   ],
+   "filters": {
+    "state": [],
+    "city": null,
+    "season": [],
+    "weather": []
+   },
+   "severity_hint": "medium",
+   "in_scope": true,
+   "needs_clarification": true,
+   "clarification_question": "Which specific KPIs or symptoms are affected besides alarm counts?",
+   "confidence": 0.55,
+   "rationale": "The text mentions increasing alarm counts and poor service quality, implying fault alarms and possible congestion. No specific symptoms like latency or throughput are stated.",
+   "source": "llm"
+  },
+  "applied_filters": {},
+  "similar_cases": [],
+  "kpi_assessment": null,
+  "segment_stats": null,
+  "root_cause_analysis": null,
+  "impact": null,
+  "fault_risk": null,
+  "performance_prediction": null,
+  "priority": null,
+  "recommendations": [],
+  "escalation": null,
+  "validation": null,
+  "sources": [],
+  "warnings": [],
+  "trace": [
+   {
+    "node": "gate",
+    "ms": 0.0,
+    "llm_calls": 0,
+    "tokens_in": 0,
+    "tokens_out": 0,
+    "tool_calls": [],
+    "status": "ok"
+   },
+   {
+    "node": "classify",
+    "ms": 1612.0,
+    "llm_calls": 1,
+    "tokens_in": 1340,
+    "tokens_out": 142,
+    "tool_calls": [],
+    "status": "ok"
+   },
+   {
+    "node": "finalize",
+    "ms": 0.0,
+    "llm_calls": 0,
+    "tokens_in": 0,
+    "tokens_out": 0,
+    "tool_calls": [],
+    "status": "ok"
+   }
+  ],
+  "meta": {
+   "model": "nvidia/nemotron-3-super-120b-a12b",
+   "judge_model": "nvidia/nemotron-3-super-120b-a12b",
+   "prompt_version": "classifier_v1,analyst_v1,recommender_v1,judge_v1",
+   "latency_ms": 1667.6,
+   "llm_calls": 1,
+   "tokens_in": 1340,
+   "tokens_out": 142,
+   "cached_calls": 0
+  },
+  "usage": {
+   "llm_calls": 1,
+   "tokens_in": 1340,
+   "tokens_out": 142,
+   "cached_calls": 0
+  }
+ },
+ "G19": {
+  "run_id": "50ae707e13ac49bebe44da8034aadfe0",
+  "status": "degraded",
+  "classification": {
+   "primary_category": "MOBILITY_HANDOVER",
+   "secondary_categories": [
+    "FAULT_ALARM"
+   ],
+   "symptoms": [
+    "high_fault_rate",
+    "low_handover_success"
+   ],
+   "filters": {
+    "state": [],
+    "city": null,
+    "season": [],
+    "weather": []
+   },
+   "severity_hint": "medium",
+   "in_scope": true,
+   "needs_clarification": false,
+   "clarification_question": null,
+   "confidence": 0.8,
+   "rationale": "The text explicitly mentions increasing fault occurrence (high_fault_rate) and declining handover success (low_handover_success). These symptoms align with FAULT_ALARM and MOBILITY_HANDOVER categories, with handover issues being more specific to mobility.",
+   "source": "llm"
+  },
+  "applied_filters": {},
+  "similar_cases": [
+   {
+    "rank": 1,
+    "case_id": "CASE-061356",
+    "final_score": 1.15,
+    "score_breakdown": {
+     "dense_rank": null,
+     "bm25_rank": 1,
+     "rrf": 0.01639,
+     "symptom_overlap": 0.5,
+     "feedback_prior": 0.5
+    },
+    "state": "AK",
+    "city": "Lake Sara",
+    "season": "Winter",
+    "weather": "Snow",
+    "primary_category": "MOBILITY_HANDOVER",
+    "secondary_categories": [],
+    "priority": "P3",
+    "fault_risk_band": "High",
+    "anomalies": [
+     {
+      "kpi": "handover_success_pct",
+      "label": "Handover success rate",
+      "value": 91.0,
+      "unit": "%",
+      "band": "critical",
+      "percentile": 0.9006
+     }
+    ],
+    "summary": "[CASE-061356] AK/Winter/Snow, P3, MOBILITY_HANDOVER: handover success rate 91.0% (crit); fault rate 42.0%"
+   },
+   {
+    "rank": 2,
+    "case_id": "CASE-080784",
+    "final_score": 1.1287,
+    "score_breakdown": {
+     "dense_rank": null,
+     "bm25_rank": 3,
+     "rrf": 0.01587,
+     "symptom_overlap": 0.667,
+     "feedback_prior": 0.5
+    },
+    "state": "FM",
+    "city": "West Johnside",
+    "season": "Winter",
+    "weather": "Snow",
+    "primary_category": "SECURITY_AUTH",
+    "secondary_categories": [
+     "FAULT_ALARM",
+     "MOBILITY_HANDOVER"
+    ],
+    "priority": "P3",
+    "fault_risk_band": "High",
+    "anomalies": [
+     {
+      "kpi": "auth_failures",
+      "label": "Authentication failures",
+      "value": 56.0,
+      "unit": "failures",
+      "band": "critical",
+      "percentile": 0.9905
+     },
+     {
+      "kpi": "fault_occurrence_rate_pct",
+      "label": "Fault occurrence rate",
+      "value": 63.07441438972854,
+      "unit": "%",
+      "band": "critical",
+      "percentile": 0.972
+     },
+     {
+      "kpi": "handover_success_pct",
+      "label": "Handover success rate",
+      "value": 91.31,
+      "unit": "%",
+      "band": "degraded",
+      "percentile": 0.8696
+     }
+    ],
+    "summary": "[CASE-080784] FM/Winter/Snow, P3, SECURITY_AUTH+FAULT_ALARM: authentication failures 56 failures (crit), fault occurrence rate 63.1% (crit), handover success rate 91.3% (deg); fault rate 63.1%"
+   },
+   {
+    "rank": 3,
+    "case_id": "CASE-093588",
+    "final_score": 1.1138,
+    "score_breakdown": {
+     "dense_rank": null,
+     "bm25_rank": 2,
+     "rrf": 0.01613,
+     "symptom_overlap": 0.5,
+     "feedback_prior": 0.5
+    },
+    "state": "NJ",
+    "city": "Lake Briannamouth",
+    "season": "Winter",
+    "weather": "Snow",
+    "primary_category": "MOBILITY_HANDOVER",
+    "secondary_categories": [],
+    "priority": "P3",
+    "fault_risk_band": "High",
+    "anomalies": [
+     {
+      "kpi": "handover_success_pct",
+      "label": "Handover success rate",
+      "value": 91.72,
+      "unit": "%",
+      "band": "degraded",
+      "percentile": 0.8287
+     }
+    ],
+    "summary": "[CASE-093588] NJ/Winter/Snow, P3, MOBILITY_HANDOVER: handover success rate 91.7% (deg); fault rate 40.0%"
+   },
+   {
+    "rank": 4,
+    "case_id": "CASE-095819",
+    "final_score": 1.0948,
+    "score_breakdown": {
+     "dense_rank": null,
+     "bm25_rank": 4,
+     "rrf": 0.01562,
+     "symptom_overlap": 0.667,
+     "feedback_prior": 0.5
+    },
+    "state": "MN",
+    "city": "Lamport",
+    "season": "Winter",
+    "weather": "Snow",
+    "primary_category": "MOBILITY_HANDOVER",
+    "secondary_categories": [
+     "SECURITY_AUTH",
+     "FAULT_ALARM"
+    ],
+    "priority": "P3",
+    "fault_risk_band": "High",
+    "anomalies": [
+     {
+      "kpi": "handover_success_pct",
+      "label": "Handover success rate",
+      "value": 90.47,
+      "unit": "%",
+      "band": "critical",
+      "percentile": 0.9535
+     },
+     {
+      "kpi": "auth_failures",
+      "label": "Authentication failures",
+      "value": 35.0,
+      "unit": "failures",
+      "band": "critical",
+      "percentile": 0.8931
+     },
+     {
+      "kpi": "fault_occurrence_rate_pct",
+      "label": "Fault occurrence rate",
+      "value": 48.33053597999746,
+      "unit": "%",
+      "band": "degraded",
+      "percentile": 0.7542
+     }
+    ],
+    "summary": "[CASE-095819] MN/Winter/Snow, P3, MOBILITY_HANDOVER+SECURITY_AUTH: handover success rate 90.5% (crit), authentication failures 35 failures (crit), fault occurrence rate 48.3% (deg); fault rate 48.3%"
+   },
+   {
+    "rank": 5,
+    "case_id": "CASE-052688",
+    "final_score": 1.0857,
+    "score_breakdown": {
+     "dense_rank": 1,
+     "bm25_rank": null,
+     "rrf": 0.01639,
+     "symptom_overlap": 0.286,
+     "feedback_prior": 0.5
+    },
+    "state": "ME",
+    "city": "Lake Mariaport",
+    "season": "Summer",
+    "weather": "Clear",
+    "primary_category": "MOBILITY_HANDOVER",
+    "secondary_categories": [
+     "SECURITY_AUTH",
+     "RADIO_COVERAGE"
+    ],
+    "priority": "P3",
+    "fault_risk_band": "Low",
+    "anomalies": [
+     {
+      "kpi": "handover_success_pct",
+      "label": "Handover success rate",
+      "value": 90.06,
+      "unit": "%",
+      "band": "critical",
+      "percentile": 0.9935
+     },
+     {
+      "kpi": "security_incidents",
+      "label": "Security incidents",
+      "value": 19.0,
+      "unit": "incidents",
+      "band": "critical",
+      "percentile": 0.974
+     },
+     {
+      "kpi": "cssr_pct",
+      "label": "Connection setup success rate",
+      "value": 90.47,
+      "unit": "%",
+      "band": "critical",
+      "percentile": 0.9515
+     },
+     {
+      "kpi": "parameter_changes",
+      "label": "Parameter changes",
+      "value": 16.0,
+      "unit": "changes",
+      "band": "degraded",
+      "percentile": 0.8222
+     },
+     {
+      "kpi": "critical_alarm_count",
+      "label": "Critical alarm count",
+      "value": 8.8393902,
+      "unit": "alarms",
+      "band": "degraded",
+      "percentile": 0.8112
+     },
+     {
+      "kpi": "fault_occurrence_rate_pct",
+      "label": "Fault occurrence rate",
+      "value": 49.444174855037744,
+      "unit": "%",
+      "band": "degraded",
+      "percentile": 0.7832
+     },
+     {
+      "kpi": "throughput_mbps",
+      "label": "Throughput",
+      "value": 385.4276,
+      "unit": "Mbps",
+      "band": "degraded",
+      "percentile": 0.7652
+     }
+    ],
+    "summary": "[CASE-052688] ME/Summer/Clear, P3, MOBILITY_HANDOVER+SECURITY_AUTH: handover success rate 90.1% (crit), security incidents 19 incidents (crit), connection setup success rate 90.5% (crit), parameter changes 16 changes (deg); fault rate 49.4%"
+   }
+  ],
+  "kpi_assessment": {
+   "basis": "similar_cases_median",
+   "anomalies": [
+    {
+     "kpi": "handover_success_pct",
+     "label": "Handover success rate",
+     "unit": "%",
+     "value": 91.0,
+     "percentile": 0.0994,
+     "worse_than_pct": 90.1,
+     "band": "critical",
+     "imputed": false
+    },
+    {
+     "kpi": "fault_occurrence_rate_pct",
+     "label": "Fault occurrence rate",
+     "unit": "%",
+     "value": 48.33053597999746,
+     "percentile": 0.7542,
+     "worse_than_pct": 75.4,
+     "band": "degraded",
+     "imputed": false
+    }
+   ],
+   "imputed_fields": []
+  },
+  "segment_stats": {
+   "count": 6263,
+   "top_lifts": [
+    {
+     "factor": "weather=Snow",
+     "segment_rate": 0.189,
+     "corpus_rate": 0.062,
+     "lift": 3.03
+    },
+    {
+     "factor": "high_critical_alarms",
+     "segment_rate": 0.715,
+     "corpus_rate": 0.25,
+     "lift": 2.86
+    },
+    {
+     "factor": "low_throughput",
+     "segment_rate": 0.681,
+     "corpus_rate": 0.25,
+     "lift": 2.73
+    },
+    {
+     "factor": "high_auth_failures",
+     "segment_rate": 0.694,
+     "corpus_rate": 0.264,
+     "lift": 2.63
+    },
+    {
+     "factor": "adverse_weather",
+     "segment_rate": 0.808,
+     "corpus_rate": 0.374,
+     "lift": 2.16
+    },
+    {
+     "factor": "high_call_drop",
+     "segment_rate": 0.496,
+     "corpus_rate": 0.25,
+     "lift": 1.98
+    },
+    {
+     "factor": "weather=Rain",
+     "segment_rate": 0.619,
+     "corpus_rate": 0.312,
+     "lift": 1.98
+    },
+    {
+     "factor": "high_packet_loss",
+     "segment_rate": 0.409,
+     "corpus_rate": 0.25,
+     "lift": 1.63
+    }
+   ],
+   "priority_mix": {
+    "P1": 0.198,
+    "P2": 0.439,
+    "P3": 0.354,
+    "P4": 0.009
+   },
+   "median_fault_rate": 53.85
+  },
+  "root_cause_analysis": {
+   "hypotheses": [
+    {
+     "cause": "Missing or wrong neighbour relations, so the target cell is not prepared.",
+     "likelihood": "medium",
+     "evidence_type": "both",
+     "supporting_evidence": [
+      "Handover success rate 91 % (critical)",
+      "Fault occurrence rate 48.3305 % (degraded)"
+     ],
+     "citations": [
+      "KB-MOBILITY_HANDOVER-likely-root-causes",
+      "KPI ASSESSMENT"
+     ]
+    },
+    {
+     "cause": "Handover thresholds, offsets or timers that trigger too late (drops) or too early (ping-pong).",
+     "likelihood": "medium",
+     "evidence_type": "both",
+     "supporting_evidence": [
+      "Handover success rate 91 % (critical)",
+      "Fault occurrence rate 48.3305 % (degraded)"
+     ],
+     "citations": [
+      "KB-MOBILITY_HANDOVER-likely-root-causes",
+      "KPI ASSESSMENT"
+     ]
+    },
+    {
+     "cause": "Overloaded target cells rejecting incoming handovers.",
+     "likelihood": "medium",
+     "evidence_type": "both",
+     "supporting_evidence": [
+      "Handover success rate 91 % (critical)",
+      "Fault occurrence rate 48.3305 % (degraded)"
+     ],
+     "citations": [
+      "KB-MOBILITY_HANDOVER-likely-root-causes",
+      "KPI ASSESSMENT"
+     ]
+    }
+   ],
+   "contributing_factors": [
+    {
+     "factor": "weather=Snow",
+     "direction": "co-occurs more often than baseline",
+     "evidence": "lift 3.03x (segment 19% vs corpus 6%)",
+     "citation": "SEGMENT STATS"
+    },
+    {
+     "factor": "high_critical_alarms",
+     "direction": "co-occurs more often than baseline",
+     "evidence": "lift 2.86x (segment 72% vs corpus 25%)",
+     "citation": "SEGMENT STATS"
+    },
+    {
+     "factor": "low_throughput",
+     "direction": "co-occurs more often than baseline",
+     "evidence": "lift 2.73x (segment 68% vs corpus 25%)",
+     "citation": "SEGMENT STATS"
+    },
+    {
+     "factor": "high_auth_failures",
+     "direction": "co-occurs more often than baseline",
+     "evidence": "lift 2.63x (segment 69% vs corpus 26%)",
+     "citation": "SEGMENT STATS"
+    }
+   ],
+   "data_limitations": [
+    "Synthetic dataset without timestamps, cell IDs or topology.",
+    "Severity is relative to this network's history, not absolute thresholds.",
+    "Co-occurrence in past cases does not prove causation."
+   ]
+  },
+  "impact": {
+   "level": "High",
+   "affected_services": [
+    "voice"
+   ],
+   "users_served": 6933,
+   "data_gb": 17.24,
+   "narrative": "Impact High: affects voice, about 6,933 users served."
+  },
+  "fault_risk": {
+   "probability": 0.7734,
+   "band": "High",
+   "top_drivers": [
+    {
+     "feature": "weather",
+     "importance": 0.3154,
+     "value": "Snow",
+     "band": null,
+     "imputed": false
+    },
+    {
+     "feature": "security_incidents",
+     "importance": 0.0181,
+     "value": 12.0,
+     "band": "normal",
+     "imputed": false
+    },
+    {
+     "feature": "alarm_count",
+     "importance": 0.0179,
+     "value": 10.0,
+     "band": "normal",
+     "imputed": false
+    },
+    {
+     "feature": "user_count",
+     "importance": 0.0082,
+     "value": 6933.0,
+     "band": "normal",
+     "imputed": false
+    },
+    {
+     "feature": "packet_loss_pct",
+     "importance": 0.0039,
+     "value": 3.94,
+     "band": "normal",
+     "imputed": false
+    }
+   ],
+   "basis": "similar_cases_median"
+  },
+  "performance_prediction": {
+   "expected_throughput_mbps": 389.7,
+   "observed": 495.2555,
+   "deficit_pct": 27.1,
+   "model_r2": 0.3277
+  },
+  "priority": {
+   "level": "P3",
+   "label": "Medium",
+   "score": 0.439,
+   "components": {
+    "severity": 0.131,
+    "impact": 0.515,
+    "risk": 0.773
+   },
+   "overrides": [],
+   "reasons": [
+    "Estimated from the median KPIs of the similar cases (no KPIs were given).",
+    "Critical handover success rate: 91 % (worse than 90% of records)",
+    "Degraded fault occurrence rate: 48.3305 % (worse than 75% of records)",
+    "Serves 6,933 users (more than 69% of records)",
+    "Fault risk 77%"
+   ]
+  },
+  "recommendations": [
+   {
+    "step": 1,
+    "action": "Break down handover failures by target cell to identify the worst failing neighbour pairs",
+    "phase": "immediate",
+    "rationale": "To pinpoint specific neighbour relations causing handover drops as per diagnostic-checks step 1",
+    "expected_kpi_effect": "Handover success rate improvement for identified pairs",
+    "verification": "Handover success rate increases and stabilizes for the targeted pairs over 15 minutes",
+    "risk_level": "low",
+    "requires_change_approval": false,
+    "citations": [
+     "KB-MOBILITY_HANDOVER-diagnostic-checks"
+    ]
+   },
+   {
+    "step": 2,
+    "action": "Check neighbour lists for missing or outdated relations, including recently added sites",
+    "phase": "immediate",
+    "rationale": "To detect missing neighbour relations that prevent target cell preparation as per diagnostic-checks step 2",
+    "expected_kpi_effect": "Reduction in handover failure rate due to missing neighbours",
+    "verification": "Handover success rate improves and fault occurrence decreases after neighbour list correction",
+    "risk_level": "low",
+    "requires_change_approval": false,
+    "citations": [
+     "KB-MOBILITY_HANDOVER-diagnostic-checks"
+    ]
+   },
+   {
+    "step": 3,
+    "action": "Add missing neighbour relations for the worst failing pairs",
+    "phase": "short_term",
+    "rationale": "To resolve missing neighbour relations causing handover preparation failure as per corrective-actions immediate step",
+    "expected_kpi_effect": "Handover success rate increases for the affected pairs",
+    "verification": "Handover success rate recovers and remains above baseline for 1 hour",
+    "risk_level": "medium",
+    "requires_change_approval": true,
+    "citations": [
+     "KB-MOBILITY_HANDOVER-corrective-actions"
+    ]
+   },
+   {
+    "step": 4,
+    "action": "Review handover parameters (offsets, hysteresis, time-to-trigger) against design defaults",
+    "phase": "short_term",
+    "rationale": "To detect incorrect handover thresholds triggering too late or too early as per diagnostic-checks step 3",
+    "expected_kpi_effect": "Handover success rate improves and ping-pong or drop rates decrease",
+    "verification": "Handover success rate stabilizes within expected range after parameter adjustment",
+    "risk_level": "low",
+    "requires_change_approval": false,
+    "citations": [
+     "KB-MOBILITY_HANDOVER-diagnostic-checks"
+    ]
+   },
+   {
+    "step": 5,
+    "action": "Tune handover offsets, hysteresis and time-to-trigger on the failing pairs",
+    "phase": "short_term",
+    "rationale": "To correct handover thresholds that trigger too late (drops) or too early (ping-pong) as per corrective-actions short-term step",
+    "expected_kpi_effect": "Handover success rate increases and unnecessary handovers decrease",
+    "verification": "Handover success rate improves and remains stable for 30 minutes post-tuning",
+    "risk_level": "medium",
+    "requires_change_approval": true,
+    "citations": [
+     "KB-MOBILITY_HANDOVER-corrective-actions"
+    ]
+   },
+   {
+    "step": 6,
+    "action": "Check target-cell load and admission rejections",
+    "phase": "immediate",
+    "rationale": "To identify overloaded target cells rejecting handovers as per diagnostic-checks step 4",
+    "expected_kpi_effect": "Reduction in handover failure due to congestion",
+    "verification": "Handover success rate improves and admission rejections decrease after load balancing",
+    "risk_level": "low",
+    "requires_change_approval": false,
+    "citations": [
+     "KB-MOBILITY_HANDOVER-diagnostic-checks"
+    ]
+   },
+   {
+    "step": 7,
+    "action": "Relieve overloaded target cells",
+    "phase": "short_term",
+    "rationale": "To address overloaded target cells rejecting incoming handovers as per corrective-actions short-term step",
+    "expected_kpi_effect": "Handover success rate increases as target cells accept more handovers",
+    "verification": "Handover success rate improves and remains elevated for 1 hour after load relief",
+    "risk_level": "medium",
+    "requires_change_approval": true,
+    "citations": [
+     "KB-MOBILITY_HANDOVER-corrective-actions"
+    ]
+   }
+  ],
+  "escalation": {
+   "needed": false,
+   "team": "",
+   "reason": "P3 priority with no timing alarms or synchronization faults indicated; actions can be handled by RAN operations team per escalation criteria"
+  },
+  "validation": {
+   "verdict": "pass",
+   "scores": {
+    "groundedness": 0.75,
+    "kpi_consistency": 0.9,
+    "actionability": 0.85,
+    "completeness": 1.0
+   },
+   "issues": [
+    {
+     "target": "analyst",
+     "problem": "Likelihood values ('medium') are not supported by evidence; they are subjective assessments without basis.",
+     "fix_instruction": "Remove likelihood field or replace with evidence-based assessment (e.g., frequency of cause in similar cases)."
+    },
+    {
+     "target": "analyst",
+     "problem": "Contributing factors direction phrasing is vague; could be more precise using lift numbers.",
+     "fix_instruction": "Restate direction as 'co-occurs more often than baseline (lift Xx)' using the lift values from SEGMENT STATS."
+    },
+    {
+     "target": "recommender",
+     "problem": "Verification steps include specific time thresholds (e.g., 'over 15 minutes', '1 hour', '30 minutes') that are not present in evidence.",
+     "fix_instruction": "Replace time-bound verification with observable KPI trends (e.g., 'handover success rate shows sustained improvement') or cite runbook-defined observation windows if available."
+    },
+    {
+     "target": "recommender",
+     "problem": "Expected KPI effect statements are vague and not quantified; they imply improvement without evidence of magnitude.",
+     "fix_instruction": "Specify expected KPI effect as a directional change (e.g., 'handover success rate expected to increase') and avoid implying specific magnitude unless supported."
+    }
+   ],
+   "summary": "The diagnosis is mostly grounded but contains unsupported likelihood values and verification timeframes; recommendations are actionable but need more evidence-based phrasing.",
+   "rule_checks": [
+    {
+     "rule": "citations_valid",
+     "passed": true,
+     "critical": false,
+     "target": "analyst",
+     "detail": "all citations known"
+    },
+    {
+     "rule": "recommendation_kb_citation",
+     "passed": true,
+     "critical": true,
+     "target": "recommender",
+     "detail": "every step cites a runbook"
+    },
+    {
+     "rule": "hypotheses_grounded",
+     "passed": true,
+     "critical": false,
+     "target": "analyst",
+     "detail": "every hypothesis cites evidence"
+    },
+    {
+     "rule": "numbers_match_evidence",
+     "passed": true,
+     "critical": false,
+     "target": "analyst",
+     "detail": "all quoted numbers match the evidence"
+    },
+    {
+     "rule": "primary_category_addressed",
+     "passed": true,
+     "critical": true,
+     "target": "recommender",
+     "detail": "MOBILITY_HANDOVER runbook cited"
+    },
+    {
+     "rule": "recommendation_count",
+     "passed": true,
+     "critical": false,
+     "target": "recommender",
+     "detail": "7 recommendations (expected 4-7)"
+    }
+   ],
+   "revisions": 0
+  },
+  "sources": [
+   {
+    "id": "CASE-061356",
+    "type": "case",
+    "title": "MOBILITY_HANDOVER case, AK",
+    "snippet": "[CASE-061356] AK/Winter/Snow, P3, MOBILITY_HANDOVER: handover success rate 91.0% (crit); fault rate 42.0%",
+    "score": 1.15
+   },
+   {
+    "id": "CASE-080784",
+    "type": "case",
+    "title": "SECURITY_AUTH case, FM",
+    "snippet": "[CASE-080784] FM/Winter/Snow, P3, SECURITY_AUTH+FAULT_ALARM: authentication failures 56 failures (crit), fault occurrence rate 63.1% (crit), handover success rate 91.3% (deg); fault rate 63.1%",
+    "score": 1.1287
+   },
+   {
+    "id": "CASE-093588",
+    "type": "case",
+    "title": "MOBILITY_HANDOVER case, NJ",
+    "snippet": "[CASE-093588] NJ/Winter/Snow, P3, MOBILITY_HANDOVER: handover success rate 91.7% (deg); fault rate 40.0%",
+    "score": 1.1138
+   },
+   {
+    "id": "CASE-095819",
+    "type": "case",
+    "title": "MOBILITY_HANDOVER case, MN",
+    "snippet": "[CASE-095819] MN/Winter/Snow, P3, MOBILITY_HANDOVER+SECURITY_AUTH: handover success rate 90.5% (crit), authentication failures 35 failures (crit), fault occurrence rate 48.3% (deg); fault rate 48.3%",
+    "score": 1.0948
+   },
+   {
+    "id": "CASE-052688",
+    "type": "case",
+    "title": "MOBILITY_HANDOVER case, ME",
+    "snippet": "[CASE-052688] ME/Summer/Clear, P3, MOBILITY_HANDOVER+SECURITY_AUTH: handover success rate 90.1% (crit), security incidents 19 incidents (crit), connection setup success rate 90.5% (crit), parameter changes 16 changes (deg); fault rate 49.4%",
+    "score": 1.0857
+   },
+   {
+    "id": "KB-MOBILITY_HANDOVER-likely-root-causes",
+    "type": "runbook",
+    "title": "Mobility and handover failures / likely-root-causes",
+    "snippet": "Runbook: Mobility and handover failures > Likely root causes\n- Missing or wrong neighbour relations, so the target cell is not prepared.\n- Handover thresholds, offsets or timers that trigger too late (drops) or too early (ping-pong).\n- Over",
+    "score": 0.7338
+   },
+   {
+    "id": "KB-MOBILITY_HANDOVER-kpi-signature",
+    "type": "runbook",
+    "title": "Mobility and handover failures / kpi-signature",
+    "snippet": "Runbook: Mobility and handover failures > KPI signature\n- Low handover success rate (lower than this network's 25th percentile).\n- Higher call drop rate, especially along roads and railways.\n- Coverage and transport KPIs may look normal for",
+    "score": 0.6918
+   },
+   {
+    "id": "KB-FAULT_ALARM-likely-root-causes",
+    "type": "runbook",
+    "title": "Equipment faults and alarm storms / likely-root-causes",
+    "snippet": "Runbook: Equipment faults and alarm storms > Likely root causes\n- Failing hardware: radio units, power modules, fans, transceivers.\n- Software defects or memory leaks causing repeated restarts.\n- Over-temperature from cooling failures.\n- A ",
+    "score": 0.6283
+   },
+   {
+    "id": "KB-FAULT_ALARM-kpi-signature",
+    "type": "runbook",
+    "title": "Equipment faults and alarm storms / kpi-signature",
+    "snippet": "Runbook: Equipment faults and alarm storms > KPI signature\n- High alarm count and high critical alarm count (worse than this network's 75th percentile).\n- High fault occurrence rate.\n- Service KPIs often follow: in this network's history, c",
+    "score": 0.621
+   },
+   {
+    "id": "KB-MOBILITY_HANDOVER-corrective-actions",
+    "type": "runbook",
+    "title": "Mobility and handover failures / corrective-actions",
+    "snippet": "Runbook: Mobility and handover failures > Corrective actions\n### Immediate\n- Add missing neighbour relations for the worst failing pairs (requires change approval).\n- Roll back any recent handover parameter change linked to the start of the",
+    "score": 0.7791
+   },
+   {
+    "id": "KB-MOBILITY_HANDOVER-diagnostic-checks",
+    "type": "runbook",
+    "title": "Mobility and handover failures / diagnostic-checks",
+    "snippet": "Runbook: Mobility and handover failures > Diagnostic checks\n1. Break down handover failures by target cell to find the failing neighbour pairs.\n2. Check neighbour lists for missing or outdated relations, including recently added sites.\n3. R",
+    "score": 0.7239
+   },
+   {
+    "id": "KB-FAULT_ALARM-corrective-actions",
+    "type": "runbook",
+    "title": "Equipment faults and alarm storms / corrective-actions",
+    "snippet": "Runbook: Equipment faults and alarm storms > Corrective actions\n### Immediate\n- Suppress duplicate secondary alarms and focus on the root alarm.\n- Restart the affected software process or unit when the alarm indicates a software hang (requi",
+    "score": 0.6492
+   },
+   {
+    "id": "KB-MOBILITY_HANDOVER-escalation-criteria",
+    "type": "runbook",
+    "title": "Mobility and handover failures / escalation-criteria",
+    "snippet": "Runbook: Mobility and handover failures > Escalation criteria\n- Escalate to RAN optimization for parameter and neighbour changes.\n- Escalate to the transport or synchronization team when timing alarms are present.",
+    "score": 0.5875
+   }
+  ],
+  "warnings": [
+   "The analyst agent was unavailable; a rule-based analysis is shown. (StructuredOutputError)"
+  ],
+  "trace": [
+   {
+    "node": "gate",
+    "ms": 0.0,
+    "llm_calls": 0,
+    "tokens_in": 0,
+    "tokens_out": 0,
+    "tool_calls": [],
+    "status": "ok"
+   },
+   {
+    "node": "classify",
+    "ms": 1109.5,
+    "llm_calls": 1,
+    "tokens_in": 1340,
+    "tokens_out": 163,
+    "tool_calls": [],
+    "status": "ok"
+   },
+   {
+    "node": "retrieve",
+    "ms": 62.4,
+    "llm_calls": 0,
+    "tokens_in": 0,
+    "tokens_out": 0,
+    "tool_calls": [
+     "hybrid_search"
+    ],
+    "status": "ok"
+   },
+   {
+    "node": "gather_evidence",
+    "ms": 214.1,
+    "llm_calls": 0,
+    "tokens_in": 0,
+    "tokens_out": 0,
+    "tool_calls": [
+     "kpi_assessment",
+     "segment_stats",
+     "predict_fault_risk",
+     "predict_performance",
+     "impact",
+     "prioritize",
+     "search_runbook(analyst)",
+     "search_runbook(recommender)"
+    ],
+    "status": "ok"
+   },
+   {
+    "node": "analyze",
+    "ms": 41545.0,
+    "llm_calls": 2,
+    "tokens_in": 4952,
+    "tokens_out": 5896,
+    "tool_calls": [],
+    "status": "fallback"
+   },
+   {
+    "node": "recommend",
+    "ms": 15443.6,
+    "llm_calls": 1,
+    "tokens_in": 1952,
+    "tokens_out": 972,
+    "tool_calls": [],
+    "status": "ok"
+   },
+   {
+    "node": "judge",
+    "ms": 20201.9,
+    "llm_calls": 1,
+    "tokens_in": 4478,
+    "tokens_out": 1814,
+    "tool_calls": [],
+    "status": "ok"
+   },
+   {
+    "node": "finalize",
+    "ms": 0.0,
+    "llm_calls": 0,
+    "tokens_in": 0,
+    "tokens_out": 0,
+    "tool_calls": [],
+    "status": "ok"
+   }
+  ],
+  "meta": {
+   "model": "nvidia/nemotron-3-super-120b-a12b",
+   "judge_model": "nvidia/nemotron-3-super-120b-a12b",
+   "prompt_version": "classifier_v1,analyst_v1,recommender_v1,judge_v1",
+   "latency_ms": 78605.4,
+   "llm_calls": 5,
+   "tokens_in": 12722,
+   "tokens_out": 8845,
+   "cached_calls": 0
+  },
+  "usage": {
+   "llm_calls": 5,
+   "tokens_in": 12722,
+   "tokens_out": 8845,
+   "cached_calls": 0
+  }
+ },
+ "G05": {
+  "run_id": "9854c65a518c4f1eac27551693f1fdec",
+  "status": "ok",
+  "classification": {
+   "primary_category": "RADIO_COVERAGE",
+   "secondary_categories": [],
+   "symptoms": [
+    "weak_signal",
+    "low_cssr",
+    "high_call_drop"
+   ],
+   "filters": {
+    "state": [],
+    "city": null,
+    "season": [],
+    "weather": []
+   },
+   "severity_hint": "high",
+   "in_scope": true,
+   "needs_clarification": false,
+   "clarification_question": null,
+   "confidence": 0.95,
+   "rationale": "Text explicitly states weak signal and calls failing to set up, matching weak_signal, low_cssr, and high_call_drop symptoms for RADIO_COVERAGE.",
+   "source": "llm"
+  },
+  "applied_filters": {},
+  "similar_cases": [
+   {
+    "rank": 1,
+    "case_id": "CASE-031903",
+    "final_score": 1.2158,
+    "score_breakdown": {
+     "dense_rank": 18,
+     "bm25_rank": 5,
+     "rrf": 0.02821,
+     "symptom_overlap": 0.75,
+     "feedback_prior": 0.5
+    },
+    "state": "MT",
+    "city": "Mariashire",
+    "season": "Spring",
+    "weather": "Rain",
+    "primary_category": "RADIO_COVERAGE",
+    "secondary_categories": [
+     "MOBILITY_HANDOVER",
+     "CONFIG_CHANGE"
+    ],
+    "priority": "P3",
+    "fault_risk_band": "Low",
+    "anomalies": [
+     {
+      "kpi": "call_drop_rate_pct",
+      "label": "Call drop rate",
+      "value": 4.067879,
+      "unit": "%",
+      "band": "critical",
+      "percentile": 0.957
+     },
+     {
+      "kpi": "cssr_pct",
+      "label": "Connection setup success rate",
+      "value": 91.26,
+      "unit": "%",
+      "band": "degraded",
+      "percentile": 0.8726
+     },
+     {
+      "kpi": "signal_strength_dbm",
+      "label": "Signal strength",
+      "value": -108.41,
+      "unit": "dBm",
+      "band": "degraded",
+      "percentile": 0.8062
+     },
+     {
+      "kpi": "config_change_success_pct",
+      "label": "Successful configuration changes",
+      "value": 92.22,
+      "unit": "%",
+      "band": "degraded",
+      "percentile": 0.7522
+     }
+    ],
+    "summary": "[CASE-031903] MT/Spring/Rain, P3, RADIO_COVERAGE+MOBILITY_HANDOVER: call drop rate 4.1% (crit), connection setup success rate 91.3% (deg), signal strength -108.4 dBm (deg), successful configuration changes 92.2% (deg); fault rate 36.7%"
+   },
+   {
+    "rank": 2,
+    "case_id": "CASE-008904",
+    "final_score": 1.18,
+    "score_breakdown": {
+     "dense_rank": 12,
+     "bm25_rank": 9,
+     "rrf": 0.02838,
+     "symptom_overlap": 0.6,
+     "feedback_prior": 0.5
+    },
+    "state": "ND",
+    "city": "Kellyshire",
+    "season": "Fall",
+    "weather": "Clouds",
+    "primary_category": "RADIO_COVERAGE",
+    "secondary_categories": [
+     "MOBILITY_HANDOVER",
+     "CONFIG_CHANGE"
+    ],
+    "priority": "P3",
+    "fault_risk_band": "Low",
+    "anomalies": [
+     {
+      "kpi": "signal_strength_dbm",
+      "label": "Signal strength",
+      "value": -119.76,
+      "unit": "dBm",
+      "band": "critical",
+      "percentile": 0.9955
+     },
+     {
+      "kpi": "config_change_success_pct",
+      "label": "Successful configuration changes",
+      "value": 90.27,
+      "unit": "%",
+      "band": "critical",
+      "percentile": 0.9685
+     },
+     {
+      "kpi": "call_drop_rate_pct",
+      "label": "Call drop rate",
+      "value": 3.5657302500000005,
+      "unit": "%",
+      "band": "critical",
+      "percentile": 0.9301
+     },
+     {
+      "kpi": "cssr_pct",
+      "label": "Connection setup success rate",
+      "value": 91.65,
+      "unit": "%",
+      "band": "degraded",
+      "percentile": 0.8337
+     },
+     {
+      "kpi": "handover_success_pct",
+      "label": "Handover success rate",
+      "value": 92.14,
+      "unit": "%",
+      "band": "degraded",
+      "percentile": 0.7867
+     }
+    ],
+    "summary": "[CASE-008904] ND/Fall/Clouds, P3, RADIO_COVERAGE+MOBILITY_HANDOVER: signal strength -119.8 dBm (crit), successful configuration changes 90.3% (crit), call drop rate 3.6% (crit), connection setup success rate 91.7% (deg); fault rate 46.8%"
+   },
+   {
+    "rank": 3,
+    "case_id": "CASE-076079",
+    "final_score": 1.1443,
+    "score_breakdown": {
+     "dense_rank": 17,
+     "bm25_rank": 8,
+     "rrf": 0.02769,
+     "symptom_overlap": 0.6,
+     "feedback_prior": 0.5
+    },
+    "state": "KY",
+    "city": "Michaelchester",
+    "season": "Spring",
+    "weather": "Clouds",
+    "primary_category": "RADIO_COVERAGE",
+    "secondary_categories": [
+     "MOBILITY_HANDOVER",
+     "CONFIG_CHANGE"
+    ],
+    "priority": "P3",
+    "fault_risk_band": "Low",
+    "anomalies": [
+     {
+      "kpi": "signal_strength_dbm",
+      "label": "Signal strength",
+      "value": -119.8,
+      "unit": "dBm",
+      "band": "critical",
+      "percentile": 0.996
+     },
+     {
+      "kpi": "handover_success_pct",
+      "label": "Handover success rate",
+      "value": 90.37,
+      "unit": "%",
+      "band": "critical",
+      "percentile": 0.9635
+     },
+     {
+      "kpi": "config_change_success_pct",
+      "label": "Successful configuration changes",
+      "value": 90.71,
+      "unit": "%",
+      "band": "critical",
+      "percentile": 0.9201
+     },
+     {
+      "kpi": "cssr_pct",
+      "label": "Connection setup success rate",
+      "value": 91.43,
+      "unit": "%",
+      "band": "degraded",
+      "percentile": 0.8556
+     },
+     {
+      "kpi": "call_drop_rate_pct",
+      "label": "Call drop rate",
+      "value": 2.1599513750000003,
+      "unit": "%",
+      "band": "degraded",
+      "percentile": 0.8102
+     }
+    ],
+    "summary": "[CASE-076079] KY/Spring/Clouds, P3, RADIO_COVERAGE+MOBILITY_HANDOVER: signal strength -119.8 dBm (crit), handover success rate 90.4% (crit), successful configuration changes 90.7% (crit), connection setup success rate 91.4% (deg); fault rate 29.9%"
+   },
+   {
+    "rank": 4,
+    "case_id": "CASE-013174",
+    "final_score": 1.0572,
+    "score_breakdown": {
+     "dense_rank": 20,
+     "bm25_rank": 14,
+     "rrf": 0.02601,
+     "symptom_overlap": 0.6,
+     "feedback_prior": 0.5
+    },
+    "state": "VA",
+    "city": "East Barbaraberg",
+    "season": "Summer",
+    "weather": "Clouds",
+    "primary_category": "RADIO_COVERAGE",
+    "secondary_categories": [
+     "TRANSPORT_QOS",
+     "CONGESTION_CAPACITY"
+    ],
+    "priority": "P3",
+    "fault_risk_band": "Low",
+    "anomalies": [
+     {
+      "kpi": "cssr_pct",
+      "label": "Connection setup success rate",
+      "value": 90.72,
+      "unit": "%",
+      "band": "critical",
+      "percentile": 0.9276
+     },
+     {
+      "kpi": "latency_ms",
+      "label": "Latency",
+      "value": 132.88049999999998,
+      "unit": "ms",
+      "band": "critical",
+      "percentile": 0.9131
+     },
+     {
+      "kpi": "signal_strength_dbm",
+      "label": "Signal strength",
+      "value": -112.25,
+      "unit": "dBm",
+      "band": "degraded",
+      "percentile": 0.8701
+     },
+     {
+      "kpi": "config_change_success_pct",
+      "label": "Successful configuration changes",
+      "value": 91.26,
+      "unit": "%",
+      "band": "degraded",
+      "percentile": 0.8596
+     },
+     {
+      "kpi": "call_drop_rate_pct",
+      "label": "Call drop rate",
+      "value": 2.0723963749999994,
+      "unit": "%",
+      "band": "degraded",
+      "percentile": 0.8002
+     }
+    ],
+    "summary": "[CASE-013174] VA/Summer/Clouds, P3, RADIO_COVERAGE+TRANSPORT_QOS: connection setup success rate 90.7% (crit), latency 132.9 ms (crit), signal strength -112.2 dBm (deg), successful configuration changes 91.3% (deg); fault rate 24.2%"
+   },
+   {
+    "rank": 5,
+    "case_id": "CASE-018327",
+    "final_score": 1.0151,
+    "score_breakdown": {
+     "dense_rank": 10,
+     "bm25_rank": 27,
+     "rrf": 0.02578,
+     "symptom_overlap": 0.5,
+     "feedback_prior": 0.5
+    },
+    "state": "PW",
+    "city": "East Maria",
+    "season": "Spring",
+    "weather": "Clouds",
+    "primary_category": "RADIO_COVERAGE",
+    "secondary_categories": [
+     "TRANSPORT_QOS",
+     "CONFIG_CHANGE"
+    ],
+    "priority": "P3",
+    "fault_risk_band": "Low",
+    "anomalies": [
+     {
+      "kpi": "cssr_pct",
+      "label": "Connection setup success rate",
+      "value": 90.23,
+      "unit": "%",
+      "band": "critical",
+      "percentile": 0.9775
+     },
+     {
+      "kpi": "packet_loss_pct",
+      "label": "Packet loss rate",
+      "value": 12.225,
+      "unit": "%",
+      "band": "critical",
+      "percentile": 0.9171
+     },
+     {
+      "kpi": "config_change_success_pct",
+      "label": "Successful configuration changes",
+      "value": 91.39,
+      "unit": "%",
+      "band": "degraded",
+      "percentile": 0.8457
+     },
+     {
+      "kpi": "signal_strength_dbm",
+      "label": "Signal strength",
+      "value": -107.55,
+      "unit": "dBm",
+      "band": "degraded",
+      "percentile": 0.7922
+     },
+     {
+      "kpi": "call_drop_rate_pct",
+      "label": "Call drop rate",
+      "value": 1.8090385,
+      "unit": "%",
+      "band": "degraded",
+      "percentile": 0.7682
+     },
+     {
+      "kpi": "latency_ms",
+      "label": "Latency",
+      "value": 105.994,
+      "unit": "ms",
+      "band": "degraded",
+      "percentile": 0.7542
+     }
+    ],
+    "summary": "[CASE-018327] PW/Spring/Clouds, P3, RADIO_COVERAGE+TRANSPORT_QOS: connection setup success rate 90.2% (crit), packet loss rate 12.2% (crit), successful configuration changes 91.4% (deg), signal strength -107.5 dBm (deg); fault rate 37.8%"
+   }
+  ],
+  "kpi_assessment": {
+   "basis": "similar_cases_median",
+   "anomalies": [
+    {
+     "kpi": "cssr_pct",
+     "label": "Connection setup success rate",
+     "unit": "%",
+     "value": 91.26,
+     "percentile": 0.1274,
+     "worse_than_pct": 87.3,
+     "band": "degraded",
+     "imputed": false
+    },
+    {
+     "kpi": "signal_strength_dbm",
+     "label": "Signal strength",
+     "unit": "dBm",
+     "value": -112.25,
+     "percentile": 0.1299,
+     "worse_than_pct": 87.0,
+     "band": "degraded",
+     "imputed": false
+    },
+    {
+     "kpi": "config_change_success_pct",
+     "label": "Successful configuration changes",
+     "unit": "%",
+     "value": 91.26,
+     "percentile": 0.1404,
+     "worse_than_pct": 86.0,
+     "band": "degraded",
+     "imputed": false
+    },
+    {
+     "kpi": "call_drop_rate_pct",
+     "label": "Call drop rate",
+     "unit": "%",
+     "value": 2.1599513750000003,
+     "percentile": 0.8102,
+     "worse_than_pct": 81.0,
+     "band": "degraded",
+     "imputed": false
+    }
+   ],
+   "imputed_fields": []
+  },
+  "segment_stats": {
+   "count": 6223,
+   "top_lifts": [
+    {
+     "factor": "high_call_drop",
+     "segment_rate": 0.268,
+     "corpus_rate": 0.25,
+     "lift": 1.07
+    },
+    {
+     "factor": "high_latency",
+     "segment_rate": 0.262,
+     "corpus_rate": 0.25,
+     "lift": 1.05
+    },
+    {
+     "factor": "long_mttr",
+     "segment_rate": 0.261,
+     "corpus_rate": 0.251,
+     "lift": 1.04
+    },
+    {
+     "factor": "high_fault_rate",
+     "segment_rate": 0.261,
+     "corpus_rate": 0.25,
+     "lift": 1.04
+    },
+    {
+     "factor": "low_availability",
+     "segment_rate": 0.257,
+     "corpus_rate": 0.25,
+     "lift": 1.03
+    },
+    {
+     "factor": "high_security_incidents",
+     "segment_rate": 0.27,
+     "corpus_rate": 0.262,
+     "lift": 1.03
+    },
+    {
+     "factor": "high_auth_failures",
+     "segment_rate": 0.273,
+     "corpus_rate": 0.264,
+     "lift": 1.03
+    },
+    {
+     "factor": "weather=Snow",
+     "segment_rate": 0.064,
+     "corpus_rate": 0.062,
+     "lift": 1.03
+    }
+   ],
+   "priority_mix": {
+    "P1": 0.074,
+    "P2": 0.243,
+    "P3": 0.515,
+    "P4": 0.168
+   },
+   "median_fault_rate": 39.81
+  },
+  "root_cause_analysis": {
+   "hypotheses": [
+    {
+     "cause": "Coverage hole due to inadequate site density, terrain, or new buildings blocking the signal",
+     "likelihood": "high",
+     "evidence_type": "data",
+     "supporting_evidence": [
+      "Connection setup success rate 91.26 % (degraded, worse than 87%)",
+      "Signal strength -112.25 dBm (degraded, worse than 87%)",
+      "Successful configuration changes 91.26 % (degraded, worse than 86%)",
+      "Call drop rate 2.15995 % (degraded, worse than 81%)"
+     ],
+     "citations": [
+      "KPI ASSESSMENT"
+     ]
+    },
+    {
+     "cause": "Antenna problems (wrong tilt/azimuth, damaged antenna or feeder, water ingress)",
+     "likelihood": "medium",
+     "evidence_type": "knowledge",
+     "supporting_evidence": [
+      "Runbook lists antenna problems as a likely root cause for radio coverage issues."
+     ],
+     "citations": [
+      "KB-RADIO_COVERAGE-likely-root-causes"
+     ]
+    },
+    {
+     "cause": "Reduced transmit power from a hardware fault or configuration error",
+     "likelihood": "low",
+     "evidence_type": "knowledge",
+     "supporting_evidence": [
+      "Runbook lists reduced transmit power as a likely root cause for radio coverage issues."
+     ],
+     "citations": [
+      "KB-RADIO_COVERAGE-likely-root-causes"
+     ]
+    }
+   ],
+   "contributing_factors": [
+    {
+     "factor": "weather",
+     "direction": "increases risk",
+     "evidence": "Predictions top drivers: weather, security_incidents, alarm_count, user_count.",
+     "citation": "PREDICTIONS"
+    },
+    {
+     "factor": "security_incidents",
+     "direction": "increases risk",
+     "evidence": "Predictions top drivers: weather, security_incidents, alarm_count, user_count.",
+     "citation": "PREDICTIONS"
+    },
+    {
+     "factor": "alarm_count",
+     "direction": "increases risk",
+     "evidence": "Predictions top drivers: weather, security_incidents, alarm_count, user_count.",
+     "citation": "PREDICTIONS"
+    },
+    {
+     "factor": "user_count",
+     "direction": "increases risk",
+     "evidence": "Predictions top drivers: weather, security_incidents, alarm_count, user_count.",
+     "citation": "PREDICTIONS"
+    },
+    {
+     "factor": "high_call_drop co-occurrence",
+     "direction": "no clear effect",
+     "evidence": "Segment stats: high_call_drop 1.07x (segment 27% vs corpus 25%)",
+     "citation": "SEGMENT STATS"
+    }
+   ],
+   "data_limitations": [
+    "Synthetic dataset; no timestamps, cell IDs or topology.",
+    "Severity is relative to this network's history (percentiles), not absolute thresholds.",
+    "Correlations in past cases are not proof of causation.",
+    "KPI values are estimates from similar cases (similar_cases_median).",
+    "Trends cannot be verified due to lack of timestamps."
+   ]
+  },
+  "impact": {
+   "level": "Moderate",
+   "affected_services": [
+    "voice",
+    "network access"
+   ],
+   "users_served": 3724,
+   "data_gb": 10.5,
+   "narrative": "The incident affects voice services and network access for approximately 3,724 users (37th percentile of historical case size), with about 10.5 GB of data traffic impacted. Users experience weak signal strength, low connection setup success rate, and increased call drop rates, leading to difficulty placing or maintaining calls. Overall impact is assessed as Moderate."
+  },
+  "fault_risk": {
+   "probability": 0.0441,
+   "band": "Low",
+   "top_drivers": [
+    {
+     "feature": "weather",
+     "importance": 0.3154,
+     "value": "Clouds",
+     "band": null,
+     "imputed": false
+    },
+    {
+     "feature": "security_incidents",
+     "importance": 0.0181,
+     "value": 7.0,
+     "band": "normal",
+     "imputed": false
+    },
+    {
+     "feature": "alarm_count",
+     "importance": 0.0179,
+     "value": 7.0,
+     "band": "normal",
+     "imputed": false
+    },
+    {
+     "feature": "user_count",
+     "importance": 0.0082,
+     "value": 3724.0,
+     "band": "normal",
+     "imputed": false
+    },
+    {
+     "feature": "packet_loss_pct",
+     "importance": 0.0039,
+     "value": 7.9125,
+     "band": "normal",
+     "imputed": false
+    }
+   ],
+   "basis": "similar_cases_median"
+  },
+  "performance_prediction": {
+   "expected_throughput_mbps": 579.7,
+   "observed": 568.0884,
+   "deficit_pct": -2.0,
+   "model_r2": 0.3277
+  },
+  "priority": {
+   "level": "P4",
+   "label": "Low",
+   "score": 0.228,
+   "components": {
+    "severity": 0.322,
+    "impact": 0.286,
+    "risk": 0.044
+   },
+   "overrides": [],
+   "reasons": [
+    "Estimated from the median KPIs of the similar cases (no KPIs were given).",
+    "Degraded connection setup success rate: 91.26 % (worse than 87% of records)",
+    "Degraded signal strength: -112.25 dBm (worse than 87% of records)",
+    "Degraded successful configuration changes: 91.26 % (worse than 86% of records)",
+    "Serves 3,724 users (more than 37% of records)",
+    "Fault risk 4%"
+   ]
+  },
+  "recommendations": [
+   {
+    "step": 1,
+    "action": "Map weak-signal reports and compare with predicted coverage of serving and neighbouring cells",
+    "phase": "immediate",
+    "rationale": "Identify coverage gaps to confirm hypothesis of inadequate site density or terrain blockage",
+    "expected_kpi_effect": "Improve CSSR by identifying areas needing intervention",
+    "verification": "CSSR improvement in affected areas after corrective actions",
+    "risk_level": "low",
+    "requires_change_approval": false,
+    "citations": [
+     "KB-RADIO_COVERAGE-diagnostic-checks"
+    ]
+   },
+   {
+    "step": 2,
+    "action": "Check transmit power and antenna configuration (tilt, azimuth) against planned values",
+    "phase": "immediate",
+    "rationale": "Verify if reduced power or misalignment contributes to weak signal and connection failures",
+    "expected_kpi_effect": "Improve signal strength and CSSR if power or alignment is restored",
+    "verification": "Signal strength improves to planned levels and CSSR increases",
+    "risk_level": "low",
+    "requires_change_approval": false,
+    "citations": [
+     "KB-RADIO_COVERAGE-diagnostic-checks"
+    ]
+   },
+   {
+    "step": 3,
+    "action": "Check feeder and antenna alarms and VSWR readings at the site",
+    "phase": "immediate",
+    "rationale": "Detect hardware faults like damaged antenna, feeder, or water ingress causing signal degradation",
+    "expected_kpi_effect": "Improve signal stability and reduce call drops if faults are found and addressed",
+    "verification": "Alarm clearance and VSWR within acceptable limits",
+    "risk_level": "low",
+    "requires_change_approval": false,
+    "citations": [
+     "KB-RADIO_COVERAGE-diagnostic-checks"
+    ]
+   },
+   {
+    "step": 4,
+    "action": "Measure interference (uplink noise rise) on the affected cells",
+    "phase": "immediate",
+    "rationale": "Rule out interference as a contributing factor to weak signal and failed call setup",
+    "expected_kpi_effect": "Improve CSSR if interference is mitigated",
+    "verification": "Uplink noise rise returns to baseline levels",
+    "risk_level": "low",
+    "requires_change_approval": false,
+    "citations": [
+     "KB-RADIO_COVERAGE-diagnostic-checks"
+    ]
+   }
+  ],
+  "escalation": {
+   "needed": false,
+   "team": "",
+   "reason": "P4 priority with moderate impact; initial diagnostics can be performed by NOC without escalation per runbook criteria"
+  },
+  "validation": {
+   "verdict": "pass",
+   "scores": {
+    "groundedness": 1.0,
+    "kpi_consistency": 1.0,
+    "actionability": 1.0,
+    "completeness": 1.0
+   },
+   "issues": [],
+   "summary": "The diagnosis is well-grounded in the evidence, with correct KPI consistency, actionable recommendations, and complete coverage of the primary category and anomalies.",
+   "rule_checks": [
+    {
+     "rule": "citations_valid",
+     "passed": true,
+     "critical": false,
+     "target": "analyst",
+     "detail": "all citations known"
+    },
+    {
+     "rule": "recommendation_kb_citation",
+     "passed": true,
+     "critical": true,
+     "target": "recommender",
+     "detail": "every step cites a runbook"
+    },
+    {
+     "rule": "hypotheses_grounded",
+     "passed": true,
+     "critical": false,
+     "target": "analyst",
+     "detail": "every hypothesis cites evidence"
+    },
+    {
+     "rule": "numbers_match_evidence",
+     "passed": true,
+     "critical": false,
+     "target": "analyst",
+     "detail": "all quoted numbers match the evidence"
+    },
+    {
+     "rule": "primary_category_addressed",
+     "passed": true,
+     "critical": true,
+     "target": "recommender",
+     "detail": "RADIO_COVERAGE runbook cited"
+    },
+    {
+     "rule": "recommendation_count",
+     "passed": true,
+     "critical": false,
+     "target": "recommender",
+     "detail": "4 recommendations (expected 4-7)"
+    }
+   ],
+   "revisions": 0
+  },
+  "sources": [
+   {
+    "id": "CASE-031903",
+    "type": "case",
+    "title": "RADIO_COVERAGE case, MT",
+    "snippet": "[CASE-031903] MT/Spring/Rain, P3, RADIO_COVERAGE+MOBILITY_HANDOVER: call drop rate 4.1% (crit), connection setup success rate 91.3% (deg), signal strength -108.4 dBm (deg), successful configuration changes 92.2% (deg); fault rate 36.7%",
+    "score": 1.2158
+   },
+   {
+    "id": "CASE-008904",
+    "type": "case",
+    "title": "RADIO_COVERAGE case, ND",
+    "snippet": "[CASE-008904] ND/Fall/Clouds, P3, RADIO_COVERAGE+MOBILITY_HANDOVER: signal strength -119.8 dBm (crit), successful configuration changes 90.3% (crit), call drop rate 3.6% (crit), connection setup success rate 91.7% (deg); fault rate 46.8%",
+    "score": 1.18
+   },
+   {
+    "id": "CASE-076079",
+    "type": "case",
+    "title": "RADIO_COVERAGE case, KY",
+    "snippet": "[CASE-076079] KY/Spring/Clouds, P3, RADIO_COVERAGE+MOBILITY_HANDOVER: signal strength -119.8 dBm (crit), handover success rate 90.4% (crit), successful configuration changes 90.7% (crit), connection setup success rate 91.4% (deg); fault rate 29.9%",
+    "score": 1.1443
+   },
+   {
+    "id": "CASE-013174",
+    "type": "case",
+    "title": "RADIO_COVERAGE case, VA",
+    "snippet": "[CASE-013174] VA/Summer/Clouds, P3, RADIO_COVERAGE+TRANSPORT_QOS: connection setup success rate 90.7% (crit), latency 132.9 ms (crit), signal strength -112.2 dBm (deg), successful configuration changes 91.3% (deg); fault rate 24.2%",
+    "score": 1.0572
+   },
+   {
+    "id": "CASE-018327",
+    "type": "case",
+    "title": "RADIO_COVERAGE case, PW",
+    "snippet": "[CASE-018327] PW/Spring/Clouds, P3, RADIO_COVERAGE+TRANSPORT_QOS: connection setup success rate 90.2% (crit), packet loss rate 12.2% (crit), successful configuration changes 91.4% (deg), signal strength -107.5 dBm (deg); fault rate 37.8%",
+    "score": 1.0151
+   },
+   {
+    "id": "KB-RADIO_COVERAGE-likely-root-causes",
+    "type": "runbook",
+    "title": "Radio coverage and signal quality / likely-root-causes",
+    "snippet": "Runbook: Radio coverage and signal quality > Likely root causes\n- A coverage hole: inadequate site density, terrain or new buildings blocking the signal.\n- Antenna problems: wrong tilt or azimuth, damaged antenna or feeder, water ingress.\n-",
+    "score": 0.6704
+   },
+   {
+    "id": "KB-RADIO_COVERAGE-kpi-signature",
+    "type": "runbook",
+    "title": "Radio coverage and signal quality / kpi-signature",
+    "snippet": "Runbook: Radio coverage and signal quality > KPI signature\n- Weak signal strength (lower than this network's 25th percentile).\n- Low connection setup success rate and higher call drop rate.\n- Throughput may fall at the edge. Transport KPIs ",
+    "score": 0.6551
+   },
+   {
+    "id": "KB-RADIO_COVERAGE-diagnostic-checks",
+    "type": "runbook",
+    "title": "Radio coverage and signal quality / diagnostic-checks",
+    "snippet": "Runbook: Radio coverage and signal quality > Diagnostic checks\n1. Map the weak-signal reports and compare them with the predicted coverage of the serving and neighbouring cells.\n2. Check transmit power and antenna configuration (tilt, azimu",
+    "score": 0.6237
+   },
+   {
+    "id": "KB-RADIO_COVERAGE-corrective-actions",
+    "type": "runbook",
+    "title": "Radio coverage and signal quality / corrective-actions",
+    "snippet": "Runbook: Radio coverage and signal quality > Corrective actions\n### Immediate\n- Restore planned transmit power or antenna settings if a recent change reduced them (requires change approval).\n- Dispatch field operations for a damaged antenna",
+    "score": 0.5522
+   },
+   {
+    "id": "KB-RADIO_COVERAGE-escalation-criteria",
+    "type": "runbook",
+    "title": "Radio coverage and signal quality / escalation-criteria",
+    "snippet": "Runbook: Radio coverage and signal quality > Escalation criteria\n- Escalate to RAN optimization for tilt and neighbour changes, and to radio planning when new sites are needed.\n- Escalate to field operations for hardware repairs.",
+    "score": 0.471
+   }
+  ],
+  "warnings": [],
+  "trace": [
+   {
+    "node": "gate",
+    "ms": 0.0,
+    "llm_calls": 0,
+    "tokens_in": 0,
+    "tokens_out": 0,
+    "tool_calls": [],
+    "status": "ok"
+   },
+   {
+    "node": "classify",
+    "ms": 1310.9,
+    "llm_calls": 1,
+    "tokens_in": 1332,
+    "tokens_out": 137,
+    "tool_calls": [],
+    "status": "ok"
+   },
+   {
+    "node": "retrieve",
+    "ms": 65.8,
+    "llm_calls": 0,
+    "tokens_in": 0,
+    "tokens_out": 0,
+    "tool_calls": [
+     "hybrid_search"
+    ],
+    "status": "ok"
+   },
+   {
+    "node": "gather_evidence",
+    "ms": 212.4,
+    "llm_calls": 0,
+    "tokens_in": 0,
+    "tokens_out": 0,
+    "tool_calls": [
+     "kpi_assessment",
+     "segment_stats",
+     "predict_fault_risk",
+     "predict_performance",
+     "impact",
+     "prioritize",
+     "search_runbook(analyst)",
+     "search_runbook(recommender)"
+    ],
+    "status": "ok"
+   },
+   {
+    "node": "analyze",
+    "ms": 28731.8,
+    "llm_calls": 2,
+    "tokens_in": 5742,
+    "tokens_out": 3526,
+    "tool_calls": [],
+    "status": "ok"
+   },
+   {
+    "node": "recommend",
+    "ms": 2964.6,
+    "llm_calls": 1,
+    "tokens_in": 1841,
+    "tokens_out": 534,
+    "tool_calls": [],
+    "status": "ok"
+   },
+   {
+    "node": "judge",
+    "ms": 16158.4,
+    "llm_calls": 1,
+    "tokens_in": 4008,
+    "tokens_out": 1397,
+    "tool_calls": [],
+    "status": "ok"
+   },
+   {
+    "node": "finalize",
+    "ms": 0.0,
+    "llm_calls": 0,
+    "tokens_in": 0,
+    "tokens_out": 0,
+    "tool_calls": [],
+    "status": "ok"
+   }
+  ],
+  "meta": {
+   "model": "nvidia/nemotron-3-super-120b-a12b",
+   "judge_model": "nvidia/nemotron-3-super-120b-a12b",
+   "prompt_version": "classifier_v1,analyst_v1,recommender_v1,judge_v1",
+   "latency_ms": 49477.0,
+   "llm_calls": 5,
+   "tokens_in": 12923,
+   "tokens_out": 5594,
+   "cached_calls": 0
+  },
+  "usage": {
+   "llm_calls": 5,
+   "tokens_in": 12923,
+   "tokens_out": 5594,
+   "cached_calls": 0
+  }
+ },
+ "G09": {
+  "run_id": "32755a724e694a2a9f44a54a1216d36a",
+  "status": "degraded",
+  "classification": {
+   "primary_category": "AVAILABILITY_OUTAGE",
+   "secondary_categories": [],
+   "symptoms": [
+    "low_availability",
+    "long_mttr"
+   ],
+   "filters": {
+    "state": [],
+    "city": null,
+    "season": [],
+    "weather": []
+   },
+   "severity_hint": "critical",
+   "in_scope": true,
+   "needs_clarification": false,
+   "clarification_question": null,
+   "confidence": 0.9,
+   "rationale": "The text states 'cell keeps going down' (low availability) and 'repairs take many hours' (long MTTR), which are defining symptoms of AVAILABILITY_OUTAGE.",
+   "source": "llm"
+  },
+  "applied_filters": {},
+  "similar_cases": [
+   {
+    "rank": 1,
+    "case_id": "CASE-065782",
+    "final_score": 1.3,
+    "score_breakdown": {
+     "dense_rank": 8,
+     "bm25_rank": 34,
+     "rrf": 0.02534,
+     "symptom_overlap": 1.0,
+     "feedback_prior": 0.5
+    },
+    "state": "MS",
+    "city": "New Denise",
+    "season": "Fall",
+    "weather": "Clear",
+    "primary_category": "AVAILABILITY_OUTAGE",
+    "secondary_categories": [],
+    "priority": "P2",
+    "fault_risk_band": "Low",
+    "anomalies": [
+     {
+      "kpi": "mttr_hours",
+      "label": "Mean time to repair",
+      "value": 9.92,
+      "unit": "hours",
+      "band": "critical",
+      "percentile": 0.9905
+     },
+     {
+      "kpi": "cell_availability_pct",
+      "label": "Cell availability",
+      "value": 79.01899999999999,
+      "unit": "%",
+      "band": "critical",
+      "percentile": 0.9161
+     }
+    ],
+    "summary": "[CASE-065782] MS/Fall/Clear, P2, AVAILABILITY_OUTAGE: mean time to repair 9.9 hours (crit), cell availability 79.0% (crit); fault rate 20.5%"
+   },
+   {
+    "rank": 2,
+    "case_id": "CASE-089688",
+    "final_score": 1.2944,
+    "score_breakdown": {
+     "dense_rank": 39,
+     "bm25_rank": 6,
+     "rrf": 0.02525,
+     "symptom_overlap": 1.0,
+     "feedback_prior": 0.5
+    },
+    "state": "OR",
+    "city": "North Kimberlyshire",
+    "season": "Summer",
+    "weather": "Clear",
+    "primary_category": "AVAILABILITY_OUTAGE",
+    "secondary_categories": [],
+    "priority": "P2",
+    "fault_risk_band": "Low",
+    "anomalies": [
+     {
+      "kpi": "cell_availability_pct",
+      "label": "Cell availability",
+      "value": 77.297,
+      "unit": "%",
+      "band": "critical",
+      "percentile": 0.979
+     },
+     {
+      "kpi": "mttr_hours",
+      "label": "Mean time to repair",
+      "value": 9.62,
+      "unit": "hours",
+      "band": "critical",
+      "percentile": 0.959
+     }
+    ],
+    "summary": "[CASE-089688] OR/Summer/Clear, P2, AVAILABILITY_OUTAGE: cell availability 77.3% (crit), mean time to repair 9.6 hours (crit); fault rate 17.0%"
+   },
+   {
+    "rank": 3,
+    "case_id": "CASE-092535",
+    "final_score": 1.1347,
+    "score_breakdown": {
+     "dense_rank": 24,
+     "bm25_rank": 33,
+     "rrf": 0.02266,
+     "symptom_overlap": 1.0,
+     "feedback_prior": 0.5
+    },
+    "state": "TN",
+    "city": "Meyerchester",
+    "season": "Fall",
+    "weather": "Clear",
+    "primary_category": "AVAILABILITY_OUTAGE",
+    "secondary_categories": [],
+    "priority": "P4",
+    "fault_risk_band": "Low",
+    "anomalies": [
+     {
+      "kpi": "mttr_hours",
+      "label": "Mean time to repair",
+      "value": 8.11,
+      "unit": "hours",
+      "band": "degraded",
+      "percentile": 0.7997
+     },
+     {
+      "kpi": "cell_availability_pct",
+      "label": "Cell availability",
+      "value": 82.966,
+      "unit": "%",
+      "band": "degraded",
+      "percentile": 0.7592
+     }
+    ],
+    "summary": "[CASE-092535] TN/Fall/Clear, P4, AVAILABILITY_OUTAGE: mean time to repair 8.1 hours (deg), cell availability 83.0% (deg); fault rate 15.2%"
+   },
+   {
+    "rank": 4,
+    "case_id": "CASE-027494",
+    "final_score": 0.9882,
+    "score_breakdown": {
+     "dense_rank": 33,
+     "bm25_rank": 45,
+     "rrf": 0.02028,
+     "symptom_overlap": 1.0,
+     "feedback_prior": 0.5
+    },
+    "state": "SC",
+    "city": "Barbarafort",
+    "season": "Summer",
+    "weather": "Clear",
+    "primary_category": "AVAILABILITY_OUTAGE",
+    "secondary_categories": [],
+    "priority": "P4",
+    "fault_risk_band": "Low",
+    "anomalies": [
+     {
+      "kpi": "mttr_hours",
+      "label": "Mean time to repair",
+      "value": 8.73,
+      "unit": "hours",
+      "band": "degraded",
+      "percentile": 0.8656
+     },
+     {
+      "kpi": "cell_availability_pct",
+      "label": "Cell availability",
+      "value": 81.589,
+      "unit": "%",
+      "band": "degraded",
+      "percentile": 0.8142
+     }
+    ],
+    "summary": "[CASE-027494] SC/Summer/Clear, P4, AVAILABILITY_OUTAGE: mean time to repair 8.7 hours (deg), cell availability 81.6% (deg); fault rate 36.5%"
+   },
+   {
+    "rank": 5,
+    "case_id": "CASE-067428",
+    "final_score": 0.8967,
+    "score_breakdown": {
+     "dense_rank": 44,
+     "bm25_rank": 49,
+     "rrf": 0.01879,
+     "symptom_overlap": 1.0,
+     "feedback_prior": 0.5
+    },
+    "state": "AL",
+    "city": "Port Nicholas",
+    "season": "Fall",
+    "weather": "Clear",
+    "primary_category": "AVAILABILITY_OUTAGE",
+    "secondary_categories": [],
+    "priority": "P4",
+    "fault_risk_band": "Low",
+    "anomalies": [
+     {
+      "kpi": "cell_availability_pct",
+      "label": "Cell availability",
+      "value": 80.084,
+      "unit": "%",
+      "band": "degraded",
+      "percentile": 0.8731
+     },
+     {
+      "kpi": "mttr_hours",
+      "label": "Mean time to repair",
+      "value": 8.09,
+      "unit": "hours",
+      "band": "degraded",
+      "percentile": 0.7977
+     }
+    ],
+    "summary": "[CASE-067428] AL/Fall/Clear, P4, AVAILABILITY_OUTAGE: cell availability 80.1% (deg), mean time to repair 8.1 hours (deg); fault rate 22.8%"
+   }
+  ],
+  "kpi_assessment": {
+   "basis": "similar_cases_median",
+   "anomalies": [
+    {
+     "kpi": "cell_availability_pct",
+     "label": "Cell availability",
+     "unit": "%",
+     "value": 80.084,
+     "percentile": 0.1269,
+     "worse_than_pct": 87.3,
+     "band": "degraded",
+     "imputed": false
+    },
+    {
+     "kpi": "mttr_hours",
+     "label": "Mean time to repair",
+     "unit": "hours",
+     "value": 8.73,
+     "percentile": 0.8656,
+     "worse_than_pct": 86.6,
+     "band": "degraded",
+     "imputed": false
+    }
+   ],
+   "imputed_fields": []
+  },
+  "segment_stats": {
+   "count": 6590,
+   "top_lifts": [
+    {
+     "factor": "high_critical_alarms",
+     "segment_rate": 0.303,
+     "corpus_rate": 0.25,
+     "lift": 1.21
+    },
+    {
+     "factor": "high_fault_rate",
+     "segment_rate": 0.287,
+     "corpus_rate": 0.25,
+     "lift": 1.15
+    },
+    {
+     "factor": "low_throughput",
+     "segment_rate": 0.286,
+     "corpus_rate": 0.25,
+     "lift": 1.14
+    },
+    {
+     "factor": "high_alarms",
+     "segment_rate": 0.343,
+     "corpus_rate": 0.305,
+     "lift": 1.13
+    },
+    {
+     "factor": "high_call_drop",
+     "segment_rate": 0.274,
+     "corpus_rate": 0.25,
+     "lift": 1.1
+    },
+    {
+     "factor": "low_config_success",
+     "segment_rate": 0.266,
+     "corpus_rate": 0.25,
+     "lift": 1.06
+    },
+    {
+     "factor": "extreme_temperature",
+     "segment_rate": 0.105,
+     "corpus_rate": 0.1,
+     "lift": 1.05
+    },
+    {
+     "factor": "high_data_usage",
+     "segment_rate": 0.261,
+     "corpus_rate": 0.25,
+     "lift": 1.04
+    }
+   ],
+   "priority_mix": {
+    "P1": 0.09,
+    "P2": 0.473,
+    "P3": 0.323,
+    "P4": 0.114
+   },
+   "median_fault_rate": 40.65
+  },
+  "root_cause_analysis": {
+   "hypotheses": [
+    {
+     "cause": "Power failure at the site: mains outage, rectifier or battery failure.",
+     "likelihood": "medium",
+     "evidence_type": "both",
+     "supporting_evidence": [
+      "Cell availability 80.084 % (degraded)",
+      "Mean time to repair 8.73 hours (degraded)"
+     ],
+     "citations": [
+      "KB-AVAILABILITY_OUTAGE-likely-root-causes",
+      "KPI ASSESSMENT"
+     ]
+    },
+    {
+     "cause": "Hardware failure of radio or baseband units.",
+     "likelihood": "medium",
+     "evidence_type": "both",
+     "supporting_evidence": [
+      "Cell availability 80.084 % (degraded)",
+      "Mean time to repair 8.73 hours (degraded)"
+     ],
+     "citations": [
+      "KB-AVAILABILITY_OUTAGE-likely-root-causes",
+      "KPI ASSESSMENT"
+     ]
+    },
+    {
+     "cause": "Transmission loss: the site cannot reach the core.",
+     "likelihood": "medium",
+     "evidence_type": "both",
+     "supporting_evidence": [
+      "Cell availability 80.084 % (degraded)",
+      "Mean time to repair 8.73 hours (degraded)"
+     ],
+     "citations": [
+      "KB-AVAILABILITY_OUTAGE-likely-root-causes",
+      "KPI ASSESSMENT"
+     ]
+    }
+   ],
+   "contributing_factors": [
+    {
+     "factor": "high_critical_alarms",
+     "direction": "co-occurs more often than baseline",
+     "evidence": "lift 1.21x (segment 30% vs corpus 25%)",
+     "citation": "SEGMENT STATS"
+    }
+   ],
+   "data_limitations": [
+    "Synthetic dataset without timestamps, cell IDs or topology.",
+    "Severity is relative to this network's history, not absolute thresholds.",
+    "Co-occurrence in past cases does not prove causation."
+   ]
+  },
+  "impact": {
+   "level": "Moderate",
+   "affected_services": [
+    "network access"
+   ],
+   "users_served": 2650,
+   "data_gb": 17.95,
+   "narrative": "Impact Moderate: affects network access, about 2,650 users served."
+  },
+  "fault_risk": {
+   "probability": 0.0413,
+   "band": "Low",
+   "top_drivers": [
+    {
+     "feature": "weather",
+     "importance": 0.3154,
+     "value": "Clear",
+     "band": null,
+     "imputed": false
+    },
+    {
+     "feature": "security_incidents",
+     "importance": 0.0181,
+     "value": 11.0,
+     "band": "normal",
+     "imputed": false
+    },
+    {
+     "feature": "alarm_count",
+     "importance": 0.0179,
+     "value": 10.0,
+     "band": "normal",
+     "imputed": false
+    },
+    {
+     "feature": "user_count",
+     "importance": 0.0082,
+     "value": 2650.0,
+     "band": "normal",
+     "imputed": false
+    },
+    {
+     "feature": "packet_loss_pct",
+     "importance": 0.0039,
+     "value": 3.69,
+     "band": "normal",
+     "imputed": false
+    }
+   ],
+   "basis": "similar_cases_median"
+  },
+  "performance_prediction": {
+   "expected_throughput_mbps": 731.7,
+   "observed": 919.6685,
+   "deficit_pct": 25.7,
+   "model_r2": 0.3277
+  },
+  "priority": {
+   "level": "P4",
+   "label": "Low",
+   "score": 0.142,
+   "components": {
+    "severity": 0.095,
+    "impact": 0.305,
+    "risk": 0.041
+   },
+   "overrides": [],
+   "reasons": [
+    "Estimated from the median KPIs of the similar cases (no KPIs were given).",
+    "Degraded cell availability: 80.084 % (worse than 87% of records)",
+    "Degraded mean time to repair: 8.73 hours (worse than 87% of records)",
+    "Serves 2,650 users (more than 26% of records)",
+    "Fault risk 4%"
+   ]
+  },
+  "recommendations": [
+   {
+    "step": 1,
+    "action": "Check active alarms for power, hardware and transmission at the site.",
+    "phase": "immediate",
+    "rationale": "To identify if power failure, hardware fault, or transmission loss is causing the outage per diagnostic checks.",
+    "expected_kpi_effect": "Cell availability should increase as root cause is identified.",
+    "verification": "Alarm status changes or clears within 15 minutes.",
+    "risk_level": "low",
+    "requires_change_approval": false,
+    "citations": [
+     "KB-AVAILABILITY_OUTAGE-diagnostic-checks"
+    ]
+   },
+   {
+    "step": 2,
+    "action": "Dispatch field operations for power or hardware failures if alarms indicate site-level issue.",
+    "phase": "immediate",
+    "rationale": "To contain outage by addressing likely root causes like power or hardware failure per corrective actions.",
+    "expected_kpi_effect": "Mean time to repair should decrease due to timely field response.",
+    "verification": "Field team dispatched within 30 minutes and site power/hardware status improves.",
+    "risk_level": "medium",
+    "requires_change_approval": false,
+    "citations": [
+     "KB-AVAILABILITY_OUTAGE-corrective-actions"
+    ]
+   },
+   {
+    "step": 3,
+    "action": "Confirm whether the cell is down, locked administratively, or restarting repeatedly.",
+    "phase": "immediate",
+    "rationale": "To distinguish between actual outage and administrative or software-related cycling per diagnostic checks.",
+    "expected_kpi_effect": "Cell availability should stabilize if misconfiguration is corrected.",
+    "verification": "Administrative state or restart pattern normalizes within 20 minutes.",
+    "risk_level": "low",
+    "requires_change_approval": false,
+    "citations": [
+     "KB-AVAILABILITY_OUTAGE-diagnostic-checks"
+    ]
+   },
+   {
+    "step": 4,
+    "action": "Check whether neighbouring sites on the same power or transport path are also down.",
+    "phase": "short_term",
+    "rationale": "To assess if transmission loss or shared power issue is affecting multiple sites per diagnostic checks.",
+    "expected_kpi_effect": "If neighbour sites are down, focus shifts to shared infrastructure repair.",
+    "verification": "Neighbour site status checked via OSS within 25 minutes.",
+    "risk_level": "low",
+    "requires_change_approval": false,
+    "citations": [
+     "KB-AVAILABILITY_OUTAGE-diagnostic-checks"
+    ]
+   },
+   {
+    "step": 5,
+    "action": "Replace failed hardware or restore power systems including batteries and rectifiers.",
+    "phase": "short_term",
+    "rationale": "To fix confirmed power or hardware failures identified during diagnostics per corrective actions.",
+    "expected_kpi_effect": "Mean time to repair should reduce as root cause is resolved.",
+    "verification": "Power and hardware alarms clear and cell remains up for at least 1 hour.",
+    "risk_level": "medium",
+    "requires_change_approval": true,
+    "citations": [
+     "KB-AVAILABILITY_OUTAGE-corrective-actions"
+    ]
+   }
+  ],
+  "escalation": {
+   "needed": false,
+   "team": "",
+   "reason": "Priority is P4 (Low) and site is not at a busy location per impact and escalation criteria; no immediate escalation warranted."
+  },
+  "validation": {
+   "verdict": "pass",
+   "scores": {
+    "groundedness": 0.9,
+    "kpi_consistency": 0.95,
+    "actionability": 0.85,
+    "completeness": 0.7
+   },
+   "issues": [
+    {
+     "target": "analyst",
+     "problem": "Likelihood values (medium) for each hypothesis are unsupported inferences with no evidence.",
+     "fix_instruction": "Remove likelihood ratings or derive them from evidence (e.g., frequency in similar cases) and provide citations."
+    },
+    {
+     "target": "analyst",
+     "problem": "Omission of software crashes or failed upgrades as likely root causes despite being listed in the runbook.",
+     "fix_instruction": "Add a hypothesis for software crash/failed upgrade, cite KB-AVAILABILITY_OUTAGE-likely-root-causes, and mark evidence_type as knowledge."
+    },
+    {
+     "target": "analyst",
+     "problem": "Missing consideration of restoration delays (no spare parts, access restrictions) as a contributing factor to long MTTR.",
+     "fix_instruction": "Add a contributing factor for restoration delays, citing KB-AVAILABILITY_OUTAGE-corrective-actions (preventive) or KB-AVAILABILITY_OUTAGE-diagnostic-checks."
+    },
+    {
+     "target": "recommender",
+     "problem": "Recommendation step 4 is labelled short_term but should be immediate to assess transmission loss promptly.",
+     "fix_instruction": "Change the phase of step 4 from short_term to immediate."
+    },
+    {
+     "target": "recommender",
+     "problem": "Escalation decision assumes the site is not at a busy location without evidence.",
+     "fix_instruction": "Verify location busyness via OSS or add a conditional escalation: escalate if site is busy; otherwise retain current decision."
+    }
+   ],
+   "summary": "The diagnosis is mostly grounded and actionable but contains unsupported likelihood assignments, omits some likely root causes and contributing factors, and has minor timing and escalation assumptions that need correction.",
+   "rule_checks": [
+    {
+     "rule": "citations_valid",
+     "passed": true,
+     "critical": false,
+     "target": "analyst",
+     "detail": "all citations known"
+    },
+    {
+     "rule": "recommendation_kb_citation",
+     "passed": true,
+     "critical": true,
+     "target": "recommender",
+     "detail": "every step cites a runbook"
+    },
+    {
+     "rule": "hypotheses_grounded",
+     "passed": true,
+     "critical": false,
+     "target": "analyst",
+     "detail": "every hypothesis cites evidence"
+    },
+    {
+     "rule": "numbers_match_evidence",
+     "passed": true,
+     "critical": false,
+     "target": "analyst",
+     "detail": "all quoted numbers match the evidence"
+    },
+    {
+     "rule": "primary_category_addressed",
+     "passed": true,
+     "critical": true,
+     "target": "recommender",
+     "detail": "AVAILABILITY_OUTAGE runbook cited"
+    },
+    {
+     "rule": "recommendation_count",
+     "passed": true,
+     "critical": false,
+     "target": "recommender",
+     "detail": "5 recommendations (expected 4-7)"
+    }
+   ],
+   "revisions": 0
+  },
+  "sources": [
+   {
+    "id": "CASE-065782",
+    "type": "case",
+    "title": "AVAILABILITY_OUTAGE case, MS",
+    "snippet": "[CASE-065782] MS/Fall/Clear, P2, AVAILABILITY_OUTAGE: mean time to repair 9.9 hours (crit), cell availability 79.0% (crit); fault rate 20.5%",
+    "score": 1.3
+   },
+   {
+    "id": "CASE-089688",
+    "type": "case",
+    "title": "AVAILABILITY_OUTAGE case, OR",
+    "snippet": "[CASE-089688] OR/Summer/Clear, P2, AVAILABILITY_OUTAGE: cell availability 77.3% (crit), mean time to repair 9.6 hours (crit); fault rate 17.0%",
+    "score": 1.2944
+   },
+   {
+    "id": "CASE-092535",
+    "type": "case",
+    "title": "AVAILABILITY_OUTAGE case, TN",
+    "snippet": "[CASE-092535] TN/Fall/Clear, P4, AVAILABILITY_OUTAGE: mean time to repair 8.1 hours (deg), cell availability 83.0% (deg); fault rate 15.2%",
+    "score": 1.1347
+   },
+   {
+    "id": "CASE-027494",
+    "type": "case",
+    "title": "AVAILABILITY_OUTAGE case, SC",
+    "snippet": "[CASE-027494] SC/Summer/Clear, P4, AVAILABILITY_OUTAGE: mean time to repair 8.7 hours (deg), cell availability 81.6% (deg); fault rate 36.5%",
+    "score": 0.9882
+   },
+   {
+    "id": "CASE-067428",
+    "type": "case",
+    "title": "AVAILABILITY_OUTAGE case, AL",
+    "snippet": "[CASE-067428] AL/Fall/Clear, P4, AVAILABILITY_OUTAGE: cell availability 80.1% (deg), mean time to repair 8.1 hours (deg); fault rate 22.8%",
+    "score": 0.8967
+   },
+   {
+    "id": "KB-AVAILABILITY_OUTAGE-likely-root-causes",
+    "type": "runbook",
+    "title": "Cell availability, outage and restoration / likely-root-causes",
+    "snippet": "Runbook: Cell availability, outage and restoration > Likely root causes\n- Power failure at the site: mains outage, rectifier or battery failure.\n- Hardware failure of radio or baseband units.\n- Transmission loss: the site cannot reach the c",
+    "score": 0.6774
+   },
+   {
+    "id": "KB-AVAILABILITY_OUTAGE-kpi-signature",
+    "type": "runbook",
+    "title": "Cell availability, outage and restoration / kpi-signature",
+    "snippet": "Runbook: Cell availability, outage and restoration > KPI signature\n- Low cell availability (lower than this network's 25th percentile; critical below the 10th).\n- Long mean time to repair.\n- Usually accompanied by alarms. When availability ",
+    "score": 0.5677
+   },
+   {
+    "id": "KB-AVAILABILITY_OUTAGE-corrective-actions",
+    "type": "runbook",
+    "title": "Cell availability, outage and restoration / corrective-actions",
+    "snippet": "Runbook: Cell availability, outage and restoration > Corrective actions\n### Immediate\n- Treat critical availability as at least P2; dispatch field operations for power or hardware failures.\n- Attempt a remote restart of the failed unit when",
+    "score": 0.6341
+   },
+   {
+    "id": "KB-AVAILABILITY_OUTAGE-diagnostic-checks",
+    "type": "runbook",
+    "title": "Cell availability, outage and restoration / diagnostic-checks",
+    "snippet": "Runbook: Cell availability, outage and restoration > Diagnostic checks\n1. Check active alarms for power, hardware and transmission at the site.\n2. Confirm whether the cell is down, locked administratively, or restarting repeatedly.\n3. Check",
+    "score": 0.6271
+   },
+   {
+    "id": "KB-AVAILABILITY_OUTAGE-escalation-criteria",
+    "type": "runbook",
+    "title": "Cell availability, outage and restoration / escalation-criteria",
+    "snippet": "Runbook: Cell availability, outage and restoration > Escalation criteria\n- Escalate immediately to field operations and the on-call lead for any site down at a busy location.\n- Escalate to the vendor or equipment support when hardware or so",
+    "score": 0.5378
+   }
+  ],
+  "warnings": [
+   "The analyst agent was unavailable; a rule-based analysis is shown. (StructuredOutputError)"
+  ],
+  "trace": [
+   {
+    "node": "gate",
+    "ms": 0.0,
+    "llm_calls": 0,
+    "tokens_in": 0,
+    "tokens_out": 0,
+    "tool_calls": [],
+    "status": "ok"
+   },
+   {
+    "node": "classify",
+    "ms": 2438.5,
+    "llm_calls": 1,
+    "tokens_in": 1328,
+    "tokens_out": 141,
+    "tool_calls": [],
+    "status": "ok"
+   },
+   {
+    "node": "retrieve",
+    "ms": 46.8,
+    "llm_calls": 0,
+    "tokens_in": 0,
+    "tokens_out": 0,
+    "tool_calls": [
+     "hybrid_search"
+    ],
+    "status": "ok"
+   },
+   {
+    "node": "gather_evidence",
+    "ms": 207.3,
+    "llm_calls": 0,
+    "tokens_in": 0,
+    "tokens_out": 0,
+    "tool_calls": [
+     "kpi_assessment",
+     "segment_stats",
+     "predict_fault_risk",
+     "predict_performance",
+     "impact",
+     "prioritize",
+     "search_runbook(analyst)",
+     "search_runbook(recommender)"
+    ],
+    "status": "ok"
+   },
+   {
+    "node": "analyze",
+    "ms": 39347.5,
+    "llm_calls": 2,
+    "tokens_in": 4741,
+    "tokens_out": 5670,
+    "tool_calls": [],
+    "status": "fallback"
+   },
+   {
+    "node": "recommend",
+    "ms": 11082.1,
+    "llm_calls": 1,
+    "tokens_in": 1769,
+    "tokens_out": 690,
+    "tool_calls": [],
+    "status": "ok"
+   },
+   {
+    "node": "judge",
+    "ms": 19407.8,
+    "llm_calls": 1,
+    "tokens_in": 3688,
+    "tokens_out": 2194,
+    "tool_calls": [],
+    "status": "ok"
+   },
+   {
+    "node": "finalize",
+    "ms": 0.0,
+    "llm_calls": 0,
+    "tokens_in": 0,
+    "tokens_out": 0,
+    "tool_calls": [],
+    "status": "ok"
+   }
+  ],
+  "meta": {
+   "model": "nvidia/nemotron-3-super-120b-a12b",
+   "judge_model": "nvidia/nemotron-3-super-120b-a12b",
+   "prompt_version": "classifier_v1,analyst_v1,recommender_v1,judge_v1",
+   "latency_ms": 72562.3,
+   "llm_calls": 5,
+   "tokens_in": 11526,
+   "tokens_out": 8695,
+   "cached_calls": 0
+  },
+  "usage": {
+   "llm_calls": 5,
+   "tokens_in": 11526,
+   "tokens_out": 8695,
+   "cached_calls": 0
+  }
+ },
+ "G13": {
+  "run_id": "e57c3c7c153c4e64bb2e955f6c6158ff",
+  "status": "ok",
+  "classification": {
+   "primary_category": "CONFIG_CHANGE",
+   "secondary_categories": [],
+   "symptoms": [
+    "low_config_success"
+   ],
+   "filters": {
+    "state": [],
+    "city": null,
+    "season": [],
+    "weather": []
+   },
+   "severity_hint": "medium",
+   "in_scope": true,
+   "needs_clarification": false,
+   "clarification_question": null,
+   "confidence": 0.9,
+   "rationale": "The text describes failed configuration changes after parameter changes, matching the defining symptom low_config_success for CONFIG_CHANGE.",
+   "source": "llm"
+  },
+  "applied_filters": {},
+  "similar_cases": [
+   {
+    "rank": 1,
+    "case_id": "CASE-096180",
+    "final_score": 1.15,
+    "score_breakdown": {
+     "dense_rank": 13,
+     "bm25_rank": 5,
+     "rrf": 0.02908,
+     "symptom_overlap": 0.5,
+     "feedback_prior": 0.5
+    },
+    "state": "AS",
+    "city": "Mcdanielland",
+    "season": "Winter",
+    "weather": "Clouds",
+    "primary_category": "CONFIG_CHANGE",
+    "secondary_categories": [],
+    "priority": "P4",
+    "fault_risk_band": "Low",
+    "anomalies": [
+     {
+      "kpi": "parameter_changes",
+      "label": "Parameter changes",
+      "value": 18.0,
+      "unit": "changes",
+      "band": "critical",
+      "percentile": 0.9236
+     },
+     {
+      "kpi": "config_change_success_pct",
+      "label": "Successful configuration changes",
+      "value": 91.53,
+      "unit": "%",
+      "band": "degraded",
+      "percentile": 0.8297
+     }
+    ],
+    "summary": "[CASE-096180] AS/Winter/Clouds, P4, CONFIG_CHANGE: parameter changes 18 changes (crit), successful configuration changes 91.5% (deg); fault rate 38.8%"
+   },
+   {
+    "rank": 2,
+    "case_id": "CASE-042588",
+    "final_score": 0.938,
+    "score_breakdown": {
+     "dense_rank": 20,
+     "bm25_rank": 21,
+     "rrf": 0.02485,
+     "symptom_overlap": 0.5,
+     "feedback_prior": 0.5
+    },
+    "state": "AS",
+    "city": "Daniellebury",
+    "season": "Fall",
+    "weather": "Clear",
+    "primary_category": "CONFIG_CHANGE",
+    "secondary_categories": [],
+    "priority": "P4",
+    "fault_risk_band": "Low",
+    "anomalies": [
+     {
+      "kpi": "parameter_changes",
+      "label": "Parameter changes",
+      "value": 19.0,
+      "unit": "changes",
+      "band": "critical",
+      "percentile": 0.9745
+     },
+     {
+      "kpi": "config_change_success_pct",
+      "label": "Successful configuration changes",
+      "value": 91.83,
+      "unit": "%",
+      "band": "degraded",
+      "percentile": 0.7967
+     }
+    ],
+    "summary": "[CASE-042588] AS/Fall/Clear, P4, CONFIG_CHANGE: parameter changes 19 changes (crit), successful configuration changes 91.8% (deg); fault rate 37.3%"
+   },
+   {
+    "rank": 3,
+    "case_id": "CASE-051429",
+    "final_score": 0.7611,
+    "score_breakdown": {
+     "dense_rank": 23,
+     "bm25_rank": 48,
+     "rrf": 0.02131,
+     "symptom_overlap": 0.5,
+     "feedback_prior": 0.5
+    },
+    "state": "MA",
+    "city": "Donaldport",
+    "season": "Spring",
+    "weather": "Clouds",
+    "primary_category": "CONFIG_CHANGE",
+    "secondary_categories": [],
+    "priority": "P4",
+    "fault_risk_band": "Low",
+    "anomalies": [
+     {
+      "kpi": "config_change_success_pct",
+      "label": "Successful configuration changes",
+      "value": 91.65,
+      "unit": "%",
+      "band": "degraded",
+      "percentile": 0.8167
+     },
+     {
+      "kpi": "parameter_changes",
+      "label": "Parameter changes",
+      "value": 15.0,
+      "unit": "changes",
+      "band": "degraded",
+      "percentile": 0.7727
+     }
+    ],
+    "summary": "[CASE-051429] MA/Spring/Clouds, P4, CONFIG_CHANGE: successful configuration changes 91.7% (deg), parameter changes 15 changes (deg); fault rate 24.7%"
+   },
+   {
+    "rank": 4,
+    "case_id": "CASE-017469",
+    "final_score": 0.7099,
+    "score_breakdown": {
+     "dense_rank": 49,
+     "bm25_rank": 30,
+     "rrf": 0.02029,
+     "symptom_overlap": 0.5,
+     "feedback_prior": 0.5
+    },
+    "state": "OK",
+    "city": "Lake Margaretbury",
+    "season": "Winter",
+    "weather": "Clouds",
+    "primary_category": "CONFIG_CHANGE",
+    "secondary_categories": [],
+    "priority": "P4",
+    "fault_risk_band": "Low",
+    "anomalies": [
+     {
+      "kpi": "parameter_changes",
+      "label": "Parameter changes",
+      "value": 19.0,
+      "unit": "changes",
+      "band": "critical",
+      "percentile": 0.9745
+     },
+     {
+      "kpi": "config_change_success_pct",
+      "label": "Successful configuration changes",
+      "value": 92.18,
+      "unit": "%",
+      "band": "degraded",
+      "percentile": 0.7567
+     }
+    ],
+    "summary": "[CASE-017469] OK/Winter/Clouds, P4, CONFIG_CHANGE: parameter changes 19 changes (crit), successful configuration changes 92.2% (deg); fault rate 44.3%"
+   },
+   {
+    "rank": 5,
+    "case_id": "CASE-074900",
+    "final_score": 0.6961,
+    "score_breakdown": {
+     "dense_rank": 42,
+     "bm25_rank": 38,
+     "rrf": 0.02001,
+     "symptom_overlap": 0.5,
+     "feedback_prior": 0.5
+    },
+    "state": "WY",
+    "city": "Sherylhaven",
+    "season": "Spring",
+    "weather": "Clouds",
+    "primary_category": "CONFIG_CHANGE",
+    "secondary_categories": [],
+    "priority": "P4",
+    "fault_risk_band": "Low",
+    "anomalies": [
+     {
+      "kpi": "parameter_changes",
+      "label": "Parameter changes",
+      "value": 18.0,
+      "unit": "changes",
+      "band": "critical",
+      "percentile": 0.9236
+     },
+     {
+      "kpi": "config_change_success_pct",
+      "label": "Successful configuration changes",
+      "value": 90.78,
+      "unit": "%",
+      "band": "critical",
+      "percentile": 0.9116
+     }
+    ],
+    "summary": "[CASE-074900] WY/Spring/Clouds, P4, CONFIG_CHANGE: parameter changes 18 changes (crit), successful configuration changes 90.8% (crit); fault rate 23.7%"
+   }
+  ],
+  "kpi_assessment": {
+   "basis": "similar_cases_median",
+   "anomalies": [
+    {
+     "kpi": "parameter_changes",
+     "label": "Parameter changes",
+     "unit": "changes",
+     "value": 18.0,
+     "percentile": 0.9236,
+     "worse_than_pct": 92.4,
+     "band": "critical",
+     "imputed": false
+    },
+    {
+     "kpi": "config_change_success_pct",
+     "label": "Successful configuration changes",
+     "unit": "%",
+     "value": 91.65,
+     "percentile": 0.1833,
+     "worse_than_pct": 81.7,
+     "band": "degraded",
+     "imputed": false
+    }
+   ],
+   "imputed_fields": []
+  },
+  "segment_stats": {
+   "count": 25040,
+   "top_lifts": [
+    {
+     "factor": "low_availability",
+     "segment_rate": 0.263,
+     "corpus_rate": 0.25,
+     "lift": 1.05
+    },
+    {
+     "factor": "high_fault_rate",
+     "segment_rate": 0.258,
+     "corpus_rate": 0.25,
+     "lift": 1.03
+    },
+    {
+     "factor": "high_user_load",
+     "segment_rate": 0.252,
+     "corpus_rate": 0.25,
+     "lift": 1.01
+    },
+    {
+     "factor": "high_data_usage",
+     "segment_rate": 0.252,
+     "corpus_rate": 0.25,
+     "lift": 1.01
+    },
+    {
+     "factor": "weak_signal",
+     "segment_rate": 0.254,
+     "corpus_rate": 0.25,
+     "lift": 1.01
+    },
+    {
+     "factor": "low_handover_success",
+     "segment_rate": 0.253,
+     "corpus_rate": 0.25,
+     "lift": 1.01
+    },
+    {
+     "factor": "long_mttr",
+     "segment_rate": 0.252,
+     "corpus_rate": 0.251,
+     "lift": 1.01
+    },
+    {
+     "factor": "high_auth_failures",
+     "segment_rate": 0.266,
+     "corpus_rate": 0.264,
+     "lift": 1.01
+    }
+   ],
+   "priority_mix": {
+    "P1": 0.059,
+    "P2": 0.227,
+    "P3": 0.446,
+    "P4": 0.268
+   },
+   "median_fault_rate": 39.85
+  },
+  "root_cause_analysis": {
+   "hypotheses": [
+    {
+     "cause": "Excessive number of parameter changes (18 changes) exceeding typical thresholds",
+     "likelihood": "high",
+     "evidence_type": "data",
+     "supporting_evidence": [
+      "Parameter changes 18 changes (critical, worse than 92%)"
+     ],
+     "citations": [
+      "KPI ASSESSMENT"
+     ]
+    },
+    {
+     "cause": "Insufficient review or testing of configuration changes",
+     "likelihood": "medium",
+     "evidence_type": "knowledge",
+     "supporting_evidence": [
+      "Changes applied without enough review or testing."
+     ],
+     "citations": [
+      "KB-CONFIG_CHANGE-likely-root-causes"
+     ]
+    },
+    {
+     "cause": "Conflicting changes from different teams or automation tools",
+     "likelihood": "low",
+     "evidence_type": "knowledge",
+     "supporting_evidence": [
+      "Conflicting changes from different teams or automation tools."
+     ],
+     "citations": [
+      "KB-CONFIG_CHANGE-likely-root-causes"
+     ]
+    }
+   ],
+   "contributing_factors": [
+    {
+     "factor": "low_availability",
+     "direction": "no clear effect",
+     "evidence": "low_availability 1.05x (segment 26% vs corpus 25%)",
+     "citation": "SEGMENT STATS"
+    },
+    {
+     "factor": "high_fault_rate",
+     "direction": "no clear effect",
+     "evidence": "high_fault_rate 1.03x (segment 26% vs corpus 25%)",
+     "citation": "SEGMENT STATS"
+    },
+    {
+     "factor": "high_user_load",
+     "direction": "no clear effect",
+     "evidence": "high_user_load 1.01x (segment 25% vs corpus 25%)",
+     "citation": "SEGMENT STATS"
+    },
+    {
+     "factor": "high_data_usage",
+     "direction": "no clear effect",
+     "evidence": "high_data_usage 1.01x (segment 25% vs corpus 25%)",
+     "citation": "SEGMENT STATS"
+    },
+    {
+     "factor": "weak_signal",
+     "direction": "no clear effect",
+     "evidence": "weak_signal 1.01x (segment 25% vs corpus 25%)",
+     "citation": "SEGMENT STATS"
+    },
+    {
+     "factor": "low_handover_success",
+     "direction": "no clear effect",
+     "evidence": "low_handover_success 1.01x (segment 25% vs corpus 25%)",
+     "citation": "SEGMENT STATS"
+    }
+   ],
+   "data_limitations": [
+    "Synthetic dataset; no timestamps, cell IDs or topology.",
+    "Severity is relative to this network's history (percentiles), not absolute thresholds.",
+    "Correlations in past cases are not proof of causation.",
+    "KPI values are estimates from similar cases (similar_cases_median).",
+    "Trends cannot be verified due to lack of timestamps."
+   ]
+  },
+  "impact": {
+   "level": "Low",
+   "affected_services": [],
+   "users_served": 4778,
+   "data_gb": 30.76,
+   "narrative": "The incident has no impact on services; no connectivity or service degradation is reported. It affects the operational process for 4,778 users served, with 30.76 GB of data transferred."
+  },
+  "fault_risk": {
+   "probability": 0.0305,
+   "band": "Low",
+   "top_drivers": [
+    {
+     "feature": "weather",
+     "importance": 0.3154,
+     "value": "Clouds",
+     "band": null,
+     "imputed": false
+    },
+    {
+     "feature": "security_incidents",
+     "importance": 0.0181,
+     "value": 8.0,
+     "band": "normal",
+     "imputed": false
+    },
+    {
+     "feature": "alarm_count",
+     "importance": 0.0179,
+     "value": 6.0,
+     "band": "normal",
+     "imputed": false
+    },
+    {
+     "feature": "user_count",
+     "importance": 0.0082,
+     "value": 4778.0,
+     "band": "normal",
+     "imputed": false
+    },
+    {
+     "feature": "packet_loss_pct",
+     "importance": 0.0039,
+     "value": 2.7625,
+     "band": "normal",
+     "imputed": false
+    }
+   ],
+   "basis": "similar_cases_median"
+  },
+  "performance_prediction": {
+   "expected_throughput_mbps": 611.4,
+   "observed": 452.85855,
+   "deficit_pct": -25.9,
+   "model_r2": 0.3277
+  },
+  "priority": {
+   "level": "P4",
+   "label": "Low",
+   "score": 0.224,
+   "components": {
+    "severity": 0.131,
+    "impact": 0.542,
+    "risk": 0.03
+   },
+   "overrides": [],
+   "reasons": [
+    "Estimated from the median KPIs of the similar cases (no KPIs were given).",
+    "Critical parameter changes: 18 changes (worse than 92% of records)",
+    "Degraded successful configuration changes: 91.65 % (worse than 82% of records)",
+    "Serves 4,778 users (more than 47% of records)",
+    "Fault risk 3%"
+   ]
+  },
+  "recommendations": [
+   {
+    "step": 1,
+    "action": "Roll back the most recent change linked to the degradation",
+    "phase": "immediate",
+    "rationale": "Address the immediate cause of configuration failure by reverting the latest change associated with the incident",
+    "expected_kpi_effect": "Increase successful configuration changes",
+    "verification": "Confirm successful configuration changes rate improves and remains stable for 15 minutes",
+    "risk_level": "medium",
+    "requires_change_approval": true,
+    "citations": [
+     "KB-CONFIG_CHANGE-corrective-actions"
+    ]
+   },
+   {
+    "step": 2,
+    "action": "Freeze further changes on the affected cells until the cause is understood",
+    "phase": "immediate",
+    "rationale": "Prevent additional configuration failures while investigating the root cause",
+    "expected_kpi_effect": "Stabilize successful configuration changes",
+    "verification": "Verify no new configuration changes are attempted on affected cells during investigation",
+    "risk_level": "low",
+    "requires_change_approval": true,
+    "citations": [
+     "KB-CONFIG_CHANGE-corrective-actions"
+    ]
+   },
+   {
+    "step": 3,
+    "action": "Document any available failure information from change logs and note if error messages are missing",
+    "phase": "short_term",
+    "rationale": "Gather diagnostic data on failed changes to identify patterns or missing error details",
+    "expected_kpi_effect": "Improve change success rate",
+    "verification": "Check that failure records and error messages are documented in the change log",
+    "risk_level": "low",
+    "requires_change_approval": false,
+    "citations": [
+     "KB-CONFIG_CHANGE-diagnostic-checks"
+    ]
+   },
+   {
+    "step": 4,
+    "action": "Re-apply failed changes correctly or complete partial changes consistently across all target cells",
+    "phase": "short_term",
+    "rationale": "Ensure configuration consistency by properly applying previously failed or partial changes",
+    "expected_kpi_effect": "Increase successful configuration changes",
+    "verification": "Confirm successful configuration changes rate returns to baseline and remains stable",
+    "risk_level": "medium",
+    "requires_change_approval": true,
+    "citations": [
+     "KB-CONFIG_CHANGE-corrective-actions"
+    ]
+   }
+  ],
+  "escalation": {
+   "needed": false,
+   "team": "",
+   "reason": "No service-affecting incident or software incompatibility indicated; incident priority is P4 with low impact"
+  },
+  "validation": {
+   "verdict": "pass",
+   "scores": {
+    "groundedness": 1.0,
+    "kpi_consistency": 1.0,
+    "actionability": 1.0,
+    "completeness": 0.9
+   },
+   "issues": [
+    {
+     "target": "recommender",
+     "problem": "Missing diagnostic check to verify software version supports changed parameters (runbook step 5).",
+     "fix_instruction": "Add a recommendation to confirm software version compatibility with the changed parameters, citing KB-CONFIG_CHANGE-diagnostic-checks, include verification (e.g., check version compatibility) and set requires_change_approval false."
+    }
+   ],
+   "summary": "The diagnosis is well grounded and actionable; only a minor completeness gap exists in the recommendations regarding software version verification.",
+   "rule_checks": [
+    {
+     "rule": "citations_valid",
+     "passed": true,
+     "critical": false,
+     "target": "analyst",
+     "detail": "all citations known"
+    },
+    {
+     "rule": "recommendation_kb_citation",
+     "passed": true,
+     "critical": true,
+     "target": "recommender",
+     "detail": "every step cites a runbook"
+    },
+    {
+     "rule": "hypotheses_grounded",
+     "passed": true,
+     "critical": false,
+     "target": "analyst",
+     "detail": "every hypothesis cites evidence"
+    },
+    {
+     "rule": "numbers_match_evidence",
+     "passed": true,
+     "critical": false,
+     "target": "analyst",
+     "detail": "all quoted numbers match the evidence"
+    },
+    {
+     "rule": "primary_category_addressed",
+     "passed": true,
+     "critical": true,
+     "target": "recommender",
+     "detail": "CONFIG_CHANGE runbook cited"
+    },
+    {
+     "rule": "recommendation_count",
+     "passed": true,
+     "critical": false,
+     "target": "recommender",
+     "detail": "4 recommendations (expected 4-7)"
+    }
+   ],
+   "revisions": 1
+  },
+  "sources": [
+   {
+    "id": "CASE-096180",
+    "type": "case",
+    "title": "CONFIG_CHANGE case, AS",
+    "snippet": "[CASE-096180] AS/Winter/Clouds, P4, CONFIG_CHANGE: parameter changes 18 changes (crit), successful configuration changes 91.5% (deg); fault rate 38.8%",
+    "score": 1.15
+   },
+   {
+    "id": "CASE-042588",
+    "type": "case",
+    "title": "CONFIG_CHANGE case, AS",
+    "snippet": "[CASE-042588] AS/Fall/Clear, P4, CONFIG_CHANGE: parameter changes 19 changes (crit), successful configuration changes 91.8% (deg); fault rate 37.3%",
+    "score": 0.938
+   },
+   {
+    "id": "CASE-051429",
+    "type": "case",
+    "title": "CONFIG_CHANGE case, MA",
+    "snippet": "[CASE-051429] MA/Spring/Clouds, P4, CONFIG_CHANGE: successful configuration changes 91.7% (deg), parameter changes 15 changes (deg); fault rate 24.7%",
+    "score": 0.7611
+   },
+   {
+    "id": "CASE-017469",
+    "type": "case",
+    "title": "CONFIG_CHANGE case, OK",
+    "snippet": "[CASE-017469] OK/Winter/Clouds, P4, CONFIG_CHANGE: parameter changes 19 changes (crit), successful configuration changes 92.2% (deg); fault rate 44.3%",
+    "score": 0.7099
+   },
+   {
+    "id": "CASE-074900",
+    "type": "case",
+    "title": "CONFIG_CHANGE case, WY",
+    "snippet": "[CASE-074900] WY/Spring/Clouds, P4, CONFIG_CHANGE: parameter changes 18 changes (crit), successful configuration changes 90.8% (crit); fault rate 23.7%",
+    "score": 0.6961
+   },
+   {
+    "id": "KB-CONFIG_CHANGE-likely-root-causes",
+    "type": "runbook",
+    "title": "Configuration change issues / likely-root-causes",
+    "snippet": "Runbook: Configuration change issues > Likely root causes\n- Changes applied without enough review or testing.\n- Partially applied changes: some cells updated, others not.\n- Conflicting changes from different teams or automation tools.\n- Wro",
+    "score": 0.699
+   },
+   {
+    "id": "KB-CONFIG_CHANGE-kpi-signature",
+    "type": "runbook",
+    "title": "Configuration change issues / kpi-signature",
+    "snippet": "Runbook: Configuration change issues > KPI signature\n- Many parameter changes (more than this network's 75th percentile).\n- Low successful-configuration-change rate (lower than the 25th percentile).\n- Service KPIs that start degrading right",
+    "score": 0.6487
+   },
+   {
+    "id": "KB-CONFIG_CHANGE-corrective-actions",
+    "type": "runbook",
+    "title": "Configuration change issues / corrective-actions",
+    "snippet": "Runbook: Configuration change issues > Corrective actions\n### Immediate\n- Roll back the most recent change linked to the degradation (requires change approval).\n- Freeze further changes on the affected cells until the cause is understood.\n#",
+    "score": 0.735
+   },
+   {
+    "id": "KB-CONFIG_CHANGE-diagnostic-checks",
+    "type": "runbook",
+    "title": "Configuration change issues / diagnostic-checks",
+    "snippet": "Runbook: Configuration change issues > Diagnostic checks\n1. Pull the change log for the affected cells and compare change times with KPI degradation onset.\n2. Identify failed or partially applied changes and their error messages.\n3. Compare",
+    "score": 0.6521
+   },
+   {
+    "id": "KB-CONFIG_CHANGE-escalation-criteria",
+    "type": "runbook",
+    "title": "Configuration change issues / escalation-criteria",
+    "snippet": "Runbook: Configuration change issues > Escalation criteria\n- Escalate to the change manager when a change caused a service-affecting incident.\n- Escalate to the vendor when configuration fails because of software incompatibility.",
+    "score": 0.6457
+   }
+  ],
+  "warnings": [],
+  "trace": [
+   {
+    "node": "gate",
+    "ms": 0.0,
+    "llm_calls": 0,
+    "tokens_in": 0,
+    "tokens_out": 0,
+    "tool_calls": [],
+    "status": "ok"
+   },
+   {
+    "node": "classify",
+    "ms": 2351.9,
+    "llm_calls": 1,
+    "tokens_in": 1334,
+    "tokens_out": 115,
+    "tool_calls": [],
+    "status": "ok"
+   },
+   {
+    "node": "retrieve",
+    "ms": 50.1,
+    "llm_calls": 0,
+    "tokens_in": 0,
+    "tokens_out": 0,
+    "tool_calls": [
+     "hybrid_search"
+    ],
+    "status": "ok"
+   },
+   {
+    "node": "gather_evidence",
+    "ms": 286.1,
+    "llm_calls": 0,
+    "tokens_in": 0,
+    "tokens_out": 0,
+    "tool_calls": [
+     "kpi_assessment",
+     "segment_stats",
+     "predict_fault_risk",
+     "predict_performance",
+     "impact",
+     "prioritize",
+     "search_runbook(analyst)",
+     "search_runbook(recommender)"
+    ],
+    "status": "ok"
+   },
+   {
+    "node": "analyze",
+    "ms": 22811.0,
+    "llm_calls": 1,
+    "tokens_in": 2119,
+    "tokens_out": 1895,
+    "tool_calls": [],
+    "status": "ok"
+   },
+   {
+    "node": "recommend",
+    "ms": 6464.1,
+    "llm_calls": 1,
+    "tokens_in": 1649,
+    "tokens_out": 647,
+    "tool_calls": [],
+    "status": "ok"
+   },
+   {
+    "node": "judge",
+    "ms": 32680.2,
+    "llm_calls": 2,
+    "tokens_in": 7699,
+    "tokens_out": 3877,
+    "tool_calls": [],
+    "status": "ok"
+   },
+   {
+    "node": "analyze",
+    "ms": 19503.1,
+    "llm_calls": 1,
+    "tokens_in": 2180,
+    "tokens_out": 2226,
+    "tool_calls": [],
+    "status": "ok"
+   },
+   {
+    "node": "recommend",
+    "ms": 4070.2,
+    "llm_calls": 1,
+    "tokens_in": 1727,
+    "tokens_out": 506,
+    "tool_calls": [],
+    "status": "ok"
+   },
+   {
+    "node": "judge",
+    "ms": 24983.3,
+    "llm_calls": 1,
+    "tokens_in": 3585,
+    "tokens_out": 1570,
+    "tool_calls": [],
+    "status": "ok"
+   },
+   {
+    "node": "finalize",
+    "ms": 0.0,
+    "llm_calls": 0,
+    "tokens_in": 0,
+    "tokens_out": 0,
+    "tool_calls": [],
+    "status": "ok"
+   }
+  ],
+  "meta": {
+   "model": "nvidia/nemotron-3-super-120b-a12b",
+   "judge_model": "nvidia/nemotron-3-super-120b-a12b",
+   "prompt_version": "classifier_v1,analyst_v1,recommender_v1,judge_v1",
+   "latency_ms": 113228.6,
+   "llm_calls": 8,
+   "tokens_in": 20293,
+   "tokens_out": 10836,
+   "cached_calls": 0
+  },
+  "usage": {
+   "llm_calls": 8,
+   "tokens_in": 20293,
+   "tokens_out": 10836,
+   "cached_calls": 0
+  }
+ },
+ "G15": {
+  "run_id": "68d5a1c29a5f4a95a90d1aca592b35ec",
+  "status": "ok",
+  "classification": {
+   "primary_category": "SECURITY_AUTH",
+   "secondary_categories": [],
+   "symptoms": [
+    "high_auth_failures",
+    "high_security_incidents"
+   ],
+   "filters": {
+    "state": [],
+    "city": null,
+    "season": [],
+    "weather": []
+   },
+   "severity_hint": "high",
+   "in_scope": true,
+   "needs_clarification": false,
+   "clarification_question": null,
+   "confidence": 0.95,
+   "rationale": "The text explicitly states a spike in authentication failures and security incidents, which are defining symptoms of the SECURITY_AUTH category.",
+   "source": "llm"
+  },
+  "applied_filters": {},
+  "similar_cases": [
+   {
+    "rank": 1,
+    "case_id": "CASE-090306",
+    "final_score": 1.3,
+    "score_breakdown": {
+     "dense_rank": 26,
+     "bm25_rank": 17,
+     "rrf": 0.02461,
+     "symptom_overlap": 1.0,
+     "feedback_prior": 0.5
+    },
+    "state": "IA",
+    "city": "Port Willieborough",
+    "season": "Spring",
+    "weather": "Rain",
+    "primary_category": "SECURITY_AUTH",
+    "secondary_categories": [],
+    "priority": "P3",
+    "fault_risk_band": "High",
+    "anomalies": [
+     {
+      "kpi": "security_incidents",
+      "label": "Security incidents",
+      "value": 19.0,
+      "unit": "incidents",
+      "band": "critical",
+      "percentile": 0.974
+     },
+     {
+      "kpi": "auth_failures",
+      "label": "Authentication failures",
+      "value": 20.0,
+      "unit": "failures",
+      "band": "degraded",
+      "percentile": 0.7832
+     }
+    ],
+    "summary": "[CASE-090306] IA/Spring/Rain, P3, SECURITY_AUTH: security incidents 19 incidents (crit), authentication failures 20 failures (deg); fault rate 41.1%"
+   },
+   {
+    "rank": 2,
+    "case_id": "CASE-045718",
+    "final_score": 0.7704,
+    "score_breakdown": {
+     "dense_rank": null,
+     "bm25_rank": 1,
+     "rrf": 0.01639,
+     "symptom_overlap": 1.0,
+     "feedback_prior": 0.5
+    },
+    "state": "ID",
+    "city": "New Nicole",
+    "season": "Winter",
+    "weather": "Clouds",
+    "primary_category": "SECURITY_AUTH",
+    "secondary_categories": [],
+    "priority": "P4",
+    "fault_risk_band": "Low",
+    "anomalies": [
+     {
+      "kpi": "security_incidents",
+      "label": "Security incidents",
+      "value": 16.0,
+      "unit": "incidents",
+      "band": "degraded",
+      "percentile": 0.8162
+     },
+     {
+      "kpi": "auth_failures",
+      "label": "Authentication failures",
+      "value": 18.0,
+      "unit": "failures",
+      "band": "degraded",
+      "percentile": 0.7512
+     }
+    ],
+    "summary": "[CASE-045718] ID/Winter/Clouds, P4, SECURITY_AUTH: security incidents 16 incidents (deg), authentication failures 18 failures (deg); fault rate 23.1%"
+   },
+   {
+    "rank": 3,
+    "case_id": "CASE-079526",
+    "final_score": 0.7534,
+    "score_breakdown": {
+     "dense_rank": null,
+     "bm25_rank": 2,
+     "rrf": 0.01613,
+     "symptom_overlap": 1.0,
+     "feedback_prior": 0.5
+    },
+    "state": "NC",
+    "city": "West Debra",
+    "season": "Winter",
+    "weather": "Rain",
+    "primary_category": "SECURITY_AUTH",
+    "secondary_categories": [],
+    "priority": "P2",
+    "fault_risk_band": "Medium",
+    "anomalies": [
+     {
+      "kpi": "security_incidents",
+      "label": "Security incidents",
+      "value": 19.0,
+      "unit": "incidents",
+      "band": "critical",
+      "percentile": 0.974
+     },
+     {
+      "kpi": "auth_failures",
+      "label": "Authentication failures",
+      "value": 40.0,
+      "unit": "failures",
+      "band": "critical",
+      "percentile": 0.9281
+     }
+    ],
+    "summary": "[CASE-079526] NC/Winter/Rain, P2, SECURITY_AUTH: security incidents 19 incidents (crit), authentication failures 40 failures (crit); fault rate 47.9%"
+   },
+   {
+    "rank": 4,
+    "case_id": "CASE-077962",
+    "final_score": 0.7369,
+    "score_breakdown": {
+     "dense_rank": null,
+     "bm25_rank": 3,
+     "rrf": 0.01587,
+     "symptom_overlap": 1.0,
+     "feedback_prior": 0.5
+    },
+    "state": "OR",
+    "city": "North Matthewville",
+    "season": "Spring",
+    "weather": "Rain",
+    "primary_category": "SECURITY_AUTH",
+    "secondary_categories": [],
+    "priority": "P4",
+    "fault_risk_band": "Medium",
+    "anomalies": [
+     {
+      "kpi": "auth_failures",
+      "label": "Authentication failures",
+      "value": 25.0,
+      "unit": "failures",
+      "band": "degraded",
+      "percentile": 0.8212
+     },
+     {
+      "kpi": "security_incidents",
+      "label": "Security incidents",
+      "value": 16.0,
+      "unit": "incidents",
+      "band": "degraded",
+      "percentile": 0.8162
+     }
+    ],
+    "summary": "[CASE-077962] OR/Spring/Rain, P4, SECURITY_AUTH: authentication failures 25 failures (deg), security incidents 16 incidents (deg); fault rate 43.4%"
+   },
+   {
+    "rank": 5,
+    "case_id": "CASE-057772",
+    "final_score": 0.7209,
+    "score_breakdown": {
+     "dense_rank": null,
+     "bm25_rank": 4,
+     "rrf": 0.01562,
+     "symptom_overlap": 1.0,
+     "feedback_prior": 0.5
+    },
+    "state": "CT",
+    "city": "Christophershire",
+    "season": "Summer",
+    "weather": "Rain",
+    "primary_category": "SECURITY_AUTH",
+    "secondary_categories": [],
+    "priority": "P4",
+    "fault_risk_band": "Medium",
+    "anomalies": [
+     {
+      "kpi": "security_incidents",
+      "label": "Security incidents",
+      "value": 16.0,
+      "unit": "incidents",
+      "band": "degraded",
+      "percentile": 0.8162
+     },
+     {
+      "kpi": "auth_failures",
+      "label": "Authentication failures",
+      "value": 20.0,
+      "unit": "failures",
+      "band": "degraded",
+      "percentile": 0.7832
+     }
+    ],
+    "summary": "[CASE-057772] CT/Summer/Rain, P4, SECURITY_AUTH: security incidents 16 incidents (deg), authentication failures 20 failures (deg); fault rate 38.3%"
+   }
+  ],
+  "kpi_assessment": {
+   "basis": "similar_cases_median",
+   "anomalies": [
+    {
+     "kpi": "security_incidents",
+     "label": "Security incidents",
+     "unit": "incidents",
+     "value": 16.0,
+     "percentile": 0.8162,
+     "worse_than_pct": 81.6,
+     "band": "degraded",
+     "imputed": false
+    },
+    {
+     "kpi": "auth_failures",
+     "label": "Authentication failures",
+     "unit": "failures",
+     "value": 20.0,
+     "percentile": 0.7832,
+     "worse_than_pct": 78.3,
+     "band": "degraded",
+     "imputed": false
+    }
+   ],
+   "imputed_fields": []
+  },
+  "segment_stats": {
+   "count": 6924,
+   "top_lifts": [
+    {
+     "factor": "high_fault_rate",
+     "segment_rate": 0.745,
+     "corpus_rate": 0.25,
+     "lift": 2.98
+    },
+    {
+     "factor": "weather=Snow",
+     "segment_rate": 0.166,
+     "corpus_rate": 0.062,
+     "lift": 2.67
+    },
+    {
+     "factor": "adverse_weather",
+     "segment_rate": 0.879,
+     "corpus_rate": 0.374,
+     "lift": 2.35
+    },
+    {
+     "factor": "weather=Rain",
+     "segment_rate": 0.713,
+     "corpus_rate": 0.312,
+     "lift": 2.28
+    },
+    {
+     "factor": "high_call_drop",
+     "segment_rate": 0.414,
+     "corpus_rate": 0.25,
+     "lift": 1.66
+    },
+    {
+     "factor": "high_critical_alarms",
+     "segment_rate": 0.4,
+     "corpus_rate": 0.25,
+     "lift": 1.6
+    },
+    {
+     "factor": "high_latency",
+     "segment_rate": 0.398,
+     "corpus_rate": 0.25,
+     "lift": 1.59
+    },
+    {
+     "factor": "low_throughput",
+     "segment_rate": 0.392,
+     "corpus_rate": 0.25,
+     "lift": 1.57
+    }
+   ],
+   "priority_mix": {
+    "P1": 0.226,
+    "P2": 0.44,
+    "P3": 0.304,
+    "P4": 0.029
+   },
+   "median_fault_rate": 54.43
+  },
+  "root_cause_analysis": {
+   "hypotheses": [
+    {
+     "cause": "Signalling or registration flood from compromised or misbehaving devices",
+     "likelihood": "high",
+     "evidence_type": "both",
+     "supporting_evidence": [
+      "Security incidents 16 incidents (degraded, worse than 82%); Authentication failures 20 failures (degraded, worse than 78%)",
+      "high_fault_rate 2.98x (segment 74% vs corpus 25%)"
+     ],
+     "citations": [
+      "KPI ASSESSMENT",
+      "SEGMENT STATS"
+     ]
+    },
+    {
+     "cause": "Credential problems: expired certificates, subscriber-data mismatches or key issues in the authentication chain",
+     "likelihood": "medium",
+     "evidence_type": "knowledge",
+     "supporting_evidence": [
+      "Runbook lists credential problems as a likely root cause for security incidents and authentication failures"
+     ],
+     "citations": [
+      "KB-SECURITY_AUTH-likely-root-causes"
+     ]
+    },
+    {
+     "cause": "Misconfiguration of security functions after a change",
+     "likelihood": "low",
+     "evidence_type": "knowledge",
+     "supporting_evidence": [
+      "Runbook lists misconfiguration of security functions after a change as a likely root cause"
+     ],
+     "citations": [
+      "KB-SECURITY_AUTH-likely-root-causes"
+     ]
+    }
+   ],
+   "contributing_factors": [
+    {
+     "factor": "Snow weather",
+     "direction": "increases risk",
+     "evidence": "weather=Snow 2.67x (segment 17% vs corpus 6%)",
+     "citation": "SEGMENT STATS"
+    },
+    {
+     "factor": "Rain weather",
+     "direction": "increases risk",
+     "evidence": "weather=Rain 2.28x (segment 71% vs corpus 31%)",
+     "citation": "SEGMENT STATS"
+    },
+    {
+     "factor": "Adverse weather conditions",
+     "direction": "increases risk",
+     "evidence": "adverse_weather 2.35x (segment 88% vs corpus 37%)",
+     "citation": "SEGMENT STATS"
+    },
+    {
+     "factor": "High fault rate",
+     "direction": "increases risk",
+     "evidence": "high_fault_rate 2.98x (segment 74% vs corpus 25%)",
+     "citation": "SEGMENT STATS"
+    },
+    {
+     "factor": "High call drop",
+     "direction": "increases risk",
+     "evidence": "high_call_drop 1.66x (segment 41% vs corpus 25%)",
+     "citation": "SEGMENT STATS"
+    },
+    {
+     "factor": "High critical alarms",
+     "direction": "increases risk",
+     "evidence": "high_critical_alarms 1.6x (segment 40% vs corpus 25%)",
+     "citation": "SEGMENT STATS"
+    }
+   ],
+   "data_limitations": [
+    "Synthetic dataset with no timestamps, cell IDs or topology.",
+    "Severity is relative to this network's history (percentiles), not absolute thresholds.",
+    "Correlations in past cases are not proof of causation.",
+    "No time series data, so trends cannot be verified.",
+    "KPI values are estimates from similar cases (similar_cases_median)."
+   ]
+  },
+  "impact": {
+   "level": "Moderate",
+   "affected_services": [
+    "network access"
+   ],
+   "users_served": 3835,
+   "data_gb": 28.09,
+   "narrative": "The incident affects network access for approximately 3,835 users, representing the 38th percentile of historical user counts, and involves about 28.09 GB of data traffic. Elevated security incidents and authentication failures may lead to connection setup failures for legitimate users. Overall impact is assessed as moderate."
+  },
+  "fault_risk": {
+   "probability": 0.46,
+   "band": "Medium",
+   "top_drivers": [
+    {
+     "feature": "weather",
+     "importance": 0.3154,
+     "value": "Rain",
+     "band": null,
+     "imputed": false
+    },
+    {
+     "feature": "security_incidents",
+     "importance": 0.0181,
+     "value": 16.0,
+     "band": "degraded",
+     "imputed": false
+    },
+    {
+     "feature": "alarm_count",
+     "importance": 0.0179,
+     "value": 8.0,
+     "band": "normal",
+     "imputed": false
+    },
+    {
+     "feature": "user_count",
+     "importance": 0.0082,
+     "value": 3835.0,
+     "band": "normal",
+     "imputed": false
+    },
+    {
+     "feature": "packet_loss_pct",
+     "importance": 0.0039,
+     "value": 2.22,
+     "band": "normal",
+     "imputed": false
+    }
+   ],
+   "basis": "similar_cases_median"
+  },
+  "performance_prediction": {
+   "expected_throughput_mbps": 480.4,
+   "observed": 624.3445,
+   "deficit_pct": 30.0,
+   "model_r2": 0.3277
+  },
+  "priority": {
+   "level": "P4",
+   "label": "Low",
+   "score": 0.305,
+   "components": {
+    "severity": 0.065,
+    "impact": 0.468,
+    "risk": 0.46
+   },
+   "overrides": [],
+   "reasons": [
+    "Estimated from the median KPIs of the similar cases (no KPIs were given).",
+    "Degraded security incidents: 16 incidents (worse than 82% of records)",
+    "Degraded authentication failures: 20 failures (worse than 78% of records)",
+    "Serves 3,835 users (more than 38% of records)",
+    "Fault risk 46%"
+   ]
+  },
+  "recommendations": [
+   {
+    "step": 1,
+    "action": "Check whether authentication failures come from many devices or a small set",
+    "phase": "immediate",
+    "rationale": "Determine if the issue is systemic or due to abusive/faulty devices per diagnostic-checks step 1.",
+    "expected_kpi_effect": "authentication failures decrease",
+    "verification": "authentication failures reduced within 15 minutes",
+    "risk_level": "low",
+    "requires_change_approval": false,
+    "citations": [
+     "KB-SECURITY_AUTH-diagnostic-checks"
+    ]
+   },
+   {
+    "step": 2,
+    "action": "Review failure causes in core network logs: unknown subscriber, MAC failure, synchronization failure",
+    "phase": "immediate",
+    "rationale": "Identify specific failure types to narrow root cause per diagnostic-checks step 2.",
+    "expected_kpi_effect": "authentication failures decrease",
+    "verification": "failure cause distribution clarified within 10 minutes",
+    "risk_level": "low",
+    "requires_change_approval": false,
+    "citations": [
+     "KB-SECURITY_AUTH-diagnostic-checks"
+    ]
+   },
+   {
+    "step": 3,
+    "action": "Check certificate validity and recent changes to authentication or security functions",
+    "phase": "immediate",
+    "rationale": "Detect credential problems or misconfigurations per diagnostic-checks step 3.",
+    "expected_kpi_effect": "authentication failures decrease",
+    "verification": "certificate and change status verified within 20 minutes",
+    "risk_level": "low",
+    "requires_change_approval": false,
+    "citations": [
+     "KB-SECURITY_AUTH-diagnostic-checks"
+    ]
+   },
+   {
+    "step": 4,
+    "action": "Look for unusual registration rates or signalling patterns",
+    "phase": "immediate",
+    "rationale": "Detect signalling flood from compromised devices per diagnostic-checks step 4.",
+    "expected_kpi_effect": "security incidents decrease",
+    "verification": "registration rates normalised within 15 minutes",
+    "risk_level": "low",
+    "requires_change_approval": false,
+    "citations": [
+     "KB-SECURITY_AUTH-diagnostic-checks"
+    ]
+   },
+   {
+    "step": 5,
+    "action": "Follow the security incident process: isolate and contain before you fix, and preserve logs as evidence",
+    "phase": "immediate",
+    "rationale": "Contain potential attack per corrective-actions immediate step.",
+    "expected_kpi_effect": "security incidents decrease",
+    "verification": "isolation completed and logs preserved within 30 minutes",
+    "risk_level": "low",
+    "requires_change_approval": false,
+    "citations": [
+     "KB-SECURITY_AUTH-corrective-actions"
+    ]
+   },
+   {
+    "step": 6,
+    "action": "Escalate suspected attacks to the security operations team at once",
+    "phase": "immediate",
+    "rationale": "Escalate per corrective-actions immediate step and escalation-criteria for suspected attacks.",
+    "expected_kpi_effect": "security incidents decrease",
+    "verification": "security operations team notified within 5 minutes",
+    "risk_level": "low",
+    "requires_change_approval": false,
+    "citations": [
+     "KB-SECURITY_AUTH-corrective-actions",
+     "KB-SECURITY_AUTH-escalation-criteria"
+    ]
+   }
+  ],
+  "escalation": {
+   "needed": true,
+   "team": "security operations",
+   "reason": "Suspected attack indicated by high authentication failures and security incidents; escalation criteria require immediate escalation for suspected attacks regardless of service impact."
+  },
+  "validation": {
+   "verdict": "pass",
+   "scores": {
+    "groundedness": 0.85,
+    "kpi_consistency": 0.95,
+    "actionability": 0.9,
+    "completeness": 0.95
+   },
+   "issues": [
+    {
+     "target": "analyst",
+     "problem": "Claims that snow weather increases risk imply causation from mere correlation (segment stats show association only).",
+     "fix_instruction": "Reword to state that snow weather is associated with higher risk, not that it causes it, and note that causality cannot be inferred from the data."
+    },
+    {
+     "target": "analyst",
+     "problem": "The hypothesis 'Signalling or registration flood from compromised or misbehaving devices' is supported only by correlation (high_fault_rate) without direct evidence of signalling flood.",
+     "fix_instruction": "Either provide direct evidence (e.g., abnormal registration rates) or downgrade likelihood and label evidence_type as 'knowledge' only, citing the runbook's generic list."
+    },
+    {
+     "target": "recommender",
+     "problem": "Verification timeframes (e.g., 'authentication failures reduced within 15 minutes') are not grounded in evidence; they are assumed without basis.",
+     "fix_instruction": "Change verification to observable checks that can be performed immediately (e.g., 'check authentication failure count after 15 minutes') and note that effect is expected but not guaranteed."
+    }
+   ],
+   "summary": "The diagnosis is well grounded in the evidence and runbook, with correct KPI consistency and actionable recommendations. Minor issues involve causal language from correlation and unverified verification timelines.",
+   "rule_checks": [
+    {
+     "rule": "citations_valid",
+     "passed": true,
+     "critical": false,
+     "target": "analyst",
+     "detail": "all citations known"
+    },
+    {
+     "rule": "recommendation_kb_citation",
+     "passed": true,
+     "critical": true,
+     "target": "recommender",
+     "detail": "every step cites a runbook"
+    },
+    {
+     "rule": "hypotheses_grounded",
+     "passed": true,
+     "critical": false,
+     "target": "analyst",
+     "detail": "every hypothesis cites evidence"
+    },
+    {
+     "rule": "numbers_match_evidence",
+     "passed": true,
+     "critical": false,
+     "target": "analyst",
+     "detail": "all quoted numbers match the evidence"
+    },
+    {
+     "rule": "primary_category_addressed",
+     "passed": true,
+     "critical": true,
+     "target": "recommender",
+     "detail": "SECURITY_AUTH runbook cited"
+    },
+    {
+     "rule": "recommendation_count",
+     "passed": true,
+     "critical": false,
+     "target": "recommender",
+     "detail": "6 recommendations (expected 4-7)"
+    }
+   ],
+   "revisions": 0
+  },
+  "sources": [
+   {
+    "id": "CASE-090306",
+    "type": "case",
+    "title": "SECURITY_AUTH case, IA",
+    "snippet": "[CASE-090306] IA/Spring/Rain, P3, SECURITY_AUTH: security incidents 19 incidents (crit), authentication failures 20 failures (deg); fault rate 41.1%",
+    "score": 1.3
+   },
+   {
+    "id": "CASE-045718",
+    "type": "case",
+    "title": "SECURITY_AUTH case, ID",
+    "snippet": "[CASE-045718] ID/Winter/Clouds, P4, SECURITY_AUTH: security incidents 16 incidents (deg), authentication failures 18 failures (deg); fault rate 23.1%",
+    "score": 0.7704
+   },
+   {
+    "id": "CASE-079526",
+    "type": "case",
+    "title": "SECURITY_AUTH case, NC",
+    "snippet": "[CASE-079526] NC/Winter/Rain, P2, SECURITY_AUTH: security incidents 19 incidents (crit), authentication failures 40 failures (crit); fault rate 47.9%",
+    "score": 0.7534
+   },
+   {
+    "id": "CASE-077962",
+    "type": "case",
+    "title": "SECURITY_AUTH case, OR",
+    "snippet": "[CASE-077962] OR/Spring/Rain, P4, SECURITY_AUTH: authentication failures 25 failures (deg), security incidents 16 incidents (deg); fault rate 43.4%",
+    "score": 0.7369
+   },
+   {
+    "id": "CASE-057772",
+    "type": "case",
+    "title": "SECURITY_AUTH case, CT",
+    "snippet": "[CASE-057772] CT/Summer/Rain, P4, SECURITY_AUTH: security incidents 16 incidents (deg), authentication failures 20 failures (deg); fault rate 38.3%",
+    "score": 0.7209
+   },
+   {
+    "id": "KB-SECURITY_AUTH-likely-root-causes",
+    "type": "runbook",
+    "title": "Security incidents and authentication failures / likely-root-causes",
+    "snippet": "Runbook: Security incidents and authentication failures > Likely root causes\n- A signalling or registration flood from compromised or misbehaving devices.\n- Credential problems: expired certificates, subscriber-data mismatches or key issues",
+    "score": 0.7553
+   },
+   {
+    "id": "KB-SECURITY_AUTH-kpi-signature",
+    "type": "runbook",
+    "title": "Security incidents and authentication failures / kpi-signature",
+    "snippet": "Runbook: Security incidents and authentication failures > KPI signature\n- High security-incident count and high authentication failures (worse than this network's 75th percentile).\n- Connection setup success may fall if legitimate users are",
+    "score": 0.73
+   },
+   {
+    "id": "KB-SECURITY_AUTH-diagnostic-checks",
+    "type": "runbook",
+    "title": "Security incidents and authentication failures / diagnostic-checks",
+    "snippet": "Runbook: Security incidents and authentication failures > Diagnostic checks\n1. Check whether authentication failures come from many devices (a systemic issue) or a small set (abuse or faulty devices).\n2. Review failure causes in core networ",
+    "score": 0.7447
+   },
+   {
+    "id": "KB-SECURITY_AUTH-corrective-actions",
+    "type": "runbook",
+    "title": "Security incidents and authentication failures / corrective-actions",
+    "snippet": "Runbook: Security incidents and authentication failures > Corrective actions\n### Immediate\n- Follow the security incident process: isolate and contain before you fix, and preserve logs as evidence.\n- Rate-limit or block clearly abusive devi",
+    "score": 0.7249
+   },
+   {
+    "id": "KB-SECURITY_AUTH-escalation-criteria",
+    "type": "runbook",
+    "title": "Security incidents and authentication failures / escalation-criteria",
+    "snippet": "Runbook: Security incidents and authentication failures > Escalation criteria\n- Always escalate suspected attacks or data exposure to security operations, regardless of service impact.\n- Treat critical security incidents together with criti",
+    "score": 0.7164
+   }
+  ],
+  "warnings": [],
+  "trace": [
+   {
+    "node": "gate",
+    "ms": 0.0,
+    "llm_calls": 0,
+    "tokens_in": 0,
+    "tokens_out": 0,
+    "tool_calls": [],
+    "status": "ok"
+   },
+   {
+    "node": "classify",
+    "ms": 1068.2,
+    "llm_calls": 1,
+    "tokens_in": 1327,
+    "tokens_out": 126,
+    "tool_calls": [],
+    "status": "ok"
+   },
+   {
+    "node": "retrieve",
+    "ms": 37.2,
+    "llm_calls": 0,
+    "tokens_in": 0,
+    "tokens_out": 0,
+    "tool_calls": [
+     "hybrid_search"
+    ],
+    "status": "ok"
+   },
+   {
+    "node": "gather_evidence",
+    "ms": 209.9,
+    "llm_calls": 0,
+    "tokens_in": 0,
+    "tokens_out": 0,
+    "tool_calls": [
+     "kpi_assessment",
+     "segment_stats",
+     "predict_fault_risk",
+     "predict_performance",
+     "impact",
+     "prioritize",
+     "search_runbook(analyst)",
+     "search_runbook(recommender)"
+    ],
+    "status": "ok"
+   },
+   {
+    "node": "analyze",
+    "ms": 21166.5,
+    "llm_calls": 1,
+    "tokens_in": 2129,
+    "tokens_out": 2889,
+    "tool_calls": [],
+    "status": "ok"
+   },
+   {
+    "node": "recommend",
+    "ms": 5107.5,
+    "llm_calls": 1,
+    "tokens_in": 1683,
+    "tokens_out": 744,
+    "tool_calls": [],
+    "status": "ok"
+   },
+   {
+    "node": "judge",
+    "ms": 40823.7,
+    "llm_calls": 2,
+    "tokens_in": 8046,
+    "tokens_out": 4323,
+    "tool_calls": [],
+    "status": "ok"
+   },
+   {
+    "node": "finalize",
+    "ms": 0.0,
+    "llm_calls": 0,
+    "tokens_in": 0,
+    "tokens_out": 0,
+    "tool_calls": [],
+    "status": "ok"
+   }
+  ],
+  "meta": {
+   "model": "nvidia/nemotron-3-super-120b-a12b",
+   "judge_model": "nvidia/nemotron-3-super-120b-a12b",
+   "prompt_version": "classifier_v1,analyst_v1,recommender_v1,judge_v1",
+   "latency_ms": 68444.4,
+   "llm_calls": 5,
+   "tokens_in": 13185,
+   "tokens_out": 8082,
+   "cached_calls": 0
+  },
+  "usage": {
+   "llm_calls": 5,
+   "tokens_in": 13185,
+   "tokens_out": 8082,
+   "cached_calls": 0
+  }
+ },
+ "G24": {
+  "run_id": "de8352627ab347efbb209f18a1c29e61",
+  "status": "degraded",
+  "classification": {
+   "primary_category": "RADIO_COVERAGE",
+   "secondary_categories": [
+    "TRANSPORT_QOS"
+   ],
+   "symptoms": [
+    "high_jitter",
+    "high_call_drop",
+    "weak_signal"
+   ],
+   "filters": {
+    "state": [],
+    "city": null,
+    "season": [],
+    "weather": []
+   },
+   "severity_hint": "medium",
+   "in_scope": true,
+   "needs_clarification": false,
+   "clarification_question": null,
+   "confidence": 0.8,
+   "rationale": "Weak RSRP indicates weak signal, and dropped calls are a defining symptom of RADIO_COVERAGE. Jitter points to TRANSPORT_QOS as secondary.",
+   "source": "llm"
+  },
+  "applied_filters": {},
+  "similar_cases": [
+   {
+    "rank": 1,
+    "case_id": "CASE-016883",
+    "final_score": 1.2485,
+    "score_breakdown": {
+     "dense_rank": 2,
+     "bm25_rank": 19,
+     "rrf": 0.02879,
+     "symptom_overlap": 1.0,
+     "feedback_prior": 0.5
+    },
+    "state": "IA",
+    "city": "Lake Terrance",
+    "season": "Fall",
+    "weather": "Clouds",
+    "primary_category": "TRANSPORT_QOS",
+    "secondary_categories": [
+     "RADIO_COVERAGE",
+     "MOBILITY_HANDOVER"
+    ],
+    "priority": "P4",
+    "fault_risk_band": "Low",
+    "anomalies": [
+     {
+      "kpi": "jitter_ms",
+      "label": "Jitter",
+      "value": 49.48,
+      "unit": "ms",
+      "band": "critical",
+      "percentile": 0.989
+     },
+     {
+      "kpi": "signal_strength_dbm",
+      "label": "Signal strength",
+      "value": -110.6,
+      "unit": "dBm",
+      "band": "degraded",
+      "percentile": 0.8432
+     },
+     {
+      "kpi": "call_drop_rate_pct",
+      "label": "Call drop rate",
+      "value": 1.965647,
+      "unit": "%",
+      "band": "degraded",
+      "percentile": 0.7882
+     }
+    ],
+    "summary": "[CASE-016883] IA/Fall/Clouds, P4, TRANSPORT_QOS+RADIO_COVERAGE: jitter 49.5 ms (crit), signal strength -110.6 dBm (deg), call drop rate 2.0% (deg); fault rate 37.5%"
+   },
+   {
+    "rank": 2,
+    "case_id": "CASE-045833",
+    "final_score": 1.225,
+    "score_breakdown": {
+     "dense_rank": 8,
+     "bm25_rank": 6,
+     "rrf": 0.02986,
+     "symptom_overlap": 0.75,
+     "feedback_prior": 0.5
+    },
+    "state": "MS",
+    "city": "Rebeccaville",
+    "season": "Summer",
+    "weather": "Clouds",
+    "primary_category": "RADIO_COVERAGE",
+    "secondary_categories": [
+     "TRANSPORT_QOS",
+     "MOBILITY_HANDOVER"
+    ],
+    "priority": "P3",
+    "fault_risk_band": "Low",
+    "anomalies": [
+     {
+      "kpi": "jitter_ms",
+      "label": "Jitter",
+      "value": 48.53,
+      "unit": "ms",
+      "band": "critical",
+      "percentile": 0.969
+     },
+     {
+      "kpi": "signal_strength_dbm",
+      "label": "Signal strength",
+      "value": -116.87,
+      "unit": "dBm",
+      "band": "critical",
+      "percentile": 0.9471
+     },
+     {
+      "kpi": "call_drop_rate_pct",
+      "label": "Call drop rate",
+      "value": 2.796776625,
+      "unit": "%",
+      "band": "degraded",
+      "percentile": 0.8731
+     },
+     {
+      "kpi": "user_count",
+      "label": "User count",
+      "value": 7839.0,
+      "unit": "users",
+      "band": "degraded",
+      "percentile": 0.7812
+     }
+    ],
+    "summary": "[CASE-045833] MS/Summer/Clouds, P3, RADIO_COVERAGE+TRANSPORT_QOS: jitter 48.5 ms (crit), signal strength -116.9 dBm (crit), call drop rate 2.8% (deg), user count 7,839 users (deg); fault rate 37.0%"
+   },
+   {
+    "rank": 3,
+    "case_id": "CASE-083217",
+    "final_score": 0.8492,
+    "score_breakdown": {
+     "dense_rank": 40,
+     "bm25_rank": 17,
+     "rrf": 0.02299,
+     "symptom_overlap": 0.6,
+     "feedback_prior": 0.5
+    },
+    "state": "MI",
+    "city": "New Miguel",
+    "season": "Fall",
+    "weather": "Clear",
+    "primary_category": "SECURITY_AUTH",
+    "secondary_categories": [
+     "TRANSPORT_QOS",
+     "RADIO_COVERAGE"
+    ],
+    "priority": "P4",
+    "fault_risk_band": "Low",
+    "anomalies": [
+     {
+      "kpi": "jitter_ms",
+      "label": "Jitter",
+      "value": 48.93,
+      "unit": "ms",
+      "band": "critical",
+      "percentile": 0.9775
+     },
+     {
+      "kpi": "security_incidents",
+      "label": "Security incidents",
+      "value": 19.0,
+      "unit": "incidents",
+      "band": "critical",
+      "percentile": 0.974
+     },
+     {
+      "kpi": "signal_strength_dbm",
+      "label": "Signal strength",
+      "value": -112.71,
+      "unit": "dBm",
+      "band": "degraded",
+      "percentile": 0.8771
+     },
+     {
+      "kpi": "cell_availability_pct",
+      "label": "Cell availability",
+      "value": 82.037,
+      "unit": "%",
+      "band": "degraded",
+      "percentile": 0.7952
+     },
+     {
+      "kpi": "call_drop_rate_pct",
+      "label": "Call drop rate",
+      "value": 2.006585999999998,
+      "unit": "%",
+      "band": "degraded",
+      "percentile": 0.7932
+     }
+    ],
+    "summary": "[CASE-083217] MI/Fall/Clear, P4, SECURITY_AUTH+TRANSPORT_QOS: jitter 48.9 ms (crit), security incidents 19 incidents (crit), signal strength -112.7 dBm (deg), cell availability 82.0% (deg); fault rate 45.2%"
+   },
+   {
+    "rank": 4,
+    "case_id": "CASE-031691",
+    "final_score": 0.5766,
+    "score_breakdown": {
+     "dense_rank": null,
+     "bm25_rank": 1,
+     "rrf": 0.01639,
+     "symptom_overlap": 0.75,
+     "feedback_prior": 0.5
+    },
+    "state": "ND",
+    "city": "West Kathryn",
+    "season": "Spring",
+    "weather": "Rain",
+    "primary_category": "RADIO_COVERAGE",
+    "secondary_categories": [
+     "MOBILITY_HANDOVER",
+     "AVAILABILITY_OUTAGE"
+    ],
+    "priority": "P3",
+    "fault_risk_band": "Medium",
+    "anomalies": [
+     {
+      "kpi": "signal_strength_dbm",
+      "label": "Signal strength",
+      "value": -115.17,
+      "unit": "dBm",
+      "band": "critical",
+      "percentile": 0.9181
+     },
+     {
+      "kpi": "call_drop_rate_pct",
+      "label": "Call drop rate",
+      "value": 3.337601499999999,
+      "unit": "%",
+      "band": "critical",
+      "percentile": 0.9141
+     },
+     {
+      "kpi": "jitter_ms",
+      "label": "Jitter",
+      "value": 44.45,
+      "unit": "ms",
+      "band": "degraded",
+      "percentile": 0.8891
+     },
+     {
+      "kpi": "cell_availability_pct",
+      "label": "Cell availability",
+      "value": 80.526,
+      "unit": "%",
+      "band": "degraded",
+      "percentile": 0.8551
+     }
+    ],
+    "summary": "[CASE-031691] ND/Spring/Rain, P3, RADIO_COVERAGE+MOBILITY_HANDOVER: signal strength -115.2 dBm (crit), call drop rate 3.3% (crit), jitter 44.5 ms (deg), cell availability 80.5% (deg); fault rate 47.3%"
+   },
+   {
+    "rank": 5,
+    "case_id": "CASE-028083",
+    "final_score": 0.5639,
+    "score_breakdown": {
+     "dense_rank": null,
+     "bm25_rank": 2,
+     "rrf": 0.01613,
+     "symptom_overlap": 0.75,
+     "feedback_prior": 0.5
+    },
+    "state": "NY",
+    "city": "West Kenneth",
+    "season": "Fall",
+    "weather": "Clouds",
+    "primary_category": "AVAILABILITY_OUTAGE",
+    "secondary_categories": [
+     "RADIO_COVERAGE",
+     "MOBILITY_HANDOVER"
+    ],
+    "priority": "P2",
+    "fault_risk_band": "Low",
+    "anomalies": [
+     {
+      "kpi": "cell_availability_pct",
+      "label": "Cell availability",
+      "value": 77.676,
+      "unit": "%",
+      "band": "critical",
+      "percentile": 0.967
+     },
+     {
+      "kpi": "call_drop_rate_pct",
+      "label": "Call drop rate",
+      "value": 2.028921125,
+      "unit": "%",
+      "band": "degraded",
+      "percentile": 0.7952
+     },
+     {
+      "kpi": "signal_strength_dbm",
+      "label": "Signal strength",
+      "value": -106.44,
+      "unit": "dBm",
+      "band": "degraded",
+      "percentile": 0.7732
+     },
+     {
+      "kpi": "jitter_ms",
+      "label": "Jitter",
+      "value": 38.21,
+      "unit": "ms",
+      "band": "degraded",
+      "percentile": 0.7642
+     }
+    ],
+    "summary": "[CASE-028083] NY/Fall/Clouds, P2, AVAILABILITY_OUTAGE+RADIO_COVERAGE: cell availability 77.7% (crit), call drop rate 2.0% (deg), signal strength -106.4 dBm (deg), jitter 38.2 ms (deg); fault rate 34.2%"
+   }
+  ],
+  "kpi_assessment": {
+   "basis": "similar_cases_median",
+   "anomalies": [
+    {
+     "kpi": "jitter_ms",
+     "label": "Jitter",
+     "unit": "ms",
+     "value": 48.53,
+     "percentile": 0.969,
+     "worse_than_pct": 96.9,
+     "band": "critical",
+     "imputed": false
+    },
+    {
+     "kpi": "signal_strength_dbm",
+     "label": "Signal strength",
+     "unit": "dBm",
+     "value": -112.71,
+     "percentile": 0.1229,
+     "worse_than_pct": 87.7,
+     "band": "degraded",
+     "imputed": false
+    },
+    {
+     "kpi": "call_drop_rate_pct",
+     "label": "Call drop rate",
+     "unit": "%",
+     "value": 2.028921125,
+     "percentile": 0.7952,
+     "worse_than_pct": 79.5,
+     "band": "degraded",
+     "imputed": false
+    },
+    {
+     "kpi": "cell_availability_pct",
+     "label": "Cell availability",
+     "unit": "%",
+     "value": 82.037,
+     "percentile": 0.2048,
+     "worse_than_pct": 79.5,
+     "band": "degraded",
+     "imputed": false
+    }
+   ],
+   "imputed_fields": []
+  },
+  "segment_stats": {
+   "count": 6248,
+   "top_lifts": [
+    {
+     "factor": "weather=Snow",
+     "segment_rate": 0.129,
+     "corpus_rate": 0.062,
+     "lift": 2.07
+    },
+    {
+     "factor": "high_critical_alarms",
+     "segment_rate": 0.507,
+     "corpus_rate": 0.25,
+     "lift": 2.03
+    },
+    {
+     "factor": "high_fault_rate",
+     "segment_rate": 0.487,
+     "corpus_rate": 0.25,
+     "lift": 1.95
+    },
+    {
+     "factor": "adverse_weather",
+     "segment_rate": 0.649,
+     "corpus_rate": 0.374,
+     "lift": 1.73
+    },
+    {
+     "factor": "weather=Rain",
+     "segment_rate": 0.52,
+     "corpus_rate": 0.312,
+     "lift": 1.67
+    },
+    {
+     "factor": "high_auth_failures",
+     "segment_rate": 0.436,
+     "corpus_rate": 0.264,
+     "lift": 1.65
+    },
+    {
+     "factor": "low_throughput",
+     "segment_rate": 0.408,
+     "corpus_rate": 0.25,
+     "lift": 1.63
+    },
+    {
+     "factor": "high_latency",
+     "segment_rate": 0.364,
+     "corpus_rate": 0.25,
+     "lift": 1.46
+    }
+   ],
+   "priority_mix": {
+    "P1": 0.133,
+    "P2": 0.345,
+    "P3": 0.452,
+    "P4": 0.069
+   },
+   "median_fault_rate": 47.87
+  },
+  "root_cause_analysis": {
+   "hypotheses": [
+    {
+     "cause": "Adverse weather (snow or rain) is correlated with increased risk of transport QoS degradation and radio coverage issues (jitter, dropped calls, weak RSRP)",
+     "likelihood": "medium",
+     "evidence_type": "data",
+     "supporting_evidence": [
+      "weather=Snow 2.07x (segment 13% vs corpus 6%)",
+      "weather=Rain 1.67x (segment 52% vs corpus 31%)",
+      "adverse_weather 1.73x (segment 65% vs corpus 37%)"
+     ],
+     "citations": [
+      "SEGMENT STATS"
+     ]
+    },
+    {
+     "cause": "High critical alarms are correlated with increased risk of jitter and call drop issues",
+     "likelihood": "medium",
+     "evidence_type": "data",
+     "supporting_evidence": [
+      "high_critical_alarms 2.03x (segment 51% vs corpus 25%)"
+     ],
+     "citations": [
+      "SEGMENT STATS"
+     ]
+    },
+    {
+     "cause": "High fault rate is correlated with increased risk of jitter and call drop issues",
+     "likelihood": "medium",
+     "evidence_type": "data",
+     "supporting_evidence": [
+      "high_fault_rate 1.95x (segment 49% vs corpus 25%)"
+     ],
+     "citations": [
+      "SEGMENT STATS"
+     ]
+    }
+   ],
+   "contributing_factors": [
+    {
+     "factor": "Snow weather",
+     "direction": "increases risk",
+     "evidence": "weather=Snow 2.07x (segment 13% vs corpus 6%)",
+     "citation": "SEGMENT STATS"
+    },
+    {
+     "factor": "Rain weather",
+     "direction": "increases risk",
+     "evidence": "weather=Rain 1.67x (segment 52% vs corpus 31%)",
+     "citation": "SEGMENT STATS"
+    },
+    {
+     "factor": "Adverse weather",
+     "direction": "increases risk",
+     "evidence": "adverse_weather 1.73x (segment 65% vs corpus 37%)",
+     "citation": "SEGMENT STATS"
+    },
+    {
+     "factor": "High critical alarms",
+     "direction": "increases risk",
+     "evidence": "high_critical_alarms 2.03x (segment 51% vs corpus 25%)",
+     "citation": "SEGMENT STATS"
+    },
+    {
+     "factor": "High fault rate",
+     "direction": "increases risk",
+     "evidence": "high_fault_rate 1.95x (segment 49% vs corpus 25%)",
+     "citation": "SEGMENT STATS"
+    },
+    {
+     "factor": "User count",
+     "direction": "increases risk",
+     "evidence": "top drivers include user_count",
+     "citation": "PREDICTIONS"
+    }
+   ],
+   "data_limitations": [
+    "Synthetic dataset",
+    "no timestamps, cell IDs or topology",
+    "Severity is relative to this network's history (percentiles), not absolute thresholds",
+    "Correlations in past cases are not proof of causation"
+   ]
+  },
+  "impact": {
+   "level": "High",
+   "affected_services": [
+    "voice",
+    "real-time and video",
+    "network access"
+   ],
+   "users_served": 4085,
+   "data_gb": 27.99,
+   "narrative": "The incident affects voice, real-time, and video services as well as network access for approximately 4,085 users (40th percentile) and involves about 27.99 GB of data. This aligns with the high impact level due to degraded KPIs (jitter, signal strength, call drop rate)."
+  },
+  "fault_risk": {
+   "probability": 0.0795,
+   "band": "Low",
+   "top_drivers": [
+    {
+     "feature": "weather",
+     "importance": 0.3154,
+     "value": "Clouds",
+     "band": null,
+     "imputed": false
+    },
+    {
+     "feature": "security_incidents",
+     "importance": 0.0181,
+     "value": 11.0,
+     "band": "normal",
+     "imputed": false
+    },
+    {
+     "feature": "alarm_count",
+     "importance": 0.0179,
+     "value": 9.0,
+     "band": "normal",
+     "imputed": false
+    },
+    {
+     "feature": "user_count",
+     "importance": 0.0082,
+     "value": 4085.0,
+     "band": "normal",
+     "imputed": false
+    },
+    {
+     "feature": "packet_loss_pct",
+     "importance": 0.0039,
+     "value": 3.4000000000000004,
+     "band": "normal",
+     "imputed": false
+    }
+   ],
+   "basis": "similar_cases_median"
+  },
+  "performance_prediction": {
+   "expected_throughput_mbps": 585.6,
+   "observed": 549.08935,
+   "deficit_pct": -6.2,
+   "model_r2": 0.3277
+  },
+  "priority": {
+   "level": "P4",
+   "label": "Low",
+   "score": 0.337,
+   "components": {
+    "severity": 0.424,
+    "impact": 0.48,
+    "risk": 0.08
+   },
+   "overrides": [],
+   "reasons": [
+    "Estimated from the median KPIs of the similar cases (no KPIs were given).",
+    "Critical jitter: 48.53 ms (worse than 97% of records)",
+    "Degraded signal strength: -112.71 dBm (worse than 88% of records)",
+    "Degraded call drop rate: 2.02892 % (worse than 80% of records)",
+    "Serves 4,085 users (more than 40% of records)",
+    "Fault risk 8%"
+   ]
+  },
+  "recommendations": [
+   {
+    "step": 1,
+    "action": "Restore planned transmit power or antenna settings if a recent change reduced them (requires change approval).",
+    "phase": "immediate",
+    "rationale": "Runbook immediate action for RADIO_COVERAGE.",
+    "expected_kpi_effect": "",
+    "verification": "",
+    "risk_level": "medium",
+    "requires_change_approval": true,
+    "citations": [
+     "KB-RADIO_COVERAGE-corrective-actions"
+    ]
+   },
+   {
+    "step": 2,
+    "action": "Dispatch field operations for a damaged antenna or feeder.",
+    "phase": "immediate",
+    "rationale": "Runbook immediate action for RADIO_COVERAGE.",
+    "expected_kpi_effect": "",
+    "verification": "",
+    "risk_level": "low",
+    "requires_change_approval": false,
+    "citations": [
+     "KB-RADIO_COVERAGE-corrective-actions"
+    ]
+   },
+   {
+    "step": 3,
+    "action": "Reroute traffic to a backup or protection path if available (requires change approval).",
+    "phase": "immediate",
+    "rationale": "Runbook immediate action for TRANSPORT_QOS.",
+    "expected_kpi_effect": "",
+    "verification": "",
+    "risk_level": "medium",
+    "requires_change_approval": true,
+    "citations": [
+     "KB-TRANSPORT_QOS-corrective-actions"
+    ]
+   },
+   {
+    "step": 4,
+    "action": "Prioritize voice and real-time traffic with QoS marking and queuing if the policy is missing or wrong (requires change approval).",
+    "phase": "immediate",
+    "rationale": "Runbook immediate action for TRANSPORT_QOS.",
+    "expected_kpi_effect": "",
+    "verification": "",
+    "risk_level": "medium",
+    "requires_change_approval": true,
+    "citations": [
+     "KB-TRANSPORT_QOS-corrective-actions"
+    ]
+   },
+   {
+    "step": 5,
+    "action": "Optimize antenna tilt and azimuth to close the gap (requires change approval).",
+    "phase": "short_term",
+    "rationale": "Runbook short-term action for RADIO_COVERAGE.",
+    "expected_kpi_effect": "",
+    "verification": "",
+    "risk_level": "medium",
+    "requires_change_approval": true,
+    "citations": [
+     "KB-RADIO_COVERAGE-corrective-actions"
+    ]
+   },
+   {
+    "step": 6,
+    "action": "Remove or mitigate interference sources.",
+    "phase": "short_term",
+    "rationale": "Runbook short-term action for RADIO_COVERAGE.",
+    "expected_kpi_effect": "",
+    "verification": "",
+    "risk_level": "low",
+    "requires_change_approval": false,
+    "citations": [
+     "KB-RADIO_COVERAGE-corrective-actions"
+    ]
+   },
+   {
+    "step": 7,
+    "action": "Adjust neighbour relations so users at the edge are served by the best cell.",
+    "phase": "short_term",
+    "rationale": "Runbook short-term action for RADIO_COVERAGE.",
+    "expected_kpi_effect": "",
+    "verification": "",
+    "risk_level": "low",
+    "requires_change_approval": false,
+    "citations": [
+     "KB-RADIO_COVERAGE-corrective-actions"
+    ]
+   }
+  ],
+  "escalation": {
+   "needed": false,
+   "team": "",
+   "reason": "Priority P4. Escalate to RAN optimization for tilt and neighbour changes, and to radio planning when new sites are needed."
+  },
+  "validation": {
+   "verdict": "unvalidated",
+   "scores": {},
+   "issues": [],
+   "summary": "LLM judge unavailable; rule checks only.",
+   "rule_checks": [
+    {
+     "rule": "citations_valid",
+     "passed": true,
+     "critical": false,
+     "target": "analyst",
+     "detail": "all citations known"
+    },
+    {
+     "rule": "recommendation_kb_citation",
+     "passed": true,
+     "critical": true,
+     "target": "recommender",
+     "detail": "every step cites a runbook"
+    },
+    {
+     "rule": "hypotheses_grounded",
+     "passed": true,
+     "critical": false,
+     "target": "analyst",
+     "detail": "every hypothesis cites evidence"
+    },
+    {
+     "rule": "numbers_match_evidence",
+     "passed": true,
+     "critical": false,
+     "target": "analyst",
+     "detail": "all quoted numbers match the evidence"
+    },
+    {
+     "rule": "primary_category_addressed",
+     "passed": true,
+     "critical": true,
+     "target": "recommender",
+     "detail": "RADIO_COVERAGE runbook cited"
+    },
+    {
+     "rule": "recommendation_count",
+     "passed": true,
+     "critical": false,
+     "target": "recommender",
+     "detail": "7 recommendations (expected 4-7)"
+    }
+   ],
+   "revisions": 1
+  },
+  "sources": [
+   {
+    "id": "CASE-016883",
+    "type": "case",
+    "title": "TRANSPORT_QOS case, IA",
+    "snippet": "[CASE-016883] IA/Fall/Clouds, P4, TRANSPORT_QOS+RADIO_COVERAGE: jitter 49.5 ms (crit), signal strength -110.6 dBm (deg), call drop rate 2.0% (deg); fault rate 37.5%",
+    "score": 1.2485
+   },
+   {
+    "id": "CASE-045833",
+    "type": "case",
+    "title": "RADIO_COVERAGE case, MS",
+    "snippet": "[CASE-045833] MS/Summer/Clouds, P3, RADIO_COVERAGE+TRANSPORT_QOS: jitter 48.5 ms (crit), signal strength -116.9 dBm (crit), call drop rate 2.8% (deg), user count 7,839 users (deg); fault rate 37.0%",
+    "score": 1.225
+   },
+   {
+    "id": "CASE-083217",
+    "type": "case",
+    "title": "SECURITY_AUTH case, MI",
+    "snippet": "[CASE-083217] MI/Fall/Clear, P4, SECURITY_AUTH+TRANSPORT_QOS: jitter 48.9 ms (crit), security incidents 19 incidents (crit), signal strength -112.7 dBm (deg), cell availability 82.0% (deg); fault rate 45.2%",
+    "score": 0.8492
+   },
+   {
+    "id": "CASE-031691",
+    "type": "case",
+    "title": "RADIO_COVERAGE case, ND",
+    "snippet": "[CASE-031691] ND/Spring/Rain, P3, RADIO_COVERAGE+MOBILITY_HANDOVER: signal strength -115.2 dBm (crit), call drop rate 3.3% (crit), jitter 44.5 ms (deg), cell availability 80.5% (deg); fault rate 47.3%",
+    "score": 0.5766
+   },
+   {
+    "id": "CASE-028083",
+    "type": "case",
+    "title": "AVAILABILITY_OUTAGE case, NY",
+    "snippet": "[CASE-028083] NY/Fall/Clouds, P2, AVAILABILITY_OUTAGE+RADIO_COVERAGE: cell availability 77.7% (crit), call drop rate 2.0% (deg), signal strength -106.4 dBm (deg), jitter 38.2 ms (deg); fault rate 34.2%",
+    "score": 0.5639
+   },
+   {
+    "id": "KB-TRANSPORT_QOS-kpi-signature",
+    "type": "runbook",
+    "title": "Transport and QoS degradation (latency, jitter, packet loss) / kpi-signature",
+    "snippet": "Runbook: Transport and QoS degradation (latency, jitter, packet loss) > KPI signature\n- High latency, high jitter and high packet loss (worse than this network's 75th percentile), often together.\n- Throughput may fall because lost packets t",
+    "score": 0.7096
+   },
+   {
+    "id": "KB-TRANSPORT_QOS-likely-root-causes",
+    "type": "runbook",
+    "title": "Transport and QoS degradation (latency, jitter, packet loss) / likely-root-causes",
+    "snippet": "Runbook: Transport and QoS degradation (latency, jitter, packet loss) > Likely root causes\n- Backhaul link congestion or an under-dimensioned transport link.\n- A degraded physical link: fibre damage, a dirty connector, microwave fading or m",
+    "score": 0.6924
+   },
+   {
+    "id": "KB-RADIO_COVERAGE-kpi-signature",
+    "type": "runbook",
+    "title": "Radio coverage and signal quality / kpi-signature",
+    "snippet": "Runbook: Radio coverage and signal quality > KPI signature\n- Weak signal strength (lower than this network's 25th percentile).\n- Low connection setup success rate and higher call drop rate.\n- Throughput may fall at the edge. Transport KPIs ",
+    "score": 0.6862
+   },
+   {
+    "id": "KB-RADIO_COVERAGE-likely-root-causes",
+    "type": "runbook",
+    "title": "Radio coverage and signal quality / likely-root-causes",
+    "snippet": "Runbook: Radio coverage and signal quality > Likely root causes\n- A coverage hole: inadequate site density, terrain or new buildings blocking the signal.\n- Antenna problems: wrong tilt or azimuth, damaged antenna or feeder, water ingress.\n-",
+    "score": 0.5966
+   },
+   {
+    "id": "KB-TRANSPORT_QOS-diagnostic-checks",
+    "type": "runbook",
+    "title": "Transport and QoS degradation (latency, jitter, packet loss) / diagnostic-checks",
+    "snippet": "Runbook: Transport and QoS degradation (latency, jitter, packet loss) > Diagnostic checks\n1. Run latency, jitter and loss measurements (for example TWAMP or ping series) from the site to the core and compare with the baseline.\n2. Check inte",
+    "score": 0.6846
+   },
+   {
+    "id": "KB-TRANSPORT_QOS-corrective-actions",
+    "type": "runbook",
+    "title": "Transport and QoS degradation (latency, jitter, packet loss) / corrective-actions",
+    "snippet": "Runbook: Transport and QoS degradation (latency, jitter, packet loss) > Corrective actions\n### Immediate\n- Reroute traffic to a backup or protection path if available (requires change approval).\n- Prioritize voice and real-time traffic with",
+    "score": 0.6739
+   },
+   {
+    "id": "KB-TRANSPORT_QOS-escalation-criteria",
+    "type": "runbook",
+    "title": "Transport and QoS degradation (latency, jitter, packet loss) / escalation-criteria",
+    "snippet": "Runbook: Transport and QoS degradation (latency, jitter, packet loss) > Escalation criteria\n- Escalate to the transport or IP team when the degradation is on shared aggregation links or affects several sites.\n- Escalate to field operations ",
+    "score": 0.654
+   },
+   {
+    "id": "KB-RADIO_COVERAGE-diagnostic-checks",
+    "type": "runbook",
+    "title": "Radio coverage and signal quality / diagnostic-checks",
+    "snippet": "Runbook: Radio coverage and signal quality > Diagnostic checks\n1. Map the weak-signal reports and compare them with the predicted coverage of the serving and neighbouring cells.\n2. Check transmit power and antenna configuration (tilt, azimu",
+    "score": 0.6334
+   },
+   {
+    "id": "KB-RADIO_COVERAGE-corrective-actions",
+    "type": "runbook",
+    "title": "Radio coverage and signal quality / corrective-actions",
+    "snippet": "Runbook: Radio coverage and signal quality > Corrective actions\n### Immediate\n- Restore planned transmit power or antenna settings if a recent change reduced them (requires change approval).\n- Dispatch field operations for a damaged antenna",
+    "score": null
+   }
+  ],
+  "warnings": [
+   "The recommender agent was unavailable; runbook actions are shown. (per-run LLM budget reached)",
+   "The judge was unavailable; only rule checks were run. (per-run LLM budget reached)"
+  ],
+  "trace": [
+   {
+    "node": "gate",
+    "ms": 0.0,
+    "llm_calls": 0,
+    "tokens_in": 0,
+    "tokens_out": 0,
+    "tool_calls": [],
+    "status": "ok"
+   },
+   {
+    "node": "classify",
+    "ms": 1432.8,
+    "llm_calls": 1,
+    "tokens_in": 1333,
+    "tokens_out": 147,
+    "tool_calls": [],
+    "status": "ok"
+   },
+   {
+    "node": "retrieve",
+    "ms": 82.2,
+    "llm_calls": 0,
+    "tokens_in": 0,
+    "tokens_out": 0,
+    "tool_calls": [
+     "hybrid_search"
+    ],
+    "status": "ok"
+   },
+   {
+    "node": "gather_evidence",
+    "ms": 221.0,
+    "llm_calls": 0,
+    "tokens_in": 0,
+    "tokens_out": 0,
+    "tool_calls": [
+     "kpi_assessment",
+     "segment_stats",
+     "predict_fault_risk",
+     "predict_performance",
+     "impact",
+     "prioritize",
+     "search_runbook(analyst)",
+     "search_runbook(recommender)"
+    ],
+    "status": "ok"
+   },
+   {
+    "node": "analyze",
+    "ms": 31848.9,
+    "llm_calls": 2,
+    "tokens_in": 5974,
+    "tokens_out": 4571,
+    "tool_calls": [],
+    "status": "ok"
+   },
+   {
+    "node": "recommend",
+    "ms": 8932.2,
+    "llm_calls": 1,
+    "tokens_in": 2035,
+    "tokens_out": 724,
+    "tool_calls": [],
+    "status": "ok"
+   },
+   {
+    "node": "judge",
+    "ms": 15806.7,
+    "llm_calls": 1,
+    "tokens_in": 4494,
+    "tokens_out": 1957,
+    "tool_calls": [],
+    "status": "ok"
+   },
+   {
+    "node": "analyze",
+    "ms": 39221.1,
+    "llm_calls": 2,
+    "tokens_in": 5917,
+    "tokens_out": 5502,
+    "tool_calls": [],
+    "status": "ok"
+   },
+   {
+    "node": "recommend",
+    "ms": 13.4,
+    "llm_calls": 0,
+    "tokens_in": 0,
+    "tokens_out": 0,
+    "tool_calls": [],
+    "status": "fallback"
+   },
+   {
+    "node": "judge",
+    "ms": 4.4,
+    "llm_calls": 0,
+    "tokens_in": 0,
+    "tokens_out": 0,
+    "tool_calls": [],
+    "status": "fallback"
+   },
+   {
+    "node": "finalize",
+    "ms": 0.0,
+    "llm_calls": 0,
+    "tokens_in": 0,
+    "tokens_out": 0,
+    "tool_calls": [],
+    "status": "ok"
+   }
+  ],
+  "meta": {
+   "model": "nvidia/nemotron-3-super-120b-a12b",
+   "judge_model": "nvidia/nemotron-3-super-120b-a12b",
+   "prompt_version": "classifier_v1,analyst_v1,recommender_v1,judge_v1",
+   "latency_ms": 97595.9,
+   "llm_calls": 7,
+   "tokens_in": 19753,
+   "tokens_out": 12901,
+   "cached_calls": 0
+  },
+  "usage": {
+   "llm_calls": 7,
+   "tokens_in": 19753,
+   "tokens_out": 12901,
+   "cached_calls": 0
+  }
+ }
+}

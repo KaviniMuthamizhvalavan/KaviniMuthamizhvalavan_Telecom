@@ -1,0 +1,64 @@
+{
+  "bases": [
+    "G01",
+    "G03"
+  ],
+  "n_seeded": 12,
+  "detection_rate": 1.0,
+  "detected_and_matched_rate": 1.0,
+  "target_detection": 0.8,
+  "controls": 2,
+  "control_false_alarms": 0,
+  "by_error": {
+    "contradicting_kpi_number": {
+      "detected": 1.0,
+      "matched": 1.0
+    },
+    "invented_case_id": {
+      "detected": 1.0,
+      "matched": 1.0
+    },
+    "irrelevant_action": {
+      "detected": 1.0,
+      "matched": 1.0
+    },
+    "overclaimed_causality": {
+      "detected": 1.0,
+      "matched": 1.0
+    },
+    "recommendation_without_kb_citation": {
+      "detected": 1.0,
+      "matched": 1.0
+    },
+    "root_cause_contradicts_anomalies": {
+      "detected": 1.0,
+      "matched": 1.0
+    }
+  },
+  "agreement": {
+    "n": 10,
+    "spearman": 0.469
+  },
+  "revision_effectiveness": {
+    "n_revised": 3,
+    "faithfulness_before_B": 0.977,
+    "faithfulness_after_C": 0.993,
+    "per_case": {
+      "G11": {
+        "A": 0.913,
+        "B": 1.0,
+        "C": 1.0
+      },
+      "G18": {
+        "A": 0.96,
+        "B": 0.968,
+        "C": 1.0
+      },
+      "G19": {
+        "A": 1.0,
+        "B": 0.964,
+        "C": 0.978
+      }
+    }
+  }
+}

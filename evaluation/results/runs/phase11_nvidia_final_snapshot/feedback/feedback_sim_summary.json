@@ -1,0 +1,22 @@
+{
+  "control": {
+    "n": 10,
+    "ndcg_before": 0.9607,
+    "ndcg_after": 0.9607,
+    "delta_mean": 0.0,
+    "improved": 0,
+    "regressed": 0,
+    "order_changed": 1
+  },
+  "feedback": {
+    "n": 10,
+    "ndcg_before": 0.949,
+    "ndcg_after": 0.9548,
+    "delta_mean": 0.0058,
+    "improved": 4,
+    "regressed": 0,
+    "order_changed": 4
+  },
+  "votes": 100,
+  "relevant_votes_share": 0.86
+}

@@ -1,0 +1,44 @@
+# Python 3.12. Pinned to the versions verified in Phase 0 (2026-10-07).
+# Install: python -m pip install -r requirements.txt
+
+# API
+fastapi==0.142.2
+uvicorn[standard]==0.54.0
+pydantic==2.13.5
+pydantic-settings==2.15.0
+
+# Frontend
+streamlit==1.65.0
+requests==2.34.2
+
+# Data and ML
+pandas==3.0.6
+numpy==2.5.3
+pyarrow==25.0.1
+scikit-learn==1.9.1
+joblib==1.6.0
+matplotlib==3.11.2
+
+# Retrieval
+sentence-transformers==6.1.0
+torch==2.14.1
+chromadb==1.5.9
+bm25s==0.3.13
+PyStemmer==3.1.0
+
+# LLM and agents
+openai==3.26.0
+# Claude runtime provider (2026-10-09). deepeval 2.9.3 declares anthropic<0.50 but only imports Anthropic/AsyncAnthropic.
+anthropic==1.12.1
+langgraph==1.2.14
+
+# Evaluation. deepeval 3.x/4.x pin click<8.4, which conflicts with huggingface-hub (click>=8.4.2).
+deepeval==2.9.3
+click>=8.4.2
+
+# Use the OS certificate store for HTTPS (needed behind TLS-intercepting antivirus/proxies)
+truststore==0.10.4
+
+# Tests
+pytest==9.1.1
+httpx==0.28.1

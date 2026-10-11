@@ -1,0 +1,23 @@
+# Secrets: never commit
+.env
+.env.*
+!.env.example
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Generated artifacts (rebuilt by: python -m scripts.bootstrap)
+artifacts/
+data/raw/
+# evaluation/results/runs/ is committed: the reports cite its baselines and test runs (logs stay ignored)
+
+# React frontend (frontend-react/)
+node_modules/
+frontend-react/dist/
+
+# Tools
+.deepeval/
+*.log

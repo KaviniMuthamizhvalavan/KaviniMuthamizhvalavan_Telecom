@@ -1,0 +1,341 @@
+{
+  "rules": {
+    "macro_f1": 0.921,
+    "per_class": {
+      "AVAILABILITY_OUTAGE": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 2.0
+      },
+      "CONFIG_CHANGE": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 2.0
+      },
+      "CONGESTION_CAPACITY": {
+        "precision": 0.75,
+        "recall": 1.0,
+        "f1-score": 0.8571428571428571,
+        "support": 3.0
+      },
+      "FAULT_ALARM": {
+        "precision": 1.0,
+        "recall": 0.75,
+        "f1-score": 0.8571428571428571,
+        "support": 4.0
+      },
+      "MOBILITY_HANDOVER": {
+        "precision": 0.6666666666666666,
+        "recall": 1.0,
+        "f1-score": 0.8,
+        "support": 2.0
+      },
+      "RADIO_COVERAGE": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 3.0
+      },
+      "SECURITY_AUTH": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 2.0
+      },
+      "TRANSPORT_QOS": {
+        "precision": 1.0,
+        "recall": 0.75,
+        "f1-score": 0.8571428571428571,
+        "support": 4.0
+      },
+      "accuracy": 0.9090909090909091,
+      "macro avg": {
+        "precision": 0.9270833333333333,
+        "recall": 0.9375,
+        "f1-score": 0.9214285714285715,
+        "support": 22.0
+      },
+      "weighted avg": {
+        "precision": 0.9356060606060606,
+        "recall": 0.9090909090909091,
+        "f1-score": 0.9103896103896104,
+        "support": 22.0
+      }
+    },
+    "confusion_matrix": {
+      "labels": [
+        "AVAILABILITY_OUTAGE",
+        "CONFIG_CHANGE",
+        "CONGESTION_CAPACITY",
+        "FAULT_ALARM",
+        "MOBILITY_HANDOVER",
+        "RADIO_COVERAGE",
+        "SECURITY_AUTH",
+        "TRANSPORT_QOS"
+      ],
+      "matrix": [
+        [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          3,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          3,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          3
+        ]
+      ]
+    },
+    "errors": [
+      {
+        "query_id": "G19",
+        "expected": "FAULT_ALARM",
+        "predicted": "MOBILITY_HANDOVER"
+      },
+      {
+        "query_id": "G23",
+        "expected": "TRANSPORT_QOS",
+        "predicted": "CONGESTION_CAPACITY"
+      }
+    ]
+  },
+  "llm:claude-haiku-5-5": {
+    "macro_f1": 0.964,
+    "per_class": {
+      "AVAILABILITY_OUTAGE": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 2.0
+      },
+      "CONFIG_CHANGE": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 2.0
+      },
+      "CONGESTION_CAPACITY": {
+        "precision": 0.75,
+        "recall": 1.0,
+        "f1-score": 0.8571428571428571,
+        "support": 3.0
+      },
+      "FAULT_ALARM": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 4.0
+      },
+      "MOBILITY_HANDOVER": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 2.0
+      },
+      "RADIO_COVERAGE": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 3.0
+      },
+      "SECURITY_AUTH": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 2.0
+      },
+      "TRANSPORT_QOS": {
+        "precision": 1.0,
+        "recall": 0.75,
+        "f1-score": 0.8571428571428571,
+        "support": 4.0
+      },
+      "accuracy": 0.9545454545454546,
+      "macro avg": {
+        "precision": 0.96875,
+        "recall": 0.96875,
+        "f1-score": 0.9642857142857143,
+        "support": 22.0
+      },
+      "weighted avg": {
+        "precision": 0.9659090909090909,
+        "recall": 0.9545454545454546,
+        "f1-score": 0.9545454545454546,
+        "support": 22.0
+      }
+    },
+    "confusion_matrix": {
+      "labels": [
+        "AVAILABILITY_OUTAGE",
+        "CONFIG_CHANGE",
+        "CONGESTION_CAPACITY",
+        "FAULT_ALARM",
+        "MOBILITY_HANDOVER",
+        "RADIO_COVERAGE",
+        "SECURITY_AUTH",
+        "TRANSPORT_QOS"
+      ],
+      "matrix": [
+        [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          3,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          3
+        ]
+      ]
+    },
+    "errors": [
+      {
+        "query_id": "G23",
+        "expected": "TRANSPORT_QOS",
+        "predicted": "CONGESTION_CAPACITY"
+      }
+    ]
+  }
+}

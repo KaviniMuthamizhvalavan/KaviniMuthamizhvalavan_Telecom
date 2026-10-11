@@ -1,0 +1,42 @@
+{
+  "n": 11,
+  "C_latency_s": {
+    "median": 31.4,
+    "p95": 33.4,
+    "max": 33.9,
+    "min": 29.1
+  },
+  "A_latency_s": {
+    "median": 8.8,
+    "p95": 10.0
+  },
+  "C_llm_calls": {
+    "mean": 4.0,
+    "max": 4
+  },
+  "C_tokens": {
+    "mean": 20273,
+    "max": 22561
+  },
+  "A_tokens_mean": 4030,
+  "C_repair_calls": 0,
+  "A_repair_calls": 0,
+  "C_first_attempt_invalid_rate": 0.0,
+  "C_fallback_events": 0,
+  "C_json_fallbacks": 0,
+  "C_budget_fallbacks": 0,
+  "C_agent_node_runs": 44,
+  "C_json_failure_rate": 0.0,
+  "C_runs_final_degraded": 0,
+  "C_status": {
+    "ok": 11
+  },
+  "A_status": {
+    "ok": 11
+  },
+  "C_verdicts": {
+    "pass": 11
+  },
+  "C_revision_rate": 0.0,
+  "C_low_confidence_runs": []
+}

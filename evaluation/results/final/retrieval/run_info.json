@@ -1,0 +1,6 @@
+{
+  "queries": 22,
+  "top_k": 10,
+  "relevance": "graded symptom overlap; filters must hold",
+  "filtered_dense": "exact_cached_vectors"
+}

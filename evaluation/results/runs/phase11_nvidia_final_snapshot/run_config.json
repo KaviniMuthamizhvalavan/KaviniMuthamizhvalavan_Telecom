@@ -1,0 +1,42 @@
+{
+  "generated_utc": "2026-10-09T05:48:29+00:00",
+  "git_sha": null,
+  "git_note": "repository has no commits yet",
+  "dataset": {
+    "source": "full",
+    "sha256": "006b685455531c414fcb4872aa8e10ca205091c41a0cf7395f276b6d86c96e98",
+    "cases": 100000
+  },
+  "models": {
+    "runtime": "nvidia/nemotron-3-super-120b-a12b",
+    "runtime_judge": "nvidia/nemotron-3-super-120b-a12b",
+    "eval_judge": "openai/gpt-oss-20b",
+    "embedding": "BAAI/bge-small-en-v1.5"
+  },
+  "reasoning": {
+    "classifier": false,
+    "analyst": true,
+    "recommender": false,
+    "judge": true,
+    "agent_allowance": 4096,
+    "default_allowance": 2048
+  },
+  "prompts": {
+    "classifier": "classifier_v1",
+    "analyst": "analyst_v1",
+    "recommender": "recommender_v1",
+    "judge": "judge_v1"
+  },
+  "narrative_template": "v1",
+  "retrieval": {
+    "top_k": 5,
+    "candidate_k": 50,
+    "rrf_k": 60,
+    "w_dense": 1.0,
+    "w_sparse": 1.0,
+    "rerank_symptom_weight": 0.3,
+    "rerank_feedback_weight": 0.1
+  },
+  "max_revisions": 1,
+  "max_tokens_per_run": 50000
+}

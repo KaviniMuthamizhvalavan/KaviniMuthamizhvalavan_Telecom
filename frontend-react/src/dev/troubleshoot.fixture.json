@@ -1,0 +1,1877 @@
+{
+ "note": "Recorded responses from tests/test_cases/api_examples.json (dev fixtures only, never bundled in production).",
+ "full": {
+  "request": {
+   "query": "A cell is experiencing high latency, packet loss, and reduced throughput. What similar network conditions have occurred before?"
+  },
+  "response": {
+   "run_id": "cd050916292b4537bf503d3998411ada",
+   "status": "ok",
+   "classification": {
+    "primary_category": "TRANSPORT_QOS",
+    "secondary_categories": [
+     "CONGESTION_CAPACITY"
+    ],
+    "symptoms": [
+     "high_latency",
+     "high_packet_loss",
+     "low_throughput"
+    ],
+    "filters": {
+     "state": [],
+     "city": null,
+     "season": [],
+     "weather": []
+    },
+    "severity_hint": "unknown",
+    "in_scope": true,
+    "needs_clarification": false,
+    "clarification_question": null,
+    "confidence": 0.8,
+    "rationale": "The text cites high latency and packet loss, which are defining symptoms of TRANSPORT_QOS, plus reduced throughput, which points to CONGESTION_CAPACITY as a secondary category. The request for historical similar conditions is a retrieval question and does not change the classification.",
+    "source": "llm"
+   },
+   "applied_filters": {},
+   "similar_cases": [
+    {
+     "rank": 1,
+     "case_id": "CASE-037746",
+     "final_score": 1.18,
+     "score_breakdown": {
+      "dense_rank": 30,
+      "bm25_rank": 12,
+      "rrf": 0.025,
+      "symptom_overlap": 0.6,
+      "feedback_prior": 0.5
+     },
+     "state": "NV",
+     "city": "New Joanne",
+     "season": "Summer",
+     "weather": "Rain",
+     "primary_category": "TRANSPORT_QOS",
+     "secondary_categories": [
+      "CONGESTION_CAPACITY",
+      "CONFIG_CHANGE"
+     ],
+     "priority": "P2",
+     "fault_risk_band": "High",
+     "anomalies": [
+      {
+       "kpi": "latency_ms",
+       "label": "Latency",
+       "value": 166.428,
+       "unit": "ms",
+       "band": "critical",
+       "percentile": 0.997
+      },
+      {
+       "kpi": "packet_loss_pct",
+       "label": "Packet loss rate",
+       "value": 14.25,
+       "unit": "%",
+       "band": "critical",
+       "percentile": 0.974
+      },
+      {
+       "kpi": "config_change_success_pct",
+       "label": "Successful configuration changes",
+       "value": 90.41,
+       "unit": "%",
+       "band": "critical",
+       "percentile": 0.9535
+      },
+      {
+       "kpi": "cell_availability_pct",
+       "label": "Cell availability",
+       "value": 80.431,
+       "unit": "%",
+       "band": "degraded",
+       "percentile": 0.8591
+      },
+      {
+       "kpi": "throughput_mbps",
+       "label": "Throughput",
+       "value": 336.66420000000005,
+       "unit": "Mbps",
+       "band": "degraded",
+       "percentile": 0.8482
+      }
+     ],
+     "summary": "[CASE-037746] NV/Summer/Rain, P2, TRANSPORT_QOS+CONGESTION_CAPACITY: latency 166.4 ms (crit), packet loss rate 14.2% (crit), successful configuration changes 90.4% (crit), cell availability 80.4% (deg); fault rate 45.3%"
+    },
+    {
+     "rank": 2,
+     "case_id": "CASE-016229",
+     "final_score": 0.684,
+     "score_breakdown": {
+      "dense_rank": null,
+      "bm25_rank": 1,
+      "rrf": 0.01639,
+      "symptom_overlap": 0.75,
+      "feedback_prior": 0.5
+     },
+     "state": "TX",
+     "city": "Banksburgh",
+     "season": "Winter",
+     "weather": "Clouds",
+     "primary_category": "TRANSPORT_QOS",
+     "secondary_categories": [
+      "CONGESTION_CAPACITY",
+      "AVAILABILITY_OUTAGE"
+     ],
+     "priority": "P4",
+     "fault_risk_band": "Low",
+     "anomalies": [
+      {
+       "kpi": "throughput_mbps",
+       "label": "Throughput",
+       "value": 306.12085,
+       "unit": "Mbps",
+       "band": "degraded",
+       "percentile": 0.8971
+      },
+      {
+       "kpi": "cell_availability_pct",
+       "label": "Cell availability",
+       "value": 80.245,
+       "unit": "%",
+       "band": "degraded",
+       "percentile": 0.8671
+      },
+      {
+       "kpi": "packet_loss_pct",
+       "label": "Packet loss rate",
+       "value": 10.6,
+       "unit": "%",
+       "band": "degraded",
+       "percentile": 0.8342
+      },
+      {
+       "kpi": "latency_ms",
+       "label": "Latency",
+       "value": 116.6415,
+       "unit": "ms",
+       "band": "degraded",
+       "percentile": 0.8292
+      }
+     ],
+     "summary": "[CASE-016229] TX/Winter/Clouds, P4, TRANSPORT_QOS+CONGESTION_CAPACITY: throughput 306.1 Mbps (deg), cell availability 80.2% (deg), packet loss rate 10.6% (deg), latency 116.6 ms (deg); fault rate 44.0%"
+    },
+    {
+     "rank": 3,
+     "case_id": "CASE-039539",
+     "final_score": 0.681,
+     "score_breakdown": {
+      "dense_rank": null,
+      "bm25_rank": 6,
+      "rrf": 0.01515,
+      "symptom_overlap": 1.0,
+      "feedback_prior": 0.5
+     },
+     "state": "MD",
+     "city": "Gutierrezton",
+     "season": "Winter",
+     "weather": "Clouds",
+     "primary_category": "TRANSPORT_QOS",
+     "secondary_categories": [
+      "CONGESTION_CAPACITY"
+     ],
+     "priority": "P4",
+     "fault_risk_band": "Low",
+     "anomalies": [
+      {
+       "kpi": "throughput_mbps",
+       "label": "Throughput",
+       "value": 379.2406,
+       "unit": "Mbps",
+       "band": "degraded",
+       "percentile": 0.7752
+      },
+      {
+       "kpi": "packet_loss_pct",
+       "label": "Packet loss rate",
+       "value": 9.55,
+       "unit": "%",
+       "band": "degraded",
+       "percentile": 0.7672
+      },
+      {
+       "kpi": "latency_ms",
+       "label": "Latency",
+       "value": 105.879,
+       "unit": "ms",
+       "band": "degraded",
+       "percentile": 0.7542
+      }
+     ],
+     "summary": "[CASE-039539] MD/Winter/Clouds, P4, TRANSPORT_QOS+CONGESTION_CAPACITY: throughput 379.2 Mbps (deg), packet loss rate 9.6% (deg), latency 105.9 ms (deg); fault rate 42.4%"
+    },
+    {
+     "rank": 4,
+     "case_id": "CASE-005057",
+     "final_score": 0.6674,
+     "score_breakdown": {
+      "dense_rank": null,
+      "bm25_rank": 2,
+      "rrf": 0.01613,
+      "symptom_overlap": 0.75,
+      "feedback_prior": 0.5
+     },
+     "state": "CO",
+     "city": "Barkerfort",
+     "season": "Summer",
+     "weather": "Clear",
+     "primary_category": "AVAILABILITY_OUTAGE",
+     "secondary_categories": [
+      "TRANSPORT_QOS",
+      "CONGESTION_CAPACITY"
+     ],
+     "priority": "P2",
+     "fault_risk_band": "Low",
+     "anomalies": [
+      {
+       "kpi": "cell_availability_pct",
+       "label": "Cell availability",
+       "value": 79.03299999999999,
+       "unit": "%",
+       "band": "critical",
+       "percentile": 0.9151
+      },
+      {
+       "kpi": "throughput_mbps",
+       "label": "Throughput",
+       "value": 329.6315,
+       "unit": "Mbps",
+       "band": "degraded",
+       "percentile": 0.8601
+      },
+      {
+       "kpi": "latency_ms",
+       "label": "Latency",
+       "value": 107.845,
+       "unit": "ms",
+       "band": "degraded",
+       "percentile": 0.7692
+      },
+      {
+       "kpi": "packet_loss_pct",
+       "label": "Packet loss rate",
+       "value": 9.48,
+       "unit": "%",
+       "band": "degraded",
+       "percentile": 0.7622
+      }
+     ],
+     "summary": "[CASE-005057] CO/Summer/Clear, P2, AVAILABILITY_OUTAGE+TRANSPORT_QOS: cell availability 79.0% (crit), throughput 329.6 Mbps (deg), latency 107.8 ms (deg), packet loss rate 9.5% (deg); fault rate 41.4%"
+    },
+    {
+     "rank": 5,
+     "case_id": "CASE-050747",
+     "final_score": 0.6529,
+     "score_breakdown": {
+      "dense_rank": null,
+      "bm25_rank": 8,
+      "rrf": 0.01471,
+      "symptom_overlap": 1.0,
+      "feedback_prior": 0.5
+     },
+     "state": "UT",
+     "city": "Lake Matthewview",
+     "season": "Summer",
+     "weather": "Clouds",
+     "primary_category": "TRANSPORT_QOS",
+     "secondary_categories": [
+      "CONGESTION_CAPACITY"
+     ],
+     "priority": "P4",
+     "fault_risk_band": "Low",
+     "anomalies": [
+      {
+       "kpi": "packet_loss_pct",
+       "label": "Packet loss rate",
+       "value": 9.525,
+       "unit": "%",
+       "band": "degraded",
+       "percentile": 0.7657
+      },
+      {
+       "kpi": "throughput_mbps",
+       "label": "Throughput",
+       "value": 388.84685,
+       "unit": "Mbps",
+       "band": "degraded",
+       "percentile": 0.7592
+      },
+      {
+       "kpi": "latency_ms",
+       "label": "Latency",
+       "value": 106.3865,
+       "unit": "ms",
+       "band": "degraded",
+       "percentile": 0.7582
+      }
+     ],
+     "summary": "[CASE-050747] UT/Summer/Clouds, P4, TRANSPORT_QOS+CONGESTION_CAPACITY: packet loss rate 9.5% (deg), throughput 388.8 Mbps (deg), latency 106.4 ms (deg); fault rate 46.9%"
+    }
+   ],
+   "kpi_assessment": {
+    "basis": "similar_cases_median",
+    "anomalies": [
+     {
+      "kpi": "cell_availability_pct",
+      "label": "Cell availability",
+      "unit": "%",
+      "value": 80.431,
+      "percentile": 0.1409,
+      "worse_than_pct": 85.9,
+      "band": "degraded",
+      "imputed": false
+     },
+     {
+      "kpi": "throughput_mbps",
+      "label": "Throughput",
+      "unit": "Mbps",
+      "value": 336.66420000000005,
+      "percentile": 0.1518,
+      "worse_than_pct": 84.8,
+      "band": "degraded",
+      "imputed": false
+     },
+     {
+      "kpi": "latency_ms",
+      "label": "Latency",
+      "unit": "ms",
+      "value": 107.845,
+      "percentile": 0.7692,
+      "worse_than_pct": 76.9,
+      "band": "degraded",
+      "imputed": false
+     },
+     {
+      "kpi": "packet_loss_pct",
+      "label": "Packet loss rate",
+      "unit": "%",
+      "value": 9.55,
+      "percentile": 0.7672,
+      "worse_than_pct": 76.7,
+      "band": "degraded",
+      "imputed": false
+     }
+    ],
+    "imputed_fields": []
+   },
+   "segment_stats": {
+    "count": 8339,
+    "top_lifts": [
+     {
+      "factor": "weather=Snow",
+      "segment_rate": 0.154,
+      "corpus_rate": 0.062,
+      "lift": 2.47
+     },
+     {
+      "factor": "adverse_weather",
+      "segment_rate": 0.729,
+      "corpus_rate": 0.374,
+      "lift": 1.95
+     },
+     {
+      "factor": "high_fault_rate",
+      "segment_rate": 0.481,
+      "corpus_rate": 0.25,
+      "lift": 1.93
+     },
+     {
+      "factor": "weather=Rain",
+      "segment_rate": 0.575,
+      "corpus_rate": 0.312,
+      "lift": 1.84
+     },
+     {
+      "factor": "high_auth_failures",
+      "segment_rate": 0.483,
+      "corpus_rate": 0.264,
+      "lift": 1.83
+     },
+     {
+      "factor": "high_critical_alarms",
+      "segment_rate": 0.431,
+      "corpus_rate": 0.25,
+      "lift": 1.72
+     },
+     {
+      "factor": "low_throughput",
+      "segment_rate": 0.424,
+      "corpus_rate": 0.25,
+      "lift": 1.69
+     },
+     {
+      "factor": "high_call_drop",
+      "segment_rate": 0.4,
+      "corpus_rate": 0.25,
+      "lift": 1.6
+     }
+    ],
+    "priority_mix": {
+     "P1": 0.173,
+     "P2": 0.343,
+     "P3": 0.406,
+     "P4": 0.078
+    },
+    "median_fault_rate": 47.65
+   },
+   "root_cause_analysis": {
+    "hypotheses": [
+     {
+      "cause": "Transport or backhaul link congestion, or an under-dimensioned transport link, causing packet queuing and loss on the path to the cell",
+      "likelihood": "medium",
+      "evidence_type": "both",
+      "supporting_evidence": [
+       "Similar cases are classed TRANSPORT_QOS+CONGESTION_CAPACITY, e.g. CASE-037746 (latency 166.4 ms crit, packet loss rate 14.2% crit) and CASE-016229 (packet loss rate 10.6% deg, throughput 306.1 Mbps deg)",
+       "Segment with high latency and high packet loss co-occurs 1.95x more often with adverse_weather (segment 73% vs corpus 37%)",
+       "Segment co-occurs 1.93x more often with high_fault_rate (segment 48% vs corpus 25%)",
+       "Performance model: expected throughput 552.7 Mbps, observed 336.664 Mbps (deficit -39.1%, below_expected)"
+      ],
+      "citations": [
+       "CASE-037746",
+       "CASE-016229",
+       "SEGMENT STATS",
+       "PREDICTIONS",
+       "KB-TRANSPORT_QOS-likely-root-causes"
+      ]
+     },
+     {
+      "cause": "Degraded physical transport link (microwave fading or misalignment, or fibre or connector fault), with weather as a plausible trigger",
+      "likelihood": "low",
+      "evidence_type": "both",
+      "supporting_evidence": [
+       "Segment co-occurs 2.47x more often with weather=Snow (segment 15% vs corpus 6%) and 1.84x more often with weather=Rain (segment 57% vs corpus 31%)",
+       "Segment co-occurs 1.72x more often with high_critical_alarms (segment 43% vs corpus 25%)",
+       "Runbook lists microwave fading and fibre damage as likely causes of transport QoS degradation; the data does not identify the link type or cell topology"
+      ],
+      "citations": [
+       "SEGMENT STATS",
+       "KB-TRANSPORT_QOS-likely-root-causes"
+      ]
+     },
+     {
+      "cause": "Congestion from peak demand or heavy users exceeding cell capacity, as described in the congestion runbook; the data does not show this pattern",
+      "likelihood": "low",
+      "evidence_type": "knowledge",
+      "supporting_evidence": [
+       "Runbook describes high user count and data usage as the congestion signature, but SEGMENT STATS shows no high user-count or data-usage lift for this segment",
+       "Users served are at the 33% percentile, which does not suggest an unusually high user load",
+       "Similar-case KPI pattern is TRANSPORT_QOS with CONGESTION_CAPACITY as secondary label only"
+      ],
+      "citations": [
+       "KB-CONGESTION_CAPACITY-kpi-signature",
+       "KB-CONGESTION_CAPACITY-likely-root-causes"
+      ]
+     }
+    ],
+    "contributing_factors": [
+     {
+      "factor": "Adverse weather (rain or snow)",
+      "direction": "increases risk",
+      "evidence": "adverse_weather co-occurs 1.95x more often with the segment (73% vs corpus 37%); Snow 2.47x, Rain 1.84x. Co-occurrence only, not causation.",
+      "citation": "SEGMENT STATS"
+     },
+     {
+      "factor": "High fault rate and critical alarms",
+      "direction": "increases risk",
+      "evidence": "high_fault_rate co-occurs 1.93x more often (48% vs 25%); high_critical_alarms co-occurs 1.72x more often (43% vs 25%). Median fault occurrence rate in the similar segment is 47.65%.",
+      "citation": "SEGMENT STATS"
+     },
+     {
+      "factor": "Predicted fault risk",
+      "direction": "decreases risk",
+      "evidence": "Fault risk 0.04 (Low; model ROC-AUC 0.8743), with weather, security_incidents, alarm_count and user_count as top drivers. The model does not point to a current fault-driven cause.",
+      "citation": "PREDICTIONS"
+     },
+     {
+      "factor": "User load",
+      "direction": "no clear effect",
+      "evidence": "3,381 users served (percentile 33%), so user load does not appear unusually high.",
+      "citation": ""
+     }
+    ],
+    "data_limitations": [
+     "No timestamps or time series, so trends cannot be verified; the season comparison is not available for this query.",
+     "No KPIs were supplied; KPI values are estimates from the similar cases' median.",
+     "No cell IDs, topology or link type, so transport and physical-link hypotheses cannot be confirmed.",
+     "Co-occurrence lifts and similar-case patterns are correlations, not proof of causation.",
+     "The performance model has R2 0.3277, so the expected-throughput comparison is only indicative.",
+     "Severity is relative to this network's percentiles, not absolute thresholds; the dataset is synthetic."
+    ]
+   },
+   "impact": {
+    "level": "Moderate",
+    "affected_services": [
+     "data",
+     "real-time and video",
+     "network access"
+    ],
+    "users_served": 3381,
+    "data_gb": 31.72,
+    "narrative": "The cell serves about 3,381 users (33rd percentile) and 31.72 GB of data, affecting data, real-time and video, and network access services. Impact is Moderate with priority P4 (Low), as computed deterministically. Because no KPIs were supplied, these KPI values are estimates from similar cases, so the actual user impact may differ."
+   },
+   "fault_risk": {
+    "probability": 0.0414,
+    "band": "Low",
+    "top_drivers": [
+     {
+      "feature": "weather",
+      "importance": 0.3154,
+      "value": "Clouds",
+      "band": null,
+      "imputed": false
+     },
+     {
+      "feature": "security_incidents",
+      "importance": 0.0181,
+      "value": 3.0,
+      "band": "normal",
+      "imputed": false
+     },
+     {
+      "feature": "alarm_count",
+      "importance": 0.0179,
+      "value": 8.0,
+      "band": "normal",
+      "imputed": false
+     },
+     {
+      "feature": "user_count",
+      "importance": 0.0082,
+      "value": 3381.0,
+      "band": "normal",
+      "imputed": false
+     },
+     {
+      "feature": "packet_loss_pct",
+      "importance": 0.0039,
+      "value": 9.55,
+      "band": "degraded",
+      "imputed": false
+     }
+    ],
+    "basis": "similar_cases_median"
+   },
+   "performance_prediction": {
+    "expected_throughput_mbps": 552.7,
+    "observed": 336.66420000000005,
+    "deficit_pct": -39.1,
+    "model_r2": 0.3277
+   },
+   "priority": {
+    "level": "P4",
+    "label": "Low",
+    "score": 0.286,
+    "components": {
+     "severity": 0.322,
+     "impact": 0.482,
+     "risk": 0.041
+    },
+    "overrides": [],
+    "reasons": [
+     "Estimated from the median KPIs of the similar cases (no KPIs were given).",
+     "Degraded cell availability: 80.431 % (worse than 86% of records)",
+     "Degraded throughput: 336.664 Mbps (worse than 85% of records)",
+     "Degraded latency: 107.845 ms (worse than 77% of records)",
+     "Serves 3,381 users (more than 33% of records)",
+     "Fault risk 4%"
+    ]
+   },
+   "recommendations": [
+    {
+     "step": 1,
+     "action": "Run latency, jitter and packet loss measurements (e.g., TWAMP or ping series) from the site to the core and compare against baseline.",
+     "phase": "immediate",
+     "rationale": "Confirms the transport degradation hypothesis before any network change is made.",
+     "expected_kpi_effect": "Establishes measured latency and loss baseline; no direct KPI change expected.",
+     "verification": "Measurement results show latency and loss values consistent with the affected period versus baseline.",
+     "risk_level": "low",
+     "requires_change_approval": false,
+     "citations": [
+      "KB-TRANSPORT_QOS-diagnostic-checks",
+      "CASE-037746"
+     ]
+    },
+    {
+     "step": 2,
+     "action": "Check interface counters on the site router and aggregation devices for errors, discards and CRC failures.",
+     "phase": "immediate",
+     "rationale": "Distinguishes a physical or interface fault from pure link congestion as the cause of packet loss.",
+     "expected_kpi_effect": "Identifies whether packet loss rate is caused by interface errors or queuing discards.",
+     "verification": "Counter review completed and error or discard trends documented for the affected period.",
+     "risk_level": "low",
+     "requires_change_approval": false,
+     "citations": [
+      "KB-TRANSPORT_QOS-diagnostic-checks"
+     ]
+    },
+    {
+     "step": 3,
+     "action": "Check backhaul utilization and received signal or optical power levels on the transport link during the affected period.",
+     "phase": "immediate",
+     "rationale": "Tests the congestion hypothesis and the degraded physical link hypothesis, including weather-related microwave fading.",
+     "expected_kpi_effect": "Confirms whether link saturation or signal degradation is driving latency and throughput loss.",
+     "verification": "Utilization and signal levels are compared with thresholds and with the weather context for the period.",
+     "risk_level": "low",
+     "requires_change_approval": false,
+     "citations": [
+      "KB-TRANSPORT_QOS-diagnostic-checks",
+      "KB-CONGESTION_CAPACITY-diagnostic-checks",
+      "CASE-016229"
+     ]
+    },
+    {
+     "step": 4,
+     "action": "Reroute traffic to a backup or protection path if available, and prioritize real-time traffic with QoS marking and queuing if the policy is missing or wrong.",
+     "phase": "short_term",
+     "rationale": "Containment of queuing and loss on the congested or degraded path while the root cause is repaired.",
+     "expected_kpi_effect": "Packet loss rate and latency decrease; throughput recovers toward baseline.",
+     "verification": "Packet loss and latency return toward baseline within the monitoring window, and cell availability improves.",
+     "risk_level": "medium",
+     "requires_change_approval": true,
+     "citations": [
+      "KB-TRANSPORT_QOS-corrective-actions"
+     ]
+    },
+    {
+     "step": 5,
+     "action": "Repair or replace degraded physical components, such as cleaning or replacing connectors, realigning microwave antennas, or repairing fibre, and increase backhaul capacity if utilization is the cause.",
+     "phase": "short_term",
+     "rationale": "Addresses the confirmed physical or capacity root cause identified in the diagnostics.",
+     "expected_kpi_effect": "Throughput increases and packet loss and latency decrease to pre-incident levels.",
+     "verification": "Post-repair KPIs remain within baseline for at least 24 hours under normal load.",
+     "risk_level": "medium",
+     "requires_change_approval": true,
+     "citations": [
+      "KB-TRANSPORT_QOS-corrective-actions",
+      "CASE-039539"
+     ]
+    },
+    {
+     "step": 6,
+     "action": "Set up continuous transport KPI monitoring with alerts on latency, jitter and loss trends for this site.",
+     "phase": "preventive",
+     "rationale": "Detects recurrence early, given the high fault rate and weather sensitivity in similar cases.",
+     "expected_kpi_effect": "Earlier detection of latency and loss trends, reducing time to recovery in future incidents.",
+     "verification": "Alerts are configured and triggered correctly in a test or during a subsequent degradation.",
+     "risk_level": "low",
+     "requires_change_approval": false,
+     "citations": [
+      "KB-TRANSPORT_QOS-corrective-actions",
+      "CASE-037746"
+     ]
+    }
+   ],
+   "escalation": {
+    "needed": true,
+    "team": "Transport/IP team",
+    "reason": "Priority P4 with degradation across latency, loss and throughput; escalate to the transport team if the degradation is on shared aggregation links or affects several sites, and to field operations if physical repair is required."
+   },
+   "validation": {
+    "verdict": "pass",
+    "scores": {
+     "groundedness": 0.7,
+     "kpi_consistency": 0.6,
+     "actionability": 0.75,
+     "completeness": 0.6
+    },
+    "issues": [
+     {
+      "target": "recommender",
+      "problem": "Steps 4, 5 and 6 cite KB-TRANSPORT_QOS-corrective-actions, which is not among the runbook excerpts provided. Those citations are unsupported.",
+      "fix_instruction": "Cite only runbook IDs present in the evidence digest (e.g., KB-TRANSPORT_QOS-diagnostic-checks, KB-TRANSPORT_QOS-escalation-criteria). If no corrective-actions excerpt exists, base steps 4-6 on the available diagnostic and escalation runbook content and remove the unsupported ID."
+     },
+     {
+      "target": "recommender",
+      "problem": "Several citations are weak or mismatched. Step 1 cites CASE-037746 for a diagnostic measurement, step 3 cites CASE-016229 for weather context, and step 5 cites CASE-039539 for a physical repair. Similar cases do not establish these actions.",
+      "fix_instruction": "Limit case citations to facts those cases actually show. Justify actions with the runbook diagnostic checks, and cite a case only for an observed pattern it supports."
+     },
+     {
+      "target": "analyst",
+      "problem": "The KPI assessment flags cell availability at 80.431% as degraded, but the analysis never discusses it. The runbook says availability is normal under congestion, so this contradicts the congestion hypothesis and is unexplained.",
+      "fix_instruction": "Address the degraded cell availability explicitly: state whether it fits or conflicts with each hypothesis, and reflect it in the likelihood ratings and the data limitations."
+     },
+     {
+      "target": "analyst",
+      "problem": "The analysis does not reconcile priority P4 (Low) with the four degraded KPIs and with similar cases where 51% are P1 or P2. It also does not state that radio KPIs were not provided, so the runbook's transport-versus-radio separation cannot be verified.",
+      "fix_instruction": "Add a short note explaining the P4 priority as deterministic from estimated KPIs, state the similar-case priority mix, and state that radio KPIs (signal strength, handover success) were not supplied so the transport-versus-radio separation is unconfirmed."
+     },
+     {
+      "target": "recommender",
+      "problem": "No step verifies radio KPIs or addresses the availability degradation, even though the runbook says radio KPIs are typically normal and separate transport from radio causes. The plan also has no step on alarms, which the analysis cites as a risk factor.",
+      "fix_instruction": "Add a diagnostic step to check radio KPIs (signal strength, handover success) and alarm history to confirm the transport diagnosis and rule out a radio or equipment fault, with a verification step."
+     }
+    ],
+    "summary": "The diagnosis is mostly grounded and the hypotheses follow the evidence, but it cites runbook and case IDs that are unsupported or mismatched, and it ignores the degraded cell availability and the P4 versus similar-case priority tension. The recommendations lack a radio/alarm verification step, so groundedness, KPI consistency and completeness are reduced.",
+    "rule_checks": [
+     {
+      "rule": "citations_valid",
+      "passed": false,
+      "critical": false,
+      "target": "analyst",
+      "detail": "removed unknown citations: ['IMPACT & PRIORITY']"
+     },
+     {
+      "rule": "recommendation_kb_citation",
+      "passed": true,
+      "critical": true,
+      "target": "recommender",
+      "detail": "every step cites a runbook"
+     },
+     {
+      "rule": "hypotheses_grounded",
+      "passed": true,
+      "critical": false,
+      "target": "analyst",
+      "detail": "every hypothesis cites evidence"
+     },
+     {
+      "rule": "numbers_match_evidence",
+      "passed": true,
+      "critical": false,
+      "target": "analyst",
+      "detail": "all quoted numbers match the evidence"
+     },
+     {
+      "rule": "primary_category_addressed",
+      "passed": true,
+      "critical": true,
+      "target": "recommender",
+      "detail": "TRANSPORT_QOS runbook cited"
+     },
+     {
+      "rule": "recommendation_count",
+      "passed": true,
+      "critical": false,
+      "target": "recommender",
+      "detail": "6 recommendations (expected 4-7)"
+     }
+    ],
+    "revisions": 0
+   },
+   "sources": [
+    {
+     "id": "CASE-037746",
+     "type": "case",
+     "title": "TRANSPORT_QOS case, NV",
+     "snippet": "[CASE-037746] NV/Summer/Rain, P2, TRANSPORT_QOS+CONGESTION_CAPACITY: latency 166.4 ms (crit), packet loss rate 14.2% (crit), successful configuration changes 90.4% (crit), cell availability 80.4% (deg); fault rate 45.3%",
+     "score": 1.18
+    },
+    {
+     "id": "CASE-016229",
+     "type": "case",
+     "title": "TRANSPORT_QOS case, TX",
+     "snippet": "[CASE-016229] TX/Winter/Clouds, P4, TRANSPORT_QOS+CONGESTION_CAPACITY: throughput 306.1 Mbps (deg), cell availability 80.2% (deg), packet loss rate 10.6% (deg), latency 116.6 ms (deg); fault rate 44.0%",
+     "score": 0.684
+    },
+    {
+     "id": "CASE-039539",
+     "type": "case",
+     "title": "TRANSPORT_QOS case, MD",
+     "snippet": "[CASE-039539] MD/Winter/Clouds, P4, TRANSPORT_QOS+CONGESTION_CAPACITY: throughput 379.2 Mbps (deg), packet loss rate 9.6% (deg), latency 105.9 ms (deg); fault rate 42.4%",
+     "score": 0.681
+    },
+    {
+     "id": "CASE-005057",
+     "type": "case",
+     "title": "AVAILABILITY_OUTAGE case, CO",
+     "snippet": "[CASE-005057] CO/Summer/Clear, P2, AVAILABILITY_OUTAGE+TRANSPORT_QOS: cell availability 79.0% (crit), throughput 329.6 Mbps (deg), latency 107.8 ms (deg), packet loss rate 9.5% (deg); fault rate 41.4%",
+     "score": 0.6674
+    },
+    {
+     "id": "CASE-050747",
+     "type": "case",
+     "title": "TRANSPORT_QOS case, UT",
+     "snippet": "[CASE-050747] UT/Summer/Clouds, P4, TRANSPORT_QOS+CONGESTION_CAPACITY: packet loss rate 9.5% (deg), throughput 388.8 Mbps (deg), latency 106.4 ms (deg); fault rate 46.9%",
+     "score": 0.6529
+    },
+    {
+     "id": "KB-TRANSPORT_QOS-likely-root-causes",
+     "type": "runbook",
+     "title": "Transport and QoS degradation (latency, jitter, packet loss) / likely-root-causes",
+     "snippet": "Runbook: Transport and QoS degradation (latency, jitter, packet loss) > Likely root causes\n- Backhaul link congestion or an under-dimensioned transport link.\n- A degraded physical link: fibre damage, a dirty connector, microwave fading or m",
+     "score": 0.7488
+    },
+    {
+     "id": "KB-TRANSPORT_QOS-kpi-signature",
+     "type": "runbook",
+     "title": "Transport and QoS degradation (latency, jitter, packet loss) / kpi-signature",
+     "snippet": "Runbook: Transport and QoS degradation (latency, jitter, packet loss) > KPI signature\n- High latency, high jitter and high packet loss (worse than this network's 75th percentile), often together.\n- Throughput may fall because lost packets t",
+     "score": 0.7369
+    },
+    {
+     "id": "KB-CONGESTION_CAPACITY-kpi-signature",
+     "type": "runbook",
+     "title": "Congestion and capacity / kpi-signature",
+     "snippet": "Runbook: Congestion and capacity > KPI signature\n- High user count and high data usage (worse than this network's 75th percentile).\n- Low throughput per cell, often with rising latency.\n- Accessibility can dip at the busiest moments, while ",
+     "score": 0.725
+    },
+    {
+     "id": "KB-CONGESTION_CAPACITY-likely-root-causes",
+     "type": "runbook",
+     "title": "Congestion and capacity / likely-root-causes",
+     "snippet": "Runbook: Congestion and capacity > Likely root causes\n- Peak-hour demand or a local event exceeding the cell's designed capacity.\n- Uneven load: one cell is saturated while its neighbours have headroom (poor load balancing).\n- Insufficient ",
+     "score": 0.7024
+    },
+    {
+     "id": "KB-TRANSPORT_QOS-diagnostic-checks",
+     "type": "runbook",
+     "title": "Transport and QoS degradation (latency, jitter, packet loss) / diagnostic-checks",
+     "snippet": "Runbook: Transport and QoS degradation (latency, jitter, packet loss) > Diagnostic checks\n1. Run latency, jitter and loss measurements (for example TWAMP or ping series) from the site to the core and compare with the baseline.\n2. Check inte",
+     "score": 0.7017
+    },
+    {
+     "id": "KB-TRANSPORT_QOS-escalation-criteria",
+     "type": "runbook",
+     "title": "Transport and QoS degradation (latency, jitter, packet loss) / escalation-criteria",
+     "snippet": "Runbook: Transport and QoS degradation (latency, jitter, packet loss) > Escalation criteria\n- Escalate to the transport or IP team when the degradation is on shared aggregation links or affects several sites.\n- Escalate to field operations ",
+     "score": 0.7001
+    },
+    {
+     "id": "KB-CONGESTION_CAPACITY-diagnostic-checks",
+     "type": "runbook",
+     "title": "Congestion and capacity / diagnostic-checks",
+     "snippet": "Runbook: Congestion and capacity > Diagnostic checks\n1. Plot user count, data volume and throughput for the cell and its neighbours over the last 7 days to confirm a load-driven pattern.\n2. Compare radio resource utilization (PRB usage) wit",
+     "score": 0.6835
+    },
+    {
+     "id": "KB-TRANSPORT_QOS-corrective-actions",
+     "type": "runbook",
+     "title": "Transport and QoS degradation (latency, jitter, packet loss) / corrective-actions",
+     "snippet": "Runbook: Transport and QoS degradation (latency, jitter, packet loss) > Corrective actions\n### Immediate\n- Reroute traffic to a backup or protection path if available (requires change approval).\n- Prioritize voice and real-time traffic with",
+     "score": 0.6683
+    }
+   ],
+   "warnings": [],
+   "trace": [
+    {
+     "node": "gate",
+     "ms": 0.0,
+     "llm_calls": 0,
+     "tokens_in": 0,
+     "tokens_out": 0,
+     "tool_calls": [],
+     "status": "ok"
+    },
+    {
+     "node": "classify",
+     "ms": 1899.2,
+     "llm_calls": 1,
+     "tokens_in": 2138,
+     "tokens_out": 244,
+     "tool_calls": [],
+     "status": "ok"
+    },
+    {
+     "node": "retrieve",
+     "ms": 116.7,
+     "llm_calls": 0,
+     "tokens_in": 0,
+     "tokens_out": 0,
+     "tool_calls": [
+      "hybrid_search"
+     ],
+     "status": "ok"
+    },
+    {
+     "node": "gather_evidence",
+     "ms": 625.4,
+     "llm_calls": 0,
+     "tokens_in": 0,
+     "tokens_out": 0,
+     "tool_calls": [
+      "kpi_assessment",
+      "segment_stats",
+      "predict_fault_risk",
+      "predict_performance",
+      "impact",
+      "prioritize",
+      "search_runbook(analyst)",
+      "search_runbook(recommender)"
+     ],
+     "status": "ok"
+    },
+    {
+     "node": "analyze",
+     "ms": 12088.6,
+     "llm_calls": 1,
+     "tokens_in": 3926,
+     "tokens_out": 2903,
+     "tool_calls": [],
+     "status": "ok"
+    },
+    {
+     "node": "recommend",
+     "ms": 6310.7,
+     "llm_calls": 1,
+     "tokens_in": 3334,
+     "tokens_out": 1453,
+     "tool_calls": [],
+     "status": "ok"
+    },
+    {
+     "node": "judge",
+     "ms": 11067.2,
+     "llm_calls": 1,
+     "tokens_in": 7905,
+     "tokens_out": 2369,
+     "tool_calls": [],
+     "status": "ok"
+    },
+    {
+     "node": "finalize",
+     "ms": 0.0,
+     "llm_calls": 0,
+     "tokens_in": 0,
+     "tokens_out": 0,
+     "tool_calls": [],
+     "status": "ok"
+    }
+   ],
+   "meta": {
+    "model": "claude-haiku-5-5",
+    "judge_model": "claude-haiku-5-5",
+    "prompt_version": "classifier_v1,analyst_v1,recommender_v1,judge_v1",
+    "latency_ms": 32171.6,
+    "llm_calls": 4,
+    "tokens_in": 17303,
+    "tokens_out": 6969,
+    "cached_calls": 0
+   },
+   "usage": {
+    "llm_calls": 4,
+    "tokens_in": 17303,
+    "tokens_out": 6969,
+    "cached_calls": 0
+   }
+  },
+  "captured": "Captured in the Haiku 5.5 agent test (2026-10-09), query G17; latency 32.2 s."
+ },
+ "reduced": {
+  "request": {
+   "query": "A cell is experiencing high latency, packet loss, and reduced throughput."
+  },
+  "response": {
+   "request_id": "e5e99e2c4f34",
+   "warnings": [
+    "Reduced mode: no LLM is configured or reachable. Classification, analysis and actions are rule-based and not validated."
+   ],
+   "run_id": "6456988312b641c18b6a4c1d86397f73",
+   "status": "degraded",
+   "classification": {
+    "primary_category": "TRANSPORT_QOS",
+    "secondary_categories": [
+     "CONGESTION_CAPACITY"
+    ],
+    "symptoms": [
+     "high_latency",
+     "high_packet_loss",
+     "low_throughput"
+    ],
+    "filters": {
+     "state": [],
+     "city": null,
+     "season": [],
+     "weather": []
+    },
+    "severity_hint": "unknown",
+    "in_scope": true,
+    "needs_clarification": false,
+    "clarification_question": null,
+    "confidence": 0.65,
+    "rationale": "Rule-based: matched high_latency, high_packet_loss, low_throughput.",
+    "source": "rules"
+   },
+   "applied_filters": {},
+   "similar_cases": [
+    {
+     "rank": 1,
+     "case_id": "CASE-037746",
+     "final_score": 1.18,
+     "score_breakdown": {
+      "dense_rank": 36,
+      "bm25_rank": 12,
+      "rrf": 0.02431,
+      "symptom_overlap": 0.6,
+      "feedback_prior": 0.5
+     },
+     "state": "NV",
+     "city": "New Joanne",
+     "season": "Summer",
+     "weather": "Rain",
+     "primary_category": "TRANSPORT_QOS",
+     "secondary_categories": [
+      "CONGESTION_CAPACITY",
+      "CONFIG_CHANGE"
+     ],
+     "priority": "P2",
+     "fault_risk_band": "High",
+     "anomalies": [
+      {
+       "kpi": "latency_ms",
+       "label": "Latency",
+       "value": 166.428,
+       "unit": "ms",
+       "band": "critical",
+       "percentile": 0.997
+      },
+      {
+       "kpi": "packet_loss_pct",
+       "label": "Packet loss rate",
+       "value": 14.25,
+       "unit": "%",
+       "band": "critical",
+       "percentile": 0.974
+      },
+      {
+       "kpi": "config_change_success_pct",
+       "label": "Successful configuration changes",
+       "value": 90.41,
+       "unit": "%",
+       "band": "critical",
+       "percentile": 0.9535
+      },
+      {
+       "kpi": "cell_availability_pct",
+       "label": "Cell availability",
+       "value": 80.431,
+       "unit": "%",
+       "band": "degraded",
+       "percentile": 0.8591
+      },
+      {
+       "kpi": "throughput_mbps",
+       "label": "Throughput",
+       "value": 336.66420000000005,
+       "unit": "Mbps",
+       "band": "degraded",
+       "percentile": 0.8482
+      }
+     ],
+     "summary": "[CASE-037746] NV/Summer/Rain, P2, TRANSPORT_QOS+CONGESTION_CAPACITY: latency 166.4 ms (crit), packet loss rate 14.2% (crit), successful configuration changes 90.4% (crit), cell availability 80.4% (deg); fault rate 45.3%"
+    },
+    {
+     "rank": 2,
+     "case_id": "CASE-016229",
+     "final_score": 0.705,
+     "score_breakdown": {
+      "dense_rank": null,
+      "bm25_rank": 1,
+      "rrf": 0.01639,
+      "symptom_overlap": 0.75,
+      "feedback_prior": 0.5
+     },
+     "state": "TX",
+     "city": "Banksburgh",
+     "season": "Winter",
+     "weather": "Clouds",
+     "primary_category": "TRANSPORT_QOS",
+     "secondary_categories": [
+      "CONGESTION_CAPACITY",
+      "AVAILABILITY_OUTAGE"
+     ],
+     "priority": "P4",
+     "fault_risk_band": "Low",
+     "anomalies": [
+      {
+       "kpi": "throughput_mbps",
+       "label": "Throughput",
+       "value": 306.12085,
+       "unit": "Mbps",
+       "band": "degraded",
+       "percentile": 0.8971
+      },
+      {
+       "kpi": "cell_availability_pct",
+       "label": "Cell availability",
+       "value": 80.245,
+       "unit": "%",
+       "band": "degraded",
+       "percentile": 0.8671
+      },
+      {
+       "kpi": "packet_loss_pct",
+       "label": "Packet loss rate",
+       "value": 10.6,
+       "unit": "%",
+       "band": "degraded",
+       "percentile": 0.8342
+      },
+      {
+       "kpi": "latency_ms",
+       "label": "Latency",
+       "value": 116.6415,
+       "unit": "ms",
+       "band": "degraded",
+       "percentile": 0.8292
+      }
+     ],
+     "summary": "[CASE-016229] TX/Winter/Clouds, P4, TRANSPORT_QOS+CONGESTION_CAPACITY: throughput 306.1 Mbps (deg), cell availability 80.2% (deg), packet loss rate 10.6% (deg), latency 116.6 ms (deg); fault rate 44.0%"
+    },
+    {
+     "rank": 3,
+     "case_id": "CASE-039539",
+     "final_score": 0.6983,
+     "score_breakdown": {
+      "dense_rank": null,
+      "bm25_rank": 6,
+      "rrf": 0.01515,
+      "symptom_overlap": 1.0,
+      "feedback_prior": 0.5
+     },
+     "state": "MD",
+     "city": "Gutierrezton",
+     "season": "Winter",
+     "weather": "Clouds",
+     "primary_category": "TRANSPORT_QOS",
+     "secondary_categories": [
+      "CONGESTION_CAPACITY"
+     ],
+     "priority": "P4",
+     "fault_risk_band": "Low",
+     "anomalies": [
+      {
+       "kpi": "throughput_mbps",
+       "label": "Throughput",
+       "value": 379.2406,
+       "unit": "Mbps",
+       "band": "degraded",
+       "percentile": 0.7752
+      },
+      {
+       "kpi": "packet_loss_pct",
+       "label": "Packet loss rate",
+       "value": 9.55,
+       "unit": "%",
+       "band": "degraded",
+       "percentile": 0.7672
+      },
+      {
+       "kpi": "latency_ms",
+       "label": "Latency",
+       "value": 105.879,
+       "unit": "ms",
+       "band": "degraded",
+       "percentile": 0.7542
+      }
+     ],
+     "summary": "[CASE-039539] MD/Winter/Clouds, P4, TRANSPORT_QOS+CONGESTION_CAPACITY: throughput 379.2 Mbps (deg), packet loss rate 9.6% (deg), latency 105.9 ms (deg); fault rate 42.4%"
+    },
+    {
+     "rank": 4,
+     "case_id": "CASE-005057",
+     "final_score": 0.6876,
+     "score_breakdown": {
+      "dense_rank": null,
+      "bm25_rank": 2,
+      "rrf": 0.01613,
+      "symptom_overlap": 0.75,
+      "feedback_prior": 0.5
+     },
+     "state": "CO",
+     "city": "Barkerfort",
+     "season": "Summer",
+     "weather": "Clear",
+     "primary_category": "AVAILABILITY_OUTAGE",
+     "secondary_categories": [
+      "TRANSPORT_QOS",
+      "CONGESTION_CAPACITY"
+     ],
+     "priority": "P2",
+     "fault_risk_band": "Low",
+     "anomalies": [
+      {
+       "kpi": "cell_availability_pct",
+       "label": "Cell availability",
+       "value": 79.03299999999999,
+       "unit": "%",
+       "band": "critical",
+       "percentile": 0.9151
+      },
+      {
+       "kpi": "throughput_mbps",
+       "label": "Throughput",
+       "value": 329.6315,
+       "unit": "Mbps",
+       "band": "degraded",
+       "percentile": 0.8601
+      },
+      {
+       "kpi": "latency_ms",
+       "label": "Latency",
+       "value": 107.845,
+       "unit": "ms",
+       "band": "degraded",
+       "percentile": 0.7692
+      },
+      {
+       "kpi": "packet_loss_pct",
+       "label": "Packet loss rate",
+       "value": 9.48,
+       "unit": "%",
+       "band": "degraded",
+       "percentile": 0.7622
+      }
+     ],
+     "summary": "[CASE-005057] CO/Summer/Clear, P2, AVAILABILITY_OUTAGE+TRANSPORT_QOS: cell availability 79.0% (crit), throughput 329.6 Mbps (deg), latency 107.8 ms (deg), packet loss rate 9.5% (deg); fault rate 41.4%"
+    },
+    {
+     "rank": 5,
+     "case_id": "CASE-037969",
+     "final_score": 0.6708,
+     "score_breakdown": {
+      "dense_rank": null,
+      "bm25_rank": 3,
+      "rrf": 0.01587,
+      "symptom_overlap": 0.75,
+      "feedback_prior": 0.5
+     },
+     "state": "GA",
+     "city": "South Edwardview",
+     "season": "Spring",
+     "weather": "Rain",
+     "primary_category": "TRANSPORT_QOS",
+     "secondary_categories": [
+      "CONGESTION_CAPACITY",
+      "AVAILABILITY_OUTAGE"
+     ],
+     "priority": "P3",
+     "fault_risk_band": "High",
+     "anomalies": [
+      {
+       "kpi": "packet_loss_pct",
+       "label": "Packet loss rate",
+       "value": 13.32,
+       "unit": "%",
+       "band": "critical",
+       "percentile": 0.951
+      },
+      {
+       "kpi": "latency_ms",
+       "label": "Latency",
+       "value": 126.262,
+       "unit": "ms",
+       "band": "degraded",
+       "percentile": 0.8811
+      },
+      {
+       "kpi": "cell_availability_pct",
+       "label": "Cell availability",
+       "value": 80.586,
+       "unit": "%",
+       "band": "degraded",
+       "percentile": 0.8531
+      },
+      {
+       "kpi": "throughput_mbps",
+       "label": "Throughput",
+       "value": 369.7358,
+       "unit": "Mbps",
+       "band": "degraded",
+       "percentile": 0.7912
+      }
+     ],
+     "summary": "[CASE-037969] GA/Spring/Rain, P3, TRANSPORT_QOS+CONGESTION_CAPACITY: packet loss rate 13.3% (crit), latency 126.3 ms (deg), cell availability 80.6% (deg), throughput 369.7 Mbps (deg); fault rate 44.3%"
+    }
+   ],
+   "kpi_assessment": {
+    "basis": "similar_cases_median",
+    "anomalies": [
+     {
+      "kpi": "cell_availability_pct",
+      "label": "Cell availability",
+      "unit": "%",
+      "value": 80.431,
+      "percentile": 0.1409,
+      "worse_than_pct": 85.9,
+      "band": "degraded",
+      "imputed": false
+     },
+     {
+      "kpi": "throughput_mbps",
+      "label": "Throughput",
+      "unit": "Mbps",
+      "value": 336.66420000000005,
+      "percentile": 0.1518,
+      "worse_than_pct": 84.8,
+      "band": "degraded",
+      "imputed": false
+     },
+     {
+      "kpi": "packet_loss_pct",
+      "label": "Packet loss rate",
+      "unit": "%",
+      "value": 10.6,
+      "percentile": 0.8342,
+      "worse_than_pct": 83.4,
+      "band": "degraded",
+      "imputed": false
+     },
+     {
+      "kpi": "latency_ms",
+      "label": "Latency",
+      "unit": "ms",
+      "value": 116.6415,
+      "percentile": 0.8292,
+      "worse_than_pct": 82.9,
+      "band": "degraded",
+      "imputed": false
+     }
+    ],
+    "imputed_fields": []
+   },
+   "segment_stats": {
+    "count": 8339,
+    "top_lifts": [
+     {
+      "factor": "weather=Snow",
+      "segment_rate": 0.154,
+      "corpus_rate": 0.062,
+      "lift": 2.47
+     },
+     {
+      "factor": "adverse_weather",
+      "segment_rate": 0.729,
+      "corpus_rate": 0.374,
+      "lift": 1.95
+     },
+     {
+      "factor": "high_fault_rate",
+      "segment_rate": 0.481,
+      "corpus_rate": 0.25,
+      "lift": 1.93
+     },
+     {
+      "factor": "weather=Rain",
+      "segment_rate": 0.575,
+      "corpus_rate": 0.312,
+      "lift": 1.84
+     },
+     {
+      "factor": "high_auth_failures",
+      "segment_rate": 0.483,
+      "corpus_rate": 0.264,
+      "lift": 1.83
+     },
+     {
+      "factor": "high_critical_alarms",
+      "segment_rate": 0.431,
+      "corpus_rate": 0.25,
+      "lift": 1.72
+     },
+     {
+      "factor": "low_throughput",
+      "segment_rate": 0.424,
+      "corpus_rate": 0.25,
+      "lift": 1.69
+     },
+     {
+      "factor": "high_call_drop",
+      "segment_rate": 0.4,
+      "corpus_rate": 0.25,
+      "lift": 1.6
+     }
+    ],
+    "priority_mix": {
+     "P1": 0.173,
+     "P2": 0.343,
+     "P3": 0.406,
+     "P4": 0.078
+    },
+    "median_fault_rate": 47.65
+   },
+   "root_cause_analysis": {
+    "hypotheses": [
+     {
+      "cause": "Backhaul link congestion or an under-dimensioned transport link.",
+      "likelihood": "medium",
+      "evidence_type": "both",
+      "supporting_evidence": [
+       "Cell availability 80.431 % (degraded)",
+       "Throughput 336.664 Mbps (degraded)",
+       "Packet loss rate 10.6 % (degraded)"
+      ],
+      "citations": [
+       "KB-TRANSPORT_QOS-likely-root-causes",
+       "KPI ASSESSMENT"
+      ]
+     },
+     {
+      "cause": "A degraded physical link: fibre damage, a dirty connector, microwave fading or misalignment.",
+      "likelihood": "medium",
+      "evidence_type": "both",
+      "supporting_evidence": [
+       "Cell availability 80.431 % (degraded)",
+       "Throughput 336.664 Mbps (degraded)",
+       "Packet loss rate 10.6 % (degraded)"
+      ],
+      "citations": [
+       "KB-TRANSPORT_QOS-likely-root-causes",
+       "KPI ASSESSMENT"
+      ]
+     },
+     {
+      "cause": "Interface errors or duplex mismatches on routers and switches.",
+      "likelihood": "medium",
+      "evidence_type": "both",
+      "supporting_evidence": [
+       "Cell availability 80.431 % (degraded)",
+       "Throughput 336.664 Mbps (degraded)",
+       "Packet loss rate 10.6 % (degraded)"
+      ],
+      "citations": [
+       "KB-TRANSPORT_QOS-likely-root-causes",
+       "KPI ASSESSMENT"
+      ]
+     }
+    ],
+    "contributing_factors": [
+     {
+      "factor": "weather=Snow",
+      "direction": "co-occurs more often than baseline",
+      "evidence": "lift 2.47x (segment 15% vs corpus 6%)",
+      "citation": "SEGMENT STATS"
+     },
+     {
+      "factor": "adverse_weather",
+      "direction": "co-occurs more often than baseline",
+      "evidence": "lift 1.95x (segment 73% vs corpus 37%)",
+      "citation": "SEGMENT STATS"
+     },
+     {
+      "factor": "high_fault_rate",
+      "direction": "co-occurs more often than baseline",
+      "evidence": "lift 1.93x (segment 48% vs corpus 25%)",
+      "citation": "SEGMENT STATS"
+     },
+     {
+      "factor": "weather=Rain",
+      "direction": "co-occurs more often than baseline",
+      "evidence": "lift 1.84x (segment 57% vs corpus 31%)",
+      "citation": "SEGMENT STATS"
+     }
+    ],
+    "data_limitations": [
+     "Synthetic dataset without timestamps, cell IDs or topology.",
+     "Severity is relative to this network's history, not absolute thresholds.",
+     "Co-occurrence in past cases does not prove causation."
+    ]
+   },
+   "impact": {
+    "level": "Moderate",
+    "affected_services": [
+     "data",
+     "real-time and video",
+     "network access"
+    ],
+    "users_served": 3049,
+    "data_gb": 26.51,
+    "narrative": "Impact Moderate: affects data, real-time and video, network access, about 3,049 users served."
+   },
+   "fault_risk": {
+    "probability": 0.0411,
+    "band": "Low",
+    "top_drivers": [
+     {
+      "feature": "weather",
+      "importance": 0.3154,
+      "value": "Clouds",
+      "band": null,
+      "imputed": false
+     },
+     {
+      "feature": "security_incidents",
+      "importance": 0.0181,
+      "value": 3.0,
+      "band": "normal",
+      "imputed": false
+     },
+     {
+      "feature": "alarm_count",
+      "importance": 0.0179,
+      "value": 8.0,
+      "band": "normal",
+      "imputed": false
+     },
+     {
+      "feature": "user_count",
+      "importance": 0.0082,
+      "value": 3049.0,
+      "band": "normal",
+      "imputed": false
+     },
+     {
+      "feature": "packet_loss_pct",
+      "importance": 0.0039,
+      "value": 10.6,
+      "band": "degraded",
+      "imputed": false
+     }
+    ],
+    "basis": "similar_cases_median"
+   },
+   "performance_prediction": {
+    "expected_throughput_mbps": 552.0,
+    "observed": 336.66420000000005,
+    "deficit_pct": -39.0,
+    "model_r2": 0.3277
+   },
+   "priority": {
+    "level": "P4",
+    "label": "Low",
+    "score": 0.264,
+    "components": {
+     "severity": 0.322,
+     "impact": 0.412,
+     "risk": 0.041
+    },
+    "overrides": [],
+    "reasons": [
+     "Estimated from the median KPIs of the similar cases (no KPIs were given).",
+     "Degraded cell availability: 80.431 % (worse than 86% of records)",
+     "Degraded throughput: 336.664 Mbps (worse than 85% of records)",
+     "Degraded packet loss rate: 10.6 % (worse than 83% of records)",
+     "Serves 3,049 users (more than 30% of records)",
+     "Fault risk 4%"
+    ]
+   },
+   "recommendations": [
+    {
+     "step": 1,
+     "action": "Reroute traffic to a backup or protection path if available (requires change approval).",
+     "phase": "immediate",
+     "rationale": "Runbook immediate action for TRANSPORT_QOS.",
+     "expected_kpi_effect": "",
+     "verification": "",
+     "risk_level": "medium",
+     "requires_change_approval": true,
+     "citations": [
+      "KB-TRANSPORT_QOS-corrective-actions"
+     ]
+    },
+    {
+     "step": 2,
+     "action": "Prioritize voice and real-time traffic with QoS marking and queuing if the policy is missing or wrong (requires change approval).",
+     "phase": "immediate",
+     "rationale": "Runbook immediate action for TRANSPORT_QOS.",
+     "expected_kpi_effect": "",
+     "verification": "",
+     "risk_level": "medium",
+     "requires_change_approval": true,
+     "citations": [
+      "KB-TRANSPORT_QOS-corrective-actions"
+     ]
+    },
+    {
+     "step": 3,
+     "action": "Enable or tune load balancing and traffic steering towards neighbours with headroom (requires change approval).",
+     "phase": "immediate",
+     "rationale": "Runbook immediate action for CONGESTION_CAPACITY.",
+     "expected_kpi_effect": "",
+     "verification": "",
+     "risk_level": "medium",
+     "requires_change_approval": true,
+     "citations": [
+      "KB-CONGESTION_CAPACITY-corrective-actions"
+     ]
+    },
+    {
+     "step": 4,
+     "action": "Apply temporary QoS prioritization for voice and critical services during the peak.",
+     "phase": "immediate",
+     "rationale": "Runbook immediate action for CONGESTION_CAPACITY.",
+     "expected_kpi_effect": "",
+     "verification": "",
+     "risk_level": "low",
+     "requires_change_approval": false,
+     "citations": [
+      "KB-CONGESTION_CAPACITY-corrective-actions"
+     ]
+    },
+    {
+     "step": 5,
+     "action": "Repair or replace degraded physical components: clean or replace connectors, realign microwave antennas, repair fibre.",
+     "phase": "short_term",
+     "rationale": "Runbook short-term action for TRANSPORT_QOS.",
+     "expected_kpi_effect": "",
+     "verification": "",
+     "risk_level": "medium",
+     "requires_change_approval": true,
+     "citations": [
+      "KB-TRANSPORT_QOS-corrective-actions"
+     ]
+    },
+    {
+     "step": 6,
+     "action": "Correct interface configuration issues such as duplex or MTU mismatches.",
+     "phase": "short_term",
+     "rationale": "Runbook short-term action for TRANSPORT_QOS.",
+     "expected_kpi_effect": "",
+     "verification": "",
+     "risk_level": "medium",
+     "requires_change_approval": true,
+     "citations": [
+      "KB-TRANSPORT_QOS-corrective-actions"
+     ]
+    },
+    {
+     "step": 7,
+     "action": "Increase backhaul capacity where utilization is the cause.",
+     "phase": "short_term",
+     "rationale": "Runbook short-term action for TRANSPORT_QOS.",
+     "expected_kpi_effect": "",
+     "verification": "",
+     "risk_level": "medium",
+     "requires_change_approval": true,
+     "citations": [
+      "KB-TRANSPORT_QOS-corrective-actions"
+     ]
+    }
+   ],
+   "escalation": {
+    "needed": false,
+    "team": "",
+    "reason": "Priority P4. Escalate to the transport or IP team when the degradation is on shared aggregation links or affects several sites."
+   },
+   "validation": {
+    "verdict": "unvalidated",
+    "scores": {},
+    "issues": [],
+    "revisions": 0,
+    "rule_checks": [
+     {
+      "rule": "citations_valid",
+      "passed": true,
+      "critical": false,
+      "target": "analyst",
+      "detail": "all citations known"
+     },
+     {
+      "rule": "recommendation_kb_citation",
+      "passed": true,
+      "critical": true,
+      "target": "recommender",
+      "detail": "every step cites a runbook"
+     },
+     {
+      "rule": "hypotheses_grounded",
+      "passed": true,
+      "critical": false,
+      "target": "analyst",
+      "detail": "every hypothesis cites evidence"
+     },
+     {
+      "rule": "numbers_match_evidence",
+      "passed": true,
+      "critical": false,
+      "target": "analyst",
+      "detail": "all quoted numbers match the evidence"
+     },
+     {
+      "rule": "primary_category_addressed",
+      "passed": true,
+      "critical": true,
+      "target": "recommender",
+      "detail": "TRANSPORT_QOS runbook cited"
+     },
+     {
+      "rule": "recommendation_count",
+      "passed": true,
+      "critical": false,
+      "target": "recommender",
+      "detail": "7 recommendations (expected 4-7)"
+     }
+    ],
+    "summary": "LLM judge unavailable; rule checks only."
+   },
+   "sources": [
+    {
+     "id": "CASE-037746",
+     "type": "case",
+     "title": "TRANSPORT_QOS case, NV",
+     "snippet": "[CASE-037746] NV/Summer/Rain, P2, TRANSPORT_QOS+CONGESTION_CAPACITY: latency 166.4 ms (crit), packet loss rate 14.2% (crit), successful configuration changes 90.4% (crit), cell availability 80.4% (deg); fault rate 45.3%",
+     "score": 1.18
+    },
+    {
+     "id": "CASE-016229",
+     "type": "case",
+     "title": "TRANSPORT_QOS case, TX",
+     "snippet": "[CASE-016229] TX/Winter/Clouds, P4, TRANSPORT_QOS+CONGESTION_CAPACITY: throughput 306.1 Mbps (deg), cell availability 80.2% (deg), packet loss rate 10.6% (deg), latency 116.6 ms (deg); fault rate 44.0%",
+     "score": 0.705
+    },
+    {
+     "id": "CASE-039539",
+     "type": "case",
+     "title": "TRANSPORT_QOS case, MD",
+     "snippet": "[CASE-039539] MD/Winter/Clouds, P4, TRANSPORT_QOS+CONGESTION_CAPACITY: throughput 379.2 Mbps (deg), packet loss rate 9.6% (deg), latency 105.9 ms (deg); fault rate 42.4%",
+     "score": 0.6983
+    },
+    {
+     "id": "CASE-005057",
+     "type": "case",
+     "title": "AVAILABILITY_OUTAGE case, CO",
+     "snippet": "[CASE-005057] CO/Summer/Clear, P2, AVAILABILITY_OUTAGE+TRANSPORT_QOS: cell availability 79.0% (crit), throughput 329.6 Mbps (deg), latency 107.8 ms (deg), packet loss rate 9.5% (deg); fault rate 41.4%",
+     "score": 0.6876
+    },
+    {
+     "id": "CASE-037969",
+     "type": "case",
+     "title": "TRANSPORT_QOS case, GA",
+     "snippet": "[CASE-037969] GA/Spring/Rain, P3, TRANSPORT_QOS+CONGESTION_CAPACITY: packet loss rate 13.3% (crit), latency 126.3 ms (deg), cell availability 80.6% (deg), throughput 369.7 Mbps (deg); fault rate 44.3%",
+     "score": 0.6708
+    },
+    {
+     "id": "KB-TRANSPORT_QOS-likely-root-causes",
+     "type": "runbook",
+     "title": "Transport and QoS degradation (latency, jitter, packet loss) / likely-root-causes",
+     "snippet": "Runbook: Transport and QoS degradation (latency, jitter, packet loss) > Likely root causes\n- Backhaul link congestion or an under-dimensioned transport link.\n- A degraded physical link: fibre damage, a dirty connector, microwave fading or m",
+     "score": 0.7443
+    },
+    {
+     "id": "KB-TRANSPORT_QOS-kpi-signature",
+     "type": "runbook",
+     "title": "Transport and QoS degradation (latency, jitter, packet loss) / kpi-signature",
+     "snippet": "Runbook: Transport and QoS degradation (latency, jitter, packet loss) > KPI signature\n- High latency, high jitter and high packet loss (worse than this network's 75th percentile), often together.\n- Throughput may fall because lost packets t",
+     "score": 0.7441
+    },
+    {
+     "id": "KB-CONGESTION_CAPACITY-kpi-signature",
+     "type": "runbook",
+     "title": "Congestion and capacity / kpi-signature",
+     "snippet": "Runbook: Congestion and capacity > KPI signature\n- High user count and high data usage (worse than this network's 75th percentile).\n- Low throughput per cell, often with rising latency.\n- Accessibility can dip at the busiest moments, while ",
+     "score": 0.7411
+    },
+    {
+     "id": "KB-CONGESTION_CAPACITY-likely-root-causes",
+     "type": "runbook",
+     "title": "Congestion and capacity / likely-root-causes",
+     "snippet": "Runbook: Congestion and capacity > Likely root causes\n- Peak-hour demand or a local event exceeding the cell's designed capacity.\n- Uneven load: one cell is saturated while its neighbours have headroom (poor load balancing).\n- Insufficient ",
+     "score": 0.7071
+    },
+    {
+     "id": "KB-TRANSPORT_QOS-diagnostic-checks",
+     "type": "runbook",
+     "title": "Transport and QoS degradation (latency, jitter, packet loss) / diagnostic-checks",
+     "snippet": "Runbook: Transport and QoS degradation (latency, jitter, packet loss) > Diagnostic checks\n1. Run latency, jitter and loss measurements (for example TWAMP or ping series) from the site to the core and compare with the baseline.\n2. Check inte",
+     "score": 0.7039
+    },
+    {
+     "id": "KB-TRANSPORT_QOS-escalation-criteria",
+     "type": "runbook",
+     "title": "Transport and QoS degradation (latency, jitter, packet loss) / escalation-criteria",
+     "snippet": "Runbook: Transport and QoS degradation (latency, jitter, packet loss) > Escalation criteria\n- Escalate to the transport or IP team when the degradation is on shared aggregation links or affects several sites.\n- Escalate to field operations ",
+     "score": 0.698
+    },
+    {
+     "id": "KB-CONGESTION_CAPACITY-diagnostic-checks",
+     "type": "runbook",
+     "title": "Congestion and capacity / diagnostic-checks",
+     "snippet": "Runbook: Congestion and capacity > Diagnostic checks\n1. Plot user count, data volume and throughput for the cell and its neighbours over the last 7 days to confirm a load-driven pattern.\n2. Compare radio resource utilization (PRB usage) wit",
+     "score": 0.6866
+    },
+    {
+     "id": "KB-TRANSPORT_QOS-corrective-actions",
+     "type": "runbook",
+     "title": "Transport and QoS degradation (latency, jitter, packet loss) / corrective-actions",
+     "snippet": "Runbook: Transport and QoS degradation (latency, jitter, packet loss) > Corrective actions\n### Immediate\n- Reroute traffic to a backup or protection path if available (requires change approval).\n- Prioritize voice and real-time traffic with",
+     "score": 0.667
+    },
+    {
+     "id": "KB-CONGESTION_CAPACITY-corrective-actions",
+     "type": "runbook",
+     "title": "Congestion and capacity / corrective-actions",
+     "snippet": "Runbook: Congestion and capacity > Corrective actions\n### Immediate\n- Enable or tune load balancing and traffic steering towards neighbours with headroom (requires change approval).\n- Apply temporary QoS prioritization for voice and critica",
+     "score": null
+    }
+   ],
+   "trace": [
+    {
+     "node": "gate",
+     "ms": 0.0,
+     "llm_calls": 0,
+     "tokens_in": 0,
+     "tokens_out": 0,
+     "tool_calls": [],
+     "status": "ok"
+    },
+    {
+     "node": "rules",
+     "ms": 2.3,
+     "llm_calls": 0,
+     "tokens_in": 0,
+     "tokens_out": 0,
+     "tool_calls": [],
+     "status": "ok"
+    },
+    {
+     "node": "retrieve",
+     "ms": 144.1,
+     "llm_calls": 0,
+     "tokens_in": 0,
+     "tokens_out": 0,
+     "tool_calls": [
+      "hybrid_search"
+     ],
+     "status": "ok"
+    },
+    {
+     "node": "gather_evidence",
+     "ms": 714.4,
+     "llm_calls": 0,
+     "tokens_in": 0,
+     "tokens_out": 0,
+     "tool_calls": [
+      "kpi_assessment",
+      "segment_stats",
+      "predict_fault_risk",
+      "predict_performance",
+      "impact",
+      "prioritize",
+      "search_runbook(analyst)",
+      "search_runbook(recommender)"
+     ],
+     "status": "ok"
+    },
+    {
+     "node": "reduced",
+     "ms": 19.6,
+     "llm_calls": 0,
+     "tokens_in": 0,
+     "tokens_out": 0,
+     "tool_calls": [],
+     "status": "ok"
+    },
+    {
+     "node": "finalize",
+     "ms": 0.0,
+     "llm_calls": 0,
+     "tokens_in": 0,
+     "tokens_out": 0,
+     "tool_calls": [],
+     "status": "ok"
+    }
+   ],
+   "meta": {
+    "model": "none",
+    "judge_model": "none",
+    "prompt_version": "classifier_v1,analyst_v1,recommender_v1,judge_v1",
+    "latency_ms": 981.8,
+    "llm_calls": 0,
+    "tokens_in": 0,
+    "tokens_out": 0,
+    "cached_calls": 0
+   },
+   "usage": {
+    "llm_calls": 0,
+    "tokens_in": 0,
+    "tokens_out": 0,
+    "cached_calls": 0
+   }
+  }
+ }
+}

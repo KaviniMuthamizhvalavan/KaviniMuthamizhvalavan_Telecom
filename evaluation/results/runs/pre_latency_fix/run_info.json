@@ -1,0 +1,5 @@
+{
+  "queries": 22,
+  "top_k": 10,
+  "relevance": "graded symptom overlap; filters must hold"
+}

@@ -1,0 +1,26 @@
+query_id,rank,case_id,ai_label,ai_notes,data_has_all_expected_symptoms,missing_expected,abnormal_kpis_in_case,auto_symptom_overlap,agrees,flag_for_review,flag_reason
+G01,1,CASE-081904,yes,Contains high latency high jitter and packet loss as described in the query,yes,,4,0.75,True,False,
+G01,2,CASE-000876,yes,Contains packet loss high latency and high jitter matching all query symptoms,yes,,4,0.75,True,False,
+G01,3,CASE-089064,yes,Displays high latency packet loss and jitter matching the video call issue,yes,,4,0.75,True,False,
+G01,4,CASE-031577,yes,Exhibits high jitter packet loss and latency matching the query,yes,,3,1.0,True,False,
+G01,5,CASE-025281,yes,Shows degraded jitter latency and packet loss matching all query requirements,yes,,3,1.0,True,False,
+G05,1,CASE-013174,yes,Shows weak signal strength and degraded connection setup success rate (calls failing),yes,,5,0.4,True,True,low automatic symptom overlap (Jaccard): the case also has many unrelated abnormal KPIs
+G05,2,CASE-076079,yes,Displays severe signal strength drop and degraded connection setup success rate,yes,,5,0.4,True,True,low automatic symptom overlap (Jaccard): the case also has many unrelated abnormal KPIs
+G05,3,CASE-018327,yes,Features poor connection setup success rate and weak signal strength,yes,,6,0.333,True,True,low automatic symptom overlap (Jaccard): the case also has many unrelated abnormal KPIs
+G05,4,CASE-088889,yes,Includes poor connection setup success rate and degraded signal strength,yes,,6,0.333,True,True,low automatic symptom overlap (Jaccard): the case also has many unrelated abnormal KPIs
+G05,5,CASE-021963,yes,Features reduced connection setup success rate and weak signal strength,yes,,3,0.667,True,False,
+G09,1,CASE-065782,yes,Directly addresses cell availability drops (cell going down) and high mean time to repair (hours),yes,,2,1.0,True,False,
+G09,2,CASE-089688,yes,Directly addresses cell outage/availability drops and high mean time to repair,yes,,2,1.0,True,False,
+G09,3,CASE-092535,yes,Mentions degraded cell availability and long repair times,yes,,2,1.0,True,False,
+G09,4,CASE-027494,yes,Matches cell availability degradation and high mean time to repair,yes,,2,1.0,True,False,
+G09,5,CASE-067428,yes,Covers reduced cell availability and lengthy repair duration,yes,,2,1.0,True,False,
+G13,1,CASE-039891,yes,Involves parameter changes and non-100% successful configuration changes (failed/rolled back),yes,,2,1.0,True,False,
+G13,2,CASE-096180,yes,Matches batch parameter changes and failed/degraded configuration success rates,yes,,2,1.0,True,False,
+G13,3,CASE-042588,yes,Matches high volume of parameter changes and degraded configuration change success rate,yes,,2,1.0,True,False,
+G13,4,CASE-085048,yes,Matches parameter changes accompanied by degraded configuration change success rate,yes,,2,1.0,True,False,
+G13,5,CASE-090109,yes,Matches parameter change volume and degraded configuration success rate,yes,,2,1.0,True,False,
+G17,1,CASE-037746,no,Has high latency and packet loss but missing throughput degradation,yes,,5,0.6,False,True,"AI label disagrees with the dataset symptom flags; the case has 5 abnormal KPIs but its summary shows only 4, so a symptom the annotator looked for can be absent from the text it read"
+G17,2,CASE-016229,yes,Contains all three queried conditions reduced throughput packet loss and high latency,yes,,4,0.75,True,False,
+G17,3,CASE-039539,yes,Contains all three queried conditions reduced throughput packet loss and high latency,yes,,3,1.0,True,False,
+G17,4,CASE-005057,yes,Contains all three queried conditions reduced throughput latency and packet loss,yes,,4,0.75,True,False,
+G17,5,CASE-050747,yes,Contains all three queried conditions packet loss reduced throughput and high latency,yes,,3,1.0,True,False,

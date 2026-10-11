@@ -1,0 +1,77 @@
+{
+  "query_id": "G05",
+  "query": "Weak signal and customers cannot connect, calls failing to set up",
+  "wall_s": 79.6,
+  "status": "degraded",
+  "verdict": "fail",
+  "revisions": 1,
+  "meta": {
+    "model": "claude-sonnet-5-5",
+    "judge_model": "claude-sonnet-5-5",
+    "prompt_version": "classifier_v1,analyst_v1,recommender_v1,judge_v1",
+    "latency_ms": 77336.6,
+    "llm_calls": 9,
+    "tokens_in": 38543,
+    "tokens_out": 11690,
+    "cached_calls": 0
+  },
+  "usage": {
+    "llm_calls": 9,
+    "tokens_in": 38543,
+    "tokens_out": 11690,
+    "cached_calls": 0
+  },
+  "warnings": [
+    "The recommender agent was unavailable; runbook actions are shown. (StructuredOutputError)",
+    "The recommender agent was unavailable; runbook actions are shown. (StructuredOutputError)",
+    "Low-confidence diagnosis: the validator found issues it could not resolve; review the issues before acting."
+  ],
+  "trace": [
+    [
+      "gate",
+      "ok"
+    ],
+    [
+      "classify",
+      "ok"
+    ],
+    [
+      "retrieve",
+      "ok"
+    ],
+    [
+      "gather_evidence",
+      "ok"
+    ],
+    [
+      "analyze",
+      "ok"
+    ],
+    [
+      "recommend",
+      "fallback"
+    ],
+    [
+      "judge",
+      "ok"
+    ],
+    [
+      "analyze",
+      "ok"
+    ],
+    [
+      "recommend",
+      "fallback"
+    ],
+    [
+      "judge",
+      "ok"
+    ],
+    [
+      "finalize",
+      "ok"
+    ]
+  ],
+  "normalizations_logged": 0,
+  "smoke": null
+}

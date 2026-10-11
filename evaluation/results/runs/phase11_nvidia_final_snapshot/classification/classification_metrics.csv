@@ -1,0 +1,3 @@
+system,n,primary_acc,primary_acc_lenient,symptom_precision,symptom_recall,symptom_f1,filters_exact,vague_clarified,off_topic_flagged,degraded_rate,latency_p50_ms,latency_p95_ms
+rules,22,0.909,1.0,0.933,0.977,0.955,1.0,1.0,0.0,1.0,0.5,0.8
+llm:nvidia/nemotron-3-super-120b-a12b,22,0.909,1.0,1.0,0.953,0.976,0.955,1.0,1.0,0.0,1251.15,2679.0

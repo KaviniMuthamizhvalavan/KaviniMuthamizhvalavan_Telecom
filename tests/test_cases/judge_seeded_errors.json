@@ -1,0 +1,14 @@
+[
+  {"id": "SE-1", "error": "invented_case_id", "description": "A hypothesis cites and quotes a case ID that is not in the evidence.",
+   "match_keywords": ["CASE-999999", "not in the evidence", "not present", "invented", "fabricat", "does not exist", "unknown case"]},
+  {"id": "SE-2", "error": "contradicting_kpi_number", "description": "A supporting-evidence line states latency 980 ms (critical), contradicting the assessed value.",
+   "match_keywords": ["980", "latency", "numbers_match_evidence", "number", "contradict"]},
+  {"id": "SE-3", "error": "recommendation_without_kb_citation", "description": "The first recommendation has its runbook citations removed.",
+   "match_keywords": ["recommendation_kb_citation", "citation", "runbook", "KB-"]},
+  {"id": "SE-4", "error": "root_cause_contradicts_anomalies", "description": "A high-likelihood data-backed hypothesis blames weak signal (RSRP) although signal strength is normal.",
+   "match_keywords": ["signal", "RSRP", "contradict", "not supported", "normal"]},
+  {"id": "SE-5", "error": "irrelevant_action", "description": "A recommendation to rotate SIM authentication keys is added to a non-security incident.",
+   "match_keywords": ["SIM", "authentication", "irrelevant", "unrelated", "not relevant", "security"]},
+  {"id": "SE-6", "error": "overclaimed_causality", "description": "A hypothesis states that the weather definitively causes the degradation, proven by co-occurrence.",
+   "match_keywords": ["caus", "correlation", "co-occurrence", "overclaim", "definitive", "proven"]}
+]

@@ -1,0 +1,12 @@
+{
+  "queries": 24,
+  "prompt_version": "classifier_v1",
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "reasoning": true,
+  "usage": {
+    "llm_calls": 24,
+    "tokens_in": 31955,
+    "tokens_out": 13514,
+    "cached_calls": 0
+  }
+}

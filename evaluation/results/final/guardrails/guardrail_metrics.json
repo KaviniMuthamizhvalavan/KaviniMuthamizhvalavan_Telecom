@@ -1,0 +1,20 @@
+{
+  "blocked_rate": 1.0,
+  "exact_code_rate": 1.0,
+  "false_positive_rate": 0.0,
+  "uncertain_band_negatives": 0,
+  "n_positive": 12,
+  "n_negative": 27,
+  "thresholds": {
+    "in_scope_min": 0.65,
+    "out_of_scope_max": 0.55
+  },
+  "by_kind": {
+    "benign": 1.0,
+    "gibberish": 1.0,
+    "golden": 1.0,
+    "injection": 1.0,
+    "off_topic": 1.0,
+    "pii": 1.0
+  }
+}

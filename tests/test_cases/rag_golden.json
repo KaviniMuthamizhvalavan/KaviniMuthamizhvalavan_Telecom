@@ -1,0 +1,196 @@
+[
+  {
+    "id": "G01",
+    "query": "Users report high latency and jitter on video calls, with some packet loss",
+    "expected_primary": "TRANSPORT_QOS",
+    "acceptable_primary": [],
+    "expected_symptoms": [
+      "high_latency",
+      "high_jitter",
+      "high_packet_loss"
+    ],
+    "expected_kb_ids": [
+      "KB-TRANSPORT_QOS-likely-root-causes",
+      "KB-TRANSPORT_QOS-corrective-actions",
+      "KB-TRANSPORT_QOS-diagnostic-checks"
+    ],
+    "reference_answer": "Likely causes: Backhaul link congestion or an under-dimensioned transport link; A degraded physical link: fibre damage, a dirty connector, microwave fading or misalignment; Interface errors or duplex mismatches on routers and switches; QoS misconfiguration, so real-time traffic is not prioritized; Routing changes that send traffic over a longer or congested path. Recommended actions: Reroute traffic to a backup or protection path if available (requires change approval); Prioritize voice and real-time traffic with QoS marking and queuing if the policy is missing or wrong (requires change approval); Repair or replace degraded physical components: clean or replace connectors, realign microwave antennas, repair fibre; Correct interface configuration issues such as duplex or MTU mismatches; Increase backhaul capacity where utilization is the cause; Monitor transport KPIs continuously with alerts on latency, jitter and loss trends; Build path diversity for critical sites. Verification: Latency, jitter and packet loss return to the site's baseline for a full traffic cycle; Interface error counters stop increasing; Voice and video quality complaints stop.",
+    "reference_source": "verbatim runbook sections of TRANSPORT_QOS: likely-root-causes, corrective-actions, verification"
+  },
+  {
+    "id": "G03",
+    "query": "Cell is overloaded with too many users and heavy data traffic, speeds are slow",
+    "expected_primary": "CONGESTION_CAPACITY",
+    "acceptable_primary": [],
+    "expected_symptoms": [
+      "high_user_load",
+      "high_data_usage",
+      "low_throughput"
+    ],
+    "expected_kb_ids": [
+      "KB-CONGESTION_CAPACITY-likely-root-causes",
+      "KB-CONGESTION_CAPACITY-corrective-actions",
+      "KB-CONGESTION_CAPACITY-diagnostic-checks"
+    ],
+    "reference_answer": "Likely causes: Peak-hour demand or a local event exceeding the cell's designed capacity; Uneven load: one cell is saturated while its neighbours have headroom (poor load balancing); Insufficient spectrum or carriers deployed for the area's growth; Backhaul capacity smaller than the radio capacity, so the bottleneck sits on the transport link; Heavy users or abnormal traffic (large uploads, misbehaving devices) consuming a disproportionate share. Recommended actions: Enable or tune load balancing and traffic steering towards neighbours with headroom (requires change approval); Apply temporary QoS prioritization for voice and critical services during the peak; Rebalance cell parameters (for example handover offsets or carrier priorities) so edge users move to less loaded cells (requires change approval); Activate an additional carrier or bandwidth if licensed spectrum is available (requires change approval); Upgrade backhaul capacity if the transport link is the bottleneck; Add capacity through cell splitting, small cells or new sectors where growth trends predict sustained congestion; Track busy-hour utilization weekly and plan capacity before thresholds are crossed. Verification: Throughput per user and latency return to the cell's normal range at the next busy hour; Neighbour cells absorb load without becoming congested themselves; No increase in dropped calls or handover failures after the parameter changes.",
+    "reference_source": "verbatim runbook sections of CONGESTION_CAPACITY: likely-root-causes, corrective-actions, verification"
+  },
+  {
+    "id": "G05",
+    "query": "Weak signal and customers cannot connect, calls failing to set up",
+    "expected_primary": "RADIO_COVERAGE",
+    "acceptable_primary": [],
+    "expected_symptoms": [
+      "weak_signal",
+      "low_cssr"
+    ],
+    "expected_kb_ids": [
+      "KB-RADIO_COVERAGE-likely-root-causes",
+      "KB-RADIO_COVERAGE-corrective-actions",
+      "KB-RADIO_COVERAGE-diagnostic-checks"
+    ],
+    "reference_answer": "Likely causes: A coverage hole: inadequate site density, terrain or new buildings blocking the signal; Antenna problems: wrong tilt or azimuth, damaged antenna or feeder, water ingress; Reduced transmit power from a hardware fault or a configuration error; Uplink or downlink interference raising the noise floor; Indoor penetration loss where users are mostly inside buildings. Recommended actions: Restore planned transmit power or antenna settings if a recent change reduced them (requires change approval); Dispatch field operations for a damaged antenna or feeder; Optimize antenna tilt and azimuth to close the gap (requires change approval); Remove or mitigate interference sources; Adjust neighbour relations so users at the edge are served by the best cell; Add coverage with new sites, small cells or indoor solutions in persistent weak areas; Schedule periodic drive tests or use crowd-sourced measurements to detect gaps early. Verification: Signal strength and connection setup success return to the area's normal range; Call drop rate falls back to baseline; No new coverage complaints from the area over the following week.",
+    "reference_source": "verbatim runbook sections of RADIO_COVERAGE: likely-root-causes, corrective-actions, verification"
+  },
+  {
+    "id": "G07",
+    "query": "Calls drop when users move between cells, handover failures are rising",
+    "expected_primary": "MOBILITY_HANDOVER",
+    "acceptable_primary": [],
+    "expected_symptoms": [
+      "low_handover_success",
+      "high_call_drop"
+    ],
+    "expected_kb_ids": [
+      "KB-MOBILITY_HANDOVER-likely-root-causes",
+      "KB-MOBILITY_HANDOVER-corrective-actions",
+      "KB-MOBILITY_HANDOVER-diagnostic-checks"
+    ],
+    "reference_answer": "Likely causes: Missing or wrong neighbour relations, so the target cell is not prepared; Handover thresholds, offsets or timers that trigger too late (drops) or too early (ping-pong); Overloaded target cells rejecting incoming handovers; Inter-frequency or inter-technology handover misconfiguration; Synchronization or timing problems between sites. Recommended actions: Add missing neighbour relations for the worst failing pairs (requires change approval); Roll back any recent handover parameter change linked to the start of the failures (requires change approval); Tune handover offsets, hysteresis and time-to-trigger on the failing pairs (requires change approval); Relieve overloaded target cells (see the congestion runbook); Fix synchronization issues at the affected sites; Enable automatic neighbour relation features where available, with operator review; Monitor handover success per neighbour pair and alert on sudden drops. Verification: Handover success returns to the area's normal range; Call drops along the affected route fall to baseline, confirmed by a drive test where possible; No ping-pong increase after the parameter changes.",
+    "reference_source": "verbatim runbook sections of MOBILITY_HANDOVER: likely-root-causes, corrective-actions, verification"
+  },
+  {
+    "id": "G09",
+    "query": "Cell keeps going down and repairs take many hours",
+    "expected_primary": "AVAILABILITY_OUTAGE",
+    "acceptable_primary": [],
+    "expected_symptoms": [
+      "low_availability",
+      "long_mttr"
+    ],
+    "expected_kb_ids": [
+      "KB-AVAILABILITY_OUTAGE-likely-root-causes",
+      "KB-AVAILABILITY_OUTAGE-corrective-actions",
+      "KB-AVAILABILITY_OUTAGE-diagnostic-checks"
+    ],
+    "reference_answer": "Likely causes: Power failure at the site: mains outage, rectifier or battery failure; Hardware failure of radio or baseband units; Transmission loss: the site cannot reach the core; Software crashes or failed upgrades leaving the cell locked or restarting; Restoration delays: no spare parts, access restrictions, or no field staff available. Recommended actions: Treat critical availability as at least P2; dispatch field operations for power or hardware failures; Attempt a remote restart of the failed unit when the alarm indicates a software or hang condition (requires change approval); Expand neighbour coverage temporarily if parameters allow (requires change approval); Replace failed hardware; restore power systems including batteries and rectifiers; Roll back a failed software upgrade; Maintain backup power (batteries, generators) sized for expected outage durations; Keep spare parts at regional depots to cut MTTR; Track repeat outages per site and fix the underlying cause. Verification: Cell availability returns to normal and the cell carries traffic again; Alarms clear and stay clear for 24 hours; MTTR for the incident is recorded for trend analysis.",
+    "reference_source": "verbatim runbook sections of AVAILABILITY_OUTAGE: likely-root-causes, corrective-actions, verification"
+  },
+  {
+    "id": "G11",
+    "query": "Alarm storm with many critical alarms and frequent faults",
+    "expected_primary": "FAULT_ALARM",
+    "acceptable_primary": [],
+    "expected_symptoms": [
+      "high_alarms",
+      "high_critical_alarms",
+      "high_fault_rate"
+    ],
+    "expected_kb_ids": [
+      "KB-FAULT_ALARM-likely-root-causes",
+      "KB-FAULT_ALARM-corrective-actions",
+      "KB-FAULT_ALARM-diagnostic-checks"
+    ],
+    "reference_answer": "Likely causes: Failing hardware: radio units, power modules, fans, transceivers; Software defects or memory leaks causing repeated restarts; Over-temperature from cooling failures; A single upstream fault (transport or power) raising many secondary alarms at once (an alarm storm); Previous repairs that treated symptoms only, so the fault recurs. Recommended actions: Suppress duplicate secondary alarms and focus on the root alarm; Restart the affected software process or unit when the alarm indicates a software hang (requires change approval); Dispatch field operations for critical hardware alarms at busy sites; Replace faulty hardware; repair cooling systems; Apply vendor patches for known software defects (requires change approval); Track fault occurrence per site and component; replace units with repeated failures; Tune alarm correlation rules so storms are grouped automatically; Do proactive maintenance on cooling and power systems before summer. Verification: Critical alarms clear and do not recur within 72 hours; Fault occurrence rate for the site returns to normal; Linked service KPIs (throughput, availability) recover.",
+    "reference_source": "verbatim runbook sections of FAULT_ALARM: likely-root-causes, corrective-actions, verification"
+  },
+  {
+    "id": "G13",
+    "query": "After a batch of parameter changes, several configuration changes failed and were rolled back",
+    "expected_primary": "CONFIG_CHANGE",
+    "acceptable_primary": [],
+    "expected_symptoms": [
+      "high_param_changes",
+      "low_config_success"
+    ],
+    "expected_kb_ids": [
+      "KB-CONFIG_CHANGE-likely-root-causes",
+      "KB-CONFIG_CHANGE-corrective-actions",
+      "KB-CONFIG_CHANGE-diagnostic-checks"
+    ],
+    "reference_answer": "Likely causes: Changes applied without enough review or testing; Partially applied changes: some cells updated, others not; Conflicting changes from different teams or automation tools; Wrong parameter values (typos, wrong cell lists, wrong units); Software incompatibility between the new configuration and the running version. Recommended actions: Roll back the most recent change linked to the degradation (requires change approval); Freeze further changes on the affected cells until the cause is understood; Re-apply failed changes correctly, or complete partial changes consistently across all target cells (requires change approval); Fix wrong parameter values against the design baseline; Use change enablement with peer review, test windows and rollback plans; Automate configuration-consistency audits against a golden baseline; Track change success rate per team and tool. Verification: The configuration matches the intended baseline on all target cells; Service KPIs return to their pre-change range; The successful-change rate recovers for subsequent changes.",
+    "reference_source": "verbatim runbook sections of CONFIG_CHANGE: likely-root-causes, corrective-actions, verification"
+  },
+  {
+    "id": "G15",
+    "query": "Spike in authentication failures and security incidents",
+    "expected_primary": "SECURITY_AUTH",
+    "acceptable_primary": [],
+    "expected_symptoms": [
+      "high_auth_failures",
+      "high_security_incidents"
+    ],
+    "expected_kb_ids": [
+      "KB-SECURITY_AUTH-likely-root-causes",
+      "KB-SECURITY_AUTH-corrective-actions",
+      "KB-SECURITY_AUTH-diagnostic-checks"
+    ],
+    "reference_answer": "Likely causes: A signalling or registration flood from compromised or misbehaving devices; Credential problems: expired certificates, subscriber-data mismatches or key issues in the authentication chain; Misconfiguration of security functions after a change; A rogue base station or other spoofing attempt in the area; Clock or time-synchronization errors breaking time-sensitive authentication. Recommended actions: Follow the security incident process: isolate and contain before you fix, and preserve logs as evidence; Rate-limit or block clearly abusive devices or sources (requires change approval); Escalate suspected attacks to the security operations team at once; Renew expired certificates and correct subscriber-data or key mismatches; Roll back security-related configuration changes that started the failures (requires change approval); Monitor authentication failure rates per cause with alert thresholds; Keep certificate and key lifecycle management automated; Run periodic security audits of network functions. Verification: Authentication failure and security-incident rates return to their normal range; Legitimate users register and connect normally; The security team confirms containment and closes the incident.",
+    "reference_source": "verbatim runbook sections of SECURITY_AUTH: likely-root-causes, corrective-actions, verification"
+  },
+  {
+    "id": "G17",
+    "query": "A cell is experiencing high latency, packet loss, and reduced throughput. What similar network conditions have occurred before?",
+    "expected_primary": "TRANSPORT_QOS",
+    "acceptable_primary": [
+      "CONGESTION_CAPACITY"
+    ],
+    "expected_symptoms": [
+      "high_latency",
+      "high_packet_loss",
+      "low_throughput"
+    ],
+    "expected_kb_ids": [
+      "KB-TRANSPORT_QOS-likely-root-causes",
+      "KB-TRANSPORT_QOS-corrective-actions",
+      "KB-TRANSPORT_QOS-diagnostic-checks"
+    ],
+    "reference_answer": "Likely causes: Backhaul link congestion or an under-dimensioned transport link; A degraded physical link: fibre damage, a dirty connector, microwave fading or misalignment; Interface errors or duplex mismatches on routers and switches; QoS misconfiguration, so real-time traffic is not prioritized; Routing changes that send traffic over a longer or congested path. Recommended actions: Reroute traffic to a backup or protection path if available (requires change approval); Prioritize voice and real-time traffic with QoS marking and queuing if the policy is missing or wrong (requires change approval); Repair or replace degraded physical components: clean or replace connectors, realign microwave antennas, repair fibre; Correct interface configuration issues such as duplex or MTU mismatches; Increase backhaul capacity where utilization is the cause; Monitor transport KPIs continuously with alerts on latency, jitter and loss trends; Build path diversity for critical sites. Verification: Latency, jitter and packet loss return to the site's baseline for a full traffic cycle; Interface error counters stop increasing; Voice and video quality complaints stop.",
+    "reference_source": "verbatim runbook sections of TRANSPORT_QOS: likely-root-causes, corrective-actions, verification"
+  },
+  {
+    "id": "G18",
+    "query": "Multiple cells are experiencing poor service quality and increasing alarm counts. What factors could be contributing to the problem?",
+    "expected_primary": "FAULT_ALARM",
+    "acceptable_primary": [],
+    "expected_symptoms": [
+      "high_alarms"
+    ],
+    "expected_kb_ids": [
+      "KB-FAULT_ALARM-likely-root-causes",
+      "KB-FAULT_ALARM-corrective-actions",
+      "KB-FAULT_ALARM-diagnostic-checks"
+    ],
+    "reference_answer": "Likely causes: Failing hardware: radio units, power modules, fans, transceivers; Software defects or memory leaks causing repeated restarts; Over-temperature from cooling failures; A single upstream fault (transport or power) raising many secondary alarms at once (an alarm storm); Previous repairs that treated symptoms only, so the fault recurs. Recommended actions: Suppress duplicate secondary alarms and focus on the root alarm; Restart the affected software process or unit when the alarm indicates a software hang (requires change approval); Dispatch field operations for critical hardware alarms at busy sites; Replace faulty hardware; repair cooling systems; Apply vendor patches for known software defects (requires change approval); Track fault occurrence per site and component; replace units with repeated failures; Tune alarm correlation rules so storms are grouped automatically; Do proactive maintenance on cooling and power systems before summer. Verification: Critical alarms clear and do not recur within 72 hours; Fault occurrence rate for the site returns to normal; Linked service KPIs (throughput, availability) recover.",
+    "reference_source": "verbatim runbook sections of FAULT_ALARM: likely-root-causes, corrective-actions, verification"
+  },
+  {
+    "id": "G19",
+    "query": "A network region has increasing fault occurrence and declining handover success. What corrective actions should be considered?",
+    "expected_primary": "FAULT_ALARM",
+    "acceptable_primary": [
+      "MOBILITY_HANDOVER"
+    ],
+    "expected_symptoms": [
+      "high_fault_rate",
+      "low_handover_success"
+    ],
+    "expected_kb_ids": [
+      "KB-FAULT_ALARM-likely-root-causes",
+      "KB-FAULT_ALARM-corrective-actions",
+      "KB-FAULT_ALARM-diagnostic-checks"
+    ],
+    "reference_answer": "Likely causes: Failing hardware: radio units, power modules, fans, transceivers; Software defects or memory leaks causing repeated restarts; Over-temperature from cooling failures; A single upstream fault (transport or power) raising many secondary alarms at once (an alarm storm); Previous repairs that treated symptoms only, so the fault recurs. Recommended actions: Suppress duplicate secondary alarms and focus on the root alarm; Restart the affected software process or unit when the alarm indicates a software hang (requires change approval); Dispatch field operations for critical hardware alarms at busy sites; Replace faulty hardware; repair cooling systems; Apply vendor patches for known software defects (requires change approval); Track fault occurrence per site and component; replace units with repeated failures; Tune alarm correlation rules so storms are grouped automatically; Do proactive maintenance on cooling and power systems before summer. Verification: Critical alarms clear and do not recur within 72 hours; Fault occurrence rate for the site returns to normal; Linked service KPIs (throughput, availability) recover.",
+    "reference_source": "verbatim runbook sections of FAULT_ALARM: likely-root-causes, corrective-actions, verification"
+  }
+]

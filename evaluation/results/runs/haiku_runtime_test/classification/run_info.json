@@ -1,0 +1,12 @@
+{
+  "queries": 24,
+  "prompt_version": "classifier_v1",
+  "model": "claude-haiku-5-5",
+  "reasoning": true,
+  "usage": {
+    "llm_calls": 24,
+    "tokens_in": 50910,
+    "tokens_out": 4858,
+    "cached_calls": 0
+  }
+}

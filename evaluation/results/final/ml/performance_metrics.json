@@ -1,0 +1,48 @@
+{
+  "target": "throughput_mbps",
+  "n_train": 80000,
+  "n_test": 20000,
+  "r2": 0.3277,
+  "mae": 161.82,
+  "rmse": 196.57,
+  "baseline_mean": {
+    "r2": -0.0,
+    "mae": 197.28,
+    "rmse": 239.74
+  },
+  "residual_std": 196.56,
+  "top_drivers": [
+    {
+      "feature": "weather",
+      "importance": 0.5479
+    },
+    {
+      "feature": "user_count",
+      "importance": 0.0237
+    },
+    {
+      "feature": "packet_loss_pct",
+      "importance": 0.0091
+    },
+    {
+      "feature": "cell_availability_pct",
+      "importance": 0.0052
+    },
+    {
+      "feature": "temperature_c",
+      "importance": 0.0003
+    },
+    {
+      "feature": "handover_success_pct",
+      "importance": 0.0001
+    },
+    {
+      "feature": "security_incidents",
+      "importance": -0.0
+    },
+    {
+      "feature": "signal_strength_dbm",
+      "importance": -0.0
+    }
+  ]
+}

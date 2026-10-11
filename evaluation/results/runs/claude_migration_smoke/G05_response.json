@@ -1,0 +1,997 @@
+{
+  "run_id": "05fb3b88bbac4ba1bb56b1d0c66cc12a",
+  "status": "degraded",
+  "classification": {
+    "primary_category": "RADIO_COVERAGE",
+    "secondary_categories": [],
+    "symptoms": [
+      "weak_signal",
+      "low_cssr"
+    ],
+    "filters": {
+      "state": [],
+      "city": null,
+      "season": [],
+      "weather": []
+    },
+    "severity_hint": "unknown",
+    "in_scope": true,
+    "needs_clarification": false,
+    "clarification_question": null,
+    "confidence": 0.93,
+    "rationale": "'Weak signal' plus customers unable to connect and calls failing to set up match the radio coverage profile (weak_signal, low_cssr).",
+    "source": "llm"
+  },
+  "applied_filters": {},
+  "similar_cases": [
+    {
+      "rank": 1,
+      "case_id": "CASE-013174",
+      "final_score": 1.12,
+      "score_breakdown": {
+        "dense_rank": 13,
+        "bm25_rank": 15,
+        "rrf": 0.02703,
+        "symptom_overlap": 0.4,
+        "feedback_prior": 0.5
+      },
+      "state": "VA",
+      "city": "East Barbaraberg",
+      "season": "Summer",
+      "weather": "Clouds",
+      "primary_category": "RADIO_COVERAGE",
+      "secondary_categories": [
+        "TRANSPORT_QOS",
+        "CONGESTION_CAPACITY"
+      ],
+      "priority": "P3",
+      "fault_risk_band": "Low",
+      "anomalies": [
+        {
+          "kpi": "cssr_pct",
+          "label": "Connection setup success rate",
+          "value": 90.72,
+          "unit": "%",
+          "band": "critical",
+          "percentile": 0.9276
+        },
+        {
+          "kpi": "latency_ms",
+          "label": "Latency",
+          "value": 132.88049999999998,
+          "unit": "ms",
+          "band": "critical",
+          "percentile": 0.9131
+        },
+        {
+          "kpi": "signal_strength_dbm",
+          "label": "Signal strength",
+          "value": -112.25,
+          "unit": "dBm",
+          "band": "degraded",
+          "percentile": 0.8701
+        },
+        {
+          "kpi": "config_change_success_pct",
+          "label": "Successful configuration changes",
+          "value": 91.26,
+          "unit": "%",
+          "band": "degraded",
+          "percentile": 0.8596
+        },
+        {
+          "kpi": "call_drop_rate_pct",
+          "label": "Call drop rate",
+          "value": 2.0723963749999994,
+          "unit": "%",
+          "band": "degraded",
+          "percentile": 0.8002
+        }
+      ],
+      "summary": "[CASE-013174] VA/Summer/Clouds, P3, RADIO_COVERAGE+TRANSPORT_QOS: connection setup success rate 90.7% (crit), latency 132.9 ms (crit), signal strength -112.2 dBm (deg), successful configuration changes 91.3% (deg); fault rate 24.2%"
+    },
+    {
+      "rank": 2,
+      "case_id": "CASE-076079",
+      "final_score": 1.039,
+      "score_breakdown": {
+        "dense_rank": 27,
+        "bm25_rank": 11,
+        "rrf": 0.02558,
+        "symptom_overlap": 0.4,
+        "feedback_prior": 0.5
+      },
+      "state": "KY",
+      "city": "Michaelchester",
+      "season": "Spring",
+      "weather": "Clouds",
+      "primary_category": "RADIO_COVERAGE",
+      "secondary_categories": [
+        "MOBILITY_HANDOVER",
+        "CONFIG_CHANGE"
+      ],
+      "priority": "P3",
+      "fault_risk_band": "Low",
+      "anomalies": [
+        {
+          "kpi": "signal_strength_dbm",
+          "label": "Signal strength",
+          "value": -119.8,
+          "unit": "dBm",
+          "band": "critical",
+          "percentile": 0.996
+        },
+        {
+          "kpi": "handover_success_pct",
+          "label": "Handover success rate",
+          "value": 90.37,
+          "unit": "%",
+          "band": "critical",
+          "percentile": 0.9635
+        },
+        {
+          "kpi": "config_change_success_pct",
+          "label": "Successful configuration changes",
+          "value": 90.71,
+          "unit": "%",
+          "band": "critical",
+          "percentile": 0.9201
+        },
+        {
+          "kpi": "cssr_pct",
+          "label": "Connection setup success rate",
+          "value": 91.43,
+          "unit": "%",
+          "band": "degraded",
+          "percentile": 0.8556
+        },
+        {
+          "kpi": "call_drop_rate_pct",
+          "label": "Call drop rate",
+          "value": 2.1599513750000003,
+          "unit": "%",
+          "band": "degraded",
+          "percentile": 0.8102
+        }
+      ],
+      "summary": "[CASE-076079] KY/Spring/Clouds, P3, RADIO_COVERAGE+MOBILITY_HANDOVER: signal strength -119.8 dBm (crit), handover success rate 90.4% (crit), successful configuration changes 90.7% (crit), connection setup success rate 91.4% (deg); fault rate 29.9%"
+    },
+    {
+      "rank": 3,
+      "case_id": "CASE-018327",
+      "final_score": 0.959,
+      "score_breakdown": {
+        "dense_rank": 14,
+        "bm25_rank": 31,
+        "rrf": 0.0245,
+        "symptom_overlap": 0.333,
+        "feedback_prior": 0.5
+      },
+      "state": "PW",
+      "city": "East Maria",
+      "season": "Spring",
+      "weather": "Clouds",
+      "primary_category": "RADIO_COVERAGE",
+      "secondary_categories": [
+        "TRANSPORT_QOS",
+        "CONFIG_CHANGE"
+      ],
+      "priority": "P3",
+      "fault_risk_band": "Low",
+      "anomalies": [
+        {
+          "kpi": "cssr_pct",
+          "label": "Connection setup success rate",
+          "value": 90.23,
+          "unit": "%",
+          "band": "critical",
+          "percentile": 0.9775
+        },
+        {
+          "kpi": "packet_loss_pct",
+          "label": "Packet loss rate",
+          "value": 12.225,
+          "unit": "%",
+          "band": "critical",
+          "percentile": 0.9171
+        },
+        {
+          "kpi": "config_change_success_pct",
+          "label": "Successful configuration changes",
+          "value": 91.39,
+          "unit": "%",
+          "band": "degraded",
+          "percentile": 0.8457
+        },
+        {
+          "kpi": "signal_strength_dbm",
+          "label": "Signal strength",
+          "value": -107.55,
+          "unit": "dBm",
+          "band": "degraded",
+          "percentile": 0.7922
+        },
+        {
+          "kpi": "call_drop_rate_pct",
+          "label": "Call drop rate",
+          "value": 1.8090385,
+          "unit": "%",
+          "band": "degraded",
+          "percentile": 0.7682
+        },
+        {
+          "kpi": "latency_ms",
+          "label": "Latency",
+          "value": 105.994,
+          "unit": "ms",
+          "band": "degraded",
+          "percentile": 0.7542
+        }
+      ],
+      "summary": "[CASE-018327] PW/Spring/Clouds, P3, RADIO_COVERAGE+TRANSPORT_QOS: connection setup success rate 90.2% (crit), packet loss rate 12.2% (crit), successful configuration changes 91.4% (deg), signal strength -107.5 dBm (deg); fault rate 37.8%"
+    },
+    {
+      "rank": 4,
+      "case_id": "CASE-088889",
+      "final_score": 0.7058,
+      "score_breakdown": {
+        "dense_rank": 32,
+        "bm25_rank": 50,
+        "rrf": 0.01996,
+        "symptom_overlap": 0.333,
+        "feedback_prior": 0.5
+      },
+      "state": "MT",
+      "city": "Ruizfurt",
+      "season": "Spring",
+      "weather": "Clear",
+      "primary_category": "RADIO_COVERAGE",
+      "secondary_categories": [
+        "AVAILABILITY_OUTAGE",
+        "MOBILITY_HANDOVER"
+      ],
+      "priority": "P3",
+      "fault_risk_band": "Low",
+      "anomalies": [
+        {
+          "kpi": "cssr_pct",
+          "label": "Connection setup success rate",
+          "value": 90.44,
+          "unit": "%",
+          "band": "critical",
+          "percentile": 0.9545
+        },
+        {
+          "kpi": "mttr_hours",
+          "label": "Mean time to repair",
+          "value": 9.21,
+          "unit": "hours",
+          "band": "critical",
+          "percentile": 0.9146
+        },
+        {
+          "kpi": "signal_strength_dbm",
+          "label": "Signal strength",
+          "value": -112.31,
+          "unit": "dBm",
+          "band": "degraded",
+          "percentile": 0.8711
+        },
+        {
+          "kpi": "jitter_ms",
+          "label": "Jitter",
+          "value": 40.95,
+          "unit": "ms",
+          "band": "degraded",
+          "percentile": 0.8192
+        },
+        {
+          "kpi": "call_drop_rate_pct",
+          "label": "Call drop rate",
+          "value": 2.01837475,
+          "unit": "%",
+          "band": "degraded",
+          "percentile": 0.7942
+        },
+        {
+          "kpi": "config_change_success_pct",
+          "label": "Successful configuration changes",
+          "value": 91.86,
+          "unit": "%",
+          "band": "degraded",
+          "percentile": 0.7927
+        }
+      ],
+      "summary": "[CASE-088889] MT/Spring/Clear, P3, RADIO_COVERAGE+AVAILABILITY_OUTAGE: connection setup success rate 90.4% (crit), mean time to repair 9.2 hours (crit), signal strength -112.3 dBm (deg), jitter 41.0 ms (deg); fault rate 35.0%"
+    },
+    {
+      "rank": 5,
+      "case_id": "CASE-021963",
+      "final_score": 0.578,
+      "score_breakdown": {
+        "dense_rank": 3,
+        "bm25_rank": null,
+        "rrf": 0.01587,
+        "symptom_overlap": 0.667,
+        "feedback_prior": 0.5
+      },
+      "state": "CA",
+      "city": "New Stephanieshire",
+      "season": "Fall",
+      "weather": "Clouds",
+      "primary_category": "RADIO_COVERAGE",
+      "secondary_categories": [
+        "SECURITY_AUTH"
+      ],
+      "priority": "P4",
+      "fault_risk_band": "Low",
+      "anomalies": [
+        {
+          "kpi": "cssr_pct",
+          "label": "Connection setup success rate",
+          "value": 90.38,
+          "unit": "%",
+          "band": "critical",
+          "percentile": 0.9615
+        },
+        {
+          "kpi": "signal_strength_dbm",
+          "label": "Signal strength",
+          "value": -110.08,
+          "unit": "dBm",
+          "band": "degraded",
+          "percentile": 0.8342
+        },
+        {
+          "kpi": "auth_failures",
+          "label": "Authentication failures",
+          "value": 18.0,
+          "unit": "failures",
+          "band": "degraded",
+          "percentile": 0.7512
+        }
+      ],
+      "summary": "[CASE-021963] CA/Fall/Clouds, P4, RADIO_COVERAGE+SECURITY_AUTH: connection setup success rate 90.4% (crit), signal strength -110.1 dBm (deg), authentication failures 18 failures (deg); fault rate 42.9%"
+    }
+  ],
+  "kpi_assessment": {
+    "basis": "similar_cases_median",
+    "anomalies": [
+      {
+        "kpi": "cssr_pct",
+        "label": "Connection setup success rate",
+        "unit": "%",
+        "value": 90.44,
+        "percentile": 0.0455,
+        "worse_than_pct": 95.5,
+        "band": "critical",
+        "imputed": false
+      },
+      {
+        "kpi": "signal_strength_dbm",
+        "label": "Signal strength",
+        "unit": "dBm",
+        "value": -112.25,
+        "percentile": 0.1299,
+        "worse_than_pct": 87.0,
+        "band": "degraded",
+        "imputed": false
+      },
+      {
+        "kpi": "config_change_success_pct",
+        "label": "Successful configuration changes",
+        "unit": "%",
+        "value": 91.39,
+        "percentile": 0.1543,
+        "worse_than_pct": 84.6,
+        "band": "degraded",
+        "imputed": false
+      },
+      {
+        "kpi": "call_drop_rate_pct",
+        "label": "Call drop rate",
+        "unit": "%",
+        "value": 2.01837475,
+        "percentile": 0.7942,
+        "worse_than_pct": 79.4,
+        "band": "degraded",
+        "imputed": false
+      }
+    ],
+    "imputed_fields": []
+  },
+  "segment_stats": {
+    "count": 6223,
+    "top_lifts": [
+      {
+        "factor": "high_call_drop",
+        "segment_rate": 0.268,
+        "corpus_rate": 0.25,
+        "lift": 1.07
+      },
+      {
+        "factor": "high_latency",
+        "segment_rate": 0.262,
+        "corpus_rate": 0.25,
+        "lift": 1.05
+      },
+      {
+        "factor": "long_mttr",
+        "segment_rate": 0.261,
+        "corpus_rate": 0.251,
+        "lift": 1.04
+      },
+      {
+        "factor": "high_fault_rate",
+        "segment_rate": 0.261,
+        "corpus_rate": 0.25,
+        "lift": 1.04
+      },
+      {
+        "factor": "low_availability",
+        "segment_rate": 0.257,
+        "corpus_rate": 0.25,
+        "lift": 1.03
+      },
+      {
+        "factor": "high_security_incidents",
+        "segment_rate": 0.27,
+        "corpus_rate": 0.262,
+        "lift": 1.03
+      },
+      {
+        "factor": "high_auth_failures",
+        "segment_rate": 0.273,
+        "corpus_rate": 0.264,
+        "lift": 1.03
+      },
+      {
+        "factor": "weather=Snow",
+        "segment_rate": 0.064,
+        "corpus_rate": 0.062,
+        "lift": 1.03
+      }
+    ],
+    "priority_mix": {
+      "P1": 0.074,
+      "P2": 0.243,
+      "P3": 0.515,
+      "P4": 0.168
+    },
+    "median_fault_rate": 39.81
+  },
+  "root_cause_analysis": {
+    "hypotheses": [
+      {
+        "cause": "Coverage deficiency (coverage hole or poor indoor penetration) producing weak signal and failed connection setup. This is an estimate based on similar-case medians, not measured values for this incident.",
+        "likelihood": "high",
+        "evidence_type": "both",
+        "supporting_evidence": [
+          "Estimated signal strength -112.25 dBm (degraded, worse than 87% of records), from similar-case medians",
+          "Estimated connection setup success rate 90.44% (critical, worse than 96% of records); the similar cases span 90.2-91.4% CSSR",
+          "Classification RADIO_COVERAGE with symptoms weak_signal and low_cssr, confidence 0.93",
+          "All 5 similar cases are RADIO_COVERAGE, with signal strength between -119.8 and -107.5 dBm",
+          "Runbook KPI signature: weak signal plus low connection setup success rate"
+        ],
+        "citations": [
+          "KPI ASSESSMENT",
+          "CASE-013174",
+          "CASE-076079",
+          "CASE-018327",
+          "CASE-088889",
+          "CASE-021963",
+          "KB-RADIO_COVERAGE-kpi-signature",
+          "KB-RADIO_COVERAGE-likely-root-causes"
+        ]
+      },
+      {
+        "cause": "Antenna or transmit-power problem (wrong tilt or azimuth, damaged antenna or feeder, reduced power from hardware fault or configuration error) lowering received signal. Domain knowledge only; the data cannot confirm it.",
+        "likelihood": "medium",
+        "evidence_type": "both",
+        "supporting_evidence": [
+          "Estimated successful configuration changes 91.39% (degraded, worse than 85% of records), from similar-case medians, which could point to a configuration issue but is not proof",
+          "Similar cases CASE-013174, CASE-018327 and CASE-076079 show configuration changes at 90.7-91.4%",
+          "Runbook lists antenna problems and reduced transmit power as likely root causes",
+          "No antenna or power measurements are available"
+        ],
+        "citations": [
+          "KPI ASSESSMENT",
+          "CASE-013174",
+          "CASE-018327",
+          "CASE-076079",
+          "KB-RADIO_COVERAGE-likely-root-causes"
+        ]
+      },
+      {
+        "cause": "Uplink or downlink interference raising the noise floor and degrading call setup. Little direct evidence; included as a runbook-listed possibility.",
+        "likelihood": "low",
+        "evidence_type": "knowledge",
+        "supporting_evidence": [
+          "Runbook lists interference as a likely root cause",
+          "No interference or noise-floor KPI is in the evidence",
+          "Estimated call drop rate 2.01837% (degraded, worse than 79% of records), which is consistent with but not specific to interference"
+        ],
+        "citations": [
+          "KB-RADIO_COVERAGE-likely-root-causes",
+          "KPI ASSESSMENT"
+        ]
+      }
+    ],
+    "contributing_factors": [
+      {
+        "factor": "Co-occurring transport, mobility, availability or security issues in similar cases",
+        "direction": "no clear effect",
+        "evidence": "Secondary categories in similar cases vary (TRANSPORT_QOS, MOBILITY_HANDOVER, AVAILABILITY_OUTAGE, SECURITY_AUTH). Segment lifts are close to 1.0x (high_call_drop 1.07x, high_latency 1.05x, long_mttr 1.04x), so the data does not show a notable co-occurrence. The runbook says transport KPIs are usually normal.",
+        "citation": "SEGMENT STATS"
+      },
+      {
+        "factor": "Fault risk model",
+        "direction": "decreases risk",
+        "evidence": "Fault risk 0.10 (Low); top drivers are weather, security_incidents, alarm_count and user_count. This is a model output and does not rule out a coverage problem.",
+        "citation": "PREDICTIONS"
+      },
+      {
+        "factor": "Throughput performance",
+        "direction": "decreases risk",
+        "evidence": "Expected throughput 569.6 Mbps against observed 580.69 Mbps (deficit 2.0%, as_expected), so no throughput degradation is visible despite the weak signal.",
+        "citation": "PREDICTIONS"
+      },
+      {
+        "factor": "Weather and season",
+        "direction": "no clear effect",
+        "evidence": "Similar cases span Summer, Spring and Fall and Clouds or Clear conditions, with no consistent pattern.",
+        "citation": "CASE-013174"
+      },
+      {
+        "factor": "User load",
+        "direction": "no clear effect",
+        "evidence": "1,248 users served (percentile 12%), a low load, so congestion is unlikely to be the main driver.",
+        "citation": "PREDICTIONS"
+      }
+    ],
+    "data_limitations": [
+      "KPI values are estimates from similar-case medians (no KPIs were given), not measurements for this incident",
+      "The similar-case CSSR range is 90.2-91.4%, and the estimate of 90.44% is within that narrow range",
+      "The dataset is synthetic with no timestamps, cell IDs or topology, so the affected cell or location cannot be identified",
+      "Severity is relative to this network's history (percentiles), not absolute thresholds",
+      "Past-case correlations and segment lifts (all near 1.0x) are not proof of causation",
+      "No antenna, transmit-power or interference measurements are available, so the hypotheses beyond coverage deficiency rest on runbook knowledge"
+    ]
+  },
+  "impact": {
+    "level": "High",
+    "affected_services": [
+      "voice",
+      "network access"
+    ],
+    "users_served": 1248,
+    "data_gb": 10.88,
+    "narrative": "Impact is High: voice and network access are affected, so users in the area cannot reliably connect or set up calls. The scope is limited, with 1,248 users served (percentile 12%) and 10.88 GB of data. The KPI figures are estimates from similar-case medians, not measurements. There is a tension between High impact and the computed Priority P4 (Low, score 0.27), which appears to reflect the low user count and the low predicted fault risk (0.10). The High impact level reflects the severity of the service degradation (voice and access) and should drive the urgency assessment, while the P4 priority should be treated with caution because it rests on estimated KPIs."
+  },
+  "fault_risk": {
+    "probability": 0.101,
+    "band": "Low",
+    "top_drivers": [
+      {
+        "feature": "weather",
+        "importance": 0.3154,
+        "value": "Clouds",
+        "band": null,
+        "imputed": false
+      },
+      {
+        "feature": "security_incidents",
+        "importance": 0.0181,
+        "value": 8.0,
+        "band": "normal",
+        "imputed": false
+      },
+      {
+        "feature": "alarm_count",
+        "importance": 0.0179,
+        "value": 9.0,
+        "band": "normal",
+        "imputed": false
+      },
+      {
+        "feature": "user_count",
+        "importance": 0.0082,
+        "value": 1248.0,
+        "band": "normal",
+        "imputed": false
+      },
+      {
+        "feature": "packet_loss_pct",
+        "importance": 0.0039,
+        "value": 7.9125,
+        "band": "normal",
+        "imputed": false
+      }
+    ],
+    "basis": "similar_cases_median"
+  },
+  "performance_prediction": {
+    "expected_throughput_mbps": 569.6,
+    "observed": 580.6901000000001,
+    "deficit_pct": 2.0,
+    "model_r2": 0.3277
+  },
+  "priority": {
+    "level": "P4",
+    "label": "Low",
+    "score": 0.27,
+    "components": {
+      "severity": 0.476,
+      "impact": 0.165,
+      "risk": 0.101
+    },
+    "overrides": [],
+    "reasons": [
+      "Estimated from the median KPIs of the similar cases (no KPIs were given).",
+      "Critical connection setup success rate: 90.44 % (worse than 96% of records)",
+      "Degraded signal strength: -112.25 dBm (worse than 87% of records)",
+      "Degraded successful configuration changes: 91.39 % (worse than 85% of records)",
+      "Serves 1,248 users (more than 12% of records)",
+      "Fault risk 10%"
+    ]
+  },
+  "recommendations": [
+    {
+      "step": 1,
+      "action": "Restore planned transmit power or antenna settings if a recent change reduced them (requires change approval).",
+      "phase": "immediate",
+      "rationale": "Runbook immediate action for RADIO_COVERAGE.",
+      "expected_kpi_effect": "",
+      "verification": "",
+      "risk_level": "medium",
+      "requires_change_approval": true,
+      "citations": [
+        "KB-RADIO_COVERAGE-corrective-actions"
+      ]
+    },
+    {
+      "step": 2,
+      "action": "Dispatch field operations for a damaged antenna or feeder.",
+      "phase": "immediate",
+      "rationale": "Runbook immediate action for RADIO_COVERAGE.",
+      "expected_kpi_effect": "",
+      "verification": "",
+      "risk_level": "low",
+      "requires_change_approval": false,
+      "citations": [
+        "KB-RADIO_COVERAGE-corrective-actions"
+      ]
+    },
+    {
+      "step": 3,
+      "action": "Optimize antenna tilt and azimuth to close the gap (requires change approval).",
+      "phase": "short_term",
+      "rationale": "Runbook short-term action for RADIO_COVERAGE.",
+      "expected_kpi_effect": "",
+      "verification": "",
+      "risk_level": "medium",
+      "requires_change_approval": true,
+      "citations": [
+        "KB-RADIO_COVERAGE-corrective-actions"
+      ]
+    },
+    {
+      "step": 4,
+      "action": "Remove or mitigate interference sources.",
+      "phase": "short_term",
+      "rationale": "Runbook short-term action for RADIO_COVERAGE.",
+      "expected_kpi_effect": "",
+      "verification": "",
+      "risk_level": "low",
+      "requires_change_approval": false,
+      "citations": [
+        "KB-RADIO_COVERAGE-corrective-actions"
+      ]
+    },
+    {
+      "step": 5,
+      "action": "Adjust neighbour relations so users at the edge are served by the best cell.",
+      "phase": "short_term",
+      "rationale": "Runbook short-term action for RADIO_COVERAGE.",
+      "expected_kpi_effect": "",
+      "verification": "",
+      "risk_level": "low",
+      "requires_change_approval": false,
+      "citations": [
+        "KB-RADIO_COVERAGE-corrective-actions"
+      ]
+    }
+  ],
+  "escalation": {
+    "needed": false,
+    "team": "",
+    "reason": "Priority P4. Escalate to RAN optimization for tilt and neighbour changes, and to radio planning when new sites are needed."
+  },
+  "validation": {
+    "verdict": "fail",
+    "scores": {
+      "groundedness": 0.75,
+      "kpi_consistency": 0.8,
+      "actionability": 0.3,
+      "completeness": 0.55
+    },
+    "issues": [
+      {
+        "target": "recommender",
+        "problem": "Every recommendation has an empty verification and an empty expected_kpi_effect. None of the five steps can be checked, and no KPI is named (CSSR, signal strength, call drop rate).",
+        "fix_instruction": "For each step, fill in a concrete verification, such as 'confirm CSSR rises from about 90.4% toward the 96% threshold and signal strength improves from about -112 dBm after the change'. Also fill in expected_kpi_effect. Tie these to the KPI assessment."
+      },
+      {
+        "target": "recommender",
+        "problem": "The recommendations are copied from the runbook corrective actions with a generic rationale. They are not tied to the diagnosed hypotheses and do not include the runbook diagnostic checks (map weak-signal reports, check antenna alarms and VSWR, measure uplink noise rise, review recent tilt or power changes). Step 1 asks for restoring settings 'if a recent change reduced them' before any check confirms such a change. Step 4 mitigates interference that the analyst rated low-likelihood with no evidence.",
+        "fix_instruction": "Put the diagnostic checks first (KB-RADIO_COVERAGE-diagnostic-checks), including a review of recent changes and interference measurement. Make the corrective steps conditional on those results. Write rationales that refer to the specific hypotheses and KPI evidence."
+      },
+      {
+        "target": "recommender",
+        "problem": "Escalation is decided as needed=false with an empty team, yet the reason text says to escalate to RAN optimization and radio planning. The decision and the reason contradict each other. The step 2 field dispatch and the tilt/azimuth change also imply involvement of field operations and RAN optimization.",
+        "fix_instruction": "Make the escalation consistent. Either set needed=true and name the team (RAN optimization, and field operations for hardware repair) with conditions, or set needed=false and state that no escalation is required unless the checks confirm a hardware fault or the need for new sites."
+      },
+      {
+        "target": "analyst",
+        "problem": "The numbers check fails on the value 1.0. The 'near 1.0x' wording for segment lifts is not a figure from the evidence. The analysis also cites 'confidence 0.93', which does not appear in the digest. The 'worse than 85%' configuration-change percentile is used to hint at a configuration issue, which is thin support.",
+        "fix_instruction": "Remove the unsupported 0.93 confidence and avoid the generic '1.0x' phrasing. Quote the actual lifts (1.07x, 1.05x, 1.04x). Keep the configuration-change hypothesis clearly labelled as weakly supported."
+      },
+      {
+        "target": "analyst",
+        "problem": "The user-load factor is cited to PREDICTIONS, but the 1,248 users (percentile 12%) come from IMPACT & PRIORITY. The weather/season factor is cited to a single case even though it is a claim about several cases.",
+        "fix_instruction": "Correct the citations: cite IMPACT & PRIORITY for the user load, and cite all the cases that support the weather and season claim."
+      }
+    ],
+    "summary": "The analysis is mostly grounded and honest about its limits (estimated KPIs, synthetic data), though it has a few unsupported figures and citation slips. The recommendations are generic runbook copies with no verification steps or expected KPI effects, and the escalation decision contradicts its own reason text.",
+    "rule_checks": [
+      {
+        "rule": "citations_valid",
+        "passed": true,
+        "critical": false,
+        "target": "analyst",
+        "detail": "all citations known"
+      },
+      {
+        "rule": "recommendation_kb_citation",
+        "passed": true,
+        "critical": true,
+        "target": "recommender",
+        "detail": "every step cites a runbook"
+      },
+      {
+        "rule": "hypotheses_grounded",
+        "passed": true,
+        "critical": false,
+        "target": "analyst",
+        "detail": "every hypothesis cites evidence"
+      },
+      {
+        "rule": "numbers_match_evidence",
+        "passed": false,
+        "critical": false,
+        "target": "analyst",
+        "detail": "numbers not found in the evidence (\u00b11%): [1.0]"
+      },
+      {
+        "rule": "primary_category_addressed",
+        "passed": true,
+        "critical": true,
+        "target": "recommender",
+        "detail": "RADIO_COVERAGE runbook cited"
+      },
+      {
+        "rule": "recommendation_count",
+        "passed": true,
+        "critical": false,
+        "target": "recommender",
+        "detail": "5 recommendations (expected 4-7)"
+      }
+    ],
+    "revisions": 1
+  },
+  "sources": [
+    {
+      "id": "CASE-013174",
+      "type": "case",
+      "title": "RADIO_COVERAGE case, VA",
+      "snippet": "[CASE-013174] VA/Summer/Clouds, P3, RADIO_COVERAGE+TRANSPORT_QOS: connection setup success rate 90.7% (crit), latency 132.9 ms (crit), signal strength -112.2 dBm (deg), successful configuration changes 91.3% (deg); fault rate 24.2%",
+      "score": 1.12
+    },
+    {
+      "id": "CASE-076079",
+      "type": "case",
+      "title": "RADIO_COVERAGE case, KY",
+      "snippet": "[CASE-076079] KY/Spring/Clouds, P3, RADIO_COVERAGE+MOBILITY_HANDOVER: signal strength -119.8 dBm (crit), handover success rate 90.4% (crit), successful configuration changes 90.7% (crit), connection setup success rate 91.4% (deg); fault rate 29.9%",
+      "score": 1.039
+    },
+    {
+      "id": "CASE-018327",
+      "type": "case",
+      "title": "RADIO_COVERAGE case, PW",
+      "snippet": "[CASE-018327] PW/Spring/Clouds, P3, RADIO_COVERAGE+TRANSPORT_QOS: connection setup success rate 90.2% (crit), packet loss rate 12.2% (crit), successful configuration changes 91.4% (deg), signal strength -107.5 dBm (deg); fault rate 37.8%",
+      "score": 0.959
+    },
+    {
+      "id": "CASE-088889",
+      "type": "case",
+      "title": "RADIO_COVERAGE case, MT",
+      "snippet": "[CASE-088889] MT/Spring/Clear, P3, RADIO_COVERAGE+AVAILABILITY_OUTAGE: connection setup success rate 90.4% (crit), mean time to repair 9.2 hours (crit), signal strength -112.3 dBm (deg), jitter 41.0 ms (deg); fault rate 35.0%",
+      "score": 0.7058
+    },
+    {
+      "id": "CASE-021963",
+      "type": "case",
+      "title": "RADIO_COVERAGE case, CA",
+      "snippet": "[CASE-021963] CA/Fall/Clouds, P4, RADIO_COVERAGE+SECURITY_AUTH: connection setup success rate 90.4% (crit), signal strength -110.1 dBm (deg), authentication failures 18 failures (deg); fault rate 42.9%",
+      "score": 0.578
+    },
+    {
+      "id": "KB-RADIO_COVERAGE-likely-root-causes",
+      "type": "runbook",
+      "title": "Radio coverage and signal quality / likely-root-causes",
+      "snippet": "Runbook: Radio coverage and signal quality > Likely root causes\n- A coverage hole: inadequate site density, terrain or new buildings blocking the signal.\n- Antenna problems: wrong tilt or azimuth, damaged antenna or feeder, water ingress.\n-",
+      "score": 0.6704
+    },
+    {
+      "id": "KB-RADIO_COVERAGE-kpi-signature",
+      "type": "runbook",
+      "title": "Radio coverage and signal quality / kpi-signature",
+      "snippet": "Runbook: Radio coverage and signal quality > KPI signature\n- Weak signal strength (lower than this network's 25th percentile).\n- Low connection setup success rate and higher call drop rate.\n- Throughput may fall at the edge. Transport KPIs ",
+      "score": 0.6551
+    },
+    {
+      "id": "KB-RADIO_COVERAGE-diagnostic-checks",
+      "type": "runbook",
+      "title": "Radio coverage and signal quality / diagnostic-checks",
+      "snippet": "Runbook: Radio coverage and signal quality > Diagnostic checks\n1. Map the weak-signal reports and compare them with the predicted coverage of the serving and neighbouring cells.\n2. Check transmit power and antenna configuration (tilt, azimu",
+      "score": 0.6237
+    },
+    {
+      "id": "KB-RADIO_COVERAGE-corrective-actions",
+      "type": "runbook",
+      "title": "Radio coverage and signal quality / corrective-actions",
+      "snippet": "Runbook: Radio coverage and signal quality > Corrective actions\n### Immediate\n- Restore planned transmit power or antenna settings if a recent change reduced them (requires change approval).\n- Dispatch field operations for a damaged antenna",
+      "score": 0.5522
+    },
+    {
+      "id": "KB-RADIO_COVERAGE-escalation-criteria",
+      "type": "runbook",
+      "title": "Radio coverage and signal quality / escalation-criteria",
+      "snippet": "Runbook: Radio coverage and signal quality > Escalation criteria\n- Escalate to RAN optimization for tilt and neighbour changes, and to radio planning when new sites are needed.\n- Escalate to field operations for hardware repairs.",
+      "score": 0.471
+    }
+  ],
+  "warnings": [
+    "The recommender agent was unavailable; runbook actions are shown. (StructuredOutputError)",
+    "The recommender agent was unavailable; runbook actions are shown. (StructuredOutputError)",
+    "Low-confidence diagnosis: the validator found issues it could not resolve; review the issues before acting."
+  ],
+  "trace": [
+    {
+      "node": "gate",
+      "ms": 0.0,
+      "llm_calls": 0,
+      "tokens_in": 0,
+      "tokens_out": 0,
+      "tool_calls": [],
+      "status": "ok"
+    },
+    {
+      "node": "classify",
+      "ms": 2709.1,
+      "llm_calls": 1,
+      "tokens_in": 2121,
+      "tokens_out": 179,
+      "tool_calls": [],
+      "status": "ok"
+    },
+    {
+      "node": "retrieve",
+      "ms": 215.9,
+      "llm_calls": 0,
+      "tokens_in": 0,
+      "tokens_out": 0,
+      "tool_calls": [
+        "hybrid_search"
+      ],
+      "status": "ok"
+    },
+    {
+      "node": "gather_evidence",
+      "ms": 829.7,
+      "llm_calls": 0,
+      "tokens_in": 0,
+      "tokens_out": 0,
+      "tool_calls": [
+        "kpi_assessment",
+        "segment_stats",
+        "predict_fault_risk",
+        "predict_performance",
+        "impact",
+        "prioritize",
+        "search_runbook(analyst)",
+        "search_runbook(recommender)"
+      ],
+      "status": "ok"
+    },
+    {
+      "node": "analyze",
+      "ms": 9373.2,
+      "llm_calls": 1,
+      "tokens_in": 3456,
+      "tokens_out": 1545,
+      "tool_calls": [],
+      "status": "ok"
+    },
+    {
+      "node": "recommend",
+      "ms": 16456.5,
+      "llm_calls": 2,
+      "tokens_in": 7483,
+      "tokens_out": 2800,
+      "tool_calls": [],
+      "status": "fallback"
+    },
+    {
+      "node": "judge",
+      "ms": 9338.9,
+      "llm_calls": 1,
+      "tokens_in": 6519,
+      "tokens_out": 1261,
+      "tool_calls": [],
+      "status": "ok"
+    },
+    {
+      "node": "analyze",
+      "ms": 11622.3,
+      "llm_calls": 1,
+      "tokens_in": 3552,
+      "tokens_out": 1933,
+      "tool_calls": [],
+      "status": "ok"
+    },
+    {
+      "node": "recommend",
+      "ms": 17154.2,
+      "llm_calls": 2,
+      "tokens_in": 8470,
+      "tokens_out": 2800,
+      "tool_calls": [],
+      "status": "fallback"
+    },
+    {
+      "node": "judge",
+      "ms": 9512.5,
+      "llm_calls": 1,
+      "tokens_in": 6942,
+      "tokens_out": 1172,
+      "tool_calls": [],
+      "status": "ok"
+    },
+    {
+      "node": "finalize",
+      "ms": 0.0,
+      "llm_calls": 0,
+      "tokens_in": 0,
+      "tokens_out": 0,
+      "tool_calls": [],
+      "status": "ok"
+    }
+  ],
+  "meta": {
+    "model": "claude-sonnet-5-5",
+    "judge_model": "claude-sonnet-5-5",
+    "prompt_version": "classifier_v1,analyst_v1,recommender_v1,judge_v1",
+    "latency_ms": 77336.6,
+    "llm_calls": 9,
+    "tokens_in": 38543,
+    "tokens_out": 11690,
+    "cached_calls": 0
+  },
+  "usage": {
+    "llm_calls": 9,
+    "tokens_in": 38543,
+    "tokens_out": 11690,
+    "cached_calls": 0
+  }
+}

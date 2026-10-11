@@ -1,0 +1,147 @@
+/* NetOps Triage design tokens. World: the incident report (SRE postmortem / carrier RFO).
+   Cool paper-grey ground, near-black ink, one report-ink blue for links and focus, a four-step severity scale,
+   verification green, hairline rules instead of boxes. Light is the default (projector rooms); dark is equal. */
+
+:root {
+  color-scheme: light;
+
+  /* ground and ink */
+  --bg: #eef1f4;          /* rail and outer ground */
+  --paper: #f7f8fa;       /* the report page */
+  --sheet: #ffffff;       /* inputs, raised panels, expanded rows */
+  --ink: #141a23;
+  --ink-2: #3b4655;       /* secondary text: 9.6:1 on paper */
+  --ink-3: #5b6676;       /* tertiary text: 5.6:1 on paper */
+  --rule: #dce1e7;
+  --rule-strong: #b9c1cc;
+  --hover: #e8ecf1;
+
+  /* one accent: report ink */
+  --accent: #1f5fbf;
+  --accent-ink: #ffffff;
+  --accent-wash: #e7eefa;
+
+  /* severity scale (text-safe on paper) and verification */
+  --sev-critical: #b42318;
+  --sev-high: #c2410c;
+  --sev-medium: #a15c07;
+  --sev-low: #5b6676;
+  --sev-critical-wash: #fbeceb;
+  --sev-high-wash: #fcefe6;
+  --sev-medium-wash: #fbf3e4;
+  --ok: #2f7d4f;
+  --ok-wash: #e9f4ed;
+
+  /* ruler bands: normal, degraded (> p75), critical (> p90) */
+  --band-normal: #e3e7ec;
+  --band-degraded: #f3dfc4;
+  --band-critical: #f1cdc9;
+
+  --primary-bg: #141a23;  /* primary button: ink, not accent; blue stays for links and focus */
+  --primary-ink: #f7f8fa;
+  --primary-hover: #2a3442;
+
+  --shadow-raise: 0 1px 2px rgb(20 26 35 / 0.06), 0 4px 12px -4px rgb(20 26 35 / 0.08);
+  --selection: #cfdcf3;
+
+  /* type */
+  --font-sans: 'IBM Plex Sans Variable', 'IBM Plex Sans', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'Cascadia Mono', monospace;
+  --fs-xs: 0.8125rem;
+  --fs-sm: 0.875rem;
+  --fs-md: 0.9375rem;
+  --fs-lg: 1.0625rem;
+  --fs-xl: 1.3125rem;
+  --fs-display: clamp(1.5rem, 1.1rem + 1.1vw, 2.125rem);
+  --lh-tight: 1.2;
+  --lh-body: 1.5;
+
+  /* space (4 px base) */
+  --s1: 4px;
+  --s2: 8px;
+  --s3: 12px;
+  --s4: 16px;
+  --s5: 24px;
+  --s6: 32px;
+  --s7: 48px;
+  --s8: 64px;
+
+  --radius: 4px;
+  --radius-lg: 6px;
+  --rail-w: 232px;
+  --content-max: 1240px;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    color-scheme: dark;
+    --bg: #0d1116;
+    --paper: #12171e;
+    --sheet: #171d25;
+    --ink: #e6eaf0;
+    --ink-2: #b4bdc9;
+    --ink-3: #8c97a5;
+    --rule: #252d38;
+    --rule-strong: #394452;
+    --hover: #1c232c;
+    --accent: #7aa7f0;
+    --accent-ink: #0d1116;
+    --accent-wash: #17243a;
+    --sev-critical: #f07a6f;
+    --sev-high: #f39a5e;
+    --sev-medium: #deb05a;
+    --sev-low: #8c97a5;
+    --sev-critical-wash: #2c1a1a;
+    --sev-high-wash: #2c1f16;
+    --sev-medium-wash: #2a2416;
+    --ok: #63bd88;
+    --ok-wash: #15261c;
+    --band-normal: #222a34;
+    --band-degraded: #3d3020;
+    --band-critical: #4a2523;
+    --primary-bg: #e6eaf0;
+    --primary-ink: #0d1116;
+    --primary-hover: #c9d0da;
+    --shadow-raise: 0 1px 2px rgb(0 0 0 / 0.4), 0 6px 16px -6px rgb(0 0 0 / 0.5);
+    --selection: #27406a;
+  }
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --bg: #0d1116;
+  --paper: #12171e;
+  --sheet: #171d25;
+  --ink: #e6eaf0;
+  --ink-2: #b4bdc9;
+  --ink-3: #8c97a5;
+  --rule: #252d38;
+  --rule-strong: #394452;
+  --hover: #1c232c;
+  --accent: #7aa7f0;
+  --accent-ink: #0d1116;
+  --accent-wash: #17243a;
+  --sev-critical: #f07a6f;
+  --sev-high: #f39a5e;
+  --sev-medium: #deb05a;
+  --sev-low: #8c97a5;
+  --sev-critical-wash: #2c1a1a;
+  --sev-high-wash: #2c1f16;
+  --sev-medium-wash: #2a2416;
+  --ok: #63bd88;
+  --ok-wash: #15261c;
+  --band-normal: #222a34;
+  --band-degraded: #3d3020;
+  --band-critical: #4a2523;
+  --primary-bg: #e6eaf0;
+  --primary-ink: #0d1116;
+  --primary-hover: #c9d0da;
+  --shadow-raise: 0 1px 2px rgb(0 0 0 / 0.4), 0 6px 16px -6px rgb(0 0 0 / 0.5);
+  --selection: #27406a;
+}
+
+/* Demo mode: projector distance. Everything scales from the root size. */
+:root[data-demo='on'] {
+  font-size: 125%;
+}

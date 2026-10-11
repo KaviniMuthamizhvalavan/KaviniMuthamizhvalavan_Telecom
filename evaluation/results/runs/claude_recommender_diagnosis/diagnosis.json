@@ -1,0 +1,215 @@
+{
+  "run": {
+    "status": "degraded",
+    "verdict": "fail",
+    "meta": {
+      "model": "claude-sonnet-5-5",
+      "judge_model": "claude-sonnet-5-5",
+      "prompt_version": "classifier_v1,analyst_v1,recommender_v1,judge_v1",
+      "latency_ms": 40364.4,
+      "llm_calls": 5,
+      "tokens_in": 19648,
+      "tokens_out": 5775,
+      "cached_calls": 0
+    },
+    "trace": [
+      [
+        "gate",
+        "ok"
+      ],
+      [
+        "classify",
+        "ok"
+      ],
+      [
+        "retrieve",
+        "ok"
+      ],
+      [
+        "gather_evidence",
+        "ok"
+      ],
+      [
+        "analyze",
+        "ok"
+      ],
+      [
+        "recommend",
+        "fallback"
+      ],
+      [
+        "judge",
+        "ok"
+      ],
+      [
+        "finalize",
+        "ok"
+      ]
+    ]
+  },
+  "calls": [
+    {
+      "role": "classifier",
+      "max_tokens": 400,
+      "thinking": {
+        "type": "between_tools"
+      },
+      "effort": {
+        "effort": "low"
+      },
+      "model": "claude-sonnet-5-5",
+      "stop_reason": "end_turn",
+      "blocks": [
+        {
+          "type": "text",
+          "chars": 434,
+          "head": "{\"primary_category\":\"RADIO_COVERAGE\",\"secondary_categories\":[],\"symptoms\":[\"weak_signal\",\"low_cssr\"],\"filters\":{\"state\":[],\"city\":null,\"season\":[],\"weather\":[]}",
+          "tail": "0.93,\"rationale\":\"'Weak signal' and customers unable to connect / calls failing to set up match the RADIO_COVERAGE defining symptoms weak_signal and low_cssr.\"}"
+        }
+      ],
+      "usage": {
+        "input_tokens": 2121,
+        "output_tokens": 186,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0
+      }
+    },
+    {
+      "role": "analyst",
+      "max_tokens": 4996,
+      "thinking": {
+        "type": "adaptive"
+      },
+      "effort": {
+        "effort": "medium"
+      },
+      "model": "claude-sonnet-5-5",
+      "stop_reason": "end_turn",
+      "blocks": [
+        {
+          "type": "text",
+          "chars": 4175,
+          "head": "{\"hypotheses\":[{\"cause\":\"Coverage hole or antenna/transmit-power problem at the affected site, leaving signal strength very weak and causing connection setup fa",
+          "tail": " 1.0 and past-case correlations are not proof of causation.\",\"No antenna, transmit power, interference or indoor/outdoor data to separate the runbook causes.\"]}"
+        }
+      ],
+      "usage": {
+        "input_tokens": 3456,
+        "output_tokens": 1586,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0
+      }
+    },
+    {
+      "role": "recommender",
+      "max_tokens": 1400,
+      "thinking": {
+        "type": "between_tools"
+      },
+      "effort": {
+        "effort": "low"
+      },
+      "model": "claude-sonnet-5-5",
+      "stop_reason": "max_tokens",
+      "blocks": [
+        {
+          "type": "text",
+          "chars": 3816,
+          "head": "{\"recommendations\":[{\"step\":1,\"action\":\"Review recent changes (antenna tilt, azimuth, transmit power, neighbour cells) on the affected site and restore planned ",
+          "tail": "fication\":\"Periodic measurements show no recurring weak-signal pockets in the area.\",\"risk_level\":\"low\",\"requires_change_approval\":false,\"citations\":[\"KB-RADIO_"
+        }
+      ],
+      "usage": {
+        "input_tokens": 2982,
+        "output_tokens": 1400,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0
+      },
+      "visible_text_tokens_approx": 1408
+    },
+    {
+      "role": "recommender_repair",
+      "max_tokens": 1400,
+      "thinking": {
+        "type": "between_tools"
+      },
+      "effort": {
+        "effort": "low"
+      },
+      "model": "claude-sonnet-5-5",
+      "stop_reason": "max_tokens",
+      "blocks": [
+        {
+          "type": "text",
+          "chars": 3786,
+          "head": "{\"recommendations\":[{\"step\":1,\"action\":\"Review recent changes (tilt, azimuth, transmit power, neighbour cells) at the affected site and restore planned transmit",
+          "tail": "lse,\"citations\":[\"KB-RADIO_COVERAGE-corrective-actions\"]}],\"escalation\":{\"needed\":true,\"team\":\"RAN optimization (field operations if hardware fault is confirmed"
+        }
+      ],
+      "usage": {
+        "input_tokens": 4529,
+        "output_tokens": 1400,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0
+      },
+      "visible_text_tokens_approx": 1408
+    },
+    {
+      "role": "judge",
+      "max_tokens": 4596,
+      "thinking": {
+        "type": "adaptive"
+      },
+      "effort": {
+        "effort": "medium"
+      },
+      "model": "claude-sonnet-5-5",
+      "stop_reason": "end_turn",
+      "blocks": [
+        {
+          "type": "text",
+          "chars": 3555,
+          "head": "{\"scores\":{\"groundedness\":0.78,\"kpi_consistency\":0.8,\"actionability\":0.35,\"completeness\":0.55},\"issues\":[{\"target\":\"recommender\",\"problem\":\"Every recommendation",
+          "tail": "e runbook copies with no verification steps, no diagnostic checks and a contradictory escalation decision, so they are weak on actionability and completeness.\"}"
+        }
+      ],
+      "usage": {
+        "input_tokens": 6560,
+        "output_tokens": 1203,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0
+      }
+    }
+  ],
+  "uncapped_recommender": {
+    "model": "claude-sonnet-5-5",
+    "stop_reason": "end_turn",
+    "blocks": [
+      {
+        "type": "text",
+        "chars": 4007,
+        "head": "{\"recommendations\":[{\"step\":1,\"action\":\"Check recent changes to transmit power, antenna tilt/azimuth and neighbour cells at the affected site, and restore plann",
+        "tail": "ilt and neighbour changes require RAN optimization, hardware repairs need field operations, and persistent gaps need radio planning per the runbook criteria.\"}}"
+      }
+    ],
+    "usage": {
+      "input_tokens": 2982,
+      "output_tokens": 1479,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0
+    },
+    "visible_text_tokens_approx": 1485,
+    "parsed": {
+      "steps": 6,
+      "chars_per_step": [
+        747,
+        635,
+        616,
+        570,
+        617,
+        597
+      ],
+      "escalation_chars": 298
+    }
+  }
+}

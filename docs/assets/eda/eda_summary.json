@@ -1,0 +1,30 @@
+{
+  "rows": 100000,
+  "columns_raw": 27,
+  "nulls": 0,
+  "duplicate_rows": 0,
+  "issue_reported_counts": {
+    "false": 50111,
+    "true": 49889
+  },
+  "unique_cities": 38066,
+  "cities_with_one_row": 20832,
+  "unique_city_state_pairs": 93986,
+  "unique_states": 59,
+  "weather_counts": {
+    "Clouds": 31392,
+    "Rain": 31204,
+    "Clear": 31185,
+    "Snow": 6219
+  },
+  "snow_outside_winter": 0,
+  "call_drop_zero_share": 0.502,
+  "issue_reported_auc_from_all_columns": 0.501,
+  "derived_columns": [
+    "throughput_mbps",
+    "call_drop_rate_pct",
+    "critical_alarm_count",
+    "fault_occurrence_rate_pct",
+    "auth_failures"
+  ]
+}
