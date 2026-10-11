@@ -163,7 +163,7 @@ def main() -> None:
     s = slide(prs, "Architecture", "0:45. Top band: offline build, no LLM. Bottom band: the mandated spine "
               "Retriever → LLM/RAG Pipeline → Agents → API Layer → UI. Orange = LLM, green = deterministic.")
     pic_h = Inches(5.85)
-    pic_w = int(pic_h * 1600 / 1000)
+    pic_w = int(pic_h * 2000 / 1255)
     s.shapes.add_picture(str(PROJECT_ROOT / "architecture" / "architecture.png"), int((W - pic_w) / 2), Inches(1.15),
                          height=pic_h)
 
