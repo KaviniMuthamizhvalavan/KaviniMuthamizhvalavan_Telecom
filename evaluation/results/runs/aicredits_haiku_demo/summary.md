@@ -13,10 +13,10 @@ Generated 2026-10-11 07:55 UTC by `python -m evaluation.make_summary`. Every num
 | KB retrieval | Hit@3 expected category | 0.909 | >= 0.90 | PASS |
 | Prioritization | Scenario exact agreement | 1.000 | >= 0.80 | PASS |
 | Prioritization | Scenario within one level | 1.000 | >= 1.0 | PASS |
-| Classifier (LLM, reasoning off) | Primary accuracy | 0.955 | >= 0.80 | PASS |
-| Classifier (LLM, reasoning off) | Macro-F1 | 0.964 | >= 0.75 | PASS |
-| Classifier (LLM, reasoning off) | Filter exact match | 1.000 | >= 0.85 | PASS |
-| Classifier (LLM, reasoning off) | Out-of-scope detection (n=1) | 1.000 | >= 0.90 | PASS |
+| Classifier (LLM) | Primary accuracy | 0.955 | >= 0.80 | PASS |
+| Classifier (LLM) | Macro-F1 | 0.964 | >= 0.75 | PASS |
+| Classifier (LLM) | Filter exact match | 1.000 | >= 0.85 | PASS |
+| Classifier (LLM) | Out-of-scope detection (n=1) | 1.000 | >= 0.90 | PASS |
 | Guardrails | Block rate | 1.000 | >= 0.90 | PASS |
 | Guardrails | False-positive rate | 0.000 | <= 0.05 | PASS |
 | Fault-risk model | ROC-AUC (holdout) | 0.874 | >= 0.85 | PASS |

@@ -56,7 +56,7 @@ The system also improves from engineer feedback.
 5. **Analyst** (LLM) ranks root-cause hypotheses, each with an evidence type and citations.
 6. **Recommender** (LLM) writes ordered actions grounded in runbooks.
 7. **Judge** (LLM plus deterministic rule checks) returns pass, revise (once) or fail. A final fail is shown as a low-confidence diagnosis with the judge's issues.
-8. **Finalize:** strip unknown citations, and attach sources, usage and a trace.
+8. **Finalize:** add the low-confidence warning when the final verdict is a fail, and return the report with its sources, usage and trace. (Citations that are not in the evidence are already stripped inside the analyst and recommender, as they answer.)
 
 Every LLM node has a deterministic fallback. Zero-key mode runs the same request with rules only.
 

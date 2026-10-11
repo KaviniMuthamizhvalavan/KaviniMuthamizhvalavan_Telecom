@@ -121,13 +121,16 @@ def main() -> None:
     if cls is not None:
         llm_row = cls[cls.system.str.startswith("llm")].iloc[0]
         llm_key = llm_row.system
-        rows += [("Classifier (LLM, reasoning off)", "Primary accuracy", llm_row.primary_acc, ">= 0.80",
+        # AICredits cannot switch thinking off, so "reasoning off" is claimed only where it holds
+        clabel = ("Classifier (LLM, reasoning off)" if s.llm_provider == "anthropic" and not s.classifier_reasoning
+                  else "Classifier (LLM)")
+        rows += [(clabel, "Primary accuracy", llm_row.primary_acc, ">= 0.80",
                   status(llm_row.primary_acc, 0.80)),
-                 ("Classifier (LLM, reasoning off)", "Macro-F1", crep[llm_key]["macro_f1"] if crep else None, ">= 0.75",
+                 (clabel, "Macro-F1", crep[llm_key]["macro_f1"] if crep else None, ">= 0.75",
                   status(crep[llm_key]["macro_f1"] if crep else None, 0.75)),
-                 ("Classifier (LLM, reasoning off)", "Filter exact match", llm_row.filters_exact, ">= 0.85",
+                 (clabel, "Filter exact match", llm_row.filters_exact, ">= 0.85",
                   status(llm_row.filters_exact, 0.85)),
-                 ("Classifier (LLM, reasoning off)", "Out-of-scope detection (n=1)", llm_row.off_topic_flagged, ">= 0.90",
+                 (clabel, "Out-of-scope detection (n=1)", llm_row.off_topic_flagged, ">= 0.90",
                   status(llm_row.off_topic_flagged, 0.90))]
     gr = load_json(F / "guardrails" / "guardrail_metrics.json")
     if gr:

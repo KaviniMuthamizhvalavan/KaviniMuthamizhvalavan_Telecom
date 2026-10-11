@@ -137,7 +137,7 @@ export function CaseTable({ cases, meta, showBreakdown = false }: { cases: CaseR
                   <td>
                     <KeyKpis anomalies={c.anomalies} />
                   </td>
-                  <td className="r" title="Share of the queried symptoms this case also shows">
+                  <td className="r" title="Symptom overlap (Jaccard): symptoms shared by the query and this case, divided by the symptoms in either">
                     {fmtPct(c.score_breakdown.symptom_overlap)}
                   </td>
                 </tr>

@@ -151,7 +151,7 @@ What happens after the engineer clicks **Run analysis**:
 | Embeddings | **BAAI/bge-small-en-v1.5** (sentence-transformers, CPU) | Strong quality for its size, runs on a laptop CPU, free | bge-base/large, e5, OpenAI or Voyage embeddings (paid API) |
 | Vector store | **ChromaDB** | Embedded, local, persistent, supports metadata filters | FAISS, Qdrant, pgvector, Weaviate, Pinecone |
 | Keyword search | **bm25s** | Fast pure-Python BM25 that catches exact terms (KPI names, IDs) dense search misses | Elasticsearch/OpenSearch, rank-bm25, SQLite FTS5 |
-| Fusion and rerank | **Reciprocal-rank fusion + symptom and feedback rerank** | Simple, robust, no extra model; measured nDCG@10 0.934 vs 0.913 for the best single mode | Cross-encoder reranker (bge-reranker), Cohere Rerank |
+| Fusion and rerank | **Reciprocal-rank fusion + symptom and feedback rerank** | Simple, robust, no extra model; measured nDCG@10 0.953 with the rerank (0.934 fusion alone) vs 0.913 for the best single mode | Cross-encoder reranker (bge-reranker), Cohere Rerank |
 | ML models | **scikit-learn HistGradientBoosting** | Strong on tabular KPI data, fast, explainable top drivers | XGBoost, LightGBM, CatBoost, logistic regression |
 | Answer evaluation | **DeepEval** + custom suites | Standard RAG metrics (faithfulness, relevancy, contextual precision/recall) plus G-Eval rubrics | RAGAS, TruLens, promptfoo, LangSmith evals |
 

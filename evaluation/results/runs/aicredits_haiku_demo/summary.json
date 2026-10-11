@@ -49,28 +49,28 @@
     "Status":"PASS"
   },
   {
-    "Component":"Classifier (LLM, reasoning off)",
+    "Component":"Classifier (LLM)",
     "Metric":"Primary accuracy",
     "Value":0.955,
     "Target":">= 0.80",
     "Status":"PASS"
   },
   {
-    "Component":"Classifier (LLM, reasoning off)",
+    "Component":"Classifier (LLM)",
     "Metric":"Macro-F1",
     "Value":0.964,
     "Target":">= 0.75",
     "Status":"PASS"
   },
   {
-    "Component":"Classifier (LLM, reasoning off)",
+    "Component":"Classifier (LLM)",
     "Metric":"Filter exact match",
     "Value":1.0,
     "Target":">= 0.85",
     "Status":"PASS"
   },
   {
-    "Component":"Classifier (LLM, reasoning off)",
+    "Component":"Classifier (LLM)",
     "Metric":"Out-of-scope detection (n=1)",
     "Value":1.0,
     "Target":">= 0.90",
