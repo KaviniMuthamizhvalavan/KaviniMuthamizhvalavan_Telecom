@@ -78,9 +78,10 @@ Prerequisites: Python 3.12, about 3 GB of free disk, internet access for the fir
 py -3.12 -m venv .venv
 .venv\Scripts\Activate.ps1          # if blocked: Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
 pip install -r requirements.txt
+pip install --no-deps -r requirements-deepeval.txt
 ```
 
-`pip check` reports one known, harmless conflict: DeepEval 2.9.3 declares `anthropic<0.50`, while the app uses `anthropic==1.12.1`. DeepEval only imports two class names from it, which still exist.
+The second command installs DeepEval 2.9.3 without dependency resolution. DeepEval declares `anthropic<0.50`, while the app uses `anthropic==1.12.1`, so pip cannot install both in one step; DeepEval only imports two class names from `anthropic`, which 1.x still provides, and its other dependencies are pinned in `requirements.txt`. Afterwards `pip check` reports this one known, harmless conflict.
 
 ## 5. API key configuration
 
@@ -199,7 +200,14 @@ A general summary of both is in `docs/Evaluation_Report.pdf`.
 - **Small evaluation samples, single labeller.** LLM judges differ: the two evaluation runs used different judges, so their answer-quality scores are compared within a run.
 - **No authentication.** Local use only.
 
-## 12. License and attribution
+## 12. Team
+
+| Name | Role | Contact |
+|---|---|---|
+| *(your name)* | *(role)* | *(email)* |
+
+## 13. License and attribution
 
 - **Dataset:** [5G Network Operations (NetOps) Dataset](https://huggingface.co/datasets/fenar/5g_netops), Apache-2.0. The 10k sample in `data/sample_data/` is derived from it (`data/sample_data/README.md`).
 - **Knowledge base:** project-authored runbooks citing public standards (3GPP TS 32.450 / TS 28.554, ITU-T Y.1541); see `data/knowledge_base/README.md`.
+- **Project code:** *(add a license before publishing)*.

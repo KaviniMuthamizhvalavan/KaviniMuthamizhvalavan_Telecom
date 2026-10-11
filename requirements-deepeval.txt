@@ -1,0 +1,5 @@
+# DeepEval (evaluation and some tests). Install AFTER requirements.txt, without dependency resolution:
+#   python -m pip install --no-deps -r requirements-deepeval.txt
+# Its dependencies are pinned in requirements.txt. --no-deps is needed because deepeval 2.9.3 declares
+# anthropic<0.50, while the app uses anthropic 1.12.1 (deepeval only imports names that 1.x still provides).
+deepeval==2.9.3
