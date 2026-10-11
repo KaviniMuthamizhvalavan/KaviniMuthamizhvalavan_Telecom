@@ -50,7 +50,7 @@ Every LLM step has a deterministic fallback, so the app also runs with **no API 
 ## 3. Repository structure
 
 ```
-architecture/          Architecture diagram (PDF, PNG, SVG source) and the agent graph (Mermaid)
+architecture/          Architecture diagram (PDF, PNG, HTML source) and the agent graph (Mermaid)
 data/                  raw/ (full dataset, downloaded), sample_data/ (10k committed sample), knowledge_base/ (9 runbooks)
 design/                Design document (PDF + Markdown source)
 docs/                  API documentation, dataset details, evaluation report (PDFs + Markdown sources in docs/source/),
